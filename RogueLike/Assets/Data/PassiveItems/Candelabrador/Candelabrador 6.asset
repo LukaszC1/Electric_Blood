@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a669253bf985f54ab2ee2aee79629cf, type: 3}
+  m_Name: Candelabrador 6
+  m_EditorClassIdentifier: 
+  upgradeType: 1
+  upgradeName: Ballistic Coprocessor 6
+  upgradeDescription: +5% area
+  icon: {fileID: 21300000, guid: 64ad13a8a5f7af6488bc7a1771398c95, type: 3}
+  weaponData: {fileID: 0}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    size: 0
+    vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
+  nextupgrade: {fileID: 11400000, guid: b65a657bb72fcb747b4b84a3e54491c0, type: 2}
+  item: {fileID: 11400000, guid: aa06a3406d2ee5946b02f9a12d82aa3c, type: 2}
+  itemStats:
+    maxHp: 0
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0.05
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0
+    amountBonus: 0

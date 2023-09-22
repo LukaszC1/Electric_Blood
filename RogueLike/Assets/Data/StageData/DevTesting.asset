@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755207ab59dc0d04fb8565c24514bdf9, type: 3}
+  m_Name: DevTesting
+  m_EditorClassIdentifier: 
+  events:
+  - eventType: 0
+    time: 0.03
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 200
+    length: 60
+  - eventType: 0
+    time: 0.03
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 200
+    length: 60
+  - eventType: 0
+    time: 0.06
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 300
+    length: 60
+  - eventType: 0
+    time: 0.06
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 300
+    length: 60

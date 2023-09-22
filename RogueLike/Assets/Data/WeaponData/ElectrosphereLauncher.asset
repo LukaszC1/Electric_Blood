@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7eef267a89f5c42964427bae89aa01, type: 3}
+  m_Name: ElectrosphereLauncher
+  m_EditorClassIdentifier: 
+  Name: Electrosphere Launcher
+  stats:
+    damage: 10
+    timeToAttack: 4.5
+    size: 0.24
+    vectorSize: {x: 0, y: 0}
+    amount: 1
+    pierce: 1
+  weaponBasePrefab: {fileID: 6634819299005489792, guid: 114d005248c1f1243b7284f350a2ff5c, type: 3}
+  firstUpgrade: {fileID: 11400000, guid: 77d1908871953d14db8c5b37d0a3a103, type: 2}

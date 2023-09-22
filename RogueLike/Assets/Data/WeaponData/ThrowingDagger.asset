@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7eef267a89f5c42964427bae89aa01, type: 3}
+  m_Name: ThrowingDagger
+  m_EditorClassIdentifier: 
+  Name: Throwing Dagger
+  stats:
+    damage: 5
+    timeToAttack: 1
+    size: 0.25
+    vectorSize: {x: 0, y: 0}
+    amount: 1
+    pierce: 1
+  weaponBasePrefab: {fileID: 7075382146051765423, guid: ecb1df5f60670094d9c62c1085564fb9, type: 3}
+  firstUpgrade: {fileID: 11400000, guid: 85774d16d1aeb2d4aba25ddef61ae65b, type: 2}

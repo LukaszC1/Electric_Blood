@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7eef267a89f5c42964427bae89aa01, type: 3}
+  m_Name: ForceField
+  m_EditorClassIdentifier: 
+  Name: Force Field
+  stats:
+    damage: 5
+    timeToAttack: 1.3
+    size: 1
+    vectorSize: {x: 0, y: 0}
+    amount: 0
+  weaponBasePrefab: {fileID: 4884365333385668482, guid: 563ecc66f5910e14891eade2a3d5414e, type: 3}
+  firstUpgrade: {fileID: 11400000, guid: 7e41dadb936ac044d94135394a411123, type: 2}

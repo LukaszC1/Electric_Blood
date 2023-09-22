@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a669253bf985f54ab2ee2aee79629cf, type: 3}
+  m_Name: PlasmaGrenade 3
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  upgradeName: Plasma Grenade 3
+  upgradeDescription: Base area up by 40%
+  icon: {fileID: 21300000, guid: dbae2112ca7c7484dbe23c668d038794, type: 3}
+  weaponData: {fileID: 11400000, guid: 6dbd5c94d1edaa44096bd59be99ec438, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    size: 0.1
+    vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
+  nextupgrade: {fileID: 11400000, guid: fb0b2cd8894b3e341b578d98e37472a7, type: 2}
+  item: {fileID: 0}
+  itemStats:
+    maxHp: 0
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0
+    amountBonus: 0

@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755207ab59dc0d04fb8565c24514bdf9, type: 3}
+  m_Name: Stage1
+  m_EditorClassIdentifier: 
+  events:
+  - eventType: 0
+    time: 0
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 15
+    length: 60
+  - eventType: 0
+    time: 1
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 1
+    enemyToSpawn: {fileID: 1622947162946701178, guid: 7f8ce5b5ade8c2a499179b3d1825f8d0, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 1
+    time: 1
+    enemyToSpawn: {fileID: 1221384219963703909, guid: 11f04946710c99549886ecb9a81492d0, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 2
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 50
+    length: 60
+  - eventType: 0
+    time: 3
+    enemyToSpawn: {fileID: 7168808013363418696, guid: 9447898f1ef74c34ba028bc76bf9c395, type: 3}
+    amount: 40
+    length: 60
+  - eventType: 0
+    time: 4
+    enemyToSpawn: {fileID: 7168808013363418696, guid: 9447898f1ef74c34ba028bc76bf9c395, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 4
+    enemyToSpawn: {fileID: 5074370525369725227, guid: e6d023bf735fb2d42bc470cdd30b9b2d, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 5
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 10
+    length: 60
+  - eventType: 1
+    time: 5
+    enemyToSpawn: {fileID: 1221384219963703909, guid: 11f04946710c99549886ecb9a81492d0, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 6
+    enemyToSpawn: {fileID: 1622947162946701178, guid: 7f8ce5b5ade8c2a499179b3d1825f8d0, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 6
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 7
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 80
+    length: 60
+  - eventType: 0
+    time: 7
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 80
+    length: 60
+  - eventType: 0
+    time: 8
+    enemyToSpawn: {fileID: 1622947162946701178, guid: 7f8ce5b5ade8c2a499179b3d1825f8d0, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 9
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 9
+    enemyToSpawn: {fileID: 1622947162946701178, guid: 7f8ce5b5ade8c2a499179b3d1825f8d0, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 10
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 10
+    length: 60
+  - eventType: 1
+    time: 10
+    enemyToSpawn: {fileID: 5340778109894255648, guid: 99e3da2450374a242a3e23a5abfb82a1, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 11
+    enemyToSpawn: {fileID: 7168808013363418696, guid: 9447898f1ef74c34ba028bc76bf9c395, type: 3}
+    amount: 300
+    length: 60
+  - eventType: 0
+    time: 12
+    enemyToSpawn: {fileID: 7051366391524797625, guid: 62503a6d4e410ec419005eaaad6385fc, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 12
+    enemyToSpawn: {fileID: 5074370525369725227, guid: e6d023bf735fb2d42bc470cdd30b9b2d, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 12
+    enemyToSpawn: {fileID: 7168808013363418696, guid: 9447898f1ef74c34ba028bc76bf9c395, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 13
+    enemyToSpawn: {fileID: 7051366391524797625, guid: 62503a6d4e410ec419005eaaad6385fc, type: 3}
+    amount: 150
+    length: 60
+  - eventType: 0
+    time: 13
+    enemyToSpawn: {fileID: 5074370525369725227, guid: e6d023bf735fb2d42bc470cdd30b9b2d, type: 3}
+    amount: 150
+    length: 60
+  - eventType: 0
+    time: 14
+    enemyToSpawn: {fileID: 7051366391524797625, guid: 62503a6d4e410ec419005eaaad6385fc, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 14
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 15
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 15
+    enemyToSpawn: {fileID: 7051366391524797625, guid: 62503a6d4e410ec419005eaaad6385fc, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 15
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 1
+    time: 15
+    enemyToSpawn: {fileID: 7051366391524797625, guid: 8dd1430bc89a42349bf7f5c1fa475158, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 16
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 16
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 17
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 20
+    length: 60
+  - eventType: 0
+    time: 18
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 60
+    length: 60
+  - eventType: 0
+    time: 18
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 60
+    length: 60
+  - eventType: 0
+    time: 19
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 19
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 20
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 20
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 0
+    time: 20
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 1
+    time: 20
+    enemyToSpawn: {fileID: 2288361812883503458, guid: cd8c993b2b9ef4544978ff80610c11be, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 21
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 200
+    length: 60
+  - eventType: 0
+    time: 22
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 200
+    length: 60
+  - eventType: 0
+    time: 22
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 200
+    length: 60
+  - eventType: 0
+    time: 23
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 300
+    length: 120
+  - eventType: 0
+    time: 23
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 300
+    length: 120
+  - eventType: 0
+    time: 25
+    enemyToSpawn: {fileID: 5926413380807825177, guid: 4febc0757c2e74145832b8c84b78ebdf, type: 3}
+    amount: 100
+    length: 60
+  - eventType: 1
+    time: 25
+    enemyToSpawn: {fileID: 5926413380807825177, guid: 89eea03791c010044a4e3e33d15b23ac, type: 3}
+    amount: 0
+    length: 0
+  - eventType: 0
+    time: 26
+    enemyToSpawn: {fileID: 5926413380807825177, guid: 4febc0757c2e74145832b8c84b78ebdf, type: 3}
+    amount: 150
+    length: 60
+  - eventType: 0
+    time: 26
+    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
+    amount: 150
+    length: 60
+  - eventType: 0
+    time: 27
+    enemyToSpawn: {fileID: 8019571746400517934, guid: 7767fa1ba5683b44ba1f812d13f6d7a2, type: 3}
+    amount: 300
+    length: 60
+  - eventType: 0
+    time: 27
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 300
+    length: 60
+  - eventType: 0
+    time: 28
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 300
+    length: 60
+  - eventType: 0
+    time: 28
+    enemyToSpawn: {fileID: 1221384219963703909, guid: 7c0654ce96a1e6f498bc7f98a598ec0e, type: 3}
+    amount: 300
+    length: 120
+  - eventType: 2
+    time: 30
+    enemyToSpawn: {fileID: 0}
+    amount: 0
+    length: 0
