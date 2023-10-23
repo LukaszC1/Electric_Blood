@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : NetworkBehaviour
 {
     Rigidbody2D rgbd2d;
 

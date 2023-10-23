@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Animate : MonoBehaviour
+public class Animate : NetworkBehaviour
 {
     public Animator animator;
 

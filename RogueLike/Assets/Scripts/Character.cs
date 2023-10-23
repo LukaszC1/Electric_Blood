@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour
+public abstract class Character : NetworkBehaviour
 {
     public int maxHp = 100;
     public int armor = 0;

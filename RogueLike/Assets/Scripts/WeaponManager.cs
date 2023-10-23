@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class WeaponManager : NetworkBehaviour
 {
     [SerializeField] Transform weaponObjectContainer;
     [SerializeField] WeaponData startingWeapon;

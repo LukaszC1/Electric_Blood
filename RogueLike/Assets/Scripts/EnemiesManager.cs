@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [Serializable]
@@ -21,7 +22,7 @@ public class EnemiesSpawnWave
 }
 
 
-public class EnemiesManager : MonoBehaviour
+public class EnemiesManager : NetworkBehaviour
 {
     [SerializeField] Vector2 spawnArea;
     [SerializeField] GameObject player;

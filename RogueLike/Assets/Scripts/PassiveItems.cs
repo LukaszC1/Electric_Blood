@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PassiveItems : MonoBehaviour
+public class PassiveItems : NetworkBehaviour
 {
     public List<Item> items;
     Character character;

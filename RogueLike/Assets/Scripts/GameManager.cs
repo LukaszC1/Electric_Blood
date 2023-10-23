@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
             position.y = UnityEngine.Random.Range(-17, 8);
             position.x = 17 * f;
         }
-        position.x += playerTransform.position.x;
-        position.y += playerTransform.position.y;
+       // position.x += playerTransform.position.x;
+       // position.y += playerTransform.position.y;
         position.z = 0;
 
         return position;

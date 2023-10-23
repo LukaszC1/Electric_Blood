@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class GameOver : MonoBehaviour
+public class GameOver : NetworkBehaviour
 {
     public GameObject gameOverPanel;
     public GameObject equipedItemsPanel;
