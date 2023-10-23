@@ -29556,7 +29556,7 @@ MonoBehaviour:
     EnableNetworkLogs: 1
     OldPrefabList: []
   RunInBackground: 1
-  LogLevel: 1
+  LogLevel: 0
 --- !u!4 &1972842046
 Transform:
   m_ObjectHideFlags: 0
@@ -31105,7 +31105,7 @@ PrefabInstance:
     - target: {fileID: 4345726276858563846, guid: 52a0d3f702f7b91479162a09d0d5865d, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7501613538289692909, guid: 4f2464a5c82fb6e4ebf802da90772779, type: 3}
     - target: {fileID: 4345726276858563847, guid: 52a0d3f702f7b91479162a09d0d5865d, type: 3}
       propertyPath: m_RootOrder
       value: 2
