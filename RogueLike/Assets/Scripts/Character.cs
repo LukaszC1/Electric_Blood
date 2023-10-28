@@ -77,8 +77,8 @@ public abstract class Character : NetworkBehaviour
     public void Start()
     {
         currentHp = maxHp;
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
-        experienceBar.SetLevelText(level);
+      //  experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+       // experienceBar.SetLevelText(level);
         hpBar.SetState(currentHp, maxHp);
         AddUpgradesIntoList(upgradesAvailableOnStart);
     }
@@ -127,7 +127,7 @@ public abstract class Character : NetworkBehaviour
     {
         experience += amount;
         xpSound.Play();
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+      //  experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
     }
 
 
@@ -145,18 +145,18 @@ public abstract class Character : NetworkBehaviour
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
-        if(selectedUpgrades.Count > 0)
-        upgradePanelManager.OpenPanel(selectedUpgrades);
+//        if(selectedUpgrades.Count > 0)
+ //       upgradePanelManager.OpenPanel(selectedUpgrades);
 
-        experience -= TO_LEVEL_UP();
-        level += 1;
-        experienceBar.SetLevelText(level);
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+//        experience -= TO_LEVEL_UP();
+//        level += 1;
+ //       experienceBar.SetLevelText(level);
+ //       experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
 
-        magnet.LevelUpUpdate();
+ //       magnet.LevelUpUpdate();
 
-        LevelUpBonus();
-        updateWeapons();
+ //       LevelUpBonus();
+ //       updateWeapons();
     }
 
     public void updateWeapons()

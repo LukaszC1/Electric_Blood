@@ -45,13 +45,14 @@ GameObject:
   - component: {fileID: 7501613538289692896}
   - component: {fileID: 7501613538289692907}
   - component: {fileID: 7501613538289692906}
-  - component: {fileID: 7501613538289692905}
   - component: {fileID: 7501613538289692902}
   - component: {fileID: 7501613538289692901}
   - component: {fileID: 7501613538289692900}
   - component: {fileID: 7501613538289692920}
   - component: {fileID: 7501613538289692926}
+  - component: {fileID: 2191538031893462433}
   - component: {fileID: -7674514467576142335}
+  - component: {fileID: -7722241779058024649}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -180,20 +181,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7501613538289692905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7501613538289692909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4aa6c46126a33e42b0d2dde3471fdd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  horizontal: 0
 --- !u!61 &7501613538289692902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,6 +342,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2191538031893462433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501613538289692909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aa6c46126a33e42b0d2dde3471fdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  horizontal: 0
 --- !u!114 &-7674514467576142335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +376,36 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &-7722241779058024649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501613538289692909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!1 &7501613538630851393
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +516,7 @@ GameObject:
   - component: {fileID: 7501613539110538406}
   - component: {fileID: 7501613539110538407}
   - component: {fileID: 7501613539110538404}
+  - component: {fileID: 4026295935593690188}
   m_Layer: 0
   m_Name: spriteshadowless_1
   m_TagString: Untagged
@@ -580,6 +612,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4026295935593690188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501613539110538409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8deae8091111f4eb30a56c1f4e0d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 7501613539110538404}
 --- !u!1 &7501613539266101168
 GameObject:
   m_ObjectHideFlags: 0

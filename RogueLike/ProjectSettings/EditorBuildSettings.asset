@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: f6300eec0048f1d48893df27731ecc26
-  - enabled: 1
     path: Assets/Scenes/GameAssasin.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/MainMenu.unity
+    guid: f6300eec0048f1d48893df27731ecc26
+  - enabled: 0
     path: Assets/Scenes/GameEnforcer.unity
-    guid: be8bb22547d9a504aa7cc24b76396a82
-  - enabled: 1
+    guid: c3f4aabac6ef40d48b54d64614b0cc23
+  - enabled: 0
     path: Assets/Scenes/GamePrototype.unity
     guid: b6ae7408ce2e2984a9249e3ba6f85e4b
   m_configObjects: {}

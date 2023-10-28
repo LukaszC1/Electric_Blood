@@ -35,60 +35,79 @@ public class PlayerMove : NetworkBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-     
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
 
-        if(movementVector.x != 0)
+        if (!IsOwner) //only the local player can move this character
         {
-            lastHorizontalVector = movementVector.x;
-            lastHorizontalVectorProjectiles = movementVector.x;
-
-        }
-       else if (movementVector.y != 0)
-            lastHorizontalVectorProjectiles = 0;
-
-
-        if (movementVector.x > 0 && !facingRight)
-        {
-            sprite.flipX = false;
-            facingRight = !facingRight;
-        }
-        if (movementVector.x < 0 && facingRight)
-        {
-            sprite.flipX = true;
-            facingRight = !facingRight;
+            return;
         }
 
-        if (movementVector.x == 0 && movementVector.y == 0)
-        {
-            animate.animator.SetBool("isMoving", false);
+            movementVector.x = Input.GetAxisRaw("Horizontal");
+            movementVector.y = Input.GetAxisRaw("Vertical");
+
+            if (movementVector.x != 0)
+            {
+                lastHorizontalVector = movementVector.x;
+                lastHorizontalVectorProjectiles = movementVector.x;
+
+            }
+            else if (movementVector.y != 0)
+                lastHorizontalVectorProjectiles = 0;
+
+
+            if (movementVector.x > 0 && !facingRight)
+            {
+                flipPlayerServerRpc();
+                facingRight = !facingRight;
+            }
+            if (movementVector.x < 0 && facingRight)
+            {
+                flipPlayerServerRpc();
+                facingRight = !facingRight;
+            }
+
+            if (movementVector.x == 0 && movementVector.y == 0)
+            {
+                animate.animator.SetBool("isMoving", false);
+            }
+            else
+            {
+                animate.animator.SetBool("isMoving", true);
+            }
+
+
+            if (movementVector.y != 0)
+            {
+                lastVerticalVector = movementVector.y;
+                lastVerticalVectorProjectiles = movementVector.y;
+
+            }
+            else if (movementVector.x != 0)
+                lastVerticalVectorProjectiles = 0;
+
+
+            animate.horizontal = movementVector.x;
+
+            movementVector *= speed;
+            rgbd2d.velocity = movementVector;
+
         }
-        else
-        {
-            animate.animator.SetBool("isMoving", true);
-        }
 
+    [ClientRpc]
+    private void flipPlayerClientRpc()
+    {    
 
-        if (movementVector.y != 0)
-        {
-            lastVerticalVector = movementVector.y;
-            lastVerticalVectorProjectiles = movementVector.y;
+        sprite.flipX = !sprite.flipX;
 
-        }
-        else if (movementVector.x != 0)
-            lastVerticalVectorProjectiles = 0;
-
-
-        animate.horizontal = movementVector.x;
-
-        movementVector *= speed;
-        rgbd2d.velocity = movementVector;
-
+        Debug.Log("Flipped");
     }
 
+    [ServerRpc]
+    private void flipPlayerServerRpc()
+    {
+        flipPlayerClientRpc();
+    }
 }
 
 

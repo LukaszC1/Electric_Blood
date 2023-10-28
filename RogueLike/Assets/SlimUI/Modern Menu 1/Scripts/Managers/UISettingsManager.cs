@@ -58,7 +58,7 @@ namespace SlimUI.ModernMenu{
 
 		public void  Start (){
 			// check difficulty
-			if(PlayerPrefs.GetInt("NormalDifficulty") == 1){
+			/*if(PlayerPrefs.GetInt("NormalDifficulty") == 1){
 				difficultynormaltextLINE.gameObject.SetActive(true);
 				difficultyhardcoretextLINE.gameObject.SetActive(false);
 			}
@@ -66,8 +66,8 @@ namespace SlimUI.ModernMenu{
 			{
 				difficultyhardcoretextLINE.gameObject.SetActive(true);
 				difficultynormaltextLINE.gameObject.SetActive(false);
-			}
-
+			}*/
+/*
 			// check slider values
 			musicSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("MusicVolume");
 			sensitivityXSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("XSensitivity");
@@ -196,14 +196,14 @@ namespace SlimUI.ModernMenu{
 				texturelowtextLINE.gameObject.SetActive(false);
 				texturemedtextLINE.gameObject.SetActive(false);
 				texturehightextLINE.gameObject.SetActive(true);
-			}
+			}*/
 		}
 
 		public void Update (){
 			//sliderValue = musicSlider.GetComponent<Slider>().value;
-			sliderValueXSensitivity = sensitivityXSlider.GetComponent<Slider>().value;
-			sliderValueYSensitivity = sensitivityYSlider.GetComponent<Slider>().value;
-			sliderValueSmoothing = mouseSmoothSlider.GetComponent<Slider>().value;
+			//sliderValueXSensitivity = sensitivityXSlider.GetComponent<Slider>().value;
+			//sliderValueYSensitivity = sensitivityYSlider.GetComponent<Slider>().value;
+		//	sliderValueSmoothing = mouseSmoothSlider.GetComponent<Slider>().value;
 		}
 
 		public void FullScreen (){

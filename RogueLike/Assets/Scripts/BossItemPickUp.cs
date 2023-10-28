@@ -11,17 +11,19 @@ public class BossItemPickUp : MonoBehaviour, iPickUpObject
     {
         //add the random upgrade to the character
 
-        var upgrade = character.GetUpgrades(1)[0];
-
-        while(upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString() || upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString())
+        if (character.GetUpgrades(1) != null)
         {
-            upgrade = character.GetUpgrades(1)[0];
+            var upgrade = character.GetUpgrades(1)[0];
+
+            while (upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString() || upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString())
+            {
+                upgrade = character.GetUpgrades(1)[0];
+            }
+
+            character.AcquiredUpgradesAdd(upgrade);
+            character.UpgradesRemove(upgrade);
+            character.UpgradeWeaponPickUp(upgrade);
         }
-
-        character.AcquiredUpgradesAdd(upgrade);
-        character.UpgradesRemove(upgrade);
-        character.UpgradeWeaponPickUp(upgrade);
-
         Destroy(gameObject);
     }
     public void setTargetDestination(Transform destination)

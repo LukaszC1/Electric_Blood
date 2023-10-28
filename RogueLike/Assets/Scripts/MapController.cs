@@ -51,7 +51,7 @@ public class MapController : MonoBehaviour
             return;
         }
 
-        if (movement.movementVector.x != 0 || movement.movementVector.y != 0)
+        /*if (movement.movementVector.x != 0 || movement.movementVector.y != 0)
         {
 
 
@@ -102,7 +102,7 @@ public class MapController : MonoBehaviour
 
 
 
-        }
+        }*/
 
 
     }
