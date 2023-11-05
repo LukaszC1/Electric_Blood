@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public abstract class WeaponBase : MonoBehaviour //weapons base class
+public abstract class WeaponBase : NetworkBehaviour //weapons base class
 {
     public WeaponData weaponData;
     public WeaponStats weaponStats;
@@ -23,7 +24,6 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
         playerMove = GetComponentInParent<PlayerMove>();
         weaponSound= GetComponent<AudioSource>();
         character = GetComponentInParent<Character>();
-
     }
     public void Start()
     {
@@ -49,8 +49,9 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
 
         if (timer < 0f)
         {
-           Attack();
-            timer = weaponStats.timeToAttack;
+            Attack();
+
+           timer = weaponStats.timeToAttack;
         }
     }
 

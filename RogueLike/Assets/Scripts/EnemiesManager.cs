@@ -32,8 +32,11 @@ public class EnemiesManager : NetworkBehaviour
 
 
     private void Update()
-    { 
-        enemyList.RemoveAll(x => x == null);
+    {
+        if(IsServer)
+        {
+            enemyList.RemoveAll(x => x == null);
+        }
 
     }
     private void LateUpdate()

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance;
 
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform playerTransform;
     private float timer = 1;
 
-    [HideInInspector] public int killCount = 0;
+    [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>();
     [SerializeField] TMPro.TextMeshProUGUI killCounter;
 
     [SerializeField] GameObject xpBankGemPrefab;
@@ -90,9 +91,13 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+
     public void IncrementKillCount()
     {
-        killCount++;
-        killCounter.text = ":" + killCount.ToString();
+        if (IsServer)
+        { 
+            killCount.Value += 1;
+            killCounter.text = ":" + killCount.Value.ToString();
+        }
     }
 }

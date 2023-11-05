@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class WhipWeapon : WeaponBase
   
     [SerializeField] GameObject WhipObject;
     private Vector2 startPosition;
+    private GameObject strike;
 
     private void ApplyDamage(Collider2D[] colliders)
     {
@@ -28,41 +30,81 @@ public class WhipWeapon : WeaponBase
         StartCoroutine(CoroutineAttack());
     }
 
+    
     private IEnumerator CoroutineAttack()
-    {
-            startPosition = transform.position;
-            if (playerMove.lastHorizontalVector > 0)
+    {       
+            startPosition = transform.position;         
+
+        if (playerMove.lastHorizontalVector > 0)
             {
                 for (int i = 0; i < weaponStats.amount; i++)
                 {
-                    GameObject strike = Instantiate(WhipObject);
-                    strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
-                    Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
-                    if (i % 2 == 0)
-                        strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
-                    else
-                        strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
-                    ApplyDamage(colliders);
-                    weaponSound.Play();
+                    spawnObjectServerRpc(i);
+
+                    Debug.Log("Attack");
+
+                if (IsClient) yield return null;
+
+                     strike = Instantiate(WhipObject);
+                     strike.GetComponent<NetworkObject>().Spawn();
+                     strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
+                     Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
+                     if (i % 2 == 0)
+                         strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
+                     else
+                         strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+                     ApplyDamage(colliders);
+                     weaponSound.Play();
+
+
+
                     yield return new WaitForSeconds(0.2f);
                 }
             }
-            else
+            else 
             {
                 for (int i = 0; i < weaponStats.amount; i++)
                 {
-                    GameObject strike = Instantiate(WhipObject);
+                    Debug.Log("Attack");
+
+                    spawnObjectServerRpc(i);
+
+                    if (IsClient) yield return null;
+
+                    strike = Instantiate(WhipObject);
                     strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
+                    strike.GetComponent<NetworkObject>().Spawn();
                     Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
                     if (i % 2 == 0)
                         strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
                     else
                         strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+
                     ApplyDamage(colliders);
                     weaponSound.Play();
-                    yield return new WaitForSeconds(0.2f);
+
+                yield return new WaitForSeconds(0.2f);
                 }
-            }
-            
+            }     
         }
+
+        [ServerRpc]
+        private void spawnObjectServerRpc(int i)
+        {
+            startPosition = transform.position;
+            strike = Instantiate(WhipObject);
+            strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
+            strike.GetComponent<NetworkObject>().Spawn();
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
+            if (i % 2 == 0)
+                strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
+            else
+                strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+
+            ApplyDamage(colliders);
+            weaponSound.Play();
+            
+            Debug.Log("Spawned");
+            NetworkLog.LogInfoServer("Spawned");
     }
+}

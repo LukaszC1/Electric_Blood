@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -57,13 +55,13 @@ public class PlayerMove : NetworkBehaviour
 
 
             if (movementVector.x > 0 && !facingRight)
-            {
-                flipPlayerServerRpc();
+            {                 
+                flipPlayerServerRpc();         
                 facingRight = !facingRight;
             }
             if (movementVector.x < 0 && facingRight)
-            {
-                flipPlayerServerRpc();
+            {                       
+                flipPlayerServerRpc();               
                 facingRight = !facingRight;
             }
 
@@ -97,16 +95,17 @@ public class PlayerMove : NetworkBehaviour
     [ClientRpc]
     private void flipPlayerClientRpc()
     {    
-
         sprite.flipX = !sprite.flipX;
 
-        Debug.Log("Flipped");
+        Debug.Log("Flipped on client " + NetworkObject.OwnerClientId);
     }
 
     [ServerRpc]
     private void flipPlayerServerRpc()
     {
         flipPlayerClientRpc();
+
+        Debug.Log("Flipped on server " + NetworkObject.OwnerClientId);
     }
 }
 

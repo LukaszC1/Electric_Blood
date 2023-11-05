@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class DestroyAfterTime : MonoBehaviour
+public class DestroyAfterTime : NetworkBehaviour
 {
     [SerializeField] float timeToDestroy = 0.8f;
     float timer;
@@ -17,6 +18,13 @@ public class DestroyAfterTime : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0f)
         {
+
+            if (gameObject.GetComponent<NetworkObject>().IsSpawned)
+            {
+                gameObject.GetComponent<NetworkObject>().Despawn();
+                Debug.Log("Despawned");
+                NetworkLog.LogInfoServer("Spawned");
+            }
             Destroy(gameObject);
         }
     }
