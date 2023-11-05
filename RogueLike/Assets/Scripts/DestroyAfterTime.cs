@@ -15,17 +15,31 @@ public class DestroyAfterTime : NetworkBehaviour
 
     private void LateUpdate()
     {
+        if (!IsOwner) return;
+
         timer -= Time.deltaTime;
         if (timer < 0f)
         {
 
-            if (gameObject.GetComponent<NetworkObject>().IsSpawned)
+            if (IsHost)
             {
                 gameObject.GetComponent<NetworkObject>().Despawn();
-                Debug.Log("Despawned");
-                NetworkLog.LogInfoServer("Spawned");
+                Destroy(gameObject);
+                Debug.Log("Despawned");               
             }
-            Destroy(gameObject);
+            else
+            {
+                destroyWhipAttackServerRpc();
+            }      
         }
     }
+
+    [ServerRpc]
+    private void destroyWhipAttackServerRpc()
+    {
+        gameObject.GetComponent<NetworkObject>().Despawn();
+        Destroy(gameObject);
+        Debug.Log("Despawned by server");
+    }
 }
+

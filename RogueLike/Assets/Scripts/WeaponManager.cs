@@ -31,7 +31,8 @@ public class WeaponManager : NetworkBehaviour
     }
     public void AddWeapon(WeaponData weaponData)
     {
-        //if(!IsOwner) return;
+        Debug.Log("Weapon equiped on: " + NetworkManager.LocalClientId.ToString());
+
         AddWeaponClientRpc(weaponData.Name);      
     }
 

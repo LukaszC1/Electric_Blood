@@ -39,21 +39,22 @@ public class WhipWeapon : WeaponBase
             {
                 for (int i = 0; i < weaponStats.amount; i++)
                 {
-                    spawnObjectServerRpc(i);
+                     spawnObjectRightServerRpc(i, startPosition);
 
-                    Debug.Log("Attack");
+                     Debug.Log("Attack");
+          
+                     if (!IsHost) yield return null;
+                     strike = Instantiate(WhipObject);                  
 
-                if (IsClient) yield return null;
-
-                     strike = Instantiate(WhipObject);
-                     strike.GetComponent<NetworkObject>().Spawn();
                      strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
                      Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
                      if (i % 2 == 0)
                          strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
                      else
                          strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
-                     ApplyDamage(colliders);
+                    strike.GetComponent<NetworkObject>().Spawn();
+
+                    ApplyDamage(colliders);
                      weaponSound.Play();
 
 
@@ -67,18 +68,19 @@ public class WhipWeapon : WeaponBase
                 {
                     Debug.Log("Attack");
 
-                    spawnObjectServerRpc(i);
+                    spawnObjectLeftServerRpc(i, startPosition);
 
-                    if (IsClient) yield return null;
-
+                    if (!IsHost) yield return null;
                     strike = Instantiate(WhipObject);
                     strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
-                    strike.GetComponent<NetworkObject>().Spawn();
+                    
+
                     Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
                     if (i % 2 == 0)
                         strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
                     else
                         strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+                    strike.GetComponent<NetworkObject>().Spawn();
 
                     ApplyDamage(colliders);
                     weaponSound.Play();
@@ -89,12 +91,32 @@ public class WhipWeapon : WeaponBase
         }
 
         [ServerRpc]
-        private void spawnObjectServerRpc(int i)
+        private void spawnObjectRightServerRpc(int i, Vector2 startPosition)
         {
-            startPosition = transform.position;
+            strike = Instantiate(WhipObject);      
+            strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
+
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
+            if (i % 2 == 0)
+                strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
+            else
+                strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+            ApplyDamage(colliders);
+                weaponSound.Play();
+
+            ApplyDamage(colliders);
+                weaponSound.Play();
+
+            strike.GetComponent<NetworkObject>().Spawn();
+            Debug.Log("Spawned");         
+        }
+
+        [ServerRpc]
+        private void spawnObjectLeftServerRpc(int i, Vector2 startPosition)
+        {
             strike = Instantiate(WhipObject);
             strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
-            strike.GetComponent<NetworkObject>().Spawn();
+
             Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
             if (i % 2 == 0)
                 strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
@@ -103,8 +125,8 @@ public class WhipWeapon : WeaponBase
 
             ApplyDamage(colliders);
             weaponSound.Play();
-            
+
+            strike.GetComponent<NetworkObject>().Spawn();
             Debug.Log("Spawned");
-            NetworkLog.LogInfoServer("Spawned");
     }
 }
