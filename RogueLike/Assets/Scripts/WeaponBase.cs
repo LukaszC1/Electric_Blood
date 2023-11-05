@@ -27,21 +27,24 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     }
     public void Start()
     {
-        originalAoE = weaponStats.vectorSize;
-        originalScale = transform.localScale;
-        originalDamage = weaponStats.damage;
-        originalCd = weaponStats.timeToAttack;
-        originalAoEF = weaponStats.size;
-        originalAmount = weaponStats.amount;
+        if (IsOwner)
+        {
+            originalAoE = weaponStats.vectorSize;
+            originalScale = transform.localScale;
+            originalDamage = weaponStats.damage;
+            originalCd = weaponStats.timeToAttack;
+            originalAoEF = weaponStats.size;
+            originalAmount = weaponStats.amount;
 
-        if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
-            weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
-        if (weaponStats.size != 0)
-            weaponStats.size = weaponStats.size * character.areaMultiplier;
-        transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
-        weaponStats.damage = weaponStats.damage * character.damageMultiplier;
-        weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
-        weaponStats.amount += character.amountBonus;
+            if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
+                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
+            if (weaponStats.size != 0)
+                weaponStats.size = weaponStats.size * character.areaMultiplier;
+            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
+            weaponStats.damage = weaponStats.damage * character.damageMultiplier;
+            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
+            weaponStats.amount += character.amountBonus;
+        }
     }
     public void Update()
     {
