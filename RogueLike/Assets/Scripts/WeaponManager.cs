@@ -33,7 +33,8 @@ public class WeaponManager : NetworkBehaviour
     {
         Debug.Log("Weapon equiped on: " + NetworkManager.LocalClientId.ToString());
 
-        AddWeaponClientRpc(weaponData.Name);      
+        AddWeaponServerRpc(weaponData.Name);
+       
     }
 
     internal void UpgradeWeapon(UpgradeData upgradeData)
@@ -46,19 +47,18 @@ public class WeaponManager : NetworkBehaviour
         }
     }
 
-    [ClientRpc]
-    private void AddWeaponClientRpc(string weaponName)
+    [ServerRpc]
+    private void AddWeaponServerRpc(string weaponName)
     {
         WeaponData weaponData = allWeapons.Find(wd => wd.Name.Equals(weaponName));
 
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectContainer);
         weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
 
-        //if (weaponGameObject.GetComponent<NetworkObject>() != null)
-        //weaponGameObject.GetComponent<NetworkObject>().Spawn();
-
         WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
 
+        weaponGameObject.GetComponent<NetworkObject>().Spawn();
+        weaponGameObject.transform.SetParent(NetworkObject.transform, false);
         weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
 
@@ -70,3 +70,4 @@ public class WeaponManager : NetworkBehaviour
     }
 
 }
+

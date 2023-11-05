@@ -43,22 +43,6 @@ public class WhipWeapon : WeaponBase
 
                      Debug.Log("Attack");
           
-                     if (!IsHost) yield return null;
-                     strike = Instantiate(WhipObject);                  
-
-                     strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
-                     Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
-                     if (i % 2 == 0)
-                         strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
-                     else
-                         strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
-                    strike.GetComponent<NetworkObject>().Spawn();
-
-                    ApplyDamage(colliders);
-                     weaponSound.Play();
-
-
-
                     yield return new WaitForSeconds(0.2f);
                 }
             }
@@ -70,22 +54,7 @@ public class WhipWeapon : WeaponBase
 
                     spawnObjectLeftServerRpc(i, startPosition);
 
-                    if (!IsHost) yield return null;
-                    strike = Instantiate(WhipObject);
-                    strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
-                    
-
-                    Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
-                    if (i % 2 == 0)
-                        strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
-                    else
-                        strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
-                    strike.GetComponent<NetworkObject>().Spawn();
-
-                    ApplyDamage(colliders);
-                    weaponSound.Play();
-
-                yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(0.2f);
                 }
             }     
         }
