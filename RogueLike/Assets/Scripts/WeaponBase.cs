@@ -49,6 +49,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
 
         if (timer < 0f)
         {
+            if (!IsOwner) return;
             Attack();
 
            timer = weaponStats.timeToAttack;

@@ -21,9 +21,8 @@ public class DestroyAfterTime : NetworkBehaviour
         if (timer < 0f)
         {
 
-            if (IsHost)
+            if (IsServer)
             {
-                gameObject.GetComponent<NetworkObject>().Despawn();
                 Destroy(gameObject);
                 Debug.Log("Despawned");               
             }
@@ -37,7 +36,6 @@ public class DestroyAfterTime : NetworkBehaviour
     [ServerRpc]
     private void destroyWhipAttackServerRpc()
     {
-        gameObject.GetComponent<NetworkObject>().Despawn();
         Destroy(gameObject);
         Debug.Log("Despawned by server");
     }
