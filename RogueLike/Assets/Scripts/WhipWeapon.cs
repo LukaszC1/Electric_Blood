@@ -35,7 +35,7 @@ public class WhipWeapon : WeaponBase
     {       
             startPosition = transform.position;         
 
-        if (playerMove.lastHorizontalVector > 0)
+        if (playerMove.lastHorizontalVector.Value > 0)
             {
                 for (int i = 0; i < weaponStats.amount; i++)
                 {
@@ -57,7 +57,7 @@ public class WhipWeapon : WeaponBase
                     yield return new WaitForSeconds(0.2f);
                 }
             }     
-        }
+    }
 
         [ServerRpc]
         private void spawnObjectRightServerRpc(int i, Vector2 startPosition)

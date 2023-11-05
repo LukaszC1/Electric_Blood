@@ -7,7 +7,7 @@ public class PlayerMove : NetworkBehaviour
     Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
-    [HideInInspector] public float lastHorizontalVector;
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(0,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
     [HideInInspector] public float lastVerticalVector;
     [HideInInspector] public float lastHorizontalVectorProjectiles;
     [HideInInspector] public float lastVerticalVectorProjectiles;
@@ -28,7 +28,7 @@ public class PlayerMove : NetworkBehaviour
     }
     private void Start()
     {
-        lastHorizontalVector = 1f; //initial value of the vector (for projectile weapons)
+        lastHorizontalVector.Value = 1f; //initial value of the vector (for projectile weapons)
         lastHorizontalVectorProjectiles = 1f;
     }
 
@@ -46,7 +46,7 @@ public class PlayerMove : NetworkBehaviour
 
             if (movementVector.x != 0)
             {
-                lastHorizontalVector = movementVector.x;
+                lastHorizontalVector.Value = movementVector.x;
                 lastHorizontalVectorProjectiles = movementVector.x;
 
             }
