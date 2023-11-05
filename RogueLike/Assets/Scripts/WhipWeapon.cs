@@ -73,9 +73,6 @@ public class WhipWeapon : WeaponBase
             ApplyDamage(colliders);
                 weaponSound.Play();
 
-            ApplyDamage(colliders);
-                weaponSound.Play();
-
             strike.GetComponent<NetworkObject>().Spawn();
             Debug.Log("Spawned");         
         }
