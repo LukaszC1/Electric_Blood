@@ -13,7 +13,7 @@ public class GameManager : NetworkBehaviour
     public Transform playerTransform;
     private float timer = 1;
 
-    [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>();
+    [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>(0);
     [SerializeField] TMPro.TextMeshProUGUI killCounter;
 
     [SerializeField] GameObject xpBankGemPrefab;
