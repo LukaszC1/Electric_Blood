@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Enemy : MonoBehaviour, iDamageable
+public class Enemy : NetworkBehaviour, iDamageable
 {
     Transform targetDestination;
     GameObject targetGameObject;
@@ -101,24 +102,11 @@ public class Enemy : MonoBehaviour, iDamageable
 
         if (isDying)
         {
-            dissolveAmount -= Time.deltaTime*1.5f;
-            GetComponent<Renderer>().material.SetFloat("_Dissolve_Amount", dissolveAmount);
-            if (dissolveAmount < 0)
-            {
-                Destroy(gameObject);
-            }
+            isDyingUpdateClientRpc();
         }
         else if (takingDamage)
         {
-            timer2 -= Time.deltaTime;
-            GetComponent<Renderer>().material = whiteMat;
-            speed = reverseSpeed;
-            if (timer2 <= 0)
-            {
-                GetComponent<Renderer>().material = originalMat;
-                timer2 = 0.15f;
-                takingDamage = false;
-            }
+            takingDamageClientRpc();
         }
         else if (isStunned)
             speed = 0;
@@ -168,11 +156,8 @@ public class Enemy : MonoBehaviour, iDamageable
 
         if (hp<= 0)
         {
-            GetComponent<DropOnDestroy>().CheckDrop();
-            GetComponent<Renderer>().material = originalMat;
-            isDying = true;
-            rgbd2d.simulated=false;
-            speed = 0;
+            isDyingClientRpc();
+            isDying = true;;
             GameManager.Instance.IncrementKillCount();
         }
     }
@@ -190,5 +175,35 @@ public class Enemy : MonoBehaviour, iDamageable
         else
             timer += 0.1f;
     }
-
+    [ClientRpc]
+    private void isDyingUpdateClientRpc()
+    {
+        dissolveAmount -= 0.05f;
+        GetComponent<Renderer>().material.SetFloat("_Dissolve_Amount", dissolveAmount);
+        if (dissolveAmount < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    [ClientRpc]
+    private void isDyingClientRpc()
+    {
+        GetComponent<DropOnDestroy>().CheckDrop();
+        GetComponent<Renderer>().material = originalMat;
+        rgbd2d.simulated = false;
+        speed = 0;
+    }
+    [ClientRpc]
+    private void takingDamageClientRpc()
+    {
+        timer2 -= Time.deltaTime;
+        GetComponent<Renderer>().material = whiteMat;
+        speed = reverseSpeed;
+        if (timer2 <= 0)
+        {
+            GetComponent<Renderer>().material = originalMat;
+            timer2 = 0.15f;
+            takingDamage = false;
+        }
+    }
 }

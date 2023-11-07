@@ -83,10 +83,9 @@ public class EnemiesManager : NetworkBehaviour
             position = GenerateRandomPosition();
         GameObject newEnemy;
         newEnemy = Instantiate(enemyToSpawn);
-        newEnemy.GetComponent<NetworkObject>().Spawn();
-
         newEnemy.transform.position = position;
-       // newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.GetComponent<NetworkObject>().Spawn();
+        // newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;
         enemyList.Add(newEnemy);
     }

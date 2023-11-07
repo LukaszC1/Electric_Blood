@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class DestructableObject : MonoBehaviour, iDamageable
+public class DestructableObject : NetworkBehaviour, iDamageable
 {
     private bool tookDamage = false;
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
