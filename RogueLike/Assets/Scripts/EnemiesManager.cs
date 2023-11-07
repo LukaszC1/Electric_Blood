@@ -41,6 +41,8 @@ public class EnemiesManager : NetworkBehaviour
     }
     private void LateUpdate()
     {
+        if (!IsServer) return;
+
         if (Time.timeScale == 1 && enemiesSpawnWaveList.Count > 0)
             ProcessSpawn();
     }
@@ -74,15 +76,17 @@ public class EnemiesManager : NetworkBehaviour
 
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
+        if(!IsServer) return;
+
         Vector3 position = GenerateRandomPosition();
         while (CheckForCollision(position))
             position = GenerateRandomPosition();
         GameObject newEnemy;
         newEnemy = Instantiate(enemyToSpawn);
-
+        newEnemy.GetComponent<NetworkObject>().Spawn();
 
         newEnemy.transform.position = position;
-        newEnemy.GetComponent<Enemy>().SetTarget(player);
+       // newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;
         enemyList.Add(newEnemy);
     }

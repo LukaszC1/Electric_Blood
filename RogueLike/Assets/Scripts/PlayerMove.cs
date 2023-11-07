@@ -7,7 +7,7 @@ public class PlayerMove : NetworkBehaviour
     Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
-    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(0,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(default,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
     [HideInInspector] public float lastVerticalVector;
     [HideInInspector] public float lastHorizontalVectorProjectiles;
     [HideInInspector] public float lastVerticalVectorProjectiles;

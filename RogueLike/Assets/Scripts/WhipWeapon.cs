@@ -33,6 +33,7 @@ public class WhipWeapon : WeaponBase
     
     private IEnumerator CoroutineAttack()
     {       
+            Debug.Log("Is owner? " + IsOwner + " " + NetworkManager.LocalClientId);
             startPosition = transform.position;         
 
         if (playerMove.lastHorizontalVector.Value > 0)
