@@ -7,10 +7,10 @@ public class PlayerMove : NetworkBehaviour
     Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
-    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(default,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
-    [HideInInspector] public float lastVerticalVector;
-    [HideInInspector] public float lastHorizontalVectorProjectiles;
-    [HideInInspector] public float lastVerticalVectorProjectiles;
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(1,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastVerticalVector = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVectorProjectiles = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastVerticalVectorProjectiles = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
 
     [SerializeField] float speed = 3f;
@@ -29,7 +29,7 @@ public class PlayerMove : NetworkBehaviour
     private void Start()
     {
         lastHorizontalVector.Value = 1f; //initial value of the vector (for projectile weapons)
-        lastHorizontalVectorProjectiles = 1f;
+        lastHorizontalVectorProjectiles.Value = 1f;
     }
 
     // Update is called once per frame
@@ -47,11 +47,11 @@ public class PlayerMove : NetworkBehaviour
             if (movementVector.x != 0)
             {
                 lastHorizontalVector.Value = movementVector.x;
-                lastHorizontalVectorProjectiles = movementVector.x;
+                lastHorizontalVectorProjectiles.Value = movementVector.x;
 
             }
             else if (movementVector.y != 0)
-                lastHorizontalVectorProjectiles = 0;
+                lastHorizontalVectorProjectiles.Value = 0;
 
 
             if (movementVector.x > 0 && !facingRight)
@@ -77,12 +77,12 @@ public class PlayerMove : NetworkBehaviour
 
             if (movementVector.y != 0)
             {
-                lastVerticalVector = movementVector.y;
-                lastVerticalVectorProjectiles = movementVector.y;
+                lastVerticalVector.Value = movementVector.y;
+                lastVerticalVectorProjectiles.Value = movementVector.y;
 
             }
             else if (movementVector.x != 0)
-                lastVerticalVectorProjectiles = 0;
+                lastVerticalVectorProjectiles.Value = 0;
 
 
             animate.horizontal = movementVector.x;

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class ThrowingDaggerProjectile : MonoBehaviour
+public class ThrowingDaggerProjectile : NetworkBehaviour
 {
     Vector3 direction;
     public float speed;
@@ -27,6 +28,8 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (!IsOwner) return;
+
         transform.position += direction.normalized * speed * Time.deltaTime;
         //Debug.Log(transform.position);
 
@@ -52,9 +55,15 @@ public class ThrowingDaggerProjectile : MonoBehaviour
 
         if (decayTime <= 0 || pierce <= 0)
         {
-            Destroy(gameObject);
+            DestroyProjectileServerRpc();
         }
    
+    }
+
+    [ServerRpc]
+    private void DestroyProjectileServerRpc()
+    {
+        Destroy(gameObject);
     }
 
     public void PostDamage(int damage, Vector3 worldPosition)
