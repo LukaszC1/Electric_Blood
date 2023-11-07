@@ -47,8 +47,9 @@ public class Enemy : MonoBehaviour, iDamageable
 
     private void Start()
     {
-        targetDestination = transform;
-        targetDestination.position = new Vector3(0, 0, 0); //debug debug
+        
+       // targetDestination = temp.transform;
+       // targetDestination.position = new Vector3(0, 0, 0); //debug debug
         if (isBoss)
         {
             if (targetCharacter == null)
@@ -62,14 +63,15 @@ public class Enemy : MonoBehaviour, iDamageable
     public void SetTarget(GameObject target)
     {
         targetGameObject = target;
-        targetDestination.position = new Vector3(0,0,0);            //target.transform; //tofix todo
+        targetDestination = target.transform; 
     }
 
     private void FixedUpdate()
     {
-        Vector3 direction = (targetDestination.position - transform.position).normalized; //tofix todo
+        //Vector3 direction = (targetDestination.position - transform.position).normalized; //tofix todo
+        Vector3 direction = (new Vector3(0, 0, 0) - transform.position).normalized; //tofix todo
         rgbd2d.velocity = direction * speed;
-        distance = Vector3.Distance(transform.position, targetDestination.position);
+        /*distance = Vector3.Distance(transform.position, targetDestination.position); //UNCOMMENT ONCE TARGETTING FIXED ! :3
 
         if (distance > maxDistance)
         {
@@ -83,7 +85,7 @@ public class Enemy : MonoBehaviour, iDamageable
                 Destroy(gameObject);
                 GetComponent<DropOnDestroy>().CheckDrop();
             }
-        }
+        }*/
 
 
 
