@@ -19,6 +19,6 @@ MonoBehaviour:
     size: 0.25
     vectorSize: {x: 0, y: 0}
     amount: 1
-    pierce: 3
+    pierce: 1
   weaponBasePrefab: {fileID: 7075382146051765423, guid: ecb1df5f60670094d9c62c1085564fb9, type: 3}
   firstUpgrade: {fileID: 11400000, guid: 85774d16d1aeb2d4aba25ddef61ae65b, type: 2}
