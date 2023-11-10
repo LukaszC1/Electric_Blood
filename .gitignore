@@ -75,3 +75,5 @@ crashlytics-build.properties
 [Aa]ssets/[Ss]treamingAssets/aa/*
 RogueLike/.vsconfig
 *.wktree
+RogueLike/.plastic/plastic.changes
+RogueLike/.plastic/plastic.wktree
