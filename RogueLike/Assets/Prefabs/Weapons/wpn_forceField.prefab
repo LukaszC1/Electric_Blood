@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4884365333385668485}
   - component: {fileID: 4884365333385668486}
   - component: {fileID: 3728359899098026961}
+  - component: {fileID: -4800327817342173935}
   m_Layer: 0
   m_Name: wpn_forceField
   m_TagString: Untagged
@@ -130,6 +131,7 @@ MonoBehaviour:
     pierce: 0
   playerMove: {fileID: 0}
   originalAoE: {x: 0, y: 0}
+  originalAoEF: 0
   originalScale: {x: 0, y: 0}
   character: {fileID: 0}
   originalDamage: 0
@@ -232,3 +234,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4800327817342173935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884365333385668482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 951099334
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1

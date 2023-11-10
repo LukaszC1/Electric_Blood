@@ -72,7 +72,7 @@ public class WhipWeapon : WeaponBase
             else
                 strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
             ApplyDamage(colliders);
-                weaponSound.Play();
+            weaponSound.Play();
 
             strike.GetComponent<NetworkObject>().Spawn();
             Debug.Log("Spawned");         

@@ -9,7 +9,7 @@ public class WeaponManager : NetworkBehaviour
 {
     [SerializeField] Transform weaponObjectContainer;
     [SerializeField] WeaponData startingWeapon;
-    [SerializeField] public EnemiesManager enemiesManager;
+    [HideInInspector] public EnemiesManager enemiesManager;
     [SerializeField] public List<WeaponData> allWeapons;
 
     [HideInInspector]public List<WeaponBase> weapons;
@@ -24,6 +24,7 @@ public class WeaponManager : NetworkBehaviour
     }
     private void Start()
     {
+        enemiesManager = FindObjectOfType<EnemiesManager>();
         equipedItemsManager.ReturnWeaponsIcons()[0].Set(startingWeapon.firstUpgrade);
 
         if(!IsOwner) return;

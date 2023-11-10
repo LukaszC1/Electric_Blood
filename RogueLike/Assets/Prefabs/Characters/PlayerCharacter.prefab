@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectContainer: {fileID: 7501613539266101169}
-  startingWeapon: {fileID: 11400000, guid: b639c2ef7ce7cc54abb1043a0aa05baf, type: 2}
-  enemiesManager: {fileID: 0}
+  startingWeapon: {fileID: 11400000, guid: 512777c42d5164440bae8d5eb1703d11, type: 2}
+  enemiesManager: {fileID: 4345726276858563846, guid: 52a0d3f702f7b91479162a09d0d5865d, type: 3}
   allWeapons:
   - {fileID: 11400000, guid: 512777c42d5164440bae8d5eb1703d11, type: 2}
   - {fileID: 11400000, guid: 260c8100008dfa0469424eda4cbf97e6, type: 2}

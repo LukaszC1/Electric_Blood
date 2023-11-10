@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class ElectrosphereMissile : MonoBehaviour
@@ -31,12 +32,15 @@ public class ElectrosphereMissile : MonoBehaviour
     private void Update()
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
-        //Debug.Log(transform.position);
 
-    
         decayTime -= Time.deltaTime;
-        Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+        spawnObjectServerRpc();
+    }
 
+    [ServerRpc]
+    private void spawnObjectServerRpc()
+    {
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
         foreach (Collider2D collision in collisions)
         {
             iDamageable enemy = collision.GetComponent<iDamageable>();
@@ -57,6 +61,7 @@ public class ElectrosphereMissile : MonoBehaviour
                 field.size = size * 5;
                 field.transform.localScale = new Vector2(field.transform.localScale.x * transform.localScale.x, field.transform.localScale.y * transform.localScale.y);
                 field.timeToAttack = timeToAttack * 0.25f;
+                field.GetComponent<NetworkObject>().Spawn();
                 break;
             }
 
@@ -66,6 +71,6 @@ public class ElectrosphereMissile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    
     }
+
 }
