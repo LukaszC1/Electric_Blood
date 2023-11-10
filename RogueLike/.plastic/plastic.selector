@@ -1,4 +1,0 @@
-repository "RogueLike@LukaszC1@cloud"
-  path "/"
-    br "/main"
-    co "/main"
