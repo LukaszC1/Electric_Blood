@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class ForceField : WeaponBase
@@ -8,23 +9,14 @@ public class ForceField : WeaponBase
    
     private float timerForce, slowTimer = 0.1f;
 
-
     new private void Update()
     {
+        if (!IsOwner) return;
+
         timerForce -= Time.deltaTime;
         slowTimer -= Time.deltaTime;
-        if (timerForce < 0f)
-        {
-            timerForce = weaponStats.timeToAttack;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponStats.size);
-            ApplyDamage(colliders);
-        }
-        if (slowTimer < 0f)
-        {
-            Slow();
-        }
-        firstAttack();
+        forceFieldAttackServerRpc();
     }
 
     
@@ -75,6 +67,24 @@ public class ForceField : WeaponBase
     public override void Attack()
     {
         //empty for this weapon since it uses slow mechanic in update
+    }
+
+    [ServerRpc]
+    private void forceFieldAttackServerRpc()
+    {
+        if (timerForce < 0f)
+        {
+            timerForce = weaponStats.timeToAttack;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponStats.size);
+            ApplyDamage(colliders);
+        }
+
+        if (slowTimer < 0f)
+        {
+            Slow();
+        }
+
+        firstAttack();
     }
 
 }

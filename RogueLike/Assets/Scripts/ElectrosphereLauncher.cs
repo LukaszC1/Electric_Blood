@@ -29,7 +29,6 @@ public class ElectrosphereLauncher : WeaponBase
     {
         //get enemy list somehow to fix the problem
         List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
-        //List<GameObject> enemies = null; //to do fix the issue
 
        if (enemies.Count != 0)
         {

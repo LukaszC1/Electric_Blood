@@ -28,7 +28,7 @@ public class PlayerMove : NetworkBehaviour
     }
     private void Start()
     {
-        lastHorizontalVector.Value = 1f; //initial value of the vector (for projectile weapons)
+       //lastHorizontalVector.Value = 1f; //initial value of the vector (for projectile weapons) -> rhis line generates error related to writing to NV by client
         lastHorizontalVectorProjectiles.Value = 1f;
     }
 
