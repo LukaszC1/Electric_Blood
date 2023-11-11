@@ -18,6 +18,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     public float originalCd;
     public int originalAmount;
     public AudioSource weaponSound;
+    public GameObject sprite;
 
     public void Awake()
     {
@@ -75,6 +76,8 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         if (weaponStats.size != 0)
             weaponStats.size = originalAoEF * character.areaMultiplier;
         transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
+        if (sprite != null)
+            sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
         weaponStats.damage = originalDamage * character.damageMultiplier;
         weaponStats.timeToAttack = originalCd * character.cooldownMultiplier;
         weaponStats.amount = originalAmount + character.amountBonus;

@@ -19,6 +19,35 @@ public class ForceField : WeaponBase
         forceFieldAttackServerRpc();
     }
 
+    new private void Start()
+    {
+        sprite.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
+        if (!IsHost)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            if (character == null)
+                character = GetComponentInParent<Character>();
+            Instantiate(sprite, character.transform);
+        }
+        if (IsOwner)
+        {
+            originalAoE = weaponStats.vectorSize;
+            originalScale = transform.localScale;
+            originalDamage = weaponStats.damage;
+            originalCd = weaponStats.timeToAttack;
+            originalAoEF = weaponStats.size;
+            originalAmount = weaponStats.amount;
+
+            if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
+                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
+            if (weaponStats.size != 0)
+                weaponStats.size = weaponStats.size * character.areaMultiplier;
+            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
+            weaponStats.damage = weaponStats.damage * character.damageMultiplier;
+            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
+            weaponStats.amount += character.amountBonus;
+        }
+    }
     
     private void Slow()
     {
