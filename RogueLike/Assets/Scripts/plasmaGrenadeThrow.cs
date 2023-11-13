@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 public class plasmaGrenadeThrow : WeaponBase
 {
@@ -12,15 +13,23 @@ public class plasmaGrenadeThrow : WeaponBase
     }
 
     private IEnumerator SpawnMissile()
-    {
-        //get enemy list somehow to fix the problem
-        List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
-
-
-        if (enemies.Count == 0) { yield break; }
+    {       
 
         for (int i = 0; i < weaponStats.amount; i++)
         {
+            spawnObjectServerRpc();
+            yield return new WaitForSeconds(0.35f);
+        }
+    }
+
+    [ServerRpc]
+    private void spawnObjectServerRpc()
+    {
+        List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
+
+        if (enemies.Count != 0)
+        {
+
             weaponSound.Play();
 
             GameObject grenade = Instantiate(grenadePrefab);
@@ -28,22 +37,22 @@ public class plasmaGrenadeThrow : WeaponBase
             grenade.transform.position = currentPosition;
 
             Vector3 randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform.position;
-            if (randomEnemy == null) { yield break; }
-            
-            Vector3 throwDirection = randomEnemy - currentPosition;
-
-            PlasmaGrenade projectile = grenade.GetComponent<PlasmaGrenade>();
-
             if (randomEnemy != null)
+            {
+                Vector3 throwDirection = randomEnemy - currentPosition;
+
+                PlasmaGrenade projectile = grenade.GetComponent<PlasmaGrenade>();
+
                 projectile.setDirection(throwDirection.x, throwDirection.y);
-            projectile.damage = weaponStats.damage;
-            projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
-            projectile.size = weaponStats.size;
-            projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
-            projectile.pierce = weaponStats.pierce;
-            projectile.character = character;
-            projectile.timeToAttack = weaponStats.timeToAttack;
-            yield return new WaitForSeconds(0.35f);
+                projectile.damage = weaponStats.damage;
+                projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
+                projectile.size = weaponStats.size;
+                projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
+                projectile.pierce = weaponStats.pierce;
+                projectile.character = character;
+                projectile.timeToAttack = weaponStats.timeToAttack;
+                projectile.GetComponent<NetworkObject>().Spawn();
+            }
         }
     }
 
