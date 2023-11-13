@@ -35,20 +35,6 @@ public class WeaponManager : NetworkBehaviour
         Debug.Log("Weapon equiped on: " + NetworkManager.LocalClientId.ToString());
 
         AddWeaponServerRpc(weaponData.Name);
-
-        /*if(!IsHost && weaponData.Name.Equals("Force Field")) //to do implement it better?
-        {
-            WeaponData wpnForceField = allWeapons.Find(wd => wd.Name.Equals("Force Field"));
-            GameObject weaponGameObject = Instantiate(wpnForceField.weaponBasePrefab, weaponObjectContainer);
-            weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
-            WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
-            weaponBase.SetData(wpnForceField);
-            weapons.Add(weaponBase);
-            if (character != null)
-            {
-                character.AddUpgradeIntoList(weaponData.firstUpgrade);
-            }
-        }*/
        
     }
 
