@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8623648}
   - component: {fileID: 8623647}
   m_Layer: 5
-  m_Name: SingleplayerButton (2)
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,6 +421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371780284}
+  - component: {fileID: 371780285}
   m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -453,6 +454,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &371780285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371780283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4fe354b14d7614980e743a522796db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singleplayerButton: {fileID: 0}
+  multiplayerButton: {fileID: 0}
+  quitButton: {fileID: 0}
 --- !u!1 &628433514
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +484,7 @@ GameObject:
   - component: {fileID: 628433517}
   - component: {fileID: 628433516}
   m_Layer: 5
-  m_Name: SingleplayerButton (1)
+  m_Name: MultiplayerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
