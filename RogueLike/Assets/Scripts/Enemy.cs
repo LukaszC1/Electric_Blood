@@ -57,7 +57,7 @@ public class Enemy : NetworkBehaviour, iDamageable
             {
                 targetCharacter = targetGameObject.GetComponent<Character>();
             }    
-            hp *= targetCharacter.level;
+            hp *= GameManager.Instance.level;
         }
     }
 

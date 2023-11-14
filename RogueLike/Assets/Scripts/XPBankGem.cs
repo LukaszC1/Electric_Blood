@@ -40,7 +40,7 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
             }
         }
 
-        distance = Vector3.Distance(transform.position, GameManager.Instance.playerTransform.position);
+       // distance = Vector3.Distance(transform.position, GameManager.Instance.playerTransform.position);
 
         if (gameObject.activeSelf && distance > maxDistance)
         {

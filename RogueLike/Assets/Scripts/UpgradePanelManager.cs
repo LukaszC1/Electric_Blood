@@ -8,6 +8,8 @@ public class UpgradePanelManager : MonoBehaviour
     PauseManager pauseManager;
 
     [SerializeField] List<UpgradeButton> upgradeButtons;
+    private ulong currentPlayer;
+
     public void Awake()
     {
         pauseManager = GetComponent<PauseManager>();
@@ -33,14 +35,15 @@ public class UpgradePanelManager : MonoBehaviour
         HideButtons();
 
     }
-    public void OpenPanel(List<UpgradeData> upgradeData)
+    public void OpenPanel(List<UpgradeData> upgradeData, ulong currentPlayer)
     {
         Clean();
         upgradePanel.SetActive(true);
         pauseManager.PauseGame();
 
+        this.currentPlayer = currentPlayer;
 
-            for (int i = 0; i < upgradeData.Count; i++)
+        for (int i = 0; i < upgradeData.Count; i++)
         {
             upgradeButtons[i].gameObject.SetActive(true);
             upgradeButtons[i].Set(upgradeData[i]);
@@ -49,7 +52,7 @@ public class UpgradePanelManager : MonoBehaviour
 
     public void Clean()
     {
-        for(int i = 0; i < upgradeButtons.Count; i++)
+        for (int i = 0; i < upgradeButtons.Count; i++)
         {
             upgradeButtons[i].Clean();
         }
@@ -58,7 +61,9 @@ public class UpgradePanelManager : MonoBehaviour
 
     public void Upgrade(int pressedButtonID)
     {
-        GameManager.Instance.playerTransform.GetComponent<Character>().Upgrade(pressedButtonID);
+        Transform player;
+        GameManager.Instance.listOfPlayers.TryGetValue(currentPlayer, out player);
+        player.GetComponent<Character>().Upgrade(pressedButtonID);
         ClosePanel();
     }
 }

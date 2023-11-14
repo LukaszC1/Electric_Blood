@@ -18,17 +18,13 @@ public abstract class Character : NetworkBehaviour
     public bool playerIsDead = false;
 
     public float hpRegenTimer;
+    [SerializeField] AudioSource xpSound;
 
 
     [HideInInspector] public int currentHp = 100;
     [SerializeField] StatusBar hpBar;
-    [SerializeField] AudioSource xpSound;
-    [HideInInspector]public int level = 1;
-    float experience = 0;
 
-
-    [SerializeField] ExperienceBar experienceBar;
-    [SerializeField] UpgradePanelManager upgradePanelManager;
+    private UpgradePanelManager upgradePanelManager;
     [SerializeField] EquipedItemsManager equipedItemsManager;
     [SerializeField] List<UpgradeData> upgrades;
 
@@ -45,6 +41,8 @@ public abstract class Character : NetworkBehaviour
         weaponManager = GetComponent<WeaponManager>();
         magnet = GetComponent<Magnet>();
         passiveItems = GetComponent<PassiveItems>();
+        upgradePanelManager = FindObjectOfType<UpgradePanelManager>();
+        equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
     }
 
     public void Update()
@@ -59,26 +57,11 @@ public abstract class Character : NetworkBehaviour
     
     }
 
-    public void FixedUpdate()
-    {
-        CheckLevelUp();
-    }
 
-    int TO_LEVEL_UP()
-    {
-        if (level <= 20)
-            return 5 + (level - 1) * 10;
-        else if (level > 20 && level <= 40)
-            return 5 + (level - 1) * 13;
-        else
-            return 5 + (level - 1) * 16;
-    }
 
     public void Start()
     {
         currentHp = maxHp;
-      //  experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
-       // experienceBar.SetLevelText(level);
         hpBar.SetState(currentHp, maxHp);
         AddUpgradesIntoList(upgradesAvailableOnStart);
     }
@@ -125,38 +108,28 @@ public abstract class Character : NetworkBehaviour
 
     public void AddExperience(float amount)
     {
-        experience += amount;
+        GameManager.Instance.experience += amount;
         xpSound.Play();
-      //  experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
-    }
-
-
-    public void CheckLevelUp()
-    {
-        if (experience >= TO_LEVEL_UP())
-        {
-            LevelUp();
-        }
+        GameManager.Instance.experienceBar.UpdateExperienceSlider(GameManager.Instance.experience, GameManager.Instance.TO_LEVEL_UP());
     }
 
     public void LevelUp()
     {
+
+        if (!IsOwner) return;
+
         if(selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
+    
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
-//        if(selectedUpgrades.Count > 0)
- //       upgradePanelManager.OpenPanel(selectedUpgrades);
+        if (selectedUpgrades.Count > 0)
+        upgradePanelManager.OpenPanel(selectedUpgrades, NetworkManager.LocalClientId);
 
-//        experience -= TO_LEVEL_UP();
-//        level += 1;
- //       experienceBar.SetLevelText(level);
- //       experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+        magnet.LevelUpUpdate();
 
- //       magnet.LevelUpUpdate();
-
- //       LevelUpBonus();
- //       updateWeapons();
+        LevelUpBonus();
+        updateWeapons();
     }
 
     public void updateWeapons()
@@ -304,4 +277,12 @@ public abstract class Character : NetworkBehaviour
     }
 
     public abstract void LevelUpBonus();
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            GameManager.Instance.listOfPlayers.Add(NetworkManager.LocalClientId, transform);
+        }
+    }
 }

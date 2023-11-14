@@ -9,13 +9,17 @@ public class GameManager : NetworkBehaviour
     public static GameManager Instance { get; private set; }
     [HideInInspector] public int xpGemAmount;
     [HideInInspector] public float xpBank;
-    public Transform playerTransform;
+    public Dictionary<ulong, Transform> listOfPlayers = new();
     private float timer = 1;
     [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>(0);
     [SerializeField] TMPro.TextMeshProUGUI killCounter;
     [SerializeField] GameObject xpBankGemPrefab;
     GameObject xpBankGem;
     [SerializeField] GameObject breakableObject;
+
+    [HideInInspector] public int level = 1;
+    public float experience = 0;
+    public ExperienceBar experienceBar;
 
     public event EventHandler OnStateChanged;
     public event EventHandler OnLocalGamePaused;
@@ -49,6 +53,9 @@ public class GameManager : NetworkBehaviour
         Instance = this;
         xpBankGem = Instantiate(xpBankGemPrefab);
         xpBankGem.SetActive(false);
+        experienceBar = FindObjectOfType<ExperienceBar>();
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+        experienceBar.SetLevelText(level);
     }
 
     private void Update()
@@ -106,6 +113,11 @@ public class GameManager : NetworkBehaviour
             case State.GameOver:
                 break;
         }
+    }
+
+    public void FixedUpdate()
+    {
+        CheckLevelUp();
     }
 
     private void OnPauseAction()
@@ -290,6 +302,36 @@ public class GameManager : NetworkBehaviour
         { 
             killCount.Value += 1;
             killCounter.text = ":" + killCount.Value.ToString();
+        }
+    }
+
+    public int TO_LEVEL_UP()
+    {
+        if (level <= 20)
+            return 5 + (level - 1) * 10;
+        else if (level > 20 && level <= 40)
+            return 5 + (level - 1) * 13;
+        else
+            return 5 + (level - 1) * 16;
+    }
+
+    public void CheckLevelUp()
+    {
+        if (experience >= TO_LEVEL_UP())
+        {
+            LevelUp();
+        }
+    }
+
+    public void LevelUp()
+    {
+        experience -= TO_LEVEL_UP();
+        level += 1;
+        experienceBar.SetLevelText(level);
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
+        foreach (var xd in listOfPlayers)
+        {
+            xd.Value.GetComponent<Character>().LevelUp();
         }
     }
 }

@@ -101,12 +101,9 @@ MonoBehaviour:
   amountBonus: 0
   playerIsDead: 0
   hpRegenTimer: 1
+  xpSound: {fileID: 7501613538289692926}
   currentHp: 100
   hpBar: {fileID: 7501613538630851423}
-  xpSound: {fileID: 7501613538289692926}
-  level: 1
-  experienceBar: {fileID: 0}
-  upgradePanelManager: {fileID: 0}
   equipedItemsManager: {fileID: 0}
   upgrades: []
   acquiredUpgrades: []
@@ -138,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectContainer: {fileID: 7501613539266101169}
-  startingWeapon: {fileID: 11400000, guid: d26b7667d87497e448529ce8e39a6dc4, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   enemiesManager: {fileID: 4345726276858563846, guid: 52a0d3f702f7b91479162a09d0d5865d, type: 3}
   allWeapons:
   - {fileID: 11400000, guid: 512777c42d5164440bae8d5eb1703d11, type: 2}

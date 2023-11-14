@@ -60,15 +60,23 @@ public class WeaponManager : NetworkBehaviour
 
         weaponGameObject.GetComponent<NetworkObject>().Spawn();
         weaponGameObject.transform.SetParent(NetworkObject.transform, false);
+        weaponGameObject.transform.position = character.transform.position;
         weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
 
 
         if (character != null)
         {
-            character.AddUpgradeIntoList(weaponData.firstUpgrade);
+            AddUpgradeClientRpc(weaponName);
         }
     }
+    [ClientRpc]
+    private void AddUpgradeClientRpc(string weaponName)
+    {
+        WeaponData weaponData = allWeapons.Find(wd => wd.Name.Equals(weaponName));
+        character.AddUpgradeIntoList(weaponData.firstUpgrade);
+    }
+
 
 }
 

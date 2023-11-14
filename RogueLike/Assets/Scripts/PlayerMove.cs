@@ -97,15 +97,12 @@ public class PlayerMove : NetworkBehaviour
     {    
         sprite.flipX = !sprite.flipX;
 
-        Debug.Log("Flipped on client " + NetworkObject.OwnerClientId);
     }
 
     [ServerRpc]
     private void flipPlayerServerRpc()
     {
         flipPlayerClientRpc();
-
-        Debug.Log("Flipped on server " + NetworkObject.OwnerClientId);
     }
 }
 
