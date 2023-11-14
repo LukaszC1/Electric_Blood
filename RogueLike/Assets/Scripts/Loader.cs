@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Loader : MonoBehaviour
+public static class Loader 
 {
     public enum Scene
     {

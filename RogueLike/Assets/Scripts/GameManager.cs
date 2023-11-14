@@ -35,7 +35,7 @@ public class GameManager : NetworkBehaviour
         GamePlaying,
         GameOver,
     }
-  
+    
     private bool isLocalPlayerReady;
     private bool isLocalGamePaused = false;
 
