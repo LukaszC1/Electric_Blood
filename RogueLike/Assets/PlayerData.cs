@@ -20,6 +20,8 @@ public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
         this.characterIndex == other.characterIndex &&
         this.playerName == other.playerName &&
         this.playerId == other.playerId;
+
+        
     }
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter

@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [Serializable]
-public class WeaponStats
+public class WeaponStats : INetworkSerializable
 {
     public float damage;
     public float timeToAttack;
@@ -23,6 +24,15 @@ public class WeaponStats
         this.vectorSize = vectorSize;
         this.amount = amount;
         this.pierce = pierce;
+    }
+
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref damage);
+        serializer.SerializeValue(ref timeToAttack);
+        serializer.SerializeValue(ref size);
+        serializer.SerializeValue(ref amount);
+        serializer.SerializeValue(ref pierce);
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
