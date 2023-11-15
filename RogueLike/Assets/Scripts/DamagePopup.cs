@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Netcode;
 
-public class DamagePopup : MonoBehaviour
+public class DamagePopup : NetworkBehaviour
 {
     [SerializeField ]float timeToLive = 1f;
     float ttl = 1f;

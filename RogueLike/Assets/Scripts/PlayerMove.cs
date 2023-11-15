@@ -7,10 +7,10 @@ public class PlayerMove : NetworkBehaviour
     Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
-    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(1,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
-    [HideInInspector] public NetworkVariable<float> lastVerticalVector = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    [HideInInspector] public NetworkVariable<float> lastHorizontalVectorProjectiles = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    [HideInInspector] public NetworkVariable<float> lastVerticalVectorProjectiles = new NetworkVariable<float>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(1f,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastVerticalVector = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastHorizontalVectorProjectiles = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [HideInInspector] public NetworkVariable<float> lastVerticalVectorProjectiles = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
 
     [SerializeField] float speed = 3f;

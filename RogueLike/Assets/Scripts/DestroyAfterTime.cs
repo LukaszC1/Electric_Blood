@@ -23,21 +23,19 @@ public class DestroyAfterTime : NetworkBehaviour
 
             if (IsServer)
             {
-                Destroy(gameObject);
-                Debug.Log("Despawned");               
+                Destroy(gameObject);              
             }
             else
             {
-                destroyWhipAttackServerRpc();
+                destroyServerRpc();
             }      
         }
     }
 
     [ServerRpc]
-    private void destroyWhipAttackServerRpc()
+    private void destroyServerRpc()
     {
         Destroy(gameObject);
-        Debug.Log("Despawned by server");
     }
 }
 

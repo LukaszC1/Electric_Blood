@@ -33,7 +33,6 @@ public class WhipWeapon : WeaponBase
     
     private IEnumerator CoroutineAttack()
     {       
-            Debug.Log("Is owner? " + IsOwner + " " + NetworkManager.LocalClientId);
             startPosition = transform.position;         
 
         if (playerMove.lastHorizontalVector.Value > 0)
@@ -42,7 +41,6 @@ public class WhipWeapon : WeaponBase
                 {
                      spawnObjectRightServerRpc(i, startPosition);
 
-                     Debug.Log("Attack");
           
                     yield return new WaitForSeconds(0.2f);
                 }
@@ -51,7 +49,6 @@ public class WhipWeapon : WeaponBase
             {
                 for (int i = 0; i < weaponStats.amount; i++)
                 {
-                    Debug.Log("Attack");
 
                     spawnObjectLeftServerRpc(i, startPosition);
 
@@ -74,8 +71,7 @@ public class WhipWeapon : WeaponBase
             ApplyDamage(colliders);
             weaponSound.Play();
 
-            strike.GetComponent<NetworkObject>().Spawn();
-            Debug.Log("Spawned");         
+            strike.GetComponent<NetworkObject>().Spawn();      
         }
 
         [ServerRpc]
@@ -94,6 +90,5 @@ public class WhipWeapon : WeaponBase
             weaponSound.Play();
 
             strike.GetComponent<NetworkObject>().Spawn();
-            Debug.Log("Spawned");
     }
 }

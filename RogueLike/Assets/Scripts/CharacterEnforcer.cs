@@ -6,6 +6,6 @@ public class CharacterEnforcer : Character
 {
     public override void LevelUpBonus()
     {
-        projectileSpeedMultiplier += 0.02f;
+        projectileSpeedMultiplier.Value += 0.02f;
     }
 }

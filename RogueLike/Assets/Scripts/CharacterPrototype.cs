@@ -6,6 +6,6 @@ public class CharacterPrototype : Character
 {
     public override void LevelUpBonus()
     {
-        areaMultiplier += 0.01f;
+        areaMultiplier.Value += 0.01f;
     }
 }

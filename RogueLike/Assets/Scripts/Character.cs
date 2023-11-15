@@ -5,15 +5,15 @@ using UnityEngine;
 
 public abstract class Character : NetworkBehaviour
 {
-    public int maxHp = 100;
-    public int armor = 0;
-    public float hpRegen = 1f;
-    public float damageMultiplier = 1f;
-    public float areaMultiplier = 1f;
-    public float projectileSpeedMultiplier = 1f;
-    public float magnetSize = 1f;
-    public float cooldownMultiplier = 1f;
-    public int amountBonus = 0;
+    public NetworkVariable<int> maxHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> armor = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> hpRegen = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> damageMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> areaMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> projectileSpeedMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> magnetSize = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> cooldownMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> amountBonus = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public bool playerIsDead = false;
 
@@ -21,7 +21,7 @@ public abstract class Character : NetworkBehaviour
     [SerializeField] AudioSource xpSound;
 
 
-    [HideInInspector] public int currentHp = 100;
+    [HideInInspector] public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] StatusBar hpBar;
 
     private UpgradePanelManager upgradePanelManager;
@@ -47,7 +47,8 @@ public abstract class Character : NetworkBehaviour
 
     public void Update()
     {
-        hpRegenTimer += Time.deltaTime * hpRegen;
+        if (!IsOwner) return;
+        hpRegenTimer += Time.deltaTime * hpRegen.Value;
 
         if(hpRegenTimer > 1f)
         {
@@ -61,8 +62,8 @@ public abstract class Character : NetworkBehaviour
 
     public void Start()
     {
-        currentHp = maxHp;
-        hpBar.SetState(currentHp, maxHp);
+        currentHp.Value = maxHp.Value;
+        hpBar.SetState(currentHp.Value, maxHp.Value);
         AddUpgradesIntoList(upgradesAvailableOnStart);
     }
 
@@ -70,9 +71,9 @@ public abstract class Character : NetworkBehaviour
     {
         if (playerIsDead) return;
         ApplyArmor(ref damage);
-        currentHp -= damage;
+        currentHp.Value -= damage;
 
-        if(currentHp <= 0)
+        if(currentHp.Value <= 0)
         {
             //Destroy(gameObject);
            
@@ -84,26 +85,27 @@ public abstract class Character : NetworkBehaviour
             }
        }
 
-        hpBar.SetState(currentHp, maxHp);
+        hpBar.SetState(currentHp.Value, maxHp.Value);
     }
 
     public void ApplyArmor(ref int damage)
     {
-        damage -= armor;
+        damage -= armor.Value;
         if (damage <= 0) { damage = 1; }
     }
 
 
     public void Heal(int amount)
     {
-        if (currentHp <= 0) { return; }
+        if (currentHp.Value <= 0) { return; }
+        if (!IsOwner) return;
 
-        currentHp += amount;
-        if (currentHp > maxHp)
+        currentHp.Value += amount;
+        if (currentHp.Value > maxHp.Value)
         {
-            currentHp=maxHp;
+            currentHp.Value=maxHp.Value;
         }
-        hpBar.SetState(currentHp, maxHp);
+        hpBar.SetState(currentHp.Value, maxHp.Value);
     }
 
     public void AddExperience(float amount)
@@ -129,10 +131,11 @@ public abstract class Character : NetworkBehaviour
         magnet.LevelUpUpdate();
 
         LevelUpBonus();
-        updateWeapons();
+        updateWeaponsServerRpc();
     }
 
-    public void updateWeapons()
+    [ServerRpc]
+    public void updateWeaponsServerRpc()
     {
         foreach (var weapon in weaponManager.weapons)
             weapon.LevelUpUpdate();
@@ -210,6 +213,19 @@ public abstract class Character : NetworkBehaviour
 
         AddLevel(iconList, upgradeData);
         weaponManager.UpgradeWeapon(upgradeData);
+    }
+
+    public void UpgradeStats(ItemStats stats)
+    {
+        maxHp.Value += stats.maxHp;
+        armor.Value += stats.armor;
+        hpRegen.Value += stats.hpRegen;
+        damageMultiplier.Value += stats.dmgMultiplier;
+        areaMultiplier.Value += stats.aoeMultiplier;
+        projectileSpeedMultiplier.Value += stats.projectileSpeedMultiplier;
+        magnetSize.Value += stats.magnetSize;
+        cooldownMultiplier.Value -= stats.cdMultiplier;
+        amountBonus.Value += stats.amountBonus;
     }
 
     public void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)

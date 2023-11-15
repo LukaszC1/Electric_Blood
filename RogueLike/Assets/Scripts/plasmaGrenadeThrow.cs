@@ -25,8 +25,6 @@ public class plasmaGrenadeThrow : WeaponBase
     [ServerRpc]
     private void spawnObjectServerRpc()
     {
-        List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
-
         if (enemies.Count != 0)
         {
 
@@ -45,7 +43,7 @@ public class plasmaGrenadeThrow : WeaponBase
 
                 projectile.setDirection(throwDirection.x, throwDirection.y);
                 projectile.damage = weaponStats.damage;
-                projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
+                projectile.speed = projectile.speed * character.projectileSpeedMultiplier.Value;
                 projectile.size = weaponStats.size;
                 projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
                 projectile.pierce = weaponStats.pierce;

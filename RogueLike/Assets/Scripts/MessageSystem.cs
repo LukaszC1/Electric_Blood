@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Unity.Netcode;
 
-public class MessageSystem : MonoBehaviour
+public class MessageSystem : NetworkBehaviour
 {
     public static MessageSystem instance;
 
@@ -19,7 +20,7 @@ public class MessageSystem : MonoBehaviour
     {
         messagePool = new List<TextMeshPro>();
 
-            for(int i =0;i < objectCount; i++)
+        for(int i = 0; i < objectCount; i++)
         {
             fillList();
         }
@@ -59,5 +60,6 @@ public class MessageSystem : MonoBehaviour
         GameObject go = Instantiate(damagePopup, transform);
         messagePool.Add(go.GetComponent<TMPro.TextMeshPro>());
         go.SetActive(false);
+        //go.GetComponent<NetworkObject>().Spawn();
     }
 }

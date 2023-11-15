@@ -48,28 +48,28 @@ public class Item : ScriptableObject
 
     public void Equip(Character character)
     {
-        character.maxHp += stats.maxHp;
-        character.armor += stats.armor;
-        character.hpRegen += stats.hpRegen;
-        character.damageMultiplier += stats.dmgMultiplier;
-        character.areaMultiplier += stats.aoeMultiplier;
-        character.projectileSpeedMultiplier += stats.projectileSpeedMultiplier;
-        character.magnetSize += stats.magnetSize;
-        character.cooldownMultiplier -= stats.cdMultiplier;
-        character.amountBonus += stats.amountBonus;
+        character.maxHp.Value += stats.maxHp;
+        character.armor.Value += stats.armor;
+        character.hpRegen.Value += stats.hpRegen;
+        character.damageMultiplier.Value += stats.dmgMultiplier;
+        character.areaMultiplier.Value += stats.aoeMultiplier;
+        character.projectileSpeedMultiplier.Value += stats.projectileSpeedMultiplier;
+        character.magnetSize.Value += stats.magnetSize;
+        character.cooldownMultiplier.Value -= stats.cdMultiplier;
+        character.amountBonus.Value += stats.amountBonus;
     }
 
     public void UnEquip(Character character)
     {
-        character.maxHp -= stats.maxHp;
-        character.armor -= stats.armor;
-        character.hpRegen -= stats.hpRegen;
-        character.damageMultiplier -= stats.dmgMultiplier;
-        character.areaMultiplier -= stats.aoeMultiplier;
-        character.projectileSpeedMultiplier -= stats.projectileSpeedMultiplier;
-        character.magnetSize -= stats.magnetSize;
-        character.cooldownMultiplier += stats.cdMultiplier;
-        character.amountBonus -= stats.amountBonus;
+        character.maxHp.Value -= stats.maxHp;
+        character.armor.Value -= stats.armor;
+        character.hpRegen.Value -= stats.hpRegen;
+        character.damageMultiplier.Value -= stats.dmgMultiplier;
+        character.areaMultiplier.Value -= stats.aoeMultiplier;
+        character.projectileSpeedMultiplier.Value -= stats.projectileSpeedMultiplier;
+        character.magnetSize.Value -= stats.magnetSize;
+        character.cooldownMultiplier.Value += stats.cdMultiplier;
+        character.amountBonus.Value -= stats.amountBonus;
     }
 
 

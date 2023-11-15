@@ -25,6 +25,15 @@ public class WeaponStats : INetworkSerializable
         this.amount = amount;
         this.pierce = pierce;
     }
+    public WeaponStats()
+    {
+        this.damage = 0;
+        this.timeToAttack = 0;
+        this.size = 0;
+        this.vectorSize = Vector2.zero;
+        this.pierce = 0;
+        this.amount = 0;
+    }
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
@@ -33,6 +42,7 @@ public class WeaponStats : INetworkSerializable
         serializer.SerializeValue(ref size);
         serializer.SerializeValue(ref amount);
         serializer.SerializeValue(ref pierce);
+        serializer.SerializeValue(ref vectorSize);
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)

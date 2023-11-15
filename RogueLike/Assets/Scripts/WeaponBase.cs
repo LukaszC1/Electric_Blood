@@ -19,6 +19,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     public int originalAmount;
     public AudioSource weaponSound;
     public GameObject sprite;
+    public List<GameObject> enemies = new();
 
     public void Awake()
     {
@@ -30,6 +31,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     {
         if (IsOwner)
         {
+            enemies = FindObjectOfType<EnemiesManager>().enemyList;
             originalAoE = weaponStats.vectorSize;
             originalScale = transform.localScale;
             originalDamage = weaponStats.damage;
@@ -38,13 +40,13 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
             originalAmount = weaponStats.amount;
 
             if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
-                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
+                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier.Value, weaponStats.vectorSize.y * character.areaMultiplier.Value);
             if (weaponStats.size != 0)
-                weaponStats.size = weaponStats.size * character.areaMultiplier;
-            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
-            weaponStats.damage = weaponStats.damage * character.damageMultiplier;
-            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
-            weaponStats.amount += character.amountBonus;
+                weaponStats.size = weaponStats.size * character.areaMultiplier.Value;
+            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier.Value, transform.localScale.y * character.areaMultiplier.Value);
+            weaponStats.damage = weaponStats.damage * character.damageMultiplier.Value;
+            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier.Value;
+            weaponStats.amount += character.amountBonus.Value;
         }
     }
     public void Update()
@@ -71,16 +73,18 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
 
     public virtual void LevelUpUpdate()
     {
+        if (character == null) 
+            character = GetComponentInParent<Character>(); 
         if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
-            weaponStats.vectorSize = new Vector2(originalAoE.x * character.areaMultiplier, originalAoE.y * character.areaMultiplier);
+            weaponStats.vectorSize = new Vector2(originalAoE.x * character.areaMultiplier.Value, originalAoE.y * character.areaMultiplier.Value);
         if (weaponStats.size != 0)
-            weaponStats.size = originalAoEF * character.areaMultiplier;
-        transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
+            weaponStats.size = originalAoEF * character.areaMultiplier.Value;
+        transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);
         if (sprite != null)
-            sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
-        weaponStats.damage = originalDamage * character.damageMultiplier;
-        weaponStats.timeToAttack = originalCd * character.cooldownMultiplier;
-        weaponStats.amount = originalAmount + character.amountBonus;
+            sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);
+        weaponStats.damage = originalDamage * character.damageMultiplier.Value;
+        weaponStats.timeToAttack = originalCd * character.cooldownMultiplier.Value;
+        weaponStats.amount = originalAmount + character.amountBonus.Value;
 
     }
 
@@ -91,20 +95,20 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     }
 
 
-    internal void Upgrade(UpgradeData upgradeData)
+    internal void Upgrade(WeaponStats upgradeData)
     {
         float percentageIncrease = 1;
-        if (originalAoEF == 0 && upgradeData.weaponUpgradeStats.vectorSize.x > 0)
-        percentageIncrease = (upgradeData.weaponUpgradeStats.vectorSize.x + originalAoE.x)/originalAoE.x;
-        else if (originalAoE.x == 0 && upgradeData.weaponUpgradeStats.size > 0)
-        percentageIncrease = ((upgradeData.weaponUpgradeStats.size + originalAoEF) / originalAoEF);
-        this.originalDamage += upgradeData.weaponUpgradeStats.damage;
-        this.originalCd -= upgradeData.weaponUpgradeStats.timeToAttack;
-        this.originalAoEF += upgradeData.weaponUpgradeStats.size;
-        this.originalAoE += upgradeData.weaponUpgradeStats.vectorSize;
+        if (originalAoEF == 0 && upgradeData.vectorSize.x > 0)
+        percentageIncrease = (upgradeData.vectorSize.x + originalAoE.x)/originalAoE.x;
+        else if (originalAoE.x == 0 && upgradeData.size > 0)
+        percentageIncrease = ((upgradeData.size + originalAoEF) / originalAoEF);
+        this.originalDamage += upgradeData.damage;
+        this.originalCd -= upgradeData.timeToAttack;
+        this.originalAoEF += upgradeData.size;
+        this.originalAoE += upgradeData.vectorSize;
         this.originalScale = new Vector2(originalScale.x * percentageIncrease, originalScale.y * percentageIncrease);
-        this.originalAmount += upgradeData.weaponUpgradeStats.amount;
-        weaponStats.pierce += upgradeData.weaponUpgradeStats.pierce;
+        this.originalAmount += upgradeData.amount;
+        weaponStats.pierce += upgradeData.pierce;
         LevelUpUpdate();
     }
 }

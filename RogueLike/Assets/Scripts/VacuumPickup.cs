@@ -40,10 +40,10 @@ public class VacuumPickup : MonoBehaviour, iPickUpObject
 
     private IEnumerator magnetIncrease(Character character)
     {
-        character.magnetSize += 10000;
+        character.magnetSize.Value += 10000;
         character.magnet.LevelUpUpdate();
         yield return new WaitForSeconds(0.01f);
-        character.magnetSize -= 10000;
+        character.magnetSize.Value -= 10000;
         character.magnet.LevelUpUpdate();
         Destroy(gameObject);
     }

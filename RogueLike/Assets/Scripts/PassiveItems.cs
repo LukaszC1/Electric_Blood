@@ -15,10 +15,6 @@ public class PassiveItems : NetworkBehaviour
         character = GetComponent<Character>();
     }
 
-    private void Start()
-    {
-       
-    }
     public void Equip(Item itemToEquip)
     {
         if(items == null)
@@ -34,7 +30,7 @@ public class PassiveItems : NetworkBehaviour
         newItemInstance.Equip(character);
         if (itemToEquip.firstUpgrade != null)
             character.AddUpgradeIntoList(itemToEquip.firstUpgrade);
-        character.updateWeapons();
+        character.updateWeaponsServerRpc();
     }
 
     public void UnEquip(Item itemToEquip)
@@ -49,12 +45,11 @@ public class PassiveItems : NetworkBehaviour
     internal void UpgradeItem(UpgradeData upgradeData)
     {
         Item itemToUpgrade = items.Find(id => id.Name == upgradeData.item.Name);
-        itemToUpgrade.UnEquip(character);
         itemToUpgrade.stats.Sum(upgradeData.itemStats);
-        itemToUpgrade.Equip(character);
+        character.UpgradeStats(upgradeData.itemStats);
         if(upgradeData.nextupgrade != null)
             character.AddUpgradeIntoList(upgradeData.nextupgrade);
-        character.updateWeapons();
+        character.updateWeaponsServerRpc();
 
     }
 }

@@ -12,7 +12,7 @@ public class Magnet : NetworkBehaviour
     private void Awake()
     {
         character = GetComponentInParent<Character>();
-        Size = character.magnetSize;
+        Size = character.magnetSize.Value;
     }
 
     private void Update()
@@ -30,6 +30,6 @@ public class Magnet : NetworkBehaviour
 
     public void LevelUpUpdate()
     {
-        Size = character.magnetSize;
+        Size = character.magnetSize.Value;
     }
 }

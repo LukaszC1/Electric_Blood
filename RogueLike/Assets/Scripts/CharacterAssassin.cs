@@ -6,6 +6,6 @@ public class CharacterAssassin : Character
 {
     public override void LevelUpBonus()
     {
-        damageMultiplier += 0.01f;
+        damageMultiplier.Value += 0.01f;
     }
 }

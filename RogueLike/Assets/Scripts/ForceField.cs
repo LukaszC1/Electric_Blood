@@ -39,13 +39,13 @@ public class ForceField : WeaponBase
             originalAmount = weaponStats.amount;
 
             if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
-                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
+                weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier.Value, weaponStats.vectorSize.y * character.areaMultiplier.Value);
             if (weaponStats.size != 0)
-                weaponStats.size = weaponStats.size * character.areaMultiplier;
-            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
-            weaponStats.damage = weaponStats.damage * character.damageMultiplier;
-            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
-            weaponStats.amount += character.amountBonus;
+                weaponStats.size = weaponStats.size * character.areaMultiplier.Value;
+            transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier.Value, transform.localScale.y * character.areaMultiplier.Value);
+            weaponStats.damage = weaponStats.damage * character.damageMultiplier.Value;
+            weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier.Value;
+            weaponStats.amount += character.amountBonus.Value;
         }
     }
     
