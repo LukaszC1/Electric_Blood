@@ -22,7 +22,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     public event EventHandler OnFailedToJoinGame;
     public event EventHandler OnPlayerDataNetworkListChanged;
 
-    [SerializeField] private List<GameObject> playerCharacters; // list of available characters
+    [SerializeField] private List<GameObject> playerCharacters; //list of available characters
 
     private NetworkList<PlayerData> playerDataNetworkList;
     private string playerName;

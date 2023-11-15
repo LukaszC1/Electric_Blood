@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public static class Loader 
 {
-    public enum Scene
+    public enum Scene //to do fix naming
     {
-        MainMenuScene,
+        MainMenu,
         GameScene,
         LoadingScene,
         LobbyScene,
