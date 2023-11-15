@@ -89,7 +89,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         playerDataNetworkList.Add(new PlayerData
         {
             clientId = clientId,
-            //colorId = GetFirstUnusedColorId(), TODO
+            characterIndex = 0, //default index is 0
         });
         SetPlayerNameServerRpc(GetPlayerName());
         SetPlayerIdServerRpc(AuthenticationService.Instance.PlayerId);

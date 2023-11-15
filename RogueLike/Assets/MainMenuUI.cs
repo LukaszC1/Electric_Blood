@@ -16,11 +16,13 @@ public class MainMenuUI : MonoBehaviour
             ElectricBloodMultiplayer.playMultiplayer = false;
             Loader.Load(Loader.Scene.LobbyScene);
         });
+
         multiplayerButton.onClick.AddListener(() =>
         {
             ElectricBloodMultiplayer.playMultiplayer = true;
             Loader.Load(Loader.Scene.LobbyScene);
         });
+
         quitButton.onClick.AddListener(() =>
         {
             Application.Quit();

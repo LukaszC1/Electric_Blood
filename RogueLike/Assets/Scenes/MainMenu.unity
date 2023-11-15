@@ -466,9 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4fe354b14d7614980e743a522796db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleplayerButton: {fileID: 0}
-  multiplayerButton: {fileID: 0}
-  quitButton: {fileID: 0}
+  singleplayerButton: {fileID: 973206996}
+  multiplayerButton: {fileID: 628433518}
+  quitButton: {fileID: 8623649}
 --- !u!1 &628433514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 575.96, y: -223}
+  m_AnchoredPosition: {x: 469.16, y: -257.13}
   m_SizeDelta: {x: 525.388, y: 514.253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142796183
