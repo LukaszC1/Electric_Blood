@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class ElectricBloodMultiplayer : NetworkBehaviour
 {
-    private const int MAX_PLAYERS = 4;
+    public const int MAX_PLAYERS = 4;
     private const string PLAYER_PREFS = "PlayerName";
 
     public static ElectricBloodMultiplayer Instance { get; private set; }
@@ -41,8 +41,8 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     {
         if(!playMultiplayer)
         {
-            StartHost();
-            Loader.LoadNetwork(Loader.Scene.GameScene);
+           // StartHost();             TODO UNCOMMENT SURELY I WONT FORGET (:
+           // Loader.LoadNetwork(Loader.Scene.GameScene);
         }
     }
 
