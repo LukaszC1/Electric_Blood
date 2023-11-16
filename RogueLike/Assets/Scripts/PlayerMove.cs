@@ -1,9 +1,12 @@
+using System;
 using Unity.Netcode;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : NetworkBehaviour
 {
+    public static event EventHandler OnPauseAction;
+
     Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
@@ -90,7 +93,11 @@ public class PlayerMove : NetworkBehaviour
             movementVector *= speed;
             rgbd2d.velocity = movementVector;
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnPauseAction?.Invoke(this, EventArgs.Empty);
         }
+    }
 
     [ClientRpc]
     private void flipPlayerClientRpc()

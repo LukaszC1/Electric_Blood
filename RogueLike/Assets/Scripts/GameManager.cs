@@ -44,8 +44,8 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<float> gamePlayingTimer = new NetworkVariable<float>(0f);
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
 
-    private Dictionary<ulong, bool> playerReadyDictionary;
-    private Dictionary<ulong, bool> playerPausedDictionary;
+    private Dictionary<ulong, bool> playerReadyDictionary = new();
+    private Dictionary<ulong, bool> playerPausedDictionary = new();
     [SerializeField] private Transform playerPrefab;
 
     private void Awake()
@@ -57,6 +57,11 @@ public class GameManager : NetworkBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
         experienceBar.SetLevelText(level);
     }
+    private void Start()
+    {
+        PlayerMove.OnPauseAction += OnPauseAction;
+        UpgradePanelManager.OnPauseAction += OnPauseAction;
+    }
 
     private void Update()
     {
@@ -64,7 +69,7 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
- 
+        
 
         switch (state.Value)
         {
@@ -103,11 +108,6 @@ public class GameManager : NetworkBehaviour
                             position = GenerateRandomPosition();
                         xpBankGem.transform.position = position;
                     }
-
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        OnPauseAction();
-                    }
                 }
                 break;
             case State.GameOver:
@@ -120,7 +120,7 @@ public class GameManager : NetworkBehaviour
         CheckLevelUp();
     }
 
-    private void OnPauseAction()
+    private void OnPauseAction(object sender, EventArgs e)
     {
         TogglePauseGame();
     }
@@ -146,12 +146,32 @@ public class GameManager : NetworkBehaviour
     private void PauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
         playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = true;
+
+        TestGamePausedState();
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void UnpauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
         playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = false;
+
+        TestGamePausedState();
+    }
+
+    private void TestGamePausedState()
+    {
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        {
+            if (playerPausedDictionary.ContainsKey(clientId) && playerPausedDictionary[clientId])
+            {
+                // This player is paused
+                isGamePaused.Value = true;
+                return;
+            }
+        }
+
+        // All players are unpaused
+        isGamePaused.Value = false;
     }
 
     public bool IsGamePlaying()
@@ -215,13 +235,13 @@ public class GameManager : NetworkBehaviour
         {
             Time.timeScale = 0f;
 
-            OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty);
+            //OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty); todo implement
         }
         else
         {
             Time.timeScale = 1f;
 
-            OnMultiplayerGameUnpaused?.Invoke(this, EventArgs.Empty);
+            //OnMultiplayerGameUnpaused?.Invoke(this, EventArgs.Empty); todo implement
         }
     }
 

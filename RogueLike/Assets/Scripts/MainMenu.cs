@@ -13,20 +13,20 @@ public class MainMenu : MonoBehaviour
     
     void Awake()
     {
-        pauseManager = GetComponent<PauseManager>();
+        //pauseManager = GetComponent<PauseManager>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(mainMenu.activeInHierarchy == false)
             OpenMenu();
             else
                 CloseMenu();
-        }
+        }*/
     }
 
     public void CloseMenu()

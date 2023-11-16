@@ -1,25 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradePanelManager : MonoBehaviour
 {
-    [SerializeField] GameObject upgradePanel;
-    PauseManager pauseManager;
 
+    [SerializeField] GameObject upgradePanel;
     [SerializeField] List<UpgradeButton> upgradeButtons;
     private ulong currentPlayer;
 
-    public void Awake()
-    {
-        pauseManager = GetComponent<PauseManager>();
-    }
+    public static event EventHandler OnPauseAction;
     public void ClosePanel()
     {
         HideButtons();
 
         upgradePanel.SetActive(false);
-        pauseManager.UnPauseGame();
+        OnPauseAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void HideButtons()
@@ -39,7 +36,7 @@ public class UpgradePanelManager : MonoBehaviour
     {
         Clean();
         upgradePanel.SetActive(true);
-        pauseManager.PauseGame();
+        OnPauseAction?.Invoke(this, EventArgs.Empty);
 
         this.currentPlayer = currentPlayer;
 
