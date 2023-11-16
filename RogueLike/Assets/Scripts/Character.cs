@@ -34,6 +34,7 @@ public abstract class Character : NetworkBehaviour
     
     WeaponManager weaponManager;
     PassiveItems passiveItems;
+    [SerializeField] GameObject camera;
     [HideInInspector]public Magnet magnet;
 
     public void Awake()
@@ -46,7 +47,7 @@ public abstract class Character : NetworkBehaviour
     }
 
     public void Update()
-    {
+    {    
         if (!IsOwner) return;
         hpRegenTimer += Time.deltaTime * hpRegen.Value;
 
@@ -299,6 +300,10 @@ public abstract class Character : NetworkBehaviour
         if (IsOwner)
         {
             GameManager.Instance.listOfPlayers.Add(NetworkManager.LocalClientId, transform);
+        }
+        if (IsOwner && camera.activeSelf == false)
+        {
+            camera.SetActive(true);
         }
     }
 }
