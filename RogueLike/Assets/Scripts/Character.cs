@@ -59,7 +59,10 @@ public abstract class Character : NetworkBehaviour
         }
     
     }
-
+    public void FixedUpdate()
+    {
+        updateWeaponsServerRpc();
+    }
 
 
     public void Start()
@@ -134,7 +137,6 @@ public abstract class Character : NetworkBehaviour
         magnet.LevelUpUpdate();
 
         LevelUpBonus();
-        updateWeaponsServerRpc();
     }
 
     [ServerRpc]

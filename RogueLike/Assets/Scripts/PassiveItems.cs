@@ -30,7 +30,6 @@ public class PassiveItems : NetworkBehaviour
         newItemInstance.Equip(character);
         if (itemToEquip.firstUpgrade != null)
             character.AddUpgradeIntoList(itemToEquip.firstUpgrade);
-        character.updateWeaponsServerRpc();
     }
 
     public void UnEquip(Item itemToEquip)
@@ -49,7 +48,5 @@ public class PassiveItems : NetworkBehaviour
         character.UpgradeStats(upgradeData.itemStats);
         if(upgradeData.nextupgrade != null)
             character.AddUpgradeIntoList(upgradeData.nextupgrade);
-        character.updateWeaponsServerRpc();
-
     }
 }
