@@ -69,7 +69,6 @@ public class GameManager : NetworkBehaviour
         {
             return;
         }
-        
 
         switch (state.Value)
         {
@@ -118,6 +117,7 @@ public class GameManager : NetworkBehaviour
     public void FixedUpdate()
     {
         CheckLevelUp();
+        RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
     }
 
     private void OnPauseAction(object sender, EventArgs e)
@@ -353,5 +353,12 @@ public class GameManager : NetworkBehaviour
         {
             xd.Value.GetComponent<Character>().LevelUp();
         }
+    }
+    public void RefreshListOfPlayers()
+    {
+        var players = FindObjectsOfType<Character>();
+        listOfPlayers.Clear();
+        foreach(var player in players)
+            listOfPlayers.Add(player.playerID.Value, player.transform);
     }
 }

@@ -20,6 +20,7 @@ public abstract class Character : NetworkBehaviour
     public float hpRegenTimer;
     [SerializeField] AudioSource xpSound;
 
+    public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [HideInInspector] public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] StatusBar hpBar;
@@ -63,6 +64,7 @@ public abstract class Character : NetworkBehaviour
 
     public void Start()
     {
+        if(!IsOwner) return;
         currentHp.Value = maxHp.Value;
         hpBar.SetState(currentHp.Value, maxHp.Value);
         AddUpgradesIntoList(upgradesAvailableOnStart);
@@ -299,7 +301,7 @@ public abstract class Character : NetworkBehaviour
     {
         if (IsOwner)
         {
-            GameManager.Instance.listOfPlayers.Add(NetworkManager.LocalClientId, transform);
+            playerID.Value = NetworkManager.Singleton.LocalClientId;
         }
         if (IsOwner && camera.activeSelf == false)
         {

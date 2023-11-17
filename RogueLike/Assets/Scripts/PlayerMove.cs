@@ -27,14 +27,7 @@ public class PlayerMove : NetworkBehaviour
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
         animate = GetComponent<Animate>();
-       
     }
-    private void Start()
-    {
-       //lastHorizontalVector.Value = 1f; //initial value of the vector (for projectile weapons) -> rhis line generates error related to writing to NV by client
-        lastHorizontalVectorProjectiles.Value = 1f;
-    }
-
     // Update is called once per frame
     private void Update()
     {
