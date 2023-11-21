@@ -95,7 +95,7 @@ public class PlayerMove : NetworkBehaviour
     [ClientRpc]
     private void flipPlayerClientRpc()
     {    
-        sprite.flipX = !sprite.flipX;
+     sprite.flipX = !sprite.flipX;
 
     }
 

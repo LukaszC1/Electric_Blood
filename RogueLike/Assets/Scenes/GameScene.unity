@@ -21603,6 +21603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -----GAME MANAGER---
       objectReference: {fileID: 0}
+    - target: {fileID: 2437381420896970830, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2437381420896970864, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
       propertyPath: winPanel
       value: 
@@ -21623,6 +21627,22 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2437381420896970865, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: availableCharacters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437381420896970865, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: availableCharacters.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 98c4532955286e34bba087da306d75d3, type: 2}
+    - target: {fileID: 2437381420896970865, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: availableCharacters.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 41092258ddd1d0140894e6f1508cb0fa, type: 2}
+    - target: {fileID: 2437381420896970865, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: availableCharacters.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c93549e6d385b1046842996c1fb0ab40, type: 2}
     - target: {fileID: 2437381420896970866, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
       propertyPath: upgradePanel
       value: 

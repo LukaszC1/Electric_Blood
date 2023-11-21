@@ -41,8 +41,8 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     {
         if(!playMultiplayer)
         {
-           // StartHost();             TODO UNCOMMENT SURELY I WONT FORGET (:
-           // Loader.LoadNetwork(Loader.Scene.GameScene);
+            StartHost();             
+            Loader.LoadNetwork(Loader.Scene.GameScene);
         }
     }
 
@@ -97,7 +97,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
     private void NetworkManager_ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest connectionApprovalRequest, NetworkManager.ConnectionApprovalResponse connectionApprovalResponse)
     {
-        if (SceneManager.GetActiveScene().name != Loader.Scene.CharacterSelectScene.ToString())
+        if (SceneManager.GetActiveScene().name != Loader.Scene.CharacterSelection.ToString())
         {
             connectionApprovalResponse.Approved = false;
             connectionApprovalResponse.Reason = "Cannot join to a game that has already started!";
@@ -214,6 +214,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         return GetPlayerDataFromClientId(NetworkManager.Singleton.LocalClientId);
     }
 
+    
     /// <summary>
     /// Method which returns the player data with a player index.
     /// </summary>
@@ -238,7 +239,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     /// Method which changes the player character.
     /// </summary>
     /// <param name="characterId"></param>
-    public void ChangePlayeCharacter(int characterId)
+    public void ChangePlayerCharacter(int characterId)
     {
         ChangePlayerCharacterServerRpc(characterId);
     }

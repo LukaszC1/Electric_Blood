@@ -194,7 +194,7 @@ public class ElectricBloodLobby : MonoBehaviour
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
 
             ElectricBloodMultiplayer.Instance.StartHost();
-            Loader.LoadNetwork(Loader.Scene.CharacterSelectScene);
+            Loader.LoadNetwork(Loader.Scene.CharacterSelection);
         }
         catch (LobbyServiceException e)
         {

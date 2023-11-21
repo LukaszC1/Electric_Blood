@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4dc2d9cb752a846a481a9d93d27bbd, type: 3}
+  m_Name: Prototype
+  m_EditorClassIdentifier: 
+  characterName: Prototype
+  characterDescription: lololololo
+  characterSprite: {fileID: -1365051779, guid: 0f9cbaaa6c629514eba7d2913653081e, type: 3}
+  characterPrefab: {fileID: 3780462723639447594, guid: 537755e5f528c5144ac15373636264a2, type: 3}

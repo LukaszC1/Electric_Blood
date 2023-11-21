@@ -18,6 +18,7 @@ public abstract class Character : NetworkBehaviour
     public bool playerIsDead = false;
 
     public float hpRegenTimer;
+
     [SerializeField] AudioSource xpSound;
 
     public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);

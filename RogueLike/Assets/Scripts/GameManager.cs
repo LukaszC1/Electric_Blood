@@ -48,6 +48,7 @@ public class GameManager : NetworkBehaviour
     private Dictionary<ulong, bool> playerPausedDictionary = new();
     [SerializeField] private Transform playerPrefab;
 
+
     private void Awake()
     {
         Instance = this;
@@ -235,13 +236,13 @@ public class GameManager : NetworkBehaviour
         {
             Time.timeScale = 0f;
 
-            //OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty); todo implement
+            OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty);
         }
         else
         {
             Time.timeScale = 1f;
 
-            //OnMultiplayerGameUnpaused?.Invoke(this, EventArgs.Empty); todo implement
+            OnMultiplayerGameUnpaused?.Invoke(this, EventArgs.Empty);
         }
     }
 

@@ -95,10 +95,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpGemAmount: 0
   xpBank: 0
-  playerTransform: {fileID: 0}
   killCounter: {fileID: 0}
   xpBankGemPrefab: {fileID: 534324648650151031, guid: 469d2eb911e52014594fa30e525cadb6, type: 3}
   breakableObject: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+  level: 1
+  experience: 0
+  experienceBar: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  availableCharacters:
+  - {fileID: 11400000, guid: 98c4532955286e34bba087da306d75d3, type: 2}
+  - {fileID: 11400000, guid: 41092258ddd1d0140894e6f1508cb0fa, type: 2}
+  - {fileID: 11400000, guid: c93549e6d385b1046842996c1fb0ab40, type: 2}
 --- !u!114 &2437381420896970864
 MonoBehaviour:
   m_ObjectHideFlags: 0

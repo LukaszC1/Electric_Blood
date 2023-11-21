@@ -12,7 +12,7 @@ public class TestingUI : MonoBehaviour
     {
         createGameButton.onClick.AddListener(() => {
             ElectricBloodMultiplayer.Instance.StartHost();
-            Loader.LoadNetwork(Loader.Scene.CharacterSelectScene);
+            Loader.LoadNetwork(Loader.Scene.CharacterSelection);
         });
         joinGameButton.onClick.AddListener(() => {
             ElectricBloodMultiplayer.Instance.StartClient();

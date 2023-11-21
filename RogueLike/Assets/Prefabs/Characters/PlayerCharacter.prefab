@@ -112,6 +112,8 @@ MonoBehaviour:
   playerIsDead: 0
   hpRegenTimer: 1
   xpSound: {fileID: 7501613538289692926}
+  playerID:
+    m_InternalValue: 0
   currentHp:
     m_InternalValue: 100
   hpBar: {fileID: 7501613538630851423}
