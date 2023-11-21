@@ -18,42 +18,42 @@ public class LobbyMessageUI : MonoBehaviour
 
     private void Start()
     {
-        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += KitchenGameMultiplayer_OnFailedToJoinGame;
-        ElectricBloodLobby.Instance.OnCreateLobbyStarted += KitchenGameLobby_OnCreateLobbyStarted;
-        ElectricBloodLobby.Instance.OnCreateLobbyFailed += KitchenGameLobby_OnCreateLobbyFailed;
-        ElectricBloodLobby.Instance.OnJoinStarted += KitchenGameLobby_OnJoinStarted;
-        ElectricBloodLobby.Instance.OnJoinFailed += KitchenGameLobby_OnJoinFailed;
-        ElectricBloodLobby.Instance.OnQuickJoinFailed += KitchenGameLobby_OnQuickJoinFailed;
+        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += ElectricBlood_OnFailedToJoinGame;
+        ElectricBloodLobby.Instance.OnCreateLobbyStarted += ElectricBlood_OnCreateLobbyStarted;
+        ElectricBloodLobby.Instance.OnCreateLobbyFailed += ElectricBlood_OnCreateLobbyFailed;
+        ElectricBloodLobby.Instance.OnJoinStarted += ElectricBlood_OnJoinStarted;
+        ElectricBloodLobby.Instance.OnJoinFailed += ElectricBlood_OnJoinFailed;
+        ElectricBloodLobby.Instance.OnQuickJoinFailed += ElectricBlood_OnQuickJoinFailed;
 
         Hide();
     }
 
-    private void KitchenGameLobby_OnQuickJoinFailed(object sender, System.EventArgs e)
+    private void ElectricBlood_OnQuickJoinFailed(object sender, System.EventArgs e)
     {
         ShowMessage("Could not Quick Join!");
     }
 
-    private void KitchenGameLobby_OnJoinFailed(object sender, System.EventArgs e)
+    private void ElectricBlood_OnJoinFailed(object sender, System.EventArgs e)
     {
         ShowMessage("Failed to join!");
     }
 
-    private void KitchenGameLobby_OnJoinStarted(object sender, System.EventArgs e)
+    private void ElectricBlood_OnJoinStarted(object sender, System.EventArgs e)
     {
         ShowMessage("Joining the lobby...");
     }
 
-    private void KitchenGameLobby_OnCreateLobbyFailed(object sender, System.EventArgs e)
+    private void ElectricBlood_OnCreateLobbyFailed(object sender, System.EventArgs e)
     {
         ShowMessage("Failed to create Lobby!");
     }
 
-    private void KitchenGameLobby_OnCreateLobbyStarted(object sender, System.EventArgs e)
+    private void ElectricBlood_OnCreateLobbyStarted(object sender, System.EventArgs e)
     {
         ShowMessage("Creating the lobby...");
     }
 
-    private void KitchenGameMultiplayer_OnFailedToJoinGame(object sender, System.EventArgs e)
+    private void ElectricBlood_OnFailedToJoinGame(object sender, System.EventArgs e)
     {
         if (NetworkManager.Singleton.DisconnectReason == "")
         {
@@ -83,12 +83,12 @@ public class LobbyMessageUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += KitchenGameMultiplayer_OnFailedToJoinGame;
-         ElectricBloodLobby.Instance.OnCreateLobbyStarted += KitchenGameLobby_OnCreateLobbyStarted;
-         ElectricBloodLobby.Instance.OnCreateLobbyFailed += KitchenGameLobby_OnCreateLobbyFailed;
-         ElectricBloodLobby.Instance.OnJoinStarted += KitchenGameLobby_OnJoinStarted;
-         ElectricBloodLobby.Instance.OnJoinFailed += KitchenGameLobby_OnJoinFailed;
-         ElectricBloodLobby.Instance.OnQuickJoinFailed += KitchenGameLobby_OnQuickJoinFailed;
+        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += ElectricBlood_OnFailedToJoinGame;
+         ElectricBloodLobby.Instance.OnCreateLobbyStarted += ElectricBlood_OnCreateLobbyStarted;
+         ElectricBloodLobby.Instance.OnCreateLobbyFailed += ElectricBlood_OnCreateLobbyFailed;
+         ElectricBloodLobby.Instance.OnJoinStarted += ElectricBlood_OnJoinStarted;
+         ElectricBloodLobby.Instance.OnJoinFailed += ElectricBlood_OnJoinFailed;
+         ElectricBloodLobby.Instance.OnQuickJoinFailed += ElectricBlood_OnQuickJoinFailed;
     }
 
 }

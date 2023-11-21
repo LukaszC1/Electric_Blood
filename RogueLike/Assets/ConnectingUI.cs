@@ -6,18 +6,18 @@ public class ConnectingUI : MonoBehaviour
 {
     private void Start()
     {
-        ElectricBloodMultiplayer.Instance.OnTryingToJoinGame += KitchenGameMultiplayer_OnTryingToJoinGame;
-        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += KitchenGameManager_OnFailedToJoinGame;
+        ElectricBloodMultiplayer.Instance.OnTryingToJoinGame += ElectricBlood_OnTryingToJoinGame;
+        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += ElectricBlood_OnFailedToJoinGame;
 
         Hide();
     }
 
-    private void KitchenGameManager_OnFailedToJoinGame(object sender, System.EventArgs e)
+    private void ElectricBlood_OnFailedToJoinGame(object sender, System.EventArgs e)
     {
         Hide();
     }
 
-    private void KitchenGameMultiplayer_OnTryingToJoinGame(object sender, System.EventArgs e)
+    private void ElectricBlood_OnTryingToJoinGame(object sender, System.EventArgs e)
     {
         Show();
     }
@@ -34,8 +34,8 @@ public class ConnectingUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        ElectricBloodMultiplayer.Instance.OnTryingToJoinGame -= KitchenGameMultiplayer_OnTryingToJoinGame;
-        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame -= KitchenGameManager_OnFailedToJoinGame;
+        ElectricBloodMultiplayer.Instance.OnTryingToJoinGame -= ElectricBlood_OnTryingToJoinGame;
+        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame -= ElectricBlood_OnFailedToJoinGame;
     }
 
 }
