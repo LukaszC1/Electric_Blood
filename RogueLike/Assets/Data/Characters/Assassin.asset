@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Assassin
   characterDescription: lololool
-  characterSprite: {fileID: -1999725284, guid: 31a5a06457c750443b63f3fdd3fd632e, type: 3}
+  characterSprite: {fileID: -144310528, guid: 10b4ed5bd2fc2f54391d65063f007c71, type: 3}
   characterPrefab: {fileID: 7501613538289692909, guid: 4f2464a5c82fb6e4ebf802da90772779, type: 3}
