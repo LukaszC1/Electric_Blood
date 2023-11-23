@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GamePauseUI : MonoBehaviour
+public class GamePauseUI : NetworkBehaviour
 {
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
-    //[SerializeField] private Button optionsButton;
 
 
     private void Awake()
@@ -17,13 +17,10 @@ public class GamePauseUI : MonoBehaviour
            GameManager.Instance.TogglePauseGame();
         });
         mainMenuButton.onClick.AddListener(() => {
+            Cleanup();
             NetworkManager.Singleton.Shutdown();
             Loader.Load(Loader.Scene.MainMenu);
         });
-        /*optionsButton.onClick.AddListener(() => {
-            Hide();
-            //OptionsUI.Instance.Show(Show); todo add a new options ui
-        });*/
     }
     private void Start()
     {
@@ -51,5 +48,17 @@ public class GamePauseUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private void Cleanup()
+    {
+        if (!IsServer) return;
+
+        foreach (var gameObject in GameManager.Instance.GetComponent<EnemiesManager>().enemyList)
+        {
+            Destroy(gameObject);
+        }
+
+        FindObjectsOfType<WeaponBase>().ToList().ForEach(x => Destroy(x.gameObject));
     }
 }

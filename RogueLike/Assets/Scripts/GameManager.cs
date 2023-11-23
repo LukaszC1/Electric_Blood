@@ -44,7 +44,6 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<float> gamePlayingTimer = new NetworkVariable<float>(0f);
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
 
-    private Dictionary<ulong, bool> playerReadyDictionary = new();
     private Dictionary<ulong, bool> playerPausedDictionary = new();
     [SerializeField] private Transform playerPrefab;
 
@@ -251,38 +250,6 @@ public class GameManager : NetworkBehaviour
         OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    private void GameInput_OnInteractAction(object sender, EventArgs e) //todo subscribe to this event when player is ready -> clicks a button?
-    {
-        if (state.Value == State.WaitingToStart)
-        {
-            isLocalPlayerReady = true;
-            OnLocalPlayerReadyChanged?.Invoke(this, EventArgs.Empty);
-
-            SetPlayerReadyServerRpc();
-        }
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
-    {
-        playerReadyDictionary[serverRpcParams.Receive.SenderClientId] = true;
-
-        bool allClientsReady = true;
-        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
-        {
-            if (!playerReadyDictionary.ContainsKey(clientId) || !playerReadyDictionary[clientId])
-            {
-                // This player is NOT ready
-                allClientsReady = false;
-                break;
-            }
-        }
-
-        if (allClientsReady)
-        {
-            state.Value = State.CountdownToStart;
-        }
-    }
     public Vector3 GenerateRandomPosition()
     {
         Vector3 position = new Vector3();

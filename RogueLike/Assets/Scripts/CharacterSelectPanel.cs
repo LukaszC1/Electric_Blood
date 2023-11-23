@@ -14,8 +14,6 @@ public class CharacterSelectPanel : NetworkBehaviour
     [SerializeField] private Button selectButton;
     [SerializeField] private Button closeButton;
 
-
-    [SerializeField] public List<ScriptableObject> availableCharacters;
     [SerializeField] private Image displayedCharacter;
 
     [SerializeField] TextMeshProUGUI characterName;
@@ -31,9 +29,11 @@ public class CharacterSelectPanel : NetworkBehaviour
     [SerializeField] private TextMeshProUGUI amountBonus;
 
     private int _selectedOption = 0;
+    private List<ScriptableObject> availableCharacters;
 
     private void Awake()
-    {
+    { 
+
         nextButton.onClick.AddListener(() =>
         {
             _selectedOption++;
@@ -69,14 +69,15 @@ public class CharacterSelectPanel : NetworkBehaviour
 
     private void Start()
     {
+        availableCharacters = ElectricBloodMultiplayer.Instance.availableCharacters;
         UpdateDisplayedCharacter();
     }
 
-    private void UpdateDisplayedCharacter() //load the data
+    public void UpdateDisplayedCharacter() //load the data
     {
-        var characterData = availableCharacters[_selectedOption] as CharacterData;
-        displayedCharacter.sprite = characterData.characterSprite;
+        CharacterData characterData = (CharacterData)availableCharacters[_selectedOption];
 
+        displayedCharacter.sprite = characterData.characterSprite;
         characterName.text = characterData.characterName;
         characterDescription.text = characterData.characterDescription;
         maxHp.text = "Max hp: " + characterData.characterPrefab.GetComponent<Character>().maxHp.Value.ToString();

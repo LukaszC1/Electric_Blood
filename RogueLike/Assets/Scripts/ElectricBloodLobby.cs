@@ -38,10 +38,10 @@ public class ElectricBloodLobby : MonoBehaviour
         private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         InitializeUnityAuthentication();
-
-        DontDestroyOnLoad(gameObject);
+       
     }
 
     private async void InitializeUnityAuthentication()

@@ -22,7 +22,9 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     public event EventHandler OnFailedToJoinGame;
     public event EventHandler OnPlayerDataNetworkListChanged;
 
-    [SerializeField] private List<GameObject> playerCharacters; //list of available characters
+    [SerializeField] public List<ScriptableObject> availableCharacters;
+    [SerializeField] public List<ScriptableObject> availableLevels;
+
 
     private NetworkList<PlayerData> playerDataNetworkList;
     private string playerName;
@@ -30,6 +32,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
         playerName = PlayerPrefs.GetString(PLAYER_PREFS, "PlayerName" + UnityEngine.Random.Range(100, 1000));
 
@@ -225,15 +228,6 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         return playerDataNetworkList[playerIndex];
     }
 
-    /// <summary>
-    /// Method which returns the character.
-    /// </summary>
-    /// <param name="characterId"></param>
-    /// <returns></returns>
-    public GameObject GetPlayerCharacter(int characterId)
-    {
-        return playerCharacters[characterId];
-    }
 
     /// <summary>
     /// Method which changes the player character.
