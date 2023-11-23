@@ -53,12 +53,15 @@ public class GamePauseUI : NetworkBehaviour
     private void Cleanup()
     {
         if (!IsServer) return;
+        var enemies = GameManager.Instance.GetComponent<EnemiesManager>().enemyList;
 
-        foreach (var gameObject in GameManager.Instance.GetComponent<EnemiesManager>().enemyList)
+        if (enemies == null) return;
+        
+        foreach (var gameObject in enemies)
         {
             Destroy(gameObject);
         }
 
-        FindObjectsOfType<WeaponBase>().ToList().ForEach(x => Destroy(x.gameObject));
+        FindObjectOfType<WeaponManager>().weapons.ForEach(w => Destroy(w.gameObject));
     }
 }
