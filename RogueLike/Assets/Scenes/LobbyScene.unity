@@ -468,6 +468,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7708133576958606758, guid: 16915dd19d6e16f42896b3ce734d9a6e, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708133576958606758, guid: 16915dd19d6e16f42896b3ce734d9a6e, type: 3}
       propertyPath: NetworkConfig.ConnectionApproval
       value: 1
       objectReference: {fileID: 0}

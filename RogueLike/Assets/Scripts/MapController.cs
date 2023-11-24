@@ -124,7 +124,7 @@ public class MapController : NetworkBehaviour
             foreach (var player in GameManager.Instance.listOfPlayers)
             {
                 dist = Vector3.Distance(player.Value.position, chunk.transform.position);
-                Debug.Log("The distance for client:" + player.Key + " is:" + dist);
+
                 if (dist < maxDistance)
                 {
                     disableChunk = false;

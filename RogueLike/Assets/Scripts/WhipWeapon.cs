@@ -41,7 +41,8 @@ public class WhipWeapon : WeaponBase
                 {
                      spawnObjectRightServerRpc(i, startPosition);
 
-          
+                    Debug.Log("Spawned");
+
                     yield return new WaitForSeconds(0.2f);
                 }
             }
@@ -51,6 +52,8 @@ public class WhipWeapon : WeaponBase
                 {
 
                     spawnObjectLeftServerRpc(i, startPosition);
+
+                    Debug.Log("Spawned");
 
                     yield return new WaitForSeconds(0.2f);
                 }

@@ -45,7 +45,7 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
 
     private Dictionary<ulong, bool> playerPausedDictionary = new();
-    [SerializeField] private Transform playerPrefab;
+    [SerializeField] private GameObject playerPrefab;
 
 
     private void Awake()
@@ -219,8 +219,8 @@ public class GameManager : NetworkBehaviour
     {
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
-            Transform playerTransform = Instantiate(playerPrefab);
-            playerTransform.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+            GameObject playerSpawned = Instantiate(playerPrefab);
+            playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
         }
     }
 
