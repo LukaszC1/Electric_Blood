@@ -22,7 +22,7 @@ public class plasmaGrenadeThrow : WeaponBase
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void spawnObjectServerRpc()
     {
         if (enemies.Count != 0)

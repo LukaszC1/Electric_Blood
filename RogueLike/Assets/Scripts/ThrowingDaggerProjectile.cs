@@ -60,7 +60,7 @@ public class ThrowingDaggerProjectile : NetworkBehaviour
    
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void DestroyProjectileServerRpc()
     {
         Destroy(gameObject);

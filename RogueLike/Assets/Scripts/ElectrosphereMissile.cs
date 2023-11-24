@@ -37,7 +37,7 @@ public class ElectrosphereMissile : NetworkBehaviour
         spawnObjectServerRpc();
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void spawnObjectServerRpc()
     {
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);

@@ -24,7 +24,7 @@ public class ElectrosphereLauncher : WeaponBase
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void spawnObjectServerRpc(int i)
     {
         //get enemy list somehow to fix the problem

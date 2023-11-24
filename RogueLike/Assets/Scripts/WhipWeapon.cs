@@ -60,8 +60,8 @@ public class WhipWeapon : WeaponBase
             }     
     }
 
-        [ServerRpc]
-        private void spawnObjectRightServerRpc(int i, Vector2 startPosition)
+    [ServerRpc(RequireOwnership = false)]
+    private void spawnObjectRightServerRpc(int i, Vector2 startPosition)
         {
             strike = Instantiate(WhipObject);      
             strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
@@ -77,8 +77,8 @@ public class WhipWeapon : WeaponBase
             strike.GetComponent<NetworkObject>().Spawn();      
         }
 
-        [ServerRpc]
-        private void spawnObjectLeftServerRpc(int i, Vector2 startPosition)
+    [ServerRpc(RequireOwnership = false)]
+    private void spawnObjectLeftServerRpc(int i, Vector2 startPosition)
         {
             strike = Instantiate(WhipObject);
             strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);

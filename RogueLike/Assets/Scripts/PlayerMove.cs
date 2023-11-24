@@ -99,7 +99,7 @@ public class PlayerMove : NetworkBehaviour
 
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void flipPlayerServerRpc()
     {
         flipPlayerClientRpc();

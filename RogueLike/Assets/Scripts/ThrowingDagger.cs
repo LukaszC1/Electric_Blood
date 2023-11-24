@@ -22,7 +22,7 @@ public class ThrowingDagger : WeaponBase
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void attackServerRpc(Vector2 startPosition)
     {
         weaponSound.Play();

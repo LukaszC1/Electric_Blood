@@ -42,7 +42,7 @@ public class LaserRifle : WeaponBase
         return bestTarget.position;
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void SpawnObjectServerRpc()
     {
         if (enemies.Count == 0) return;

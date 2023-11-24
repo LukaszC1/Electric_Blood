@@ -25,9 +25,9 @@ public class Quickhack : WeaponBase
         enemy.isStunned = true;
         yield return new WaitForSeconds(0.8f);
         enemy.isStunned = false;
-    }    
+    }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void SpawnObjectServerRpc()
     {
         List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;

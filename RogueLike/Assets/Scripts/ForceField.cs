@@ -98,7 +98,7 @@ public class ForceField : WeaponBase
         //empty for this weapon since it uses slow mechanic in update
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void forceFieldAttackServerRpc()
     {
         if (timerForce < 0f)

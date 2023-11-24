@@ -32,7 +32,7 @@ public class DestroyAfterTime : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void destroyServerRpc()
     {
         Destroy(gameObject);

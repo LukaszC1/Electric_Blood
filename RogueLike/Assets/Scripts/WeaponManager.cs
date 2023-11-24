@@ -45,7 +45,7 @@ public class WeaponManager : NetworkBehaviour
         }
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void AddWeaponServerRpc(string weaponName)
     {
         WeaponData weaponData = allWeapons.Find(wd => wd.Name.Equals(weaponName));
@@ -74,7 +74,7 @@ public class WeaponManager : NetworkBehaviour
         weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
     }
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void UpgradeWeaponServerRpc(WeaponStats weaponStats, NetworkBehaviourReference weaponBaseReference)
     {
         weaponBaseReference.TryGet<WeaponBase>(out WeaponBase weaponToUpgrade);

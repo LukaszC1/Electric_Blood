@@ -44,7 +44,7 @@ public class PlasmaGrenade : NetworkBehaviour
         MessageSystem.instance.PostMessage(damage, worldPosition);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void UpdateServerRpc()
     {
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
