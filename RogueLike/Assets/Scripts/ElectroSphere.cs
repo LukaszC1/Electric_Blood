@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class ElectroSphere : MonoBehaviour
+public class ElectroSphere : NetworkBehaviour
 {
     private float timerForce;
     public float timeToAttack;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class ElectrosphereMissile : MonoBehaviour
+public class ElectrosphereMissile : NetworkBehaviour
 {
     Vector3 direction;
     public float speed;
