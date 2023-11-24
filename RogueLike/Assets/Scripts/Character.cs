@@ -62,6 +62,7 @@ public abstract class Character : NetworkBehaviour
     }
     public void FixedUpdate()
     {
+        if(damageMultiplier.Value > 0 &&areaMultiplier.Value > 0 && projectileSpeedMultiplier.Value > 0 && cooldownMultiplier.Value > 0 && amountBonus.Value > 0)
         updateWeaponsServerRpc();
     }
 
