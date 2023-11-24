@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class VacuumPickup : MonoBehaviour, iPickUpObject
+public class VacuumPickup : NetworkBehaviour, iPickUpObject
 {
     private float speed = 2.3f;
     private float speed2 = 3;

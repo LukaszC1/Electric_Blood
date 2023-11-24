@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class PlasmaGrenade : MonoBehaviour
+public class PlasmaGrenade : NetworkBehaviour
 {
     Vector3 direction;
     public float speed;
