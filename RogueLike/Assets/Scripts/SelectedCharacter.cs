@@ -24,7 +24,7 @@ public class SelectedCharacter : MonoBehaviour
 
     private void Start()
     {
-        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged += KitchenGameMultiplayer_OnPlayerDataNetworkListChanged;
+        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged += ElectricBloodLobby_OnPlayerDataNetworkListChanged;
         SelectReady.Instance.OnReadyChanged += CharacterSelectReady_OnReadyChanged;
 
         _kickButton.gameObject.SetActive(NetworkManager.Singleton.IsServer);
@@ -37,7 +37,7 @@ public class SelectedCharacter : MonoBehaviour
         UpdatePlayer();
     }
 
-    private void KitchenGameMultiplayer_OnPlayerDataNetworkListChanged(object sender, System.EventArgs e)
+    private void ElectricBloodLobby_OnPlayerDataNetworkListChanged(object sender, System.EventArgs e)
     {
         UpdatePlayer();
     }
@@ -74,7 +74,7 @@ public class SelectedCharacter : MonoBehaviour
 
     private void OnDestroy()
     {
-        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= KitchenGameMultiplayer_OnPlayerDataNetworkListChanged;
+        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= ElectricBloodLobby_OnPlayerDataNetworkListChanged;
     }
 
 }

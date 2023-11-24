@@ -51,11 +51,11 @@ public class LobbyUI : MonoBehaviour
         ElectricBloodMultiplayer.Instance.SetPlayerName(newText);
         });
 
-        ElectricBloodLobby.Instance.OnLobbyListChanged += KitchenGameLobby_OnLobbyListChanged;
+        ElectricBloodLobby.Instance.OnLobbyListChanged += ElectricBloodLobby_OnLobbyListChanged;
         UpdateLobbyList(new List<Lobby>());
     }
 
-    private void KitchenGameLobby_OnLobbyListChanged(object sender, ElectricBloodLobby.OnLobbyListChangedEventArgs e)
+    private void ElectricBloodLobby_OnLobbyListChanged(object sender, ElectricBloodLobby.OnLobbyListChangedEventArgs e)
     {
         UpdateLobbyList(e.lobbyList);
     }
@@ -78,6 +78,6 @@ public class LobbyUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        ElectricBloodLobby.Instance.OnLobbyListChanged -= KitchenGameLobby_OnLobbyListChanged;
+        ElectricBloodLobby.Instance.OnLobbyListChanged -= ElectricBloodLobby_OnLobbyListChanged;
     }
 }

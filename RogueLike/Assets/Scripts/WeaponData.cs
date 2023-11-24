@@ -45,7 +45,7 @@ public class WeaponStats : INetworkSerializable
         serializer.SerializeValue(ref vectorSize);
     }
 
-    internal void Sum(WeaponStats weaponUpgradeStats)
+    public void Sum(WeaponStats weaponUpgradeStats)
     {
         this.damage += weaponUpgradeStats.damage;
         this.timeToAttack += weaponUpgradeStats.timeToAttack;

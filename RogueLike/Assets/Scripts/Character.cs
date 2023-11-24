@@ -46,6 +46,27 @@ public abstract class Character : NetworkBehaviour
         passiveItems = GetComponent<PassiveItems>();
         upgradePanelManager = FindObjectOfType<UpgradePanelManager>();
         equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
+
+        //if any of the stats change update the weapons
+        maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
+        armor.OnValueChanged += NetworkVariable_OnStatsChanged;
+        hpRegen.OnValueChanged += NetworkVariable_OnStatsChanged;
+        damageMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        areaMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        projectileSpeedMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        magnetSize.OnValueChanged += NetworkVariable_OnStatsChanged;
+        cooldownMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        amountBonus.OnValueChanged += NetworkVariable_OnStatsChanged;
+    }
+
+    private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
+    {
+        updateWeaponsServerRpc();
+    }
+
+    private void NetworkVariable_OnStatsChanged(int previousValue, int newValue)
+    {
+        updateWeaponsServerRpc();
     }
 
     public void Update()
@@ -62,8 +83,8 @@ public abstract class Character : NetworkBehaviour
     }
     public void FixedUpdate()
     {
-        if(damageMultiplier.Value > 0 &&areaMultiplier.Value > 0 && projectileSpeedMultiplier.Value > 0 && cooldownMultiplier.Value > 0 && amountBonus.Value > 0)
-        updateWeaponsServerRpc();
+        //if(damageMultiplier.Value > 0 &&areaMultiplier.Value > 0 && projectileSpeedMultiplier.Value > 0 && cooldownMultiplier.Value > 0 && amountBonus.Value > 0)
+        //updateWeaponsServerRpc();
     }
 
 
@@ -234,6 +255,7 @@ public abstract class Character : NetworkBehaviour
         cooldownMultiplier.Value -= stats.cdMultiplier;
         amountBonus.Value += stats.amountBonus;
     }
+
 
     public void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
     {
