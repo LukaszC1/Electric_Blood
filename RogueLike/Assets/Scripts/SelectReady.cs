@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class SelectReady : MonoBehaviour
+public class SelectReady : NetworkBehaviour
 {
     public static SelectReady Instance { get; private set; }
     public event EventHandler OnReadyChanged;
@@ -38,6 +38,7 @@ public class SelectReady : MonoBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
     {
+
         var senderClientId = serverRpcParams.Receive.SenderClientId;
 
         SetPlayerReadyClientRpc(senderClientId);
@@ -54,6 +55,7 @@ public class SelectReady : MonoBehaviour
                 break;
             }
         }
+
         if (allClientsReady)
         {
             ElectricBloodLobby.Instance.DeleteLobby();
