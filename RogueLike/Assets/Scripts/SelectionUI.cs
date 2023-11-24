@@ -10,6 +10,10 @@ public class SelectionUI : MonoBehaviour
 {
     [SerializeField] private Button _mainMenuBtn;
     [SerializeField] private Button _readyBtn;
+    [SerializeField] private Button _selectCharacter;
+    [SerializeField] private Button _selectLevel;
+
+    [SerializeField] private CharacterSelectPanel _characterSelectPanel;
 
     [SerializeField] private TextMeshProUGUI _lobbyNameText;
     [SerializeField] private TextMeshProUGUI _lobbyCodeText;
@@ -26,12 +30,20 @@ public class SelectionUI : MonoBehaviour
         {
             SelectReady.Instance.SetPlayerReady();
         });
+        _selectCharacter.onClick.AddListener(() =>
+        {
+            _characterSelectPanel.gameObject.SetActive(true);
+        });
+        _selectLevel.onClick.AddListener(() =>
+        {
+            
+        });
     }
     private void Start()
     {
-       // Lobby lobby = ElectricBloodLobby.Instance.GetLobby();
+        Lobby lobby = ElectricBloodLobby.Instance.GetLobby();
 
-        //_lobbyNameText.text = "Lobby Name: " + lobby.Name;
-       // _lobbyCodeText.text = "Lobby Code: " + lobby.LobbyCode;
+        _lobbyNameText.text = "Lobby Name: " + lobby.Name;
+        _lobbyCodeText.text = "Lobby Code: " + lobby.LobbyCode;
     }
 }
