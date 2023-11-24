@@ -43,21 +43,21 @@ public class SelectReady : MonoBehaviour
         SetPlayerReadyClientRpc(senderClientId);
         _readyDict[senderClientId] = true;
 
-        bool allPlayersReady = true;
+        bool allClientsReady = true;
 
-        foreach(var clientId in _readyDict.Keys)
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
-            if (!_readyDict[clientId])
+            if (!_readyDict.ContainsKey(clientId) || !_readyDict[clientId])
             {
-                // If any player is not ready, then all players are not ready.
-                allPlayersReady = false;
+                // This player is NOT ready
+                allClientsReady = false;
                 break;
             }
         }
-        if (allPlayersReady)
+        if (allClientsReady)
         {
             ElectricBloodLobby.Instance.DeleteLobby();
-            Loader.Load(Loader.Scene.GameScene);
+            Loader.LoadNetwork(Loader.Scene.GameScene);
         }
     }
 
