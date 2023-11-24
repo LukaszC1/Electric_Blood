@@ -53,7 +53,8 @@ public class GamePauseUI : NetworkBehaviour
     private void Cleanup()
     {
         if (!IsServer) return;
-        var enemies = GameManager.Instance.GetComponent<EnemiesManager>().enemyList;
+        var enemiesManager = FindObjectOfType<EnemiesManager>();
+        var enemies = enemiesManager.enemyList;
 
         if (enemies == null) return;
         
