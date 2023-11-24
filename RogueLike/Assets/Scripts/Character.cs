@@ -162,7 +162,7 @@ public abstract class Character : NetworkBehaviour
         LevelUpBonus();
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void updateWeaponsServerRpc()
     {
         foreach (var weapon in weaponManager.weapons)
