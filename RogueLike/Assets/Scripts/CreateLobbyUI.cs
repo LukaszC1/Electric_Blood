@@ -14,7 +14,7 @@ public class CreateLobbyUI : MonoBehaviour
 
 
     private void Awake()
-    {
+    {  
         _createPublicBtn.onClick.AddListener(() => {
             ElectricBloodLobby.Instance.CreateLobby(_lobbyNameInputField.text, false);
         });
