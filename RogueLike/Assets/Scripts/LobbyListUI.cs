@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyListUI : MonoBehaviour
+public class LobbyListUI : NetworkBehaviour
 {
     [SerializeField] private TextMeshProUGUI _lobbyNameText;
     private Lobby _lobby;

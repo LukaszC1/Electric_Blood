@@ -83,12 +83,12 @@ public class LobbyMessageUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        ElectricBloodMultiplayer.Instance.OnFailedToJoinGame += ElectricBlood_OnFailedToJoinGame;
-         ElectricBloodLobby.Instance.OnCreateLobbyStarted += ElectricBlood_OnCreateLobbyStarted;
-         ElectricBloodLobby.Instance.OnCreateLobbyFailed += ElectricBlood_OnCreateLobbyFailed;
-         ElectricBloodLobby.Instance.OnJoinStarted += ElectricBlood_OnJoinStarted;
-         ElectricBloodLobby.Instance.OnJoinFailed += ElectricBlood_OnJoinFailed;
-         ElectricBloodLobby.Instance.OnQuickJoinFailed += ElectricBlood_OnQuickJoinFailed;
+         ElectricBloodMultiplayer.Instance.OnFailedToJoinGame -= ElectricBlood_OnFailedToJoinGame;
+         ElectricBloodLobby.Instance.OnCreateLobbyStarted -= ElectricBlood_OnCreateLobbyStarted;
+         ElectricBloodLobby.Instance.OnCreateLobbyFailed -= ElectricBlood_OnCreateLobbyFailed;
+         ElectricBloodLobby.Instance.OnJoinStarted -= ElectricBlood_OnJoinStarted;
+         ElectricBloodLobby.Instance.OnJoinFailed -= ElectricBlood_OnJoinFailed;
+         ElectricBloodLobby.Instance.OnQuickJoinFailed -= ElectricBlood_OnQuickJoinFailed;
     }
 
 }

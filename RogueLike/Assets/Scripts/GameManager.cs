@@ -328,6 +328,6 @@ public class GameManager : NetworkBehaviour
         var players = FindObjectsOfType<Character>();
         listOfPlayers.Clear();
         foreach(var player in players)
-            listOfPlayers.Add(player.playerID.Value, player.transform);
+            listOfPlayers.TryAdd(player.playerID.Value, player.transform);
     }
 }
