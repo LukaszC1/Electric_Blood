@@ -138,30 +138,30 @@ public class GameManager : NetworkBehaviour
         isLocalGamePaused = !isLocalGamePaused;
         if (isLocalGamePaused)
         {
-            PauseGameServerRpc(NetworkManager.LocalClientId);
+            PauseGameServerRpc();
 
             OnLocalGamePaused?.Invoke(this, EventArgs.Empty);
         }
         else
         {
-            UnpauseGameServerRpc(NetworkManager.LocalClientId);
+            UnpauseGameServerRpc();
 
             OnLocalGameUnpaused?.Invoke(this, EventArgs.Empty);
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void PauseGameServerRpc(ulong clientId)
+    private void PauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
-        playerPausedDictionary[clientId] = true;
+        playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = true;
 
         TestGamePausedState();
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void UnpauseGameServerRpc(ulong clientId)
+    private void UnpauseGameServerRpc(ServerRpcParams serverRpcParams = default)
     {
-        playerPausedDictionary[clientId] = false;
+        playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = false;
 
         TestGamePausedState();
     }
