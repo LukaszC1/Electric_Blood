@@ -48,15 +48,7 @@ public abstract class Character : NetworkBehaviour
         equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
 
         //if any of the stats change update the weapons
-        maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
-        armor.OnValueChanged += NetworkVariable_OnStatsChanged;
-        hpRegen.OnValueChanged += NetworkVariable_OnStatsChanged;
-        damageMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
-        areaMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
-        projectileSpeedMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
-        magnetSize.OnValueChanged += NetworkVariable_OnStatsChanged;
-        cooldownMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
-        amountBonus.OnValueChanged += NetworkVariable_OnStatsChanged;
+       
     }
 
     private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
@@ -89,6 +81,17 @@ public abstract class Character : NetworkBehaviour
         if(!IsOwner) return;
         currentHp.Value = maxHp.Value;
         hpBar.SetState(currentHp.Value, maxHp.Value);
+
+        maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
+        armor.OnValueChanged += NetworkVariable_OnStatsChanged;
+        hpRegen.OnValueChanged += NetworkVariable_OnStatsChanged;
+        damageMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        areaMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        projectileSpeedMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        magnetSize.OnValueChanged += NetworkVariable_OnStatsChanged;
+        cooldownMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
+        amountBonus.OnValueChanged += NetworkVariable_OnStatsChanged;
+
         AddUpgradesIntoList(upgradesAvailableOnStart);
     }
 
