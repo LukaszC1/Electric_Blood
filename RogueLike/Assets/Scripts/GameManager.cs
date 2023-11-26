@@ -66,7 +66,7 @@ public class GameManager : NetworkBehaviour
         PlayerMove.OnPauseAction += OnPauseAction;
         UpgradePanelManager.OnPauseAction += OnPauseAction;
     }
-    private void OnDestroy()
+    public override void OnDestroy()
     {
         PlayerMove.OnPauseAction -= OnPauseAction;
         UpgradePanelManager.OnPauseAction -= OnPauseAction;
