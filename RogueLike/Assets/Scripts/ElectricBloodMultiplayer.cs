@@ -68,7 +68,6 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
     public void StartHost()
     {
-        if(NetworkManager.Singleton.ConnectionApprovalCallback != null)
         NetworkManager.Singleton.ConnectionApprovalCallback += NetworkManager_ConnectionApprovalCallback;
         NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
         NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_Server_OnClientDisconnectCallback;

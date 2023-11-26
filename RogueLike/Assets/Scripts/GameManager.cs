@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class GameManager : NetworkBehaviour
@@ -44,13 +45,16 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<float> gamePlayingTimer = new NetworkVariable<float>(0f);
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
 
-    private Dictionary<ulong, bool> playerPausedDictionary = new();
+    private Dictionary<ulong, bool> playerPausedDictionary;
     [SerializeField] private GameObject playerPrefab;
 
 
     private void Awake()
     {
         Instance = this;
+
+        playerPausedDictionary = new Dictionary<ulong, bool>();
+
         xpBankGem = Instantiate(xpBankGemPrefab);
         xpBankGem.SetActive(false);
         experienceBar = FindObjectOfType<ExperienceBar>();
@@ -62,7 +66,11 @@ public class GameManager : NetworkBehaviour
         PlayerMove.OnPauseAction += OnPauseAction;
         UpgradePanelManager.OnPauseAction += OnPauseAction;
     }
-
+    private void OnDestroy()
+    {
+        PlayerMove.OnPauseAction -= OnPauseAction;
+        UpgradePanelManager.OnPauseAction -= OnPauseAction;
+    }
     private void Update()
     {
         if (!IsServer)
@@ -130,30 +138,30 @@ public class GameManager : NetworkBehaviour
         isLocalGamePaused = !isLocalGamePaused;
         if (isLocalGamePaused)
         {
-            PauseGameServerRpc();
+            PauseGameServerRpc(NetworkManager.LocalClientId);
 
             OnLocalGamePaused?.Invoke(this, EventArgs.Empty);
         }
         else
         {
-            UnpauseGameServerRpc();
+            UnpauseGameServerRpc(NetworkManager.LocalClientId);
 
             OnLocalGameUnpaused?.Invoke(this, EventArgs.Empty);
         }
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void PauseGameServerRpc(ServerRpcParams serverRpcParams = default)
+    private void PauseGameServerRpc(ulong clientId)
     {
-        playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = true;
+        playerPausedDictionary[clientId] = true;
 
         TestGamePausedState();
     }
 
     [ServerRpc(RequireOwnership = false)]
-    private void UnpauseGameServerRpc(ServerRpcParams serverRpcParams = default)
+    private void UnpauseGameServerRpc(ulong clientId)
     {
-        playerPausedDictionary[serverRpcParams.Receive.SenderClientId] = false;
+        playerPausedDictionary[clientId] = false;
 
         TestGamePausedState();
     }
