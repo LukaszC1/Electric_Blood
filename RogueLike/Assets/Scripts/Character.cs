@@ -61,13 +61,13 @@ public abstract class Character : NetworkBehaviour
 
     private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
     {
-        if(newValue != 0)
+        if(previousValue != 0)
         updateWeaponsServerRpc();
     }
 
     private void NetworkVariable_OnStatsChanged(int previousValue, int newValue)
     {
-        if (newValue != 0)
+        if (previousValue != 0)
         updateWeaponsServerRpc();
     }
 
