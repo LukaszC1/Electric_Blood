@@ -58,11 +58,15 @@ public class CharacterSelectPanel : NetworkBehaviour
 
         selectButton.onClick.AddListener(() =>
         {
+            ElectricBloodMultiplayer.Instance.ChangeCharacterIndex(_selectedOption);
+
             this.gameObject.SetActive(false);
         });
 
         closeButton.onClick.AddListener(() =>
         {
+            ElectricBloodMultiplayer.Instance.ChangeCharacterIndex(_selectedOption);
+
             this.gameObject.SetActive(false);
         });
     }

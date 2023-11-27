@@ -25,7 +25,6 @@ public class ElectricBloodLobby : MonoBehaviour
     public event EventHandler OnQuickJoinFailed;
     public event EventHandler OnJoinFailed;
     public event EventHandler<OnLobbyListChangedEventArgs> OnLobbyListChanged;
-
     private Lobby joinedLobby;
     private float heartbeatTimer;
     private float listLobbiesTimer;
@@ -39,7 +38,7 @@ public class ElectricBloodLobby : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+        
         InitializeUnityAuthentication();
        
     }
@@ -202,7 +201,6 @@ public class ElectricBloodLobby : MonoBehaviour
             OnCreateLobbyFailed?.Invoke(this, EventArgs.Empty);
         }
     }
-
     public async void QuickJoin()
     {
         OnJoinStarted?.Invoke(this, EventArgs.Empty);

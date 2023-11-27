@@ -10,6 +10,7 @@ public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
 {
     public ulong clientId;
     public int characterIndex;
+    public int selectedLevel;
     public FixedString64Bytes playerName;
     public FixedString64Bytes playerId;
 
@@ -18,10 +19,9 @@ public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
         return
         this.clientId == other.clientId &&
         this.characterIndex == other.characterIndex &&
+        this.selectedLevel == other.selectedLevel &&
         this.playerName == other.playerName &&
         this.playerId == other.playerId;
-
-        
     }
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
@@ -30,5 +30,6 @@ public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
        serializer.SerializeValue(ref characterIndex);
        serializer.SerializeValue(ref playerName);
        serializer.SerializeValue(ref playerId);
+       serializer.SerializeValue(ref selectedLevel);
     }
 }

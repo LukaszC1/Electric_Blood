@@ -21389,8 +21389,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2055026114}
-  - component: {fileID: 2055026113}
   - component: {fileID: 2055026115}
+  - component: {fileID: 2055026113}
   m_Layer: 6
   m_Name: MapController
   m_TagString: Untagged

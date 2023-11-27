@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.Netcode;
 using Unity.Services.Authentication;
 using UnityEngine;
@@ -86,13 +87,14 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
             }
         }
     }
-
+  
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)
     {
         playerDataNetworkList.Add(new PlayerData
         {
             clientId = clientId,
             characterIndex = 0, //default index is 0
+            selectedLevel = 0, 
         });
         SetPlayerNameServerRpc(GetPlayerName());
         SetPlayerIdServerRpc(AuthenticationService.Instance.PlayerId);
@@ -158,10 +160,42 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
         playerDataNetworkList[playerDataIndex] = playerData;
     }
+    public void ChangeCharacterIndex(int characterIndex)
+    {
+        ChangeCharacterIndexServerRpc(characterIndex);
+    }
+    public void ChangeSelectedLevelIndex(int selectedLevel)
+    {
+        ChangeSelectedLevelIndexServerRpc(selectedLevel);
+    }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangeCharacterIndexServerRpc(int characterIndex, ServerRpcParams serverRpcParams = default)
+    {
+        int playerDataIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
+
+        PlayerData playerData = playerDataNetworkList[playerDataIndex];
+
+        playerData.characterIndex = characterIndex;
+
+        playerDataNetworkList[playerDataIndex] = playerData;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangeSelectedLevelIndexServerRpc(int selectedLevel, ServerRpcParams serverRpcParams = default)
+    {
+        int playerDataIndex = GetPlayerDataIndexFromClientId(serverRpcParams.Receive.SenderClientId);
+
+        PlayerData playerData = playerDataNetworkList[playerDataIndex];
+
+        playerData.selectedLevel = selectedLevel;
+
+        playerDataNetworkList[playerDataIndex] = playerData;
+    }
     private void NetworkManager_Client_OnClientDisconnectCallback(ulong clientId)
     {
         OnFailedToJoinGame?.Invoke(this, EventArgs.Empty);
+        Loader.Load(Loader.Scene.MainMenu);
     }
 
     /// <summary>

@@ -45,5 +45,7 @@ public class SelectionUI : MonoBehaviour
 
         _lobbyNameText.text = "Lobby Name: " + lobby.Name;
         _lobbyCodeText.text = "Lobby Code: " + lobby.LobbyCode;
+
+        _selectLevel.gameObject.SetActive(NetworkManager.Singleton.IsServer); //level selection only for host
     }
 }
