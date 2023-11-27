@@ -14,7 +14,7 @@ using Unity.Services.Relay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ElectricBloodLobby : MonoBehaviour
+public class ElectricBloodLobby : NetworkBehaviour
 {
     public static ElectricBloodLobby Instance { get; private set; }
 
@@ -47,8 +47,9 @@ public class ElectricBloodLobby : MonoBehaviour
     {
         if (UnityServices.State != ServicesInitializationState.Initialized)
         {
+            var profileId = UnityEngine.Random.Range(0, 80);
             InitializationOptions initializationOptions = new InitializationOptions();
-
+            initializationOptions.SetProfile(profileId.ToString());
             await UnityServices.InitializeAsync(initializationOptions);
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
