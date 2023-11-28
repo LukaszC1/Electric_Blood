@@ -34,7 +34,7 @@ public class VacuumPickup : NetworkBehaviour, iPickUpObject
         }
     }
 
-    public void setTargetDestination(Transform destination)
+    public void SetTargetDestination(Transform destination)
     {
         targetDestination = destination;
     }

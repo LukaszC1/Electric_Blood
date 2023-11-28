@@ -13,7 +13,7 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
 
     public void OnPickUp(Character character)
     {
-        character.AddExperience(GameManager.Instance.xpBank);
+        GameManager.Instance.AddExperience(GameManager.Instance.xpBank);
         GameManager.Instance.xpBank = 0;
         gameObject.SetActive(false);
         targetDestination = null;
@@ -48,7 +48,7 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
         }
     }
 
-    public void setTargetDestination(Transform destination)
+    public void SetTargetDestination(Transform destination)
     {
         targetDestination = destination;
     }

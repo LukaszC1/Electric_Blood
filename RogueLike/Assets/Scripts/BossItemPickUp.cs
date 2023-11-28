@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
 
-public class BossItemPickUp : MonoBehaviour, iPickUpObject
+public class BossItemPickUp : NetworkBehaviour, iPickUpObject
 {
 
     public void OnPickUp(Character character)
@@ -26,7 +27,7 @@ public class BossItemPickUp : MonoBehaviour, iPickUpObject
         }
         Destroy(gameObject);
     }
-    public void setTargetDestination(Transform destination)
+    public void SetTargetDestination(Transform destination)
     {
      
     }

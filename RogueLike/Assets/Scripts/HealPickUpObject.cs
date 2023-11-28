@@ -35,7 +35,7 @@ public class HealPickUpObject : MonoBehaviour, iPickUpObject
         }
     }
 
-    public void setTargetDestination(Transform destination)
+    public void SetTargetDestination(Transform destination)
     {
         targetDestination = destination;
     }

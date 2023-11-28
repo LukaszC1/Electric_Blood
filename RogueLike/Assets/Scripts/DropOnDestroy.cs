@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class DropOnDestroy : MonoBehaviour
+public class DropOnDestroy : NetworkBehaviour
 {
     [SerializeField] GameObject droppedItem;
     [SerializeField] [Range(0,1)] float chanceToDrop=1f;
@@ -15,6 +16,7 @@ public class DropOnDestroy : MonoBehaviour
 
     public void CheckDrop()
     {
+        if (!IsOwner) return;
         if (quitting)
         {
             return;
@@ -22,11 +24,17 @@ public class DropOnDestroy : MonoBehaviour
 
         if (Random.value < chanceToDrop)
         {
-            Transform t = Instantiate(droppedItem).transform;
-            t.position = transform.position;
+            SpawnDropServerRpc();  
         }
     }
 
-  
+    [ServerRpc(RequireOwnership = false)]
+    private void SpawnDropServerRpc()
+    {
+        Transform t = Instantiate(droppedItem).transform;
+        t.position = transform.position;
+        t.GetComponent<NetworkObject>().Spawn();
+    }
+
 
 }

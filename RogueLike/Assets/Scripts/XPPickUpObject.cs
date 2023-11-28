@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class XPPickUpObject : MonoBehaviour, iPickUpObject
+public class XPPickUpObject : NetworkBehaviour, iPickUpObject
 {
     [SerializeField] float xpAmount;
     private float speed = 2.3f;
@@ -16,7 +17,7 @@ public class XPPickUpObject : MonoBehaviour, iPickUpObject
         if (GameManager.Instance.xpGemAmount >= 400)
         {
             GameManager.Instance.xpBank += xpAmount;
-            Destroy(gameObject);
+            DestroyObjectServerRpc();
         }
         else
             GameManager.Instance.xpGemAmount++;
@@ -24,9 +25,10 @@ public class XPPickUpObject : MonoBehaviour, iPickUpObject
 
     public void OnPickUp(Character character)
     {
-        character.AddExperience(xpAmount);
+        if (!IsOwner) return;
+        GameManager.Instance.AddExperience(xpAmount);
         GameManager.Instance.xpGemAmount--;
-        Destroy(gameObject);
+        DestroyObjectServerRpc();
     }
     private void Update()
     {
@@ -48,8 +50,14 @@ public class XPPickUpObject : MonoBehaviour, iPickUpObject
         }
     }
 
-    public void setTargetDestination(Transform destination)
+    public void SetTargetDestination(Transform destination)
     {
         targetDestination = destination;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyObjectServerRpc()
+    {
+        Destroy(gameObject);
     }
 }

@@ -16,9 +16,10 @@ public class GameManager : NetworkBehaviour
     GameObject xpBankGem;
     [SerializeField] GameObject breakableObject;
 
-    [HideInInspector] public int level = 1;
-    public float experience = 0;
+    [HideInInspector] public NetworkVariable<int> level = new NetworkVariable<int>(1, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<float> experience = new NetworkVariable<float>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public ExperienceBar experienceBar;
+    [SerializeField] public AudioSource xpSound;
 
     public event EventHandler OnStateChanged;
     public event EventHandler OnLocalGamePaused;
@@ -56,8 +57,8 @@ public class GameManager : NetworkBehaviour
         xpBankGem = Instantiate(xpBankGemPrefab);
         xpBankGem.SetActive(false);
         experienceBar = FindObjectOfType<ExperienceBar>();
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
-        experienceBar.SetLevelText(level);
+        experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
+        experienceBar.SetLevelText(level.Value);
     }
     private void Start()
     {
@@ -302,17 +303,17 @@ public class GameManager : NetworkBehaviour
 
     public int TO_LEVEL_UP()
     {
-        if (level <= 20)
-            return 5 + (level - 1) * 10;
-        else if (level > 20 && level <= 40)
-            return 5 + (level - 1) * 13;
+        if (level.Value <= 20)
+            return 5 + (level.Value - 1) * 10;
+        else if (level.Value > 20 && level.Value <= 40)
+            return 5 + (level.Value - 1) * 13;
         else
-            return 5 + (level - 1) * 16;
+            return 5 + (level.Value - 1) * 16;
     }
 
     public void CheckLevelUp()
     {
-        if (experience >= TO_LEVEL_UP())
+        if (experience.Value >= TO_LEVEL_UP())
         {
             LevelUp();
         }
@@ -320,14 +321,10 @@ public class GameManager : NetworkBehaviour
 
     public void LevelUp()
     {
-        experience -= TO_LEVEL_UP();
-        level += 1;
-        experienceBar.SetLevelText(level);
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
-        foreach (var xd in listOfPlayers)
-        {
-            xd.Value.GetComponent<Character>().LevelUp();
-        }
+        if (!IsOwner) return;
+        experience.Value -= TO_LEVEL_UP();
+        level.Value += 1;
+        LevelUpClientRpc();
     }
     public void RefreshListOfPlayers()
     {
@@ -335,5 +332,28 @@ public class GameManager : NetworkBehaviour
         listOfPlayers.Clear();
         foreach(var player in players)
             listOfPlayers.TryAdd(player.playerID.Value, player.transform);
+    }
+
+    [ClientRpc]
+    public void UpdateExpSliderClientRpc()
+    {
+        experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
+        xpSound.Play();
+    }
+
+    public void AddExperience(float amount)
+    {
+        experience.Value += amount;
+        UpdateExpSliderClientRpc();
+    }
+    [ClientRpc]
+    private void LevelUpClientRpc()
+    {
+        experienceBar.SetLevelText(level.Value);
+        experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
+        foreach (var xd in listOfPlayers)
+        {
+            xd.Value.GetComponent<Character>().LevelUp();
+        }
     }
 }

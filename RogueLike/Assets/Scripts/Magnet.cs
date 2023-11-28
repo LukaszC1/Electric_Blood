@@ -23,7 +23,7 @@ public class Magnet : NetworkBehaviour
             iPickUpObject e = colliders[i].GetComponent<iPickUpObject>();
             if (e != null)
             {
-                e.setTargetDestination(transform);
+                e.SetTargetDestination(transform);
             }
         }
     }

@@ -5,6 +5,6 @@ using UnityEngine;
 public interface iPickUpObject
 {
     public void OnPickUp(Character character);
-    public void setTargetDestination(Transform destination);
+    public void SetTargetDestination(Transform destination);
 
 }

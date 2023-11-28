@@ -19,7 +19,7 @@ public abstract class Character : NetworkBehaviour
 
     public float hpRegenTimer;
 
-    [SerializeField] AudioSource xpSound;
+    [SerializeField] public AudioSource xpSound;
 
     public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
@@ -47,19 +47,16 @@ public abstract class Character : NetworkBehaviour
         upgradePanelManager = FindObjectOfType<UpgradePanelManager>();
         equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
 
-        //if any of the stats change update the weapons
        
     }
 
     private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
     {
-        if(previousValue != 0)
         updateWeaponsServerRpc();
     }
 
     private void NetworkVariable_OnStatsChanged(int previousValue, int newValue)
     {
-        if (previousValue != 0)
         updateWeaponsServerRpc();
     }
 
@@ -134,13 +131,6 @@ public abstract class Character : NetworkBehaviour
             currentHp.Value=maxHp.Value;
         }
         hpBar.SetState(currentHp.Value, maxHp.Value);
-    }
-
-    public void AddExperience(float amount)
-    {
-        GameManager.Instance.experience += amount;
-        xpSound.Play();
-        GameManager.Instance.experienceBar.UpdateExperienceSlider(GameManager.Instance.experience, GameManager.Instance.TO_LEVEL_UP());
     }
 
     public void LevelUp()
