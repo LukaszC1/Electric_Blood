@@ -35,7 +35,7 @@ public class GameManager : NetworkBehaviour
         GamePlaying,
         GameOver,
     }
-    
+
     private bool isLocalPlayerReady;
     private bool isLocalGamePaused = false;
 
@@ -64,6 +64,8 @@ public class GameManager : NetworkBehaviour
     {
         PlayerMove.OnPauseAction += OnPauseAction;
         UpgradePanelManager.OnPauseAction += OnPauseAction;
+        experience.OnValueChanged += UpdateExpSlider;
+        level.OnValueChanged += UpdateLevelText;
     }
     public override void OnDestroy()
     {
@@ -85,7 +87,7 @@ public class GameManager : NetworkBehaviour
                 countdownToStartTimer.Value -= Time.deltaTime;
                 if (countdownToStartTimer.Value < 0f)
                 {
-                    state.Value = State.GamePlaying;                 
+                    state.Value = State.GamePlaying;
                 }
                 break;
             case State.GamePlaying:
@@ -219,7 +221,7 @@ public class GameManager : NetworkBehaviour
         {
             NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += SceneManager_OnLoadEventCompleted;
-          
+
         }
     }
 
@@ -295,7 +297,7 @@ public class GameManager : NetworkBehaviour
     public void IncrementKillCount()
     {
         if (IsServer)
-        { 
+        {
             killCount.Value += 1;
             killCounter.text = ":" + killCount.Value.ToString();
         }
@@ -330,27 +332,28 @@ public class GameManager : NetworkBehaviour
     {
         var players = FindObjectsOfType<Character>();
         listOfPlayers.Clear();
-        foreach(var player in players)
+        foreach (var player in players)
             listOfPlayers.TryAdd(player.playerID.Value, player.transform);
     }
 
-    [ClientRpc]
-    public void UpdateExpSliderClientRpc()
+    public void UpdateExpSlider(float previousValue, float nextValue)
     {
-        experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
+        experienceBar.UpdateExperienceSlider(nextValue, TO_LEVEL_UP());
         xpSound.Play();
+    }
+
+    public void UpdateLevelText(int previousValue, int nextValue)
+    {
+        experienceBar.SetLevelText(nextValue);
     }
 
     public void AddExperience(float amount)
     {
         experience.Value += amount;
-        UpdateExpSliderClientRpc();
     }
     [ClientRpc]
     private void LevelUpClientRpc()
     {
-        experienceBar.SetLevelText(level.Value);
-        experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
         foreach (var xd in listOfPlayers)
         {
             xd.Value.GetComponent<Character>().LevelUp();

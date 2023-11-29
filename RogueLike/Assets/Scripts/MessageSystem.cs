@@ -18,48 +18,67 @@ public class MessageSystem : NetworkBehaviour
 
     private void Start()
     {
-        messagePool = new List<TextMeshPro>();
+        if (!IsOwner) return;
+        messagePool = new List<NetworkObject>();
 
         for(int i = 0; i < objectCount; i++)
         {
-            fillList();
+            fillListServerRpc();
         }
     }
 
     [SerializeField] GameObject damagePopup;
-    List<TMPro.TextMeshPro> messagePool;
+    List<NetworkObject> messagePool;
 
     public void PostMessage (int damage, Vector3 position)
     {
-        string message = damage.ToString();
-        messagePool[count].gameObject.SetActive (true);
-        messagePool[count].transform.position = position;
-        messagePool[count].text = message;
-        messagePool[count].alpha = 1.0f;
-        messagePool[count].transform.localScale = new Vector3(0.55f,0.55f,0.55f);
-
-        if (damage < 20)
-        messagePool[count].color = new Color(1,1,1);
-        else if(damage >= 20 && damage < 50)
-        messagePool[count].color = new Color(1, 1, 0);
-        else if (damage >= 50 && damage < 100)
-        messagePool[count].color = new Color(1, 0, 0);
-        else
-        messagePool[count].color = new Color(0.043f, 0.85f, 0.85f);
-
+        //messagePool[count].transform.position = position;
+        PostMessageClientRpc(messagePool[count], damage, position);
         count += 1;
 
-        if(count >= objectCount)
+        if (count >= objectCount)
         {
             count = 0;
         }
     }
-
-    public void fillList()
+    [ClientRpc]
+    private void PostMessageClientRpc(NetworkObjectReference messageReference, int damage, Vector3 position)
     {
-        GameObject go = Instantiate(damagePopup, transform);
-        messagePool.Add(go.GetComponent<TMPro.TextMeshPro>());
-        go.SetActive(false);
-        //go.GetComponent<NetworkObject>().Spawn();
+        messageReference.TryGet(out NetworkObject messageObject);
+        TextMeshPro message = messageObject.GetComponent<TextMeshPro>();
+
+        string text = damage.ToString();
+        message.gameObject.SetActive(true);
+        MoveTransformServerRpc(messageReference, position);
+        //messageObject.gameObject.transform.position = position;
+        message.text = text;
+        message.alpha = 1.0f;
+        message.transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+
+        if (damage < 20)
+            message.color = new Color(1, 1, 1);
+        else if (damage >= 20 && damage < 50)
+            message.color = new Color(1, 1, 0);
+        else if (damage >= 50 && damage < 100)
+            message.color = new Color(1, 0, 0);
+        else
+            message.color = new Color(0.043f, 0.85f, 0.85f);
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void fillListServerRpc()
+    {
+        GameObject go = Instantiate(damagePopup);
+        messagePool.Add(go.GetComponent<NetworkObject>());
+        go.SetActive(false);
+        go.GetComponent<NetworkObject>().Spawn();
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void MoveTransformServerRpc(NetworkObjectReference messageReference, Vector3 position)
+    {
+        messageReference.TryGet(out NetworkObject messageObject);
+        //messageObject.transform.position = position;
+        messageObject.gameObject.transform.position=position;
+    }
+
 }

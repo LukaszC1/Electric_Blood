@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 79250849
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (5)
@@ -13256,6 +13260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3477062147
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (4)
@@ -13839,6 +13847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4129798084
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (3)
@@ -14425,6 +14437,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2579058737
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (11)
@@ -14940,6 +14956,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 703215607
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (8)
@@ -15136,6 +15156,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3612009628
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (10)
@@ -18594,6 +18618,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3884709850
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (14)
@@ -18655,6 +18683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3046193906
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (12)
@@ -18716,6 +18748,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1547106219
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (13)
@@ -19681,6 +19717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3123379921
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (1)
@@ -19816,6 +19856,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2104588258
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (15)
@@ -20042,6 +20086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 417690156
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (9)
@@ -20290,6 +20338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3398079515
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (2)
@@ -20593,6 +20645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3322873537
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (6)
@@ -21323,6 +21379,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 42150147
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest
@@ -21472,6 +21532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 606707975}
     m_Modifications:
+    - target: {fileID: -6413662765876033269, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1836989334
+      objectReference: {fileID: 0}
     - target: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
       propertyPath: m_Name
       value: BreakableChest (7)
