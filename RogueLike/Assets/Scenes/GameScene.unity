@@ -21973,6 +21973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -----MESSAGE SYSTEM------
       objectReference: {fileID: 0}
+    - target: {fileID: 6720228041433360470, guid: 4140caefe605828458e2dc518642f545, type: 3}
+      propertyPath: damagePopup
+      value: 
+      objectReference: {fileID: 742890762200124103, guid: 4e74ae400c9e8554facf6548e0a5b34d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

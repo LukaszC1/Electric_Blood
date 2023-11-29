@@ -32,7 +32,6 @@ public class MessageSystem : NetworkBehaviour
 
     public void PostMessage (int damage, Vector3 position)
     {
-        //messagePool[count].transform.position = position;
         PostMessageClientRpc(messagePool[count], damage, position);
         count += 1;
 
@@ -45,15 +44,14 @@ public class MessageSystem : NetworkBehaviour
     private void PostMessageClientRpc(NetworkObjectReference messageReference, int damage, Vector3 position)
     {
         messageReference.TryGet(out NetworkObject messageObject);
-        TextMeshPro message = messageObject.GetComponent<TextMeshPro>();
+        TextMeshPro message = messageObject.GetComponentInChildren<TextMeshPro>();
 
         string text = damage.ToString();
-        message.gameObject.SetActive(true);
-        MoveTransformServerRpc(messageReference, position);
-        //messageObject.gameObject.transform.position = position;
+        message.transform.parent.gameObject.SetActive(true);
+        message.transform.parent.transform.position = position;
         message.text = text;
         message.alpha = 1.0f;
-        message.transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
+        message.transform.parent.localScale = new Vector3(0.55f, 0.55f, 0.55f);
 
         if (damage < 20)
             message.color = new Color(1, 1, 1);
@@ -73,12 +71,4 @@ public class MessageSystem : NetworkBehaviour
         go.SetActive(false);
         go.GetComponent<NetworkObject>().Spawn();
     }
-    [ServerRpc(RequireOwnership = false)]
-    private void MoveTransformServerRpc(NetworkObjectReference messageReference, Vector3 position)
-    {
-        messageReference.TryGet(out NetworkObject messageObject);
-        //messageObject.transform.position = position;
-        messageObject.gameObject.transform.position=position;
-    }
-
 }

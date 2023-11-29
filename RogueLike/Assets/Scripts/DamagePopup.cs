@@ -15,7 +15,7 @@ public class DamagePopup : NetworkBehaviour
 
     private void Awake()
     {
-        textMeshPro = GetComponent<TextMeshPro>();
+        textMeshPro = GetComponentInChildren<TextMeshPro>();
         enemyHit = GetComponent<AudioSource>();
     }
 
