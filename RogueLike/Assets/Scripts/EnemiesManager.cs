@@ -82,9 +82,9 @@ public class EnemiesManager : NetworkBehaviour
         if(!IsServer) return;
         GameManager.Instance.listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayers.Count), out Transform player);
 
-        Vector3 position = GenerateRandomPosition(player.transform.position);
+        Vector3 position = GenerateRandomPosition(player.position);
         while (CheckForCollision(position))
-            position = GenerateRandomPosition(player.transform.position);
+            position = GenerateRandomPosition(player.position);
 
         GameObject newEnemy;
         newEnemy = Instantiate(enemyToSpawn);
