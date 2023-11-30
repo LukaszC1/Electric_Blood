@@ -48,16 +48,15 @@ public class Enemy : NetworkBehaviour, iDamageable
 
     private void Start()
     {
-        
-       // targetDestination = temp.transform;
-       // targetDestination.position = new Vector3(0, 0, 0); //debug debug
+        if (!IsOwner) return;
+        float playerScaling = (GameManager.Instance.listOfPlayers.Count + 1f) / 2f;
         if (isBoss)
         {
-            if (targetCharacter == null)
-            {
-                targetCharacter = targetGameObject.GetComponent<Character>();
-            }    
-            hp *= GameManager.Instance.level.Value;
+            hp *= GameManager.Instance.level.Value * playerScaling;
+        }
+        else
+        {
+            hp *= playerScaling;
         }
     }
 
@@ -69,16 +68,16 @@ public class Enemy : NetworkBehaviour, iDamageable
 
     private void FixedUpdate()
     {
-        //Vector3 direction = (targetDestination.position - transform.position).normalized; //tofix todo
-        Vector3 direction = (new Vector3(0, 0, 0) - transform.position).normalized; //tofix todo
+        if (!IsOwner) return;
+        Vector3 direction = (targetDestination.position - transform.position).normalized; 
         rgbd2d.velocity = direction * speed;
-        /*distance = Vector3.Distance(transform.position, targetDestination.position); //UNCOMMENT ONCE TARGETTING FIXED ! :3
+        distance = Vector3.Distance(transform.position, targetDestination.position);
 
         if (distance > maxDistance)
         {
             if (isBoss)
             {
-                transform.position = GameManager.Instance.GenerateRandomPosition();
+                transform.position = GameManager.Instance.GenerateRandomPosition(targetGameObject.transform.position);
             }
             else
             {
@@ -86,9 +85,7 @@ public class Enemy : NetworkBehaviour, iDamageable
                 Destroy(gameObject);
                 GetComponent<DropOnDestroy>().CheckDrop();
             }
-        }*/
-
-
+        }
 
         if (direction.x > 0)
         {

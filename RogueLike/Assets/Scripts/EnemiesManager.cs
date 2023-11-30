@@ -25,10 +25,10 @@ public class EnemiesSpawnWave
 public class EnemiesManager : NetworkBehaviour
 {
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] GameObject player;
     public List<GameObject> enemyList;
 
     public List<EnemiesSpawnWave> enemiesSpawnWaveList;
+    private float timer = 2f;
 
 
     private void Update()
@@ -43,13 +43,16 @@ public class EnemiesManager : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        if (Time.timeScale == 1 && enemiesSpawnWaveList.Count > 0)
+        if (timer > 0f)
+            timer -= Time.deltaTime;
+        else if (Time.timeScale == 1 && enemiesSpawnWaveList.Count > 0)
             ProcessSpawn();
     }
 
     private void ProcessSpawn()
     {
         if (enemiesSpawnWaveList == null) { return; }
+        if (GameManager.Instance.listOfPlayers.Count == 0) { return; }
 
         for (int i = 0; i < enemiesSpawnWaveList.Count; i++)
         {
@@ -77,20 +80,22 @@ public class EnemiesManager : NetworkBehaviour
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
         if(!IsServer) return;
+        GameManager.Instance.listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayers.Count), out Transform player);
 
-        Vector3 position = GenerateRandomPosition();
+        Vector3 position = GenerateRandomPosition(player.transform.position);
         while (CheckForCollision(position))
-            position = GenerateRandomPosition();
+            position = GenerateRandomPosition(player.transform.position);
+
         GameObject newEnemy;
         newEnemy = Instantiate(enemyToSpawn);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<NetworkObject>().Spawn();
-        // newEnemy.GetComponent<Enemy>().SetTarget(player);
+        newEnemy.GetComponent<Enemy>().SetTarget(player.gameObject);
         newEnemy.transform.parent = transform;
         enemyList.Add(newEnemy);
     }
 
-    private Vector3 GenerateRandomPosition()
+    private Vector3 GenerateRandomPosition(Vector3 playerPos)
     {
         Vector3 position = new Vector3();
 
@@ -106,18 +111,26 @@ public class EnemiesManager : NetworkBehaviour
             position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
             position.x = spawnArea.x * f;
         }
-        position.x += player.transform.position.x;
-        position.y += player.transform.position.y;
+        position.x += playerPos.x;
+        position.y += playerPos.y;
         position.z = 0;
 
         return position;
     }
     private bool CheckForCollision(Vector3 position)
     {
-        Collider2D[] collisions = Physics2D.OverlapCircleAll(position, 0.1f);
-        foreach (Collider2D collision in collisions)
+        Collider2D[] collisionsEnvironment = Physics2D.OverlapCircleAll(position, 0.1f);
+        foreach (Collider2D collision in collisionsEnvironment)
         {
             if (collision.transform.name == "buildings")
+            {
+                return true;
+            }
+        }
+        Collider2D[] collisionsOtherPlayers = Physics2D.OverlapBoxAll(position, new Vector2(12f, 5f), 0f);
+        foreach (Collider2D collision in collisionsOtherPlayers)
+        {
+            if (collision.CompareTag("Player"))
             {
                 return true;
             }

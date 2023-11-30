@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7075382146051765422}
+  - component: {fileID: -6482432901311169782}
   - component: {fileID: 7075382146051765421}
   - component: {fileID: -9063972273268693012}
-  - component: {fileID: -6482432901311169782}
   - component: {fileID: 2640124567532365004}
   m_Layer: 0
   m_Name: wpn_Dagger
@@ -35,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6482432901311169782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075382146051765423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 183439921
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &7075382146051765421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +84,8 @@ MonoBehaviour:
   originalCd: 0
   originalAmount: 0
   weaponSound: {fileID: 0}
+  sprite: {fileID: 0}
+  enemies: []
   knifePrefab: {fileID: 1957862162160582046, guid: f0ae72bbcb6d78842b22d5df36f50cc7, type: 3}
 --- !u!82 &-9063972273268693012
 AudioSource:
@@ -161,26 +183,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-6482432901311169782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7075382146051765423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 951099334
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &2640124567532365004
 MonoBehaviour:
   m_ObjectHideFlags: 0

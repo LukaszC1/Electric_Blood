@@ -94,7 +94,7 @@ public abstract class Character : NetworkBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (playerIsDead) return;
+        /*if (playerIsDead) return;
         ApplyArmor(ref damage);
         currentHp.Value -= damage;
 
@@ -110,7 +110,7 @@ public abstract class Character : NetworkBehaviour
             }
        }
 
-        hpBar.SetState(currentHp.Value, maxHp.Value);
+        hpBar.SetState(currentHp.Value, maxHp.Value);*/
     }
 
     public void ApplyArmor(ref int damage)

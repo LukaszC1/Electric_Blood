@@ -99,24 +99,26 @@ public class GameManager : NetworkBehaviour
                 {
                     if (UnityEngine.Random.value <= 0.1)
                     {
+                        listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
                         GameObject breakable = Instantiate(breakableObject);
-                        Vector3 position = GenerateRandomPosition();
+                        Vector3 position = GenerateRandomPosition(player.transform.position);
                         while (CheckForCollision(position))
-                            position = GenerateRandomPosition();
+                            position = GenerateRandomPosition(player.transform.position);
                         breakable.transform.position = position;
                     }
                     timer = 1;
-
-
-                    if (xpBank > 100 && !xpBankGem.activeSelf)
-                    {
-                        xpBankGem.SetActive(true);
-                        Vector3 position = GenerateRandomPosition();
-                        while (CheckForCollision(position))
-                            position = GenerateRandomPosition();
-                        xpBankGem.transform.position = position;
-                    }
                 }
+
+                if (xpBank > 100 && !xpBankGem.activeSelf)
+                {
+                    listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+                    xpBankGem.SetActive(true);
+                    Vector3 position = GenerateRandomPosition(player.transform.position);
+                    while (CheckForCollision(position))
+                        position = GenerateRandomPosition(player.transform.position);
+                    xpBankGem.transform.position = position;
+                }
+                
                 break;
             case State.GameOver:
                 break;
@@ -260,7 +262,7 @@ public class GameManager : NetworkBehaviour
         OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public Vector3 GenerateRandomPosition()
+    public Vector3 GenerateRandomPosition(Vector3 playerPos)
     {
         Vector3 position = new Vector3();
 
@@ -276,6 +278,8 @@ public class GameManager : NetworkBehaviour
             position.y = UnityEngine.Random.Range(-17, 8);
             position.x = 17 * f;
         }
+        position.x += playerPos.x;
+        position.y += playerPos.y;
         position.z = 0;
 
         return position;
@@ -287,6 +291,14 @@ public class GameManager : NetworkBehaviour
         foreach (Collider2D collision in collisions)
         {
             if (collision.transform.name == "buildings")
+            {
+                return true;
+            }
+        }
+        Collider2D[] collisionsOtherPlayers = Physics2D.OverlapBoxAll(position, new Vector2(12f, 5f), 0f);
+        foreach (Collider2D collision in collisionsOtherPlayers)
+        {
+            if (collision.CompareTag("Player"))
             {
                 return true;
             }
