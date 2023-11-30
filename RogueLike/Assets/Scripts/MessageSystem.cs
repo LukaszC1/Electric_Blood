@@ -32,6 +32,7 @@ public class MessageSystem : NetworkBehaviour
 
     public void PostMessage (int damage, Vector3 position)
     {
+        if (!IsOwner) return;
         PostMessageClientRpc(messagePool[count], damage, position);
         count += 1;
 
