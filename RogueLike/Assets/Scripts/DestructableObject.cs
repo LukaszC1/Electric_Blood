@@ -26,7 +26,7 @@ public class DestructableObject : NetworkBehaviour, iDamageable
             GetComponent<Renderer>().material.SetFloat("_Dissolve_Amount", dissolveAmount);
             if (dissolveAmount < 0)
             {
-                Destroy(gameObject);
+                DestroyObjectServerRpc();
             }
         }
     }
@@ -34,10 +34,22 @@ public class DestructableObject : NetworkBehaviour, iDamageable
     {
         if (!isGettingDestroyed)
         {
-            isGettingDestroyed = true;
-            GetComponent<BoxCollider2D>().enabled = false;
-            foreach (DropOnDestroy dropOnDestroy in dropOnDestroy)
-                dropOnDestroy.CheckDrop();  
+            TakeDamageClientRpc();
         }
+    }
+
+    [ClientRpc]
+    private void TakeDamageClientRpc()
+    {
+        isGettingDestroyed = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        foreach (DropOnDestroy dropOnDestroy in dropOnDestroy)
+            dropOnDestroy.CheckDrop();
+    }
+
+    [ServerRpc]
+    private void DestroyObjectServerRpc()
+    {
+        Destroy(gameObject);
     }
 }

@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class XPBankGem : MonoBehaviour, iPickUpObject
+using Unity.Netcode;
+public class XPBankGem : NetworkBehaviour, iPickUpObject
 {
     private float speed = 2.3f;
     private float speed2 = 3;
@@ -11,19 +11,21 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
     float maxDistance = 30f;
     float distance;
 
+
     public void OnPickUp(Character character)
     {
-        GameManager.Instance.AddExperience(GameManager.Instance.xpBank);
-        GameManager.Instance.xpBank = 0;
         gameObject.SetActive(false);
         targetDestination = null;
         speed = 2.3f;
         speed2 = 3;
         timer = 0.2f;
+        if (!IsOwner) return;
+        GameManager.Instance.AddExperience(GameManager.Instance.xpBank);
+        GameManager.Instance.xpBank = 0;
     }
     private void Update()
     {
-        if (targetDestination != null)
+        if (targetDestination != null && Time.timeScale == 1)
         {
             timer -= Time.deltaTime;
             if (timer >= 0)
@@ -39,10 +41,21 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
                 speed *= 1.001f;
             }
         }
+    }
 
-       // distance = Vector3.Distance(transform.position, GameManager.Instance.playerTransform.position);
+    private void FixedUpdate()
+    {
+        bool disableGem = true;
+        foreach (var player in GameManager.Instance.listOfPlayers)
+        {
+            distance = Vector3.Distance(player.Value.position, transform.position);
 
-        if (gameObject.activeSelf && distance > maxDistance)
+            if (distance < maxDistance)
+            {
+                disableGem = false;
+            }
+        }
+        if (gameObject.activeSelf && disableGem)
         {
             gameObject.SetActive(false);
         }

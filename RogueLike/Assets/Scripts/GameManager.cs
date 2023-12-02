@@ -54,8 +54,7 @@ public class GameManager : NetworkBehaviour
 
         playerPausedDictionary = new Dictionary<ulong, bool>();
 
-        xpBankGem = Instantiate(xpBankGemPrefab);
-        xpBankGem.SetActive(false);
+ 
         experienceBar = FindObjectOfType<ExperienceBar>();
         experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
         experienceBar.SetLevelText(level.Value);
@@ -79,6 +78,32 @@ public class GameManager : NetworkBehaviour
             return;
         }
 
+        if (xpBank > 100 && !xpBankGem.activeSelf)
+        {
+            listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+            SetActiveClientRpc(xpBankGem);
+            Vector3 position = GenerateRandomPosition(player.transform.position);
+            while (CheckForCollision(position))
+                position = GenerateRandomPosition(player.transform.position);
+            xpBankGem.transform.position = position;
+        }
+
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            if (UnityEngine.Random.value <= 0.1)
+            {
+                listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+                GameObject breakable = Instantiate(breakableObject);
+                Vector3 position = GenerateRandomPosition(player.transform.position);
+                while (CheckForCollision(position))
+                    position = GenerateRandomPosition(player.transform.position);
+                breakable.transform.position = position;
+                breakable.GetComponent<NetworkObject>().Spawn();
+            }
+            timer = 1;
+        }
+
         switch (state.Value)
         {
             case State.WaitingToStart:
@@ -93,32 +118,6 @@ public class GameManager : NetworkBehaviour
             case State.GamePlaying:
 
                 gamePlayingTimer.Value += Time.deltaTime;
-
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    if (UnityEngine.Random.value <= 0.1)
-                    {
-                        listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
-                        GameObject breakable = Instantiate(breakableObject);
-                        Vector3 position = GenerateRandomPosition(player.transform.position);
-                        while (CheckForCollision(position))
-                            position = GenerateRandomPosition(player.transform.position);
-                        breakable.transform.position = position;
-                    }
-                    timer = 1;
-                }
-
-                if (xpBank > 100 && !xpBankGem.activeSelf)
-                {
-                    listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
-                    xpBankGem.SetActive(true);
-                    Vector3 position = GenerateRandomPosition(player.transform.position);
-                    while (CheckForCollision(position))
-                        position = GenerateRandomPosition(player.transform.position);
-                    xpBankGem.transform.position = position;
-                }
-                
                 break;
             case State.GameOver:
                 break;
@@ -223,7 +222,9 @@ public class GameManager : NetworkBehaviour
         {
             NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += SceneManager_OnLoadEventCompleted;
-
+            xpBankGem = Instantiate(xpBankGemPrefab);
+            xpBankGem.GetComponent<NetworkObject>().Spawn();
+            xpBankGem.SetActive(false);
         }
     }
 
@@ -233,7 +234,7 @@ public class GameManager : NetworkBehaviour
         {
             GameObject playerSpawned = Instantiate(playerPrefab);
             playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
-        }
+        };
     }
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
@@ -370,5 +371,11 @@ public class GameManager : NetworkBehaviour
         {
             xd.Value.GetComponent<Character>().LevelUp();
         }
+    }
+    [ClientRpc]
+    private void SetActiveClientRpc(NetworkObjectReference objectReference)
+    {
+        objectReference.TryGet(out NetworkObject Object);
+        Object.gameObject.SetActive(true);
     }
 }

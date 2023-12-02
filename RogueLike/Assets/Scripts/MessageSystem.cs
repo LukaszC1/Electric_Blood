@@ -69,7 +69,8 @@ public class MessageSystem : NetworkBehaviour
     {
         GameObject go = Instantiate(damagePopup);
         messagePool.Add(go.GetComponent<NetworkObject>());
-        go.SetActive(false);
         go.GetComponent<NetworkObject>().Spawn();
+        go.SetActive(false);
+        go.transform.SetParent(NetworkObject.transform, false);
     }
 }

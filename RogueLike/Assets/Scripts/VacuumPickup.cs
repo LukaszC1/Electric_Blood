@@ -16,7 +16,7 @@ public class VacuumPickup : NetworkBehaviour, iPickUpObject
     }
     private void Update()
     {
-        if (targetDestination != null)
+        if (targetDestination != null && Time.timeScale == 1)
         {
             timer -= Time.deltaTime;
             if (timer >= 0)

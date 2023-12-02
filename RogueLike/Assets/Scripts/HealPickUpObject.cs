@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class HealPickUpObject : MonoBehaviour, iPickUpObject
+public class HealPickUpObject : NetworkBehaviour, iPickUpObject
 {
     [SerializeField] int healAmount;
     private float speed = 3;
@@ -17,7 +18,7 @@ public class HealPickUpObject : MonoBehaviour, iPickUpObject
 
     private void Update()
     {
-        if (targetDestination != null)
+        if (targetDestination != null && Time.timeScale == 1)
         {
             timer -= Time.deltaTime;
             if (timer >= 0)
