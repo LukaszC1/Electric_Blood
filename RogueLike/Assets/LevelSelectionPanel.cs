@@ -9,27 +9,30 @@ public class LevelSelectionPanel : MonoBehaviour
     [SerializeField] private Button _nextBtn;
     [SerializeField] private Button _previousBtn;
     [SerializeField] private Image _displayedImage;
-    [SerializeField] private GameObject _circleContainer;
-    [SerializeField] private GameObject _circleTemplate;
+    [SerializeField] private Transform _circleContainer;
+    [SerializeField] private Transform _circleTemplate;
     private List<ScriptableObject> _availableLevels;
-    private List<GameObject> _displayedCirclesList;
+    private List<Transform> _displayedCirclesList;
     private int _currentLevelIndex = 0;
 
     private void Start()
     {
+        _displayedCirclesList = new();
         _availableLevels = ElectricBloodMultiplayer.Instance.availableLevels;
 
         for (int i = 0; i < _availableLevels.Count; i++)
         {
-            GameObject circleGameObject = Instantiate(_circleTemplate, _circleContainer.transform);
+            Transform circleGameObject = Instantiate(_circleTemplate, _circleContainer);
             circleGameObject.gameObject.SetActive(true);
-            _displayedCirclesList.Add(gameObject);
+            _displayedCirclesList.Add(circleGameObject);
         }
+        UpdateDisplayedLevel();
     }
     private void Awake()
     {
         _closeBtn.onClick.AddListener(() =>
         {
+            ElectricBloodMultiplayer.Instance.ChangeSelectedLevelIndex(_currentLevelIndex);
             gameObject.SetActive(false);
         });
         _nextBtn.onClick.AddListener(() =>
@@ -37,40 +40,32 @@ public class LevelSelectionPanel : MonoBehaviour
             _currentLevelIndex++;
             if (_currentLevelIndex >= _availableLevels.Count)
             {
-                _currentLevelIndex = 0;
-                UpdateDisplayedLevel();
+                _currentLevelIndex = 0;               
             }
+            UpdateDisplayedLevel();
         });
         _previousBtn.onClick.AddListener(() =>
         {
             _currentLevelIndex--;
             if (_currentLevelIndex < 0)
             {
-                _currentLevelIndex = _availableLevels.Count - 1;
-                UpdateDisplayedLevel();
+                _currentLevelIndex = _availableLevels.Count - 1;           
             }
+            UpdateDisplayedLevel();
         });
     }
 
     private void UpdateDisplayedLevel()
     {
         var circle = _displayedCirclesList[_currentLevelIndex].GetComponent<Image>();
-        circle.color = Color.green;
+        circle.color = Color.magenta;
 
-        if(_currentLevelIndex == 0)
+       for(int i = 0; i < _displayedCirclesList.Count; i++)
         {
-            circle = _displayedCirclesList[_displayedCirclesList.Count-1].GetComponent<Image>();
-            circle.color = Color.white;
-        }
-        else if (_currentLevelIndex == _availableLevels.Count - 1)
-        {
-            circle = _displayedCirclesList[0].GetComponent<Image>();
-            circle.color = Color.white;
-        }
-        else
-        {
-            circle = _displayedCirclesList[_currentLevelIndex-1].GetComponent<Image>();
-            circle.color = Color.white;
+            if (i == _currentLevelIndex)
+                continue;
+            else
+            _displayedCirclesList[i].GetComponent<Image>().color = Color.white;
         }
 
         var selectedLevel = _availableLevels[_currentLevelIndex] as LevelData;

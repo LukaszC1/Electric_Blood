@@ -14,6 +14,8 @@ public class SelectionUI : MonoBehaviour
     [SerializeField] private Button _selectLevel;
 
     [SerializeField] private CharacterSelectPanel _characterSelectPanel;
+    [SerializeField] private LevelSelectionPanel _levelSelectionPanel;
+
 
     [SerializeField] private TextMeshProUGUI _lobbyNameText;
     [SerializeField] private TextMeshProUGUI _lobbyCodeText;
@@ -36,7 +38,7 @@ public class SelectionUI : MonoBehaviour
         });
         _selectLevel.onClick.AddListener(() =>
         {
-            
+            _levelSelectionPanel.gameObject.SetActive(true);
         });
     }
     private void Start()
