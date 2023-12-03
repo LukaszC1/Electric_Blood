@@ -22,9 +22,9 @@ public class LevelSelectionPanel : MonoBehaviour
 
         for (int i = 0; i < _availableLevels.Count; i++)
         {
-            Transform circleGameObject = Instantiate(_circleTemplate, _circleContainer);
-            circleGameObject.gameObject.SetActive(true);
-            _displayedCirclesList.Add(circleGameObject);
+            Transform circle = Instantiate(_circleTemplate, _circleContainer);
+            circle.gameObject.SetActive(true);
+            _displayedCirclesList.Add(circle);
         }
         UpdateDisplayedLevel();
     }
