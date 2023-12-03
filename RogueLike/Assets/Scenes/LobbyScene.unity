@@ -3957,7 +3957,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98c4532955286e34bba087da306d75d3, type: 2}
   - {fileID: 11400000, guid: 41092258ddd1d0140894e6f1508cb0fa, type: 2}
   - {fileID: 11400000, guid: c93549e6d385b1046842996c1fb0ab40, type: 2}
-  availableLevels: []
+  availableLevels:
+  - {fileID: 11400000, guid: 5fff3dfe344a82c4eb6dea91d8659d2b, type: 2}
+  - {fileID: 11400000, guid: 5fff3dfe344a82c4eb6dea91d8659d2b, type: 2}
+  - {fileID: 11400000, guid: 5fff3dfe344a82c4eb6dea91d8659d2b, type: 2}
 --- !u!1 &1380896715
 GameObject:
   m_ObjectHideFlags: 0
