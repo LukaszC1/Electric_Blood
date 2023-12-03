@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -61,6 +62,9 @@ public class CharacterSelectPanel : NetworkBehaviour
             ElectricBloodMultiplayer.Instance.ChangeCharacterIndex(_selectedOption);
 
             this.gameObject.SetActive(false);
+
+            if (ElectricBloodMultiplayer.playMultiplayer == false)
+                StartGameSingleplayer();
         });
 
         closeButton.onClick.AddListener(() =>
@@ -68,6 +72,9 @@ public class CharacterSelectPanel : NetworkBehaviour
             ElectricBloodMultiplayer.Instance.ChangeCharacterIndex(_selectedOption);
 
             this.gameObject.SetActive(false);
+
+            if (ElectricBloodMultiplayer.playMultiplayer == false)
+                StartGameSingleplayer();
         });
     }
 
@@ -77,7 +84,7 @@ public class CharacterSelectPanel : NetworkBehaviour
         UpdateDisplayedCharacter();
     }
 
-    public void UpdateDisplayedCharacter() //load the data
+    private void UpdateDisplayedCharacter() //load the data
     {
         CharacterData characterData = (CharacterData)availableCharacters[_selectedOption];
 
@@ -93,5 +100,20 @@ public class CharacterSelectPanel : NetworkBehaviour
         magnetSize.text = "Magnet size: " + characterData.characterPrefab.GetComponent<Character>().magnetSize.Value.ToString();
         cooldownMultiplier.text = "Cooldown multiplier: " + characterData.characterPrefab.GetComponent<Character>().cooldownMultiplier.Value.ToString();
         amountBonus.text = "Amount bonus: " + characterData.characterPrefab.GetComponent<Character>().amountBonus.Value.ToString();
+    }
+
+    private void StartGameSingleplayer()
+    {
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        {
+            var playerData = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(clientId);
+            var characterData = ElectricBloodMultiplayer.Instance.availableCharacters[playerData.characterIndex] as CharacterData;
+
+            GameObject playerSpawned = Instantiate(characterData.characterPrefab);
+            playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+        }
+
+        Time.timeScale = 1f;
+        GameManager.Instance.singleplayerCamera.gameObject.SetActive(false);
     }
 }

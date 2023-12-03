@@ -45,8 +45,9 @@ public class GameManager : NetworkBehaviour
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
 
     private Dictionary<ulong, bool> playerPausedDictionary;
-    [SerializeField] private GameObject playerPrefab;
 
+    [SerializeField] private GameObject characterPanel;
+    [SerializeField] public GameObject singleplayerCamera;
 
     private void Awake()
     {
@@ -230,11 +231,25 @@ public class GameManager : NetworkBehaviour
 
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
-        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        if (ElectricBloodMultiplayer.playMultiplayer == false)
         {
-            GameObject playerSpawned = Instantiate(playerPrefab);
-            playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
-        };
+            //enable a default camera before the player camera gets spawned
+            singleplayerCamera.SetActive(true);
+            characterPanel.SetActive(true);
+
+            Time.timeScale = 0f;
+        }
+        else
+        { 
+            foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+            {
+                var playerData = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(clientId);
+                var characterData = ElectricBloodMultiplayer.Instance.availableCharacters[playerData.characterIndex] as CharacterData;
+
+                GameObject playerSpawned = Instantiate(characterData.characterPrefab);
+                playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
+            }
+        }
     }
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
