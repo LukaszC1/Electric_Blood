@@ -26,7 +26,6 @@ public class GameManager : NetworkBehaviour
     public event EventHandler OnLocalGameUnpaused;
     public event EventHandler OnMultiplayerGamePaused;
     public event EventHandler OnMultiplayerGameUnpaused;
-    public event EventHandler OnLocalPlayerReadyChanged;
 
     private enum State
     {
@@ -38,6 +37,8 @@ public class GameManager : NetworkBehaviour
 
     private bool isLocalPlayerReady;
     private bool isLocalGamePaused = false;
+
+    [SerializeField] private WaitingForOtherPlayersUI waitingForOtherPlayersUI;
 
     private NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
     private NetworkVariable<float> countdownToStartTimer = new NetworkVariable<float>(3f);
@@ -54,11 +55,11 @@ public class GameManager : NetworkBehaviour
         Instance = this;
 
         playerPausedDictionary = new Dictionary<ulong, bool>();
-
  
         experienceBar = FindObjectOfType<ExperienceBar>();
         experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
         experienceBar.SetLevelText(level.Value);
+
     }
     private void Start()
     {
@@ -133,23 +134,36 @@ public class GameManager : NetworkBehaviour
 
     private void OnPauseAction(object sender, EventArgs e)
     {
-        TogglePauseGame();
+        TogglePauseGameWithMenuScreen();
     }
 
-    public void TogglePauseGame()
+    private void TogglePauseGameWithMenuScreen()
     {
         isLocalGamePaused = !isLocalGamePaused;
+        WaitingForOtherPlayersUIServerRpc();
         if (isLocalGamePaused)
         {
             PauseGameServerRpc();
-
             OnLocalGamePaused?.Invoke(this, EventArgs.Empty);
         }
         else
         {
             UnpauseGameServerRpc();
-
             OnLocalGameUnpaused?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void TogglePauseGame()
+    {
+        isLocalGamePaused = !isLocalGamePaused;
+        WaitingForOtherPlayersUIServerRpc();
+        if (isLocalGamePaused)
+        {
+            PauseGameServerRpc();
+        }
+        else
+        {
+            UnpauseGameServerRpc();
         }
     }
 
@@ -175,39 +189,16 @@ public class GameManager : NetworkBehaviour
         {
             if (playerPausedDictionary.ContainsKey(clientId) && playerPausedDictionary[clientId])
             {
-                // This player is paused
                 isGamePaused.Value = true;
                 return;
             }
         }
-
-        // All players are unpaused
         isGamePaused.Value = false;
     }
 
-    public bool IsGamePlaying()
+    public bool IsGamePaused()
     {
-        return state.Value == State.GamePlaying;
-    }
-
-    public bool IsCountdownToStartActive()
-    {
-        return state.Value == State.CountdownToStart;
-    }
-
-    public float GetCountdownToStartTimer()
-    {
-        return countdownToStartTimer.Value;
-    }
-
-    public bool IsGameOver()
-    {
-        return state.Value == State.GameOver;
-    }
-
-    public bool IsWaitingToStart()
-    {
-        return state.Value == State.WaitingToStart;
+        return isGamePaused.Value;
     }
 
     public bool IsLocalPlayerReady()
@@ -392,5 +383,17 @@ public class GameManager : NetworkBehaviour
     {
         objectReference.TryGet(out NetworkObject Object);
         Object.gameObject.SetActive(true);
+    }
+
+    [ClientRpc]
+    private void WaitingForOtherPlayersUIClientRpc()
+    {
+        waitingForOtherPlayersUI.ChangeVisibility();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void WaitingForOtherPlayersUIServerRpc()
+    {
+        WaitingForOtherPlayersUIClientRpc();
     }
 }
