@@ -86,6 +86,8 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
                 playerDataNetworkList.RemoveAt(i);
             }
         }
+
+        //here might be a good place to call a method which destroys the weapons assigned to this client
     }
   
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)

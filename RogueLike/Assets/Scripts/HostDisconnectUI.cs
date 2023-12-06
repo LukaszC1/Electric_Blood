@@ -42,8 +42,11 @@ public class HostDisconnectUI : NetworkBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnDestroy()
+    public override void OnDestroy()
     {
+        if (NetworkManager.Singleton == null)
+            return;
+        
         NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectCallback;
     }
 }
