@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class StageTime : MonoBehaviour
+public class StageTime : NetworkBehaviour
 {
-    public float time;
+    public NetworkVariable<float> time = new NetworkVariable<float>(0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     TimerUi timer;
 
 
@@ -12,9 +13,20 @@ public class StageTime : MonoBehaviour
     {
         timer = FindObjectOfType<TimerUi>();
     }
+
+    private void Start()
+    {
+        time.OnValueChanged += UpdateTime;
+    }
+
     private void Update()
     {
-        time += Time.deltaTime;
-        timer.UpdateTime(time);
+        if (!IsOwner) return;
+        time.Value += Time.deltaTime;
+
+    }
+    public void UpdateTime(float previousValue, float nextValue)
+    {
+        timer.UpdateTime(time.Value);
     }
 }

@@ -69,6 +69,8 @@ public class Enemy : NetworkBehaviour, iDamageable
     private void FixedUpdate()
     {
         if (!IsOwner) return;
+        if (targetDestination == null)
+            SetTarget(FindObjectOfType<Character>().gameObject);
         Vector3 direction = (targetDestination.position - transform.position).normalized; 
         rgbd2d.velocity = direction * speed;
         distance = Vector3.Distance(transform.position, targetDestination.position);

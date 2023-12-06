@@ -22,7 +22,7 @@ public class StageEventManager : MonoBehaviour
     {
         if (eventIndexer >= stageData.events.Count) { return; }
 
-        if(stageTime.time > stageData.events[eventIndexer].time*60)
+        if(stageTime.time.Value > stageData.events[eventIndexer].time*60)
         {
             switch (stageData.events[eventIndexer].eventType)
             {

@@ -16247,6 +16247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750933112}
+  - component: {fileID: 750933116}
   - component: {fileID: 750933113}
   - component: {fileID: 750933115}
   m_Layer: 6
@@ -16283,7 +16284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a8e4e31e058f94daef5082c104a8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  time:
+    m_InternalValue: 0
 --- !u!114 &750933115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16299,6 +16301,26 @@ MonoBehaviour:
   stageData: {fileID: 11400000, guid: 1a5a37bd6e9bd5542addc487c8ffefa0, type: 2}
   enemiesManager: {fileID: 1665965312}
   playerWinManager: {fileID: 1951896867}
+--- !u!114 &750933116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750933111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3537685572
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!4 &786774421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2462822473757790713, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}

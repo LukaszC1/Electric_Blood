@@ -45,21 +45,24 @@ public class XPBankGem : NetworkBehaviour, iPickUpObject
 
     private void FixedUpdate()
     {
-        if (GameManager.Instance.listOfPlayers.Count != 0)
+        if (GameManager.Instance != null)
         {
-            bool disableGem = true;
-            foreach (var player in GameManager.Instance.listOfPlayers)
+            if (GameManager.Instance.listOfPlayers != null)
             {
-                distance = Vector3.Distance(player.Value.position, transform.position);
-
-                if (distance < maxDistance)
+                bool disableGem = true;
+                foreach (var player in GameManager.Instance.listOfPlayers)
                 {
-                    disableGem = false;
+                    distance = Vector3.Distance(player.Value.position, transform.position);
+
+                    if (distance < maxDistance)
+                    {
+                        disableGem = false;
+                    }
                 }
-            }
-            if (gameObject.activeSelf && disableGem)
-            {
-                gameObject.SetActive(false);
+                if (gameObject.activeSelf && disableGem)
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
