@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 6437405971716922608}
   - component: {fileID: 6437405971716922609}
   - component: {fileID: 6437405971716922610}
+  - component: {fileID: 7915252712685149873}
   m_Layer: 0
   m_Name: spriteshadowless_1
   m_TagString: Untagged
@@ -773,6 +774,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &7915252712685149873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437405971716922623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8deae8091111f4eb30a56c1f4e0d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 6437405971716922610}
 --- !u!1001 &1547906754390949126
 PrefabInstance:
   m_ObjectHideFlags: 0
