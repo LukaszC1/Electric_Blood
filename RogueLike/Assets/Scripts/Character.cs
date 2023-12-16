@@ -16,7 +16,7 @@ public abstract class Character : NetworkBehaviour
     public NetworkVariable<int> amountBonus = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public bool playerIsDead = false;
-
+    public ulong clientId;
     public float hpRegenTimer;
 
     [SerializeField] public AudioSource xpSound;
@@ -46,10 +46,8 @@ public abstract class Character : NetworkBehaviour
         passiveItems = GetComponent<PassiveItems>();
         upgradePanelManager = FindObjectOfType<UpgradePanelManager>();
         equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
-
-       
     }
-
+   
     private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
     {
         updateWeaponsServerRpc();
@@ -76,6 +74,7 @@ public abstract class Character : NetworkBehaviour
     public void Start()
     {
         if(!IsOwner) return;
+
         currentHp.Value = maxHp.Value;
         hpBar.SetState(currentHp.Value, maxHp.Value);
 
@@ -90,11 +89,18 @@ public abstract class Character : NetworkBehaviour
         amountBonus.OnValueChanged += NetworkVariable_OnStatsChanged;
 
         AddUpgradesIntoList(upgradesAvailableOnStart);
+        clientId = NetworkManager.Singleton.LocalClientId;
     }
 
     public void TakeDamage(int damage)
     {
-        /*if (playerIsDead) return;
+        if (!IsOwner)  //only for testing
+        {
+            TakeDamageClientRpc(damage);
+            return;
+        }
+        if (playerIsDead) return;
+
         ApplyArmor(ref damage);
         currentHp.Value -= damage;
 
@@ -106,11 +112,19 @@ public abstract class Character : NetworkBehaviour
             if (!playerIsDead)
             {
                 playerIsDead = true;
-                GetComponent<GameOver>().PlayerGameOver();
+                //GetComponent<GameOver>().PlayerGameOver();
             }
        }
 
-        hpBar.SetState(currentHp.Value, maxHp.Value);*/
+        hpBar.SetState(currentHp.Value, maxHp.Value);
+    }
+    [ClientRpc]
+    public void TakeDamageClientRpc(int damage)
+    {
+        if (IsOwner)
+        {
+          TakeDamage(damage);
+        }
     }
 
     public void ApplyArmor(ref int damage)

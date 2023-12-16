@@ -118,6 +118,7 @@ public class Enemy : NetworkBehaviour, iDamageable
 
     private void Update()
     {
+        if (!IsOwner) return;
         timer -= Time.deltaTime;
         if (timer < 0 && isSlowed)
         {
@@ -139,10 +140,13 @@ public class Enemy : NetworkBehaviour, iDamageable
     {
         if (targetCharacter == null)
         {
-            targetCharacter = targetGameObject.GetComponent<Character>();
+            targetCharacter = targetGameObject.GetComponent<Character>(); //todo
         }
-        if(!isDying)
-        targetCharacter.TakeDamage(damage);
+
+        if (!isDying)
+        {
+           targetCharacter.TakeDamage(damage);
+        }
     }
 
     public void TakeDamage(float damage)

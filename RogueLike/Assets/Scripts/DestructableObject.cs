@@ -47,7 +47,7 @@ public class DestructableObject : NetworkBehaviour, iDamageable
             dropOnDestroy.CheckDrop();
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     private void DestroyObjectServerRpc()
     {
         Destroy(gameObject);

@@ -17049,9 +17049,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 894984074}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExitToMenu, Assembly-CSharp
-        m_MethodName: SwitchMainmenu
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17060,7 +17060,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: IntroCinematic
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: UI_SFX, Assembly-CSharp
         m_MethodName: PlayClick
@@ -20626,7 +20626,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: IntroCinematic
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 519420034}
         m_TargetAssemblyTypeName: UI_SFX, Assembly-CSharp
         m_MethodName: PlayClick
