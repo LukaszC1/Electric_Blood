@@ -12,7 +12,9 @@ public class VacuumPickup : NetworkBehaviour, iPickUpObject
 
     public void OnPickUp(Character character)
     {
-        StartCoroutine(magnetIncrease(character));
+        if (!IsOwner) return;
+        character.VacuumGems();
+        DestroyObjectServerRpc();
     }
     private void Update()
     {
@@ -39,13 +41,9 @@ public class VacuumPickup : NetworkBehaviour, iPickUpObject
         targetDestination = destination;
     }
 
-    private IEnumerator magnetIncrease(Character character)
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyObjectServerRpc()
     {
-        character.magnetSize.Value += 10000;
-        character.magnet.LevelUpUpdate();
-        yield return new WaitForSeconds(0.01f);
-        character.magnetSize.Value -= 10000;
-        character.magnet.LevelUpUpdate();
         Destroy(gameObject);
     }
 }

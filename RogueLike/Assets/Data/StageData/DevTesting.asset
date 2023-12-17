@@ -13,23 +13,8 @@ MonoBehaviour:
   m_Name: DevTesting
   m_EditorClassIdentifier: 
   events:
-  - eventType: 0
-    time: 0.03
-    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
-    amount: 200
-    length: 60
-  - eventType: 0
-    time: 0.03
-    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
-    amount: 200
-    length: 60
-  - eventType: 0
-    time: 0.06
-    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
-    amount: 300
-    length: 60
-  - eventType: 0
-    time: 0.06
-    enemyToSpawn: {fileID: 5340778109894255648, guid: c3ce9fc0a7756b046bd2c463768a09ee, type: 3}
-    amount: 300
-    length: 60
+  - eventType: 1
+    time: 0
+    enemyToSpawn: {fileID: 1221384219963703909, guid: 11f04946710c99549886ecb9a81492d0, type: 3}
+    amount: 0
+    length: 0

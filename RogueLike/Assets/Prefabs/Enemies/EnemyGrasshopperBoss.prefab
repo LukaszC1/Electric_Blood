@@ -192,6 +192,7 @@ MonoBehaviour:
   droppedItem: {fileID: 5914866728136780709, guid: 689c9fc9d33a5974c907de568a969762, type: 3}
   chanceToDrop: 1
   quitting: 0
+  clientSide: 1
 --- !u!70 &7056146114075102991
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

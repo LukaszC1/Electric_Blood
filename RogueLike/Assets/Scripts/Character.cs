@@ -23,7 +23,7 @@ public abstract class Character : NetworkBehaviour
 
     public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
-    [HideInInspector] public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] StatusBar hpBar;
 
     private UpgradePanelManager upgradePanelManager;
@@ -58,6 +58,18 @@ public abstract class Character : NetworkBehaviour
         updateWeaponsServerRpc();
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void UpdateHpBarServerRpc(int previousValue, int newValue)
+    {
+        UpdateHpBarClientRpc();
+    }
+
+    [ClientRpc]
+    private void UpdateHpBarClientRpc()
+    {
+        hpBar.SetState(currentHp.Value, maxHp.Value);
+    }
+
     public void Update()
     {    
         if (!IsOwner) return;
@@ -76,7 +88,6 @@ public abstract class Character : NetworkBehaviour
         if(!IsOwner) return;
 
         currentHp.Value = maxHp.Value;
-        hpBar.SetState(currentHp.Value, maxHp.Value);
 
         maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
         armor.OnValueChanged += NetworkVariable_OnStatsChanged;
@@ -87,6 +98,7 @@ public abstract class Character : NetworkBehaviour
         magnetSize.OnValueChanged += NetworkVariable_OnStatsChanged;
         cooldownMultiplier.OnValueChanged += NetworkVariable_OnStatsChanged;
         amountBonus.OnValueChanged += NetworkVariable_OnStatsChanged;
+        currentHp.OnValueChanged += UpdateHpBarServerRpc;
 
         AddUpgradesIntoList(upgradesAvailableOnStart);
         clientId = NetworkManager.Singleton.LocalClientId;
@@ -116,7 +128,6 @@ public abstract class Character : NetworkBehaviour
             }
        }
 
-        hpBar.SetState(currentHp.Value, maxHp.Value);
     }
     [ClientRpc]
     public void TakeDamageClientRpc(int damage)
@@ -137,14 +148,24 @@ public abstract class Character : NetworkBehaviour
     public void Heal(int amount)
     {
         if (currentHp.Value <= 0) { return; }
-        if (!IsOwner) return;
+        if (!IsOwner)
+        {
+            HealClientRpc(amount);
+            return;
+        }
 
         currentHp.Value += amount;
         if (currentHp.Value > maxHp.Value)
         {
             currentHp.Value=maxHp.Value;
         }
-        hpBar.SetState(currentHp.Value, maxHp.Value);
+    }
+
+    [ClientRpc]
+    private void HealClientRpc(int amount)
+    {
+        if (IsOwner)
+            Heal(amount);
     }
 
     public void LevelUp()
@@ -337,4 +358,17 @@ public abstract class Character : NetworkBehaviour
             camera.SetActive(true);
         }
     }
+
+    public void VacuumGems()
+    {
+        GameObject[] XPGems = GameObject.FindGameObjectsWithTag("XP");
+        foreach (GameObject XPGem in XPGems)
+        {
+            if(XPGem.GetComponent<XPPickUpObject>() != null)
+                XPGem.GetComponent<XPPickUpObject>().SetTargetDestination(this.transform);
+            else
+                XPGem.GetComponent<XPBankGem>().SetTargetDestination(this.transform);
+        }
+    }
+
 }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3814461221860834325}
   m_Layer: 0
   m_Name: XPBankGem
-  m_TagString: Untagged
+  m_TagString: XP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

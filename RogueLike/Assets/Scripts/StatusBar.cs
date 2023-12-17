@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class StatusBar : MonoBehaviour
+public class StatusBar : NetworkBehaviour
 {
     [SerializeField] Transform bar;
 

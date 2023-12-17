@@ -12,8 +12,9 @@ public class HealPickUpObject : NetworkBehaviour, iPickUpObject
     Transform targetDestination;
     public void OnPickUp(Character character)
     {
+        if (!IsOwner) return;
         character.Heal(healAmount);
-        Destroy(gameObject);
+        DestroyObjectServerRpc();
     }
 
     private void Update()
@@ -39,6 +40,12 @@ public class HealPickUpObject : NetworkBehaviour, iPickUpObject
     public void SetTargetDestination(Transform destination)
     {
         targetDestination = destination;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyObjectServerRpc()
+    {
+        Destroy(gameObject);
     }
 
 }

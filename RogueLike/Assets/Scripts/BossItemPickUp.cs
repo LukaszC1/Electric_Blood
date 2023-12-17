@@ -12,23 +12,35 @@ public class BossItemPickUp : NetworkBehaviour, iPickUpObject
     {
         //add the random upgrade to the character
 
-        if (character.GetUpgrades(1) != null)
+        if (!IsOwner) return;
+
+        foreach (var player in GameManager.Instance.listOfPlayers)
         {
-            var upgrade = character.GetUpgrades(1)[0];
-
-            while (upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString() || upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString())
+            Character playerChar = player.Value.GetComponent<Character>();
+            if (playerChar.GetUpgrades(1) != null)
             {
-                upgrade = character.GetUpgrades(1)[0];
-            }
+                var upgrade = playerChar.GetUpgrades(1)[0];
 
-            character.AcquiredUpgradesAdd(upgrade);
-            character.UpgradesRemove(upgrade);
-            character.UpgradeWeaponPickUp(upgrade);
+                while (upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString() || upgrade.upgradeType.ToString() != UpgradeType.WeaponUpgrade.ToString())
+                {
+                    upgrade = playerChar.GetUpgrades(1)[0];
+                }
+
+                playerChar.AcquiredUpgradesAdd(upgrade);
+                playerChar.UpgradesRemove(upgrade);
+                playerChar.UpgradeWeaponPickUp(upgrade);
+            }
         }
-        Destroy(gameObject);
+        DestroyObjectServerRpc();
     }
     public void SetTargetDestination(Transform destination)
     {
      
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyObjectServerRpc()
+    {
+        Destroy(gameObject);
     }
 }
