@@ -16,7 +16,7 @@ public class Enemy : NetworkBehaviour, iDamageable
     private float previousSpeed;
 
     private float timer;
-    private float timer2 = 0.15f;
+    private float timer2 = 0f;
     Rigidbody2D rgbd2d;
 
     [SerializeField] float hp = 4;
@@ -99,6 +99,8 @@ public class Enemy : NetworkBehaviour, iDamageable
         }
 
 
+
+
         if (isDying)
         {
             isDyingUpdateClientRpc();
@@ -106,6 +108,13 @@ public class Enemy : NetworkBehaviour, iDamageable
         else if (takingDamage)
         {
             takingDamageClientRpc();
+            if (timer2 > 0)
+                timer2 -= Time.deltaTime;
+            else if (timer2 <= 0)
+            {
+                ResetMateriaClientRpc();
+                takingDamage = false;
+            }
         }
         else if (isStunned)
             speed = 0;
@@ -148,9 +157,12 @@ public class Enemy : NetworkBehaviour, iDamageable
     {
         hp -= damage;
         if (!takingDamage)
+        {
             takingDamage = true;
+            timer2 += 0.15f;
+        }
         else
-            timer2 += 0.1f;
+            timer2 += 0.075f;
 
         if (hp<= 0)
         {
@@ -194,14 +206,13 @@ public class Enemy : NetworkBehaviour, iDamageable
     [ClientRpc]
     private void takingDamageClientRpc()
     {
-        timer2 -= Time.deltaTime;
         GetComponent<Renderer>().material = whiteMat;
         speed = reverseSpeed;
-        if (timer2 <= 0)
-        {
-            GetComponent<Renderer>().material = originalMat;
-            timer2 = 0.15f;
-            takingDamage = false;
-        }
+
+    }
+    [ClientRpc]
+    private void ResetMateriaClientRpc()
+    {
+        GetComponent<Renderer>().material = originalMat;
     }
 }
