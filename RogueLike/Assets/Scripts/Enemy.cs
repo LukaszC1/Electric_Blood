@@ -91,11 +91,11 @@ public class Enemy : NetworkBehaviour, iDamageable
 
         if (direction.x > 0)
         {
-            sprite.flipX = false;
+            SpriteFlipFalseClientRpc();
         }
         else
         {
-            sprite.flipX = true;
+            SpriteFlipTrueClientRpc();
         }
 
 
@@ -214,5 +214,15 @@ public class Enemy : NetworkBehaviour, iDamageable
     private void ResetMateriaClientRpc()
     {
         GetComponent<Renderer>().material = originalMat;
+    }
+    [ClientRpc]
+    private void SpriteFlipTrueClientRpc()
+    {
+        sprite.flipX = true;
+    }
+    [ClientRpc]
+    private void SpriteFlipFalseClientRpc()
+    {
+        sprite.flipX = false;
     }
 }
