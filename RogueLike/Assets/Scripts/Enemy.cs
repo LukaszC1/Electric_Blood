@@ -130,22 +130,17 @@ public class Enemy : NetworkBehaviour, iDamageable
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject == targetGameObject)
+        if(collision.gameObject.tag == "Player")
         {
-            Attack();
+            Attack(collision.gameObject);
         }
     }
 
-    private void Attack()
+    private void Attack(GameObject target)
     {
-        if (targetCharacter == null)
-        {
-            targetCharacter = targetGameObject.GetComponent<Character>(); //todo
-        }
-
         if (!isDying)
         {
-           targetCharacter.TakeDamage(damage);
+           target.GetComponent<Character>().TakeDamage(damage);
         }
     }
 
