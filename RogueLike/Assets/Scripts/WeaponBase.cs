@@ -20,6 +20,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     public AudioSource weaponSound;
     public GameObject sprite;
     public List<GameObject> enemies = new();
+    [SerializeField] bool updateSprite = false;
 
     public void Awake()
     {
@@ -80,8 +81,10 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         if (weaponStats.size != 0)
             weaponStats.size = originalAoEF * character.areaMultiplier.Value;
         transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);
-        if (sprite != null)
-            sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);
+        /*        if (sprite != null)
+                    sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);*/
+        if(updateSprite)
+            UpdateSpriteClientRpc(originalScale, character, character.areaMultiplier.Value);
         weaponStats.damage = originalDamage * character.damageMultiplier.Value;
         weaponStats.timeToAttack = originalCd * character.cooldownMultiplier.Value;
         weaponStats.amount = originalAmount + character.amountBonus.Value;
@@ -110,5 +113,13 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         this.originalAmount += upgradeData.amount;
         weaponStats.pierce += upgradeData.pierce;
         LevelUpUpdate();
+    }
+    [ClientRpc]
+    private void UpdateSpriteClientRpc(Vector2 originalScale, NetworkBehaviourReference characterReference, float areaMultiplier)
+    {
+        characterReference.TryGet(out Character character);
+        ForceFieldSprite sprite = character.GetComponentInChildren<ForceFieldSprite>();
+        if (sprite != null)
+            sprite.UpdateTransform(new Vector2(originalScale.x * areaMultiplier, originalScale.y * areaMultiplier));
     }
 }
