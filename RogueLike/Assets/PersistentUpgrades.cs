@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class PersistentUpgrades : MonoBehaviour
 {
-    public SaveData saveData = new SaveData();
+    private SaveData saveData { get; set; } = new SaveData();
     public static PersistentUpgrades Instance { get; private set;}
 
     private void Awake()
@@ -35,7 +35,7 @@ public class PersistentUpgrades : MonoBehaviour
         Debug.Log("Data saved at: " + filePath);
     }
 
-    private void Load()
+    public void Load()
     {
         string filePath = Application.persistentDataPath + "/saveData.json";
 
@@ -58,7 +58,17 @@ public class PersistentUpgrades : MonoBehaviour
 [Serializable]
 public class SaveData
 {
-    public int coins = 5;
+    public int coins;
     public int[] characterStats;
-    public int[] costTexts;
+
+    /// <summary>
+    /// Updates the data to be saved.
+    /// </summary>
+    /// <param name="coins"></param>
+    /// <param name="characterStats"></param>
+    public void UpdateData(int coins, int[] characterStats)
+    {
+        this.coins = coins;
+        this.characterStats = characterStats;
+    }
 }
