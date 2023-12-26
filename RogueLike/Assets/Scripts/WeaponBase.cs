@@ -52,15 +52,21 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     }
     public void Update()
     {
+        if (!IsServer) return;
         timer -= Time.deltaTime;
 
         if (timer < 0f)
         {
-            if (!IsServer) return;
             Attack();
 
            timer = weaponStats.timeToAttack;
         }
+    }
+
+    public void FixedUpdate()
+    {
+        if (!IsServer) return;
+        if (character == null) Destroy(gameObject);
     }
 
     public virtual void SetData(WeaponData wd)
@@ -81,8 +87,6 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         if (weaponStats.size != 0)
             weaponStats.size = originalAoEF * character.areaMultiplier.Value;
         transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);
-        /*        if (sprite != null)
-                    sprite.transform.localScale = new Vector2(originalScale.x * character.areaMultiplier.Value, originalScale.y * character.areaMultiplier.Value);*/
         if(updateSprite)
             UpdateSpriteClientRpc(originalScale, character, character.areaMultiplier.Value);
         weaponStats.damage = originalDamage * character.damageMultiplier.Value;
