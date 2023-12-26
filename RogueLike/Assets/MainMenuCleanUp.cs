@@ -19,6 +19,11 @@ public class MainMenuCleanUp : MonoBehaviour
         {
             Destroy(ElectricBloodLobby.Instance.gameObject);
         }
+        
+        if (PersistentUpgrades.Instance != null)
+        {
+            Destroy(PersistentUpgrades.Instance.gameObject);
+        }
     }
 
 }
