@@ -67,6 +67,7 @@ public class GameManager : NetworkBehaviour
         UpgradePanelManager.OnPauseAction += OnPauseAction;
         experience.OnValueChanged += UpdateExpSlider;
         level.OnValueChanged += UpdateLevelText;
+        killCount.OnValueChanged += UpdateKillCounter;
     }
     public override void OnDestroy()
     {
@@ -318,7 +319,6 @@ public class GameManager : NetworkBehaviour
         if (IsServer)
         {
             killCount.Value += 1;
-            killCounter.text = ":" + killCount.Value.ToString();
         }
     }
 
@@ -353,6 +353,11 @@ public class GameManager : NetworkBehaviour
         listOfPlayers.Clear();
         foreach (var player in players)
             listOfPlayers.TryAdd(player.playerID.Value, player.transform);
+    }
+
+    public void UpdateKillCounter(int previousValue, int nextValue)
+    {
+        killCounter.text = ":" + killCount.Value.ToString();
     }
 
     public void UpdateExpSlider(float previousValue, float nextValue)
