@@ -153,10 +153,13 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    public void TogglePauseGame()
+    public void TogglePauseGame(bool toggle = true)
     {
         isLocalGamePaused = !isLocalGamePaused;
+
+        if(toggle)
         WaitingForOtherPlayersUIServerRpc();
+
         if (isLocalGamePaused)
         {
             PauseGameServerRpc();
@@ -245,7 +248,7 @@ public class GameManager : NetworkBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
-        TogglePauseGame(); //pause game when client disconnects
+        TogglePauseGame(false); //pause game when client disconnects
     }
 
     private void IsGamePaused_OnValueChanged(bool previousValue, bool newValue)

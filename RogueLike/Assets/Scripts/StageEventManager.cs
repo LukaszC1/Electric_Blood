@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class StageEventManager : MonoBehaviour
+public class StageEventManager : NetworkBehaviour
 {
     [SerializeField] StageData stageData;
     [SerializeField] EnemiesManager enemiesManager;
@@ -20,6 +21,7 @@ public class StageEventManager : MonoBehaviour
 
     private void Update()
     {
+        if (!IsServer) return;
         if (eventIndexer >= stageData.events.Count) { return; }
 
         if(stageTime.time.Value > stageData.events[eventIndexer].time*60)
@@ -33,14 +35,16 @@ public class StageEventManager : MonoBehaviour
                     enemiesManager.SpawnEnemy(stageData.events[eventIndexer].enemyToSpawn);
                     break;
                 case StageEventType.WinStage:
-                    WinStage();
+                    GameManager.Instance.TogglePauseGame(false);
+                    WinStageClientRpc();
                     break;
             }
             eventIndexer++;
         }
     }
 
-    private void WinStage()
+    [ClientRpc]
+    private void WinStageClientRpc()
     {
         playerWinManager.Win();
     }

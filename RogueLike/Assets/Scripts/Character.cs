@@ -37,7 +37,7 @@ public abstract class Character : NetworkBehaviour
     WeaponManager weaponManager;
     PassiveItems passiveItems;
     [SerializeField] GameObject camera;
-    [HideInInspector]public Magnet magnet;
+    [HideInInspector] public Magnet magnet;
 
     public void Awake()
     {

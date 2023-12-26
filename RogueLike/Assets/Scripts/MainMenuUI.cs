@@ -8,7 +8,8 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button singleplayerButton;
     [SerializeField] private Button multiplayerButton;
     [SerializeField] private Button quitButton;
-
+    [SerializeField] private Button shopButton;
+    [SerializeField] private GameObject shopPanel;
     private void Awake()
     {
         singleplayerButton.onClick.AddListener(()=>
@@ -26,6 +27,11 @@ public class MainMenuUI : MonoBehaviour
         quitButton.onClick.AddListener(() =>
         {
             Application.Quit();
+        });
+
+        shopButton.onClick.AddListener(() =>
+        {
+            shopPanel.SetActive(true);
         });
     }
 }

@@ -1,14 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class ExitToMenu : MonoBehaviour
+public class ExitToMenu : NetworkBehaviour
 {
-    
-    public void SwitchMainmenu()
+    [SerializeField] private Button mainMenuButton;
+    private void Awake()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            Cleanup();
+            NetworkManager.Singleton.Shutdown();
+            Loader.Load(Loader.Scene.MainMenu);
+        });
+    }
+
+    private void Cleanup()
+    {
+        if (!IsServer) return;
+        var enemiesManager = FindObjectOfType<EnemiesManager>();
+        var enemies = enemiesManager.enemyList;
+
+        if (enemies == null) return;
+
+        foreach (var gameObject in enemies)
+        {
+            Destroy(gameObject);
+        }
+
+        FindObjectOfType<WeaponManager>().weapons.ForEach(w => Destroy(w.gameObject));
+        FindObjectsOfType<DamagePopup>().ToList().ForEach(d => Destroy(d.gameObject));
     }
 }
