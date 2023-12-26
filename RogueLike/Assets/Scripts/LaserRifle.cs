@@ -47,7 +47,7 @@ public class LaserRifle : WeaponBase
     {
         if (enemies.Count == 0) return;
 
-        weaponSound.Play();
+        PlaySoundClientRpc();
 
         GameObject thrownKnife = Instantiate(laserPrefab);
         Vector3 currentPosition = transform.position;
@@ -67,4 +67,9 @@ public class LaserRifle : WeaponBase
         thrownKnife.GetComponent<NetworkObject>().Spawn();
     }
 
+    [ClientRpc]
+    private void PlaySoundClientRpc()
+    {
+        weaponSound.Play();
+    }
 }

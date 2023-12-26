@@ -72,7 +72,7 @@ public class WhipWeapon : WeaponBase
             else
                 strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
             ApplyDamage(colliders);
-            weaponSound.Play();
+            PlaySoundClientRpc();
 
             strike.GetComponent<NetworkObject>().Spawn();      
         }
@@ -90,8 +90,14 @@ public class WhipWeapon : WeaponBase
                 strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
 
             ApplyDamage(colliders);
-            weaponSound.Play();
+            PlaySoundClientRpc();
 
             strike.GetComponent<NetworkObject>().Spawn();
+    }
+
+    [ClientRpc]
+    private void PlaySoundClientRpc()
+    {
+        weaponSound.Play();
     }
 }
