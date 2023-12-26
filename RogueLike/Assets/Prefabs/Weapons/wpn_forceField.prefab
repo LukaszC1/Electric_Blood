@@ -160,6 +160,7 @@ MonoBehaviour:
   weaponSound: {fileID: 0}
   sprite: {fileID: 4884365333385668482, guid: 272f080eb09c4ba4ea538a56d07fb726, type: 3}
   enemies: []
+  updateSprite: 1
 --- !u!82 &3728359899098026961
 AudioSource:
   m_ObjectHideFlags: 0
@@ -282,7 +283,7 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   UseQuaternionSynchronization: 0
   UseQuaternionCompression: 0
-  UseHalfFloatPrecision: 1
+  UseHalfFloatPrecision: 0
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0

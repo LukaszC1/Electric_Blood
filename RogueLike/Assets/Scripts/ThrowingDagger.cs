@@ -25,7 +25,7 @@ public class ThrowingDagger : WeaponBase
     [ServerRpc(RequireOwnership = false)]
     private void attackServerRpc(Vector2 startPosition)
     {
-        weaponSound.Play();
+        PlaySoundClientRpc();
         GameObject thrownKnife = Instantiate(knifePrefab);
         thrownKnife.transform.position = new Vector2(startPosition.x + UnityEngine.Random.Range(-0.3f, 0.3f), startPosition.y + UnityEngine.Random.Range(-0.3f, 0.3f));
         ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
@@ -37,5 +37,10 @@ public class ThrowingDagger : WeaponBase
         projectile.size = weaponStats.size;
         projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
         projectile.pierce = weaponStats.pierce;
+    }
+    [ClientRpc]
+    private void PlaySoundClientRpc()
+    {
+        weaponSound.Play();
     }
 }

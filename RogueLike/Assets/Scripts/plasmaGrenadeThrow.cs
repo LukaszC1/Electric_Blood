@@ -28,7 +28,7 @@ public class plasmaGrenadeThrow : WeaponBase
         if (enemies.Count != 0)
         {
 
-            weaponSound.Play();
+            PlaySoundClientRpc();
 
             GameObject grenade = Instantiate(grenadePrefab);
             Vector3 currentPosition = transform.position;
@@ -53,6 +53,10 @@ public class plasmaGrenadeThrow : WeaponBase
             }
         }
     }
-
+    [ClientRpc]
+    private void PlaySoundClientRpc()
+    {
+        weaponSound.Play();
+    }
 
 }

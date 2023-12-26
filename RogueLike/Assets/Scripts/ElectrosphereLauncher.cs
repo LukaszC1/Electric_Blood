@@ -32,7 +32,7 @@ public class ElectrosphereLauncher : WeaponBase
 
        if (enemies.Count != 0)
         {
-            weaponSound.Play();
+            PlaySoundClientRpc();
             GameObject missile = Instantiate(missilePrefab);
             Vector3 currentPosition = transform.position;
             missile.transform.position = currentPosition;
@@ -55,5 +55,10 @@ public class ElectrosphereLauncher : WeaponBase
                 Debug.Log("Spawned electrosphere.");
             }
         }
+    }
+    [ClientRpc]
+    private void PlaySoundClientRpc()
+    {
+        weaponSound.Play();
     }
 }
