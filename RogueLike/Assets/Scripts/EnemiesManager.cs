@@ -81,7 +81,6 @@ public class EnemiesManager : NetworkBehaviour
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
         if(!IsServer) return;
-        //GameManager.Instance.listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayers.Count), out Transform player);
         Transform player = GameManager.Instance.listOfPlayerTransforms[UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayerTransforms.Count)];
 
         if (player == null) return;

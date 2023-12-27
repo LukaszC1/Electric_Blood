@@ -85,7 +85,6 @@ public class GameManager : NetworkBehaviour
 
         if (xpBank > 100 && !xpBankGem.activeSelf)
         {
-            //listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
             Transform player = listOfPlayerTransforms[UnityEngine.Random.Range(0, listOfPlayerTransforms.Count)];
             SetActiveClientRpc(xpBankGem);
             Vector3 position = GenerateRandomPosition(player.transform.position);
@@ -99,7 +98,6 @@ public class GameManager : NetworkBehaviour
         {
             if (UnityEngine.Random.value <= 0.075)
             {
-                //listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
                 Transform player = listOfPlayerTransforms[UnityEngine.Random.Range(0, listOfPlayerTransforms.Count)];
                 GameObject breakable = Instantiate(breakableObject);
                 Vector3 position = GenerateRandomPosition(player.transform.position);

@@ -209,7 +209,6 @@ public abstract class Character : NetworkBehaviour
     [ClientRpc]
     private void GameOverClientRpc()
     {
-        //GameManager.Instance.singleplayerCamera.SetActive(true);
         GetComponent<GameOver>().PlayerGameOver();
     }
     public void ApplyArmor(ref int damage)
