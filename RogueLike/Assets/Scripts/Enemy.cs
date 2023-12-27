@@ -92,11 +92,11 @@ public class Enemy : NetworkBehaviour, iDamageable
 
         if (direction.x > 0)
         {
-            SpriteFlipClientRpc();
+            SpriteFlipFalseClientRpc();
         }
         else
         {
-            SpriteFlipClientRpc();
+            SpriteFlipTrueClientRpc();
         }
 
         if (isDying)
@@ -214,11 +214,17 @@ public class Enemy : NetworkBehaviour, iDamageable
         GetComponent<Renderer>().material = originalMat;
     }
     [ClientRpc]
-    private void SpriteFlipClientRpc()
+    private void SpriteFlipFalseClientRpc()
     {
-        sprite.flipX = !sprite.flipX;
+        sprite.flipX = false;
     }
-  
+
+    [ClientRpc]
+    private void SpriteFlipTrueClientRpc()
+    {
+        sprite.flipX = true;
+    }
+
     private void OnApplicationQuit()
     {
         dropOnDestroy.quitting = true;
