@@ -83,6 +83,8 @@ public class GameManager : NetworkBehaviour
             return;
         }
 
+        RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
+
         if (xpBank > 100 && !xpBankGem.activeSelf)
         {
             Transform player = listOfPlayerTransforms[UnityEngine.Random.Range(0, listOfPlayerTransforms.Count)];
@@ -132,7 +134,6 @@ public class GameManager : NetworkBehaviour
     public void FixedUpdate()
     {
         CheckLevelUp();
-        RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
     }
 
     private void OnPauseAction(object sender, EventArgs e)
