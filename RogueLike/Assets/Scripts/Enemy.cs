@@ -33,6 +33,7 @@ public class Enemy : NetworkBehaviour, iDamageable
     DropOnDestroy dropOnDestroy;
     private float dissolveAmount = 1;
     private bool isDying=false;
+    bool quitting = false;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
@@ -224,5 +225,10 @@ public class Enemy : NetworkBehaviour, iDamageable
     private void SpriteFlipFalseClientRpc()
     {
         sprite.flipX = false;
+    }
+    private void OnApplicationQuit()
+    {
+        dropOnDestroy.quitting = true;
+        Destroy(gameObject);
     }
 }

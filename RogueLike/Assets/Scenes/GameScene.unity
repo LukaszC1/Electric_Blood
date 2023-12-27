@@ -25765,6 +25765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7562818615052598267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7562818613102072944, guid: 30266e9a50448c94bba1164137992b05, type: 3}
+  m_PrefabInstance: {fileID: 7562818615052598265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7701939552780407151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25968,6 +25973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 93805965}
     - target: {fileID: 9116707114065722785, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 7562818615052598267}
+    - target: {fileID: 9116707114065722785, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
       propertyPath: characterPanel
       value: 
       objectReference: {fileID: 1528449285}
@@ -25999,6 +26008,10 @@ PrefabInstance:
       propertyPath: upgradeButtons.Array.data[3]
       value: 
       objectReference: {fileID: 846156567}
+    - target: {fileID: 9116707114065722791, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: mainPanel
+      value: 
+      objectReference: {fileID: 7701939552780407152}
     - target: {fileID: 9116707114065722791, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
       propertyPath: equipedItems.Array.data[0]
       value: 

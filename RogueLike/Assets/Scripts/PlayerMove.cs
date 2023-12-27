@@ -7,7 +7,7 @@ public class PlayerMove : NetworkBehaviour
 {
     public static event EventHandler OnPauseAction;
 
-    Rigidbody2D rgbd2d;
+    public Rigidbody2D rgbd2d;
 
     [HideInInspector] public Vector3 movementVector;
     [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(1f,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
@@ -16,7 +16,7 @@ public class PlayerMove : NetworkBehaviour
     [HideInInspector] public NetworkVariable<float> lastVerticalVectorProjectiles = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
 
-    [SerializeField] float speed = 3f;
+    [SerializeField] public float speed = 3f;
     bool facingRight = true;
     public SpriteRenderer sprite;
 

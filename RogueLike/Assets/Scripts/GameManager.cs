@@ -9,6 +9,7 @@ public class GameManager : NetworkBehaviour
     [HideInInspector] public int xpGemAmount;
     [HideInInspector] public float xpBank;
     public Dictionary<ulong, Transform> listOfPlayers = new();
+    public List<Transform> listOfPlayerTransforms = new();
     private float timer = 1;
     [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>(0);
     [SerializeField] TMPro.TextMeshProUGUI killCounter;
@@ -49,6 +50,7 @@ public class GameManager : NetworkBehaviour
 
     [SerializeField] private GameObject characterPanel;
     [SerializeField] public GameObject singleplayerCamera;
+    [SerializeField] public GameObject gameOverPanel;
 
     private void Awake()
     {
@@ -83,7 +85,8 @@ public class GameManager : NetworkBehaviour
 
         if (xpBank > 100 && !xpBankGem.activeSelf)
         {
-            listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+            //listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+            Transform player = listOfPlayerTransforms[UnityEngine.Random.Range(0, listOfPlayerTransforms.Count)];
             SetActiveClientRpc(xpBankGem);
             Vector3 position = GenerateRandomPosition(player.transform.position);
             while (CheckForCollision(position))
@@ -94,9 +97,10 @@ public class GameManager : NetworkBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            if (UnityEngine.Random.value <= 0.1)
+            if (UnityEngine.Random.value <= 0.075)
             {
-                listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+                //listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, listOfPlayers.Count), out Transform player);
+                Transform player = listOfPlayerTransforms[UnityEngine.Random.Range(0, listOfPlayerTransforms.Count)];
                 GameObject breakable = Instantiate(breakableObject);
                 Vector3 position = GenerateRandomPosition(player.transform.position);
                 while (CheckForCollision(position))
@@ -352,10 +356,14 @@ public class GameManager : NetworkBehaviour
     }
     public void RefreshListOfPlayers()
     {
-        var players = FindObjectsOfType<Character>();
+        var players = GameObject.FindGameObjectsWithTag("Player");
         listOfPlayers.Clear();
         foreach (var player in players)
-            listOfPlayers.TryAdd(player.playerID.Value, player.transform);
+        {
+            Character character = player.GetComponent<Character>();
+            listOfPlayers.TryAdd(character.playerID.Value, character.transform);
+        }
+        listOfPlayerTransforms = new List<Transform>(listOfPlayers.Values);
     }
 
     public void UpdateKillCounter(int previousValue, int nextValue)

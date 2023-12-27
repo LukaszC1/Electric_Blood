@@ -33,7 +33,7 @@ public class EnemiesManager : NetworkBehaviour
 
     private void Update()
     {
-        if(IsServer)
+        if (IsServer)
         {
             enemyList.RemoveAll(x => x == null);
         }
@@ -42,6 +42,7 @@ public class EnemiesManager : NetworkBehaviour
     private void LateUpdate()
     {
         if (!IsServer) return;
+        if (GameManager.Instance.listOfPlayerTransforms.Count == 0) return; 
 
         if (timer > 0f)
             timer -= Time.deltaTime;
@@ -52,7 +53,7 @@ public class EnemiesManager : NetworkBehaviour
     private void ProcessSpawn()
     {
         if (enemiesSpawnWaveList == null) { return; }
-        if (GameManager.Instance.listOfPlayers.Count == 0) { return; }
+
 
         for (int i = 0; i < enemiesSpawnWaveList.Count; i++)
         {
@@ -80,8 +81,10 @@ public class EnemiesManager : NetworkBehaviour
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
         if(!IsServer) return;
-        GameManager.Instance.listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayers.Count), out Transform player);
+        //GameManager.Instance.listOfPlayers.TryGetValue((ulong)UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayers.Count), out Transform player);
+        Transform player = GameManager.Instance.listOfPlayerTransforms[UnityEngine.Random.Range(0, GameManager.Instance.listOfPlayerTransforms.Count)];
 
+        if (player == null) return;
         Vector3 position = GenerateRandomPosition(player.position);
         while (CheckForCollision(position))
             position = GenerateRandomPosition(player.position);
@@ -137,4 +140,9 @@ public class EnemiesManager : NetworkBehaviour
         }
         return false;
     }
+    private void OnApplicationQuit()
+    {
+        Destroy(gameObject);
+    }
+
 }

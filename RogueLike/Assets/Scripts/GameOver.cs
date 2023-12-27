@@ -8,17 +8,15 @@ public class GameOver : NetworkBehaviour
     public GameObject gameOverPanel;
     public GameObject equipedItemsPanel;
 
-    //PauseManager pauseManager; todo : fix this
-
     private void Start()
     {
-        //pauseManager = FindObjectOfType<PauseManager>(); todo : fix this
+        gameOverPanel = GameManager.Instance.gameOverPanel;
+        equipedItemsPanel = FindObjectOfType<PlayerWinManager>().equipedItemsPanel;
     }
-
     public void PlayerGameOver()
     {
+        GameManager.Instance.TogglePauseGame(false);
         equipedItemsPanel.SetActive(false);
         gameOverPanel.SetActive(true);
-        //pauseManager.PauseGame();
     }
 }

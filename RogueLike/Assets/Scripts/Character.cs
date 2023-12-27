@@ -18,6 +18,7 @@ public abstract class Character : NetworkBehaviour
     public bool playerIsDead = false;
     public ulong clientId;
     public float hpRegenTimer;
+    private float dissolveAmount = 1;
 
     [SerializeField] public AudioSource xpSound;
 
@@ -33,21 +34,23 @@ public abstract class Character : NetworkBehaviour
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> acquiredUpgrades;
     [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
-    
+
     WeaponManager weaponManager;
     PassiveItems passiveItems;
     [SerializeField] GameObject camera;
     [HideInInspector] public Magnet magnet;
+    private PlayerMove playerMove;
 
     public void Awake()
     {
+        playerMove = GetComponent<PlayerMove>();
         weaponManager = GetComponent<WeaponManager>();
         magnet = GetComponent<Magnet>();
         passiveItems = GetComponent<PassiveItems>();
         upgradePanelManager = FindObjectOfType<UpgradePanelManager>();
         equipedItemsManager = FindObjectOfType<EquipedItemsManager>(); // this will need to be reworked for multiple clients :3
     }
-   
+
     private void NetworkVariable_OnStatsChanged(float previousValue, float newValue)
     {
         updateWeaponsServerRpc();
@@ -71,21 +74,28 @@ public abstract class Character : NetworkBehaviour
     }
 
     public void Update()
-    {    
+    {
         if (!IsOwner) return;
         hpRegenTimer += Time.deltaTime * hpRegen.Value;
 
-        if(hpRegenTimer > 1f)
+        if (hpRegenTimer > 1f)
         {
             Heal(1);
             hpRegenTimer -= 1f;
         }
-    
+
+    }
+
+    public void FixedUpdate()
+    {
+        if (!IsOwner) return;
+        if (playerIsDead)
+            isDyingUpdateServerRpc();
     }
 
     public void Start()
     {
-        if(!IsOwner) return;
+        if (!IsOwner) return;
 
         currentHp.Value = maxHp.Value;
 
@@ -116,28 +126,92 @@ public abstract class Character : NetworkBehaviour
         ApplyArmor(ref damage);
         currentHp.Value -= damage;
 
-        if(currentHp.Value <= 0)
+        if (currentHp.Value <= 0)
         {
-            //Destroy(gameObject);
-           
-
+            ClientRpcParams clientRpcParams = new ClientRpcParams
+            {
+                Send = new ClientRpcSendParams
+                {
+                    TargetClientIds = new ulong[] { playerID.Value }
+                }
+            };
+            SwitchCameraClientRpc(clientRpcParams);
             if (!playerIsDead)
             {
+                PlayerDeathClientRpc();
                 playerIsDead = true;
-                //GetComponent<GameOver>().PlayerGameOver();
             }
-       }
+        }
 
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void DestroyGameObjectServerRpc()
+    {
+       this.GetComponent<NetworkObject>().Despawn();
     }
     [ClientRpc]
     public void TakeDamageClientRpc(int damage)
     {
         if (IsOwner)
         {
-          TakeDamage(damage);
+            TakeDamage(damage);
         }
     }
-
+    [ClientRpc]
+    private void SwitchCameraClientRpc(ClientRpcParams clientRpcParams = default)
+    {
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in players)
+        {
+            Character character = player.GetComponent<Character>();
+            if (character != this)
+            {
+                character.camera.SetActive(true);
+            }
+        }
+    }
+    [ClientRpc]
+    private void isDyingUpdateClientRpc()
+    {
+        dissolveAmount -= 0.05f;
+        GetComponentInChildren<Renderer>().material.SetFloat("_Dissolve_Amount", dissolveAmount);
+        if (dissolveAmount < 0)
+        {
+            CheckForGameOverServerRpc();
+        }
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void isDyingUpdateServerRpc()
+    {
+        isDyingUpdateClientRpc();
+    }
+    [ClientRpc]
+    private void PlayerDeathClientRpc()
+    {
+        playerIsDead = true;
+        playerMove.rgbd2d.simulated = false;
+        playerMove.speed = 0;
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void CheckForGameOverServerRpc()
+    {
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length==1)
+        {
+            GameOverClientRpc();
+            DestroyGameObjectServerRpc();
+        }
+        else
+        {
+            DestroyGameObjectServerRpc();
+        }
+    }
+    [ClientRpc]
+    private void GameOverClientRpc()
+    {
+        //GameManager.Instance.singleplayerCamera.SetActive(true);
+        GetComponent<GameOver>().PlayerGameOver();
+    }
     public void ApplyArmor(ref int damage)
     {
         damage -= armor.Value;
@@ -157,7 +231,7 @@ public abstract class Character : NetworkBehaviour
         currentHp.Value += amount;
         if (currentHp.Value > maxHp.Value)
         {
-            currentHp.Value=maxHp.Value;
+            currentHp.Value = maxHp.Value;
         }
     }
 
@@ -173,13 +247,13 @@ public abstract class Character : NetworkBehaviour
 
         if (!IsOwner) return;
 
-        if(selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
-    
+        if (selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
+
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
         if (selectedUpgrades.Count > 0)
-        upgradePanelManager.OpenPanel(selectedUpgrades, NetworkManager.LocalClientId);
+            upgradePanelManager.OpenPanel(selectedUpgrades, NetworkManager.LocalClientId);
 
         magnet.LevelUpUpdate();
 
@@ -198,10 +272,10 @@ public abstract class Character : NetworkBehaviour
         List<UpgradeData> upgradeList = new List<UpgradeData>();
 
 
-        if(count > upgrades.Count)
+        if (count > upgrades.Count)
             count = upgrades.Count;
 
-        for(int i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
             UpgradeData upgradeData = upgrades[Random.Range(0, upgrades.Count)];
             while (upgradeList.Contains(upgradeData))
@@ -214,12 +288,12 @@ public abstract class Character : NetworkBehaviour
         return upgradeList;
     }
 
-    public void Upgrade (int selectedUpgrade)
+    public void Upgrade(int selectedUpgrade)
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgrade];
         List<EquipedItem> iconList = new List<EquipedItem>();
 
-       if( acquiredUpgrades == null ) { acquiredUpgrades = new List<UpgradeData>(); }
+        if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeData>(); }
 
         switch (upgradeData.upgradeType)
         {
@@ -247,9 +321,9 @@ public abstract class Character : NetworkBehaviour
                 break;
         }
 
-       acquiredUpgrades.Add(upgradeData);
-       upgrades.Remove(upgradeData);
-   
+        acquiredUpgrades.Add(upgradeData);
+        upgrades.Remove(upgradeData);
+
 
     }
     public void UpgradeWeaponPickUp(UpgradeData upgradeData)
@@ -257,7 +331,7 @@ public abstract class Character : NetworkBehaviour
         List<EquipedItem> iconList = new List<EquipedItem>();
 
         if (upgradeData.upgradeType == UpgradeType.WeaponUpgrade)
-        {   
+        {
             iconList = equipedItemsManager.ReturnWeaponsIcons();
         }
         else
@@ -308,7 +382,7 @@ public abstract class Character : NetworkBehaviour
 
     public void CheckForMaxWeapons()
     {
-        if(weaponManager.weapons.Count >= 6)
+        if (weaponManager.weapons.Count >= 6)
         {
             upgrades.RemoveAll(x => x.upgradeType == UpgradeType.WeaponUnlock);
         }
@@ -324,9 +398,9 @@ public abstract class Character : NetworkBehaviour
 
     internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
     {
-        if(upgradesToAdd == null) { return; }
+        if (upgradesToAdd == null) { return; }
 
-       this.upgrades.AddRange(upgradesToAdd);
+        this.upgrades.AddRange(upgradesToAdd);
     }
     internal void AddUpgradeIntoList(UpgradeData upgradeToAdd)
     {
@@ -364,7 +438,7 @@ public abstract class Character : NetworkBehaviour
         GameObject[] XPGems = GameObject.FindGameObjectsWithTag("XP");
         foreach (GameObject XPGem in XPGems)
         {
-            if(XPGem.GetComponent<XPPickUpObject>() != null)
+            if (XPGem.GetComponent<XPPickUpObject>() != null)
                 XPGem.GetComponent<XPPickUpObject>().SetTargetDestination(this.transform);
             else
                 XPGem.GetComponent<XPBankGem>().SetTargetDestination(this.transform);

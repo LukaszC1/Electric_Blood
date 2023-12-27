@@ -368,6 +368,7 @@ MonoBehaviour:
   amountBonus:
     m_InternalValue: 0
   playerIsDead: 0
+  clientId: 0
   hpRegenTimer: 1
   xpSound: {fileID: 7501613538289692926}
   playerID:
@@ -845,7 +846,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f7a929ab7c288547b94186787fc400f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1093,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 6188665545121636906, guid: 4c2b60ea482046d42bf07c5dbcb2ca1d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188665545121636906, guid: 4c2b60ea482046d42bf07c5dbcb2ca1d, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCamera
       objectReference: {fileID: 0}
     - target: {fileID: 6188665545121637078, guid: 4c2b60ea482046d42bf07c5dbcb2ca1d, type: 3}
       propertyPath: m_RootOrder
