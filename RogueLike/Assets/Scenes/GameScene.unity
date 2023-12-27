@@ -25981,6 +25981,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1528449285}
     - target: {fileID: 9116707114065722785, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
+      propertyPath: indicatorPrefab
+      value: 
+      objectReference: {fileID: 7259948351834191759, guid: 49b40bd550eb6714989c0ef30ed23d4d, type: 3}
+    - target: {fileID: 9116707114065722785, guid: 3dde811f9042f90468a0bc38ab548c8a, type: 3}
       propertyPath: singleplayerCamera
       value: 
       objectReference: {fileID: 1842820843}

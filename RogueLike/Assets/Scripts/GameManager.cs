@@ -38,6 +38,7 @@ public class GameManager : NetworkBehaviour
 
     private bool isLocalPlayerReady;
     private bool isLocalGamePaused = false;
+    private bool indicatorNotLoaded = true;
 
     [SerializeField] private WaitingForOtherPlayersUI waitingForOtherPlayersUI;
 
@@ -51,7 +52,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject characterPanel;
     [SerializeField] public GameObject singleplayerCamera;
     [SerializeField] public GameObject gameOverPanel;
-
+    [SerializeField] private GameObject indicatorPrefab;
     private void Awake()
     {
         Instance = this;
@@ -71,7 +72,7 @@ public class GameManager : NetworkBehaviour
         level.OnValueChanged += UpdateLevelText;
         killCount.OnValueChanged += UpdateKillCounter;
     }
-    public override void OnDestroy()
+    public void OnDestroy()
     {
         PlayerMove.OnPauseAction -= OnPauseAction;
         UpgradePanelManager.OnPauseAction -= OnPauseAction;
@@ -133,6 +134,19 @@ public class GameManager : NetworkBehaviour
     {
         CheckLevelUp();
         RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
+
+        if (indicatorNotLoaded && NetworkManager.ConnectedClientsList.Count == listOfPlayerTransforms.Count)
+        {
+            //Spawn the indicators
+            if (NetworkManager.ConnectedClientsList?.Count > 1)
+            {
+                foreach (var client in listOfPlayerTransforms)
+                {
+                    Instantiate(indicatorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                }
+                indicatorNotLoaded = false;
+            }
+        }
     }
 
     private void OnPauseAction(object sender, EventArgs e)

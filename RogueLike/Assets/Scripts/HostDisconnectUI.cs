@@ -42,7 +42,7 @@ public class HostDisconnectUI : NetworkBehaviour
         gameObject.SetActive(false);
     }
 
-    public override void OnDestroy()
+    public void OnDestroy()
     {
         if (NetworkManager.Singleton == null)
             return;

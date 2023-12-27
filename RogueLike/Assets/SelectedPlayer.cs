@@ -79,7 +79,7 @@ public class SelectedPlayer : NetworkBehaviour
         gameObject.SetActive(false);
     }
 
-    public override void OnDestroy()
+    public void OnDestroy()
     {
         ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= Instance_OnPlayerDataNetworkListChanged;
     }

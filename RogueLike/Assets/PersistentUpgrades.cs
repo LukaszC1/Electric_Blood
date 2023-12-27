@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 
 /// <summary>
@@ -46,7 +45,7 @@ public class PersistentUpgrades : MonoBehaviour
 
         string saveDataJson = File.ReadAllText(filePath);
 
-        if(!saveDataJson.IsNullOrEmpty())
+        if(saveDataJson != null || saveDataJson != string.Empty)
         saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
         Debug.Log("Data loaded at: " + filePath);
     }
