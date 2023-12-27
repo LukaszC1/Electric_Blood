@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OffscreenIndicator : MonoBehaviour
 {
-    public GameObject target;
+    public Transform target;
     public float threshold = 10f;
     private Camera cam;
     private bool isActive = true;
@@ -19,7 +19,7 @@ public class OffscreenIndicator : MonoBehaviour
 
     private void Update()
     {     
-            Vector3 targetDir = target.transform.position - transform.position;
+            Vector3 targetDir = target.position - transform.position;
             float distance = targetDir.magnitude;
 
             if(distance < threshold)
@@ -28,7 +28,7 @@ public class OffscreenIndicator : MonoBehaviour
             }
             else
             {
-                Vector3 screenPos = cam.WorldToViewportPoint(target.transform.position);
+                Vector3 screenPos = cam.WorldToViewportPoint(target.position);
 
                 if(screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1)
                 {
@@ -39,7 +39,7 @@ public class OffscreenIndicator : MonoBehaviour
                     spriteRenderer.enabled = true;
                     Vector3 screenEdge = cam.ViewportToWorldPoint(new Vector3(Mathf.Clamp(screenPos.x, 0.1f, 0.9f), Mathf.Clamp(screenPos.y, 0.1f, 0.9f), cam.nearClipPlane));
                     transform.position = screenEdge;
-                    Vector3 dir = target.transform.position - transform.position;
+                    Vector3 dir = target.position - transform.position;
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0, 0, angle);
                 }

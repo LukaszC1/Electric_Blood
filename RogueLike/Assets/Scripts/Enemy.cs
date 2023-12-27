@@ -69,7 +69,7 @@ public class Enemy : NetworkBehaviour, iDamageable
 
     private void FixedUpdate()
     {
-        if (!IsOwner) return;
+        if (!IsOwner || !IsServer) return;
         if (targetDestination == null)
             SetTarget(FindObjectOfType<Character>().gameObject);
         Vector3 direction = (targetDestination.position - transform.position).normalized; 
@@ -92,15 +92,12 @@ public class Enemy : NetworkBehaviour, iDamageable
 
         if (direction.x > 0)
         {
-            SpriteFlipFalseClientRpc();
+            SpriteFlipClientRpc();
         }
         else
         {
-            SpriteFlipTrueClientRpc();
+            SpriteFlipClientRpc();
         }
-
-
-
 
         if (isDying)
         {
@@ -217,18 +214,14 @@ public class Enemy : NetworkBehaviour, iDamageable
         GetComponent<Renderer>().material = originalMat;
     }
     [ClientRpc]
-    private void SpriteFlipTrueClientRpc()
+    private void SpriteFlipClientRpc()
     {
-        sprite.flipX = true;
+        sprite.flipX = !sprite.flipX;
     }
-    [ClientRpc]
-    private void SpriteFlipFalseClientRpc()
-    {
-        sprite.flipX = false;
-    }
+  
     private void OnApplicationQuit()
     {
         dropOnDestroy.quitting = true;
-        Destroy(gameObject);
+        Destroy(this);
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -39,6 +40,8 @@ public class GameManager : NetworkBehaviour
     private bool isLocalPlayerReady;
     private bool isLocalGamePaused = false;
     private bool indicatorNotLoaded = true;
+
+    NetworkVariable<int> connectedClientIdsCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     [SerializeField] private WaitingForOtherPlayersUI waitingForOtherPlayersUI;
 
@@ -135,18 +138,29 @@ public class GameManager : NetworkBehaviour
         CheckLevelUp();
         RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
 
-        if (indicatorNotLoaded && NetworkManager.ConnectedClientsList.Count == listOfPlayerTransforms.Count)
+        if (indicatorNotLoaded)
         {
+            SetConnectedClientIdsCountServerRpc();
             //Spawn the indicators
-            if (NetworkManager.ConnectedClientsList?.Count > 1)
+            if (connectedClientIdsCount.Value > 1 && connectedClientIdsCount.Value == listOfPlayerTransforms.Count)
             {
                 foreach (var client in listOfPlayerTransforms)
                 {
-                    Instantiate(indicatorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    if (NetworkManager.LocalClientId == client.gameObject.GetComponent<Character>().clientId)
+                        continue;
+
+                    var indicator = Instantiate(indicatorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                    indicator.GetComponent<OffscreenIndicator>().target = client;
                 }
                 indicatorNotLoaded = false;
             }
         }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void SetConnectedClientIdsCountServerRpc()
+    {
+        connectedClientIdsCount.Value = NetworkManager.Singleton.ConnectedClientsList.Count;
     }
 
     private void OnPauseAction(object sender, EventArgs e)

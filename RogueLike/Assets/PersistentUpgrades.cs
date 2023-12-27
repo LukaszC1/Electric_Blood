@@ -45,7 +45,7 @@ public class PersistentUpgrades : MonoBehaviour
 
         string saveDataJson = File.ReadAllText(filePath);
 
-        if(saveDataJson != null || saveDataJson != string.Empty)
+        if(saveDataJson != null && saveDataJson != string.Empty)
         saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
         Debug.Log("Data loaded at: " + filePath);
     }
