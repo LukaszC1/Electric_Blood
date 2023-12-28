@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -17,6 +19,8 @@ public abstract class Character : NetworkBehaviour
 
     public bool playerIsDead = false;
     private bool indicatorNotLoaded = true;
+    private bool nickLoaded = true;
+
     public ulong clientId;
     public float hpRegenTimer;
     private float dissolveAmount = 1;
@@ -97,7 +101,7 @@ public abstract class Character : NetworkBehaviour
     public void Start()
     {
 
-        if(!IsLocalPlayer)
+        if (!IsLocalPlayer)
         {
             if (indicatorNotLoaded)
             {
@@ -106,6 +110,13 @@ public abstract class Character : NetworkBehaviour
                 indicatorNotLoaded = false;
             }
         }
+
+        if (nickLoaded)
+        {
+            GetComponentInChildren<TextMeshProUGUI>().text = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(this.playerID.Value).playerName.ToString();
+            nickLoaded = false;
+        }
+
 
         if (!IsOwner) return;
     
