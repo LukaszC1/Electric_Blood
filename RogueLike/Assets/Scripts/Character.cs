@@ -19,7 +19,7 @@ public abstract class Character : NetworkBehaviour
 
     public bool playerIsDead = false;
     private bool indicatorNotLoaded = true;
-    private bool nickLoaded = true;
+    private bool nickNotLoaded = true;
 
     public ulong clientId;
     public float hpRegenTimer;
@@ -111,10 +111,14 @@ public abstract class Character : NetworkBehaviour
             }
         }
 
-        if (nickLoaded)
+        if (nickNotLoaded)
         {
-            GetComponentInChildren<TextMeshProUGUI>().text = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(this.playerID.Value).playerName.ToString();
-            nickLoaded = false;
+            if(ElectricBloodMultiplayer.playMultiplayer == true)
+                GetComponentInChildren<TextMeshProUGUI>().text = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(this.playerID.Value).playerName.ToString();
+            else
+                GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(false);
+
+            nickNotLoaded = false;
         }
 
 
