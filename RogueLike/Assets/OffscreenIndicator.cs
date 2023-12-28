@@ -8,29 +8,36 @@ public class OffscreenIndicator : MonoBehaviour
     public Transform target;
     public float threshold = 10f;
     private Camera cam;
-    private bool isActive = true;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        cam = Camera.main;
+        var camGameObject = GameObject.FindWithTag("PlayerCamera");
+
+        if (camGameObject != null)
+        {
+            cam = camGameObject.GetComponent<Camera>();
+        }
+       
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
-    {     
+    {
+        if (target != null && cam != null)
+        {
             Vector3 targetDir = target.position - transform.position;
             float distance = targetDir.magnitude;
 
-            if(distance < threshold)
+            if (distance < threshold)
             {
-               spriteRenderer.enabled = false;
+                spriteRenderer.enabled = false;
             }
             else
             {
                 Vector3 screenPos = cam.WorldToViewportPoint(target.position);
 
-                if(screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1)
+                if (screenPos.z > 0 && screenPos.x > 0 && screenPos.x < 1 && screenPos.y > 0 && screenPos.y < 1)
                 {
                     spriteRenderer.enabled = false;
                 }
@@ -45,4 +52,7 @@ public class OffscreenIndicator : MonoBehaviour
                 }
             }
         }
+        else
+            spriteRenderer.enabled = false;
+    }
 }

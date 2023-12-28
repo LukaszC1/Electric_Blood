@@ -16,6 +16,7 @@ public abstract class Character : NetworkBehaviour
     public NetworkVariable<int> amountBonus = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public bool playerIsDead = false;
+    private bool indicatorNotLoaded = true;
     public ulong clientId;
     public float hpRegenTimer;
     private float dissolveAmount = 1;
@@ -95,8 +96,19 @@ public abstract class Character : NetworkBehaviour
 
     public void Start()
     {
-        if (!IsOwner) return;
 
+        if(!IsLocalPlayer)
+        {
+            if (indicatorNotLoaded)
+            {
+                var indicator = Instantiate(GameManager.Instance.indicatorPrefab, NetworkManager.Singleton.LocalClient.PlayerObject.transform);
+                indicator.GetComponent<OffscreenIndicator>().target = this.transform;
+                indicatorNotLoaded = false;
+            }
+        }
+
+        if (!IsOwner) return;
+    
         currentHp.Value = maxHp.Value;
 
         maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;

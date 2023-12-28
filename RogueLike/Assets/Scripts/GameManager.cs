@@ -55,7 +55,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject characterPanel;
     [SerializeField] public GameObject singleplayerCamera;
     [SerializeField] public GameObject gameOverPanel;
-    [SerializeField] private GameObject indicatorPrefab;
+    [SerializeField] public GameObject indicatorPrefab;
     private void Awake()
     {
         Instance = this;
@@ -136,31 +136,7 @@ public class GameManager : NetworkBehaviour
     public void FixedUpdate()
     {
         CheckLevelUp();
-        RefreshListOfPlayers(); //THIS IS ONLY UNTIL LOBBY WORKS
-
-        if (indicatorNotLoaded)
-        {
-            SetConnectedClientIdsCountServerRpc();
-            //Spawn the indicators
-            if (connectedClientIdsCount.Value > 1 && connectedClientIdsCount.Value == listOfPlayerTransforms.Count)
-            {
-                foreach (var client in listOfPlayerTransforms)
-                {
-                    if (NetworkManager.LocalClientId == client.gameObject.GetComponent<Character>().clientId)
-                        continue;
-
-                    var indicator = Instantiate(indicatorPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-                    indicator.GetComponent<OffscreenIndicator>().target = client;
-                }
-                indicatorNotLoaded = false;
-            }
-        }
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void SetConnectedClientIdsCountServerRpc()
-    {
-        connectedClientIdsCount.Value = NetworkManager.Singleton.ConnectedClientsList.Count;
+        RefreshListOfPlayers(); 
     }
 
     private void OnPauseAction(object sender, EventArgs e)
@@ -279,7 +255,7 @@ public class GameManager : NetworkBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
-        TogglePauseGame(false); //pause game when client disconnects
+        TogglePauseGameWithMenuScreen();
     }
 
     private void IsGamePaused_OnValueChanged(bool previousValue, bool newValue)

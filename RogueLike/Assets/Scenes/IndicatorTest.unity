@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b847ccd3da036af4199879231e6e8b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 247324972}
+  target: {fileID: 247324974}
   threshold: 10
 --- !u!212 &144482828
 SpriteRenderer:
