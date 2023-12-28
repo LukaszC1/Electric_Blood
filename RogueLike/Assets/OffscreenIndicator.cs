@@ -48,7 +48,7 @@ public class OffscreenIndicator : MonoBehaviour
                     transform.position = screenEdge;
                     Vector3 dir = target.position - transform.position;
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0, 0, angle);
+                    transform.rotation = Quaternion.Euler(0, 0, angle+30);
                 }
             }
         }
