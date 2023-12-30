@@ -52,7 +52,6 @@ public class ElectrosphereLauncher : WeaponBase
                 projectile.timeToAttack = weaponStats.timeToAttack;
 
                 projectile.GetComponent<NetworkObject>().Spawn();
-                Debug.Log("Spawned electrosphere.");
             }
         }
     }

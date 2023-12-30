@@ -31,7 +31,6 @@ public class ThrowingDaggerProjectile : NetworkBehaviour
         if (!IsOwner) return;
 
         transform.position += direction.normalized * speed * Time.deltaTime;
-        //Debug.Log(transform.position);
 
         decayTime -= Time.deltaTime;
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);

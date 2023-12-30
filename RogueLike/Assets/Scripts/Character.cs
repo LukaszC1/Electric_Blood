@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
+using static ShopPanelUI;
 
 public abstract class Character : NetworkBehaviour
 {
@@ -123,7 +124,8 @@ public abstract class Character : NetworkBehaviour
 
 
         if (!IsOwner) return;
-    
+        LoadPersistentUpgrades();
+
         currentHp.Value = maxHp.Value;
 
         maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
@@ -139,6 +141,49 @@ public abstract class Character : NetworkBehaviour
 
         AddUpgradesIntoList(upgradesAvailableOnStart);
         clientId = NetworkManager.Singleton.LocalClientId;
+
+    }
+
+    private void LoadPersistentUpgrades()
+    {
+        if(PersistentUpgrades.Instance?.saveData != null) 
+        {
+            var saveData = PersistentUpgrades.Instance.saveData;
+
+            saveData.newCharacterStats.ForEach(x =>
+            {
+                switch (x.stat)
+                {
+                    case CharacterStats.MaxHp:
+                        maxHp.Value += Mathf.FloorToInt(x.currentValue);
+                        break;
+                    case CharacterStats.Armor:
+                        armor.Value += Mathf.FloorToInt(x.currentValue);
+                        break;
+                    case CharacterStats.HpRegen:
+                        hpRegen.Value += x.currentValue;
+                        break;
+                    case CharacterStats.DamageMultiplier:
+                        damageMultiplier.Value += x.currentValue;
+                        break;
+                    case CharacterStats.AreaMultiplier:
+                        areaMultiplier.Value += x.currentValue;
+                        break;
+                    case CharacterStats.ProjectileSpeed:
+                        projectileSpeedMultiplier.Value += x.currentValue;
+                        break;
+                    case CharacterStats.MagnetSize:
+                        magnetSize.Value += x.currentValue;
+                        break;
+                    case CharacterStats.CooldownMultiplier:
+                        cooldownMultiplier.Value += x.currentValue;
+                        break;
+                    case CharacterStats.AmountBonus:
+                        amountBonus.Value += Mathf.FloorToInt(x.currentValue);
+                        break;
+                }
+            });
+        }
     }
 
     public void TakeDamage(int damage)

@@ -317,7 +317,6 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
-
     public Lobby GetLobby()
     {
         return joinedLobby;

@@ -15,6 +15,10 @@ public class ExitToMenu : NetworkBehaviour
         {
             Cleanup();
             NetworkManager.Singleton.Shutdown();
+
+            PersistentUpgrades.Instance.Save(); 
+            Destroy(PersistentUpgrades.Instance.gameObject);
+
             Loader.Load(Loader.Scene.MainMenu);
         });
     }

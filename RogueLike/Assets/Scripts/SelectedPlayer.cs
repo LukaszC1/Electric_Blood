@@ -27,7 +27,6 @@ public class SelectedPlayer : NetworkBehaviour
 
     private void Start()
     {
-        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged += Instance_OnPlayerDataNetworkListChanged;
         SelectReady.Instance.OnReadyChanged += Instance_OnReadyChanged;
         kickBtn.gameObject.SetActive(NetworkManager.Singleton.IsServer);
         UpdatePlayer();
@@ -77,11 +76,6 @@ public class SelectedPlayer : NetworkBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
-    }
-
-    public void OnDestroy()
-    {
-        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= Instance_OnPlayerDataNetworkListChanged;
     }
 }
   

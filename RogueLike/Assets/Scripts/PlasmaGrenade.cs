@@ -33,8 +33,6 @@ public class PlasmaGrenade : NetworkBehaviour
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
         transform.Rotate(0.0f, 0.0f, 3, Space.Self);
-        //Debug.Log(transform.position);
-
     
         decayTime -= Time.deltaTime;
         UpdateServerRpc();
