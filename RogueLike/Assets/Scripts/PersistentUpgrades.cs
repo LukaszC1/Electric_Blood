@@ -5,6 +5,7 @@ using System.IO;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using static ShopPanelUI;
 
 /// <summary>
@@ -19,10 +20,8 @@ public class PersistentUpgrades : MonoBehaviour
     {
         Instance = this;
         //load the data from a file 
-        //Load();
+        Load();
         DontDestroyOnLoad(this);
-
-        saveData.coins = 1000;
     }
 
     public void Save()
@@ -39,6 +38,7 @@ public class PersistentUpgrades : MonoBehaviour
 
         if (!File.Exists(filePath))
         {
+            Save();
             return;
         }
 
@@ -74,8 +74,10 @@ public class SaveData
             _coins = value;       
         }
     }
+    [FormerlySerializedAs("coins")]
+    [SerializeField]
     private int _coins = 0;
-    public int sumOfCoinsSpent;
+    public int totalCoinsSpent = 0;
     private void OnValueChanged(int oldValue, int newValue)
     {
         GameManager.Instance?.UpdateCoins(newValue);

@@ -251,7 +251,7 @@ public class GameManager : NetworkBehaviour
             {
                 var playerData = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(clientId);
                 var characterData = ElectricBloodMultiplayer.Instance.availableCharacters[playerData.characterIndex] as CharacterData;
-
+                
                 GameObject playerSpawned = Instantiate(characterData.characterPrefab);
                 playerSpawned.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId, true);
             }

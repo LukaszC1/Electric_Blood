@@ -13,14 +13,13 @@ public class ShopPanelUI : MonoBehaviour
     [SerializeField] private Button closeButton;
     [SerializeField] private Button buyButton;
     [SerializeField] private Button resetButton;
-
     [SerializeField] private TextMeshProUGUI availableCoins;
-
     [SerializeField] private List<TextMeshProUGUI> characterStats;
     [SerializeField] private List<TextMeshProUGUI> costTexts;
 
     private List<LoadedStats> newCharacterStats = new();
     private int sumOfCoinsSpent = 0;
+    private int totalCoinsSpent = 0;
     private int coins;
 
     public enum CharacterStats : int
@@ -36,6 +35,7 @@ public class ShopPanelUI : MonoBehaviour
         AmountBonus
     }
 
+    [Serializable]
     public struct LoadedStats
     {
         public CharacterStats stat;
@@ -48,7 +48,7 @@ public class ShopPanelUI : MonoBehaviour
     private void Awake()
     {
         //load the data from a file 
-        //PersistentUpgrades.Instance.Load();
+        PersistentUpgrades.Instance.Load();
 
         closeButton.onClick.AddListener(() =>
         {
@@ -59,10 +59,12 @@ public class ShopPanelUI : MonoBehaviour
         {           
             if(coins >= sumOfCoinsSpent)
             {
-                PersistentUpgrades.Instance.saveData.coins -= sumOfCoinsSpent;             
+                PersistentUpgrades.Instance.saveData.coins -= sumOfCoinsSpent;
+                PersistentUpgrades.Instance.saveData.totalCoinsSpent += sumOfCoinsSpent;
                 availableCoins.text = "COINS:" + PersistentUpgrades.Instance.saveData.coins.ToString();
-                //PersistentUpgrades.Instance.Save();
+                PersistentUpgrades.Instance.Save();
                 gameObject.SetActive(false);
+                ClearCosts();
             }
         });
         resetButton.onClick.AddListener(() =>
@@ -74,7 +76,7 @@ public class ShopPanelUI : MonoBehaviour
     private void Start()
     {
        newCharacterStats = PersistentUpgrades.Instance.saveData.newCharacterStats;
-       sumOfCoinsSpent = PersistentUpgrades.Instance.saveData.sumOfCoinsSpent;
+       totalCoinsSpent = PersistentUpgrades.Instance.saveData.totalCoinsSpent;
        coins = PersistentUpgrades.Instance.saveData.coins;
 
        InitializeUpgrades();
@@ -215,18 +217,14 @@ public class ShopPanelUI : MonoBehaviour
 
     private void ResetUpgrades()
     {
-        if (sumOfCoinsSpent >= coins)
-        {
-            availableCoins.text = "COINS: " + PersistentUpgrades.Instance.saveData.coins;
-        }
-        else
-        {
-            coins += sumOfCoinsSpent;
-            PersistentUpgrades.Instance.saveData.coins = coins;
-            availableCoins.text = "COINS: " + coins;
-        }
+        coins += sumOfCoinsSpent + totalCoinsSpent;
+        PersistentUpgrades.Instance.saveData.coins = coins;
+        PersistentUpgrades.Instance.saveData.totalCoinsSpent = 0;
+        availableCoins.text = "COINS: " + coins;
 
         sumOfCoinsSpent = 0;
+        totalCoinsSpent = 0;
+
         for (int i = 0; i < newCharacterStats.Count; ++i)
         {
             var item = newCharacterStats[i];
@@ -235,14 +233,19 @@ public class ShopPanelUI : MonoBehaviour
             newCharacterStats[i] = item;
         }
 
-        foreach (var text in costTexts)
-        {
-            text.text = "0";
-        }
+        ClearCosts();
 
         newCharacterStats.ForEach(x =>
         {
             characterStats[(int)x.stat].text = x.currentLevel + "/" + x.maxLevel;
         });
+    }
+
+    private void ClearCosts()
+    {
+        foreach (var text in costTexts)
+        {
+            text.text = "0";
+        }
     }
 }

@@ -20,7 +20,7 @@ public class GamePauseUI : NetworkBehaviour
             Cleanup();
             NetworkManager.Singleton.Shutdown();
 
-            //PersistentUpgrades.Instance.Save(); todo
+            PersistentUpgrades.Instance.Save(); 
             Destroy(PersistentUpgrades.Instance.gameObject);
 
             Loader.Load(Loader.Scene.MainMenu);
