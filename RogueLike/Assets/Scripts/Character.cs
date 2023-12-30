@@ -187,13 +187,13 @@ public abstract class Character : NetworkBehaviour
     [ClientRpc]
     private void SwitchCameraClientRpc(ClientRpcParams clientRpcParams = default)
     {
-        var players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (var player in players)
+        foreach (var player in GameManager.Instance.listOfPlayerTransforms)
         {
             Character character = player.GetComponent<Character>();
-            if (character != this)
+            if (character.playerID != this.playerID)
             {
                 character.camera.SetActive(true);
+                break;
             }
         }
     }
