@@ -18603,71 +18603,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1001 &1062635119
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -9035238310201664354, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1769859679
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095446, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479770238918095465, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-      propertyPath: m_Name
-      value: Terrain Chunk
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
 --- !u!1001 &1076834294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25163,17 +25098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac5d9bef00e09647988b18f33d5f537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainChunk:
-  - {fileID: 8479770238918095465, guid: 63a223fdb5169aa419002f367856e22a, type: 3}
-  - {fileID: 8479770238918095465, guid: abb9bd0cac8b6674282c43ba72e22cfd, type: 3}
-  - {fileID: 8479770238918095465, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
+  terrainChunk: []
   currentChunk: {fileID: 0}
   radius: 1
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
-  spawnedChunk:
-  - {fileID: 2146072114}
+  spawnedChunk: []
   latest: {fileID: 0}
   maxDistance: 70
   cooldownTime: 1
@@ -25357,11 +25288,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145842351}
   m_CullTransparentMesh: 1
---- !u!1 &2146072114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8479770238918095465, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
-  m_PrefabInstance: {fileID: 1062635119}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5403181274889972248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26200,4 +26126,3 @@ SceneRoots:
   - {fileID: 1645261465}
   - {fileID: 6188665544747063894}
   - {fileID: 2055026114}
-  - {fileID: 1062635119}
