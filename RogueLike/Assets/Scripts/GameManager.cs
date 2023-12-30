@@ -62,6 +62,7 @@ public class GameManager : NetworkBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
         Instance = this;
 
         playerPausedDictionary = new Dictionary<ulong, bool>();
