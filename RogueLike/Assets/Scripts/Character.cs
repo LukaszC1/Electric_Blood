@@ -124,7 +124,8 @@ public abstract class Character : NetworkBehaviour
 
 
         if (!IsOwner) return;
-    
+        LoadPersistentUpgrades();
+
         currentHp.Value = maxHp.Value;
 
         maxHp.OnValueChanged += NetworkVariable_OnStatsChanged;
@@ -141,7 +142,6 @@ public abstract class Character : NetworkBehaviour
         AddUpgradesIntoList(upgradesAvailableOnStart);
         clientId = NetworkManager.Singleton.LocalClientId;
 
-        LoadPersistentUpgrades();
     }
 
     private void LoadPersistentUpgrades()

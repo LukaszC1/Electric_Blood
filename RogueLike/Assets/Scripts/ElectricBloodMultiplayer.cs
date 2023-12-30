@@ -21,7 +21,6 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
     public event EventHandler OnTryingToJoinGame;
     public event EventHandler OnFailedToJoinGame;
-    public event EventHandler OnPlayerDataNetworkListChanged;
 
     [SerializeField] public List<ScriptableObject> availableCharacters;
     [SerializeField] public List<ScriptableObject> availableLevels;
@@ -36,9 +35,7 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         DontDestroyOnLoad(gameObject);
 
         playerName = PlayerPrefs.GetString(PLAYER_PREFS, "PlayerName" + UnityEngine.Random.Range(100, 1000));
-
         playerDataNetworkList = new NetworkList<PlayerData>();
-        playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
     }
 
     private void Start()
@@ -60,11 +57,6 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         this.playerName = playerName;
 
         PlayerPrefs.SetString(PLAYER_PREFS, playerName);
-    }
-
-    private void PlayerDataNetworkList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
-    {
-        OnPlayerDataNetworkListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void StartHost()
