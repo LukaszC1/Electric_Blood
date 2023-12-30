@@ -19,6 +19,10 @@ public class GamePauseUI : NetworkBehaviour
         mainMenuButton.onClick.AddListener(() => {
             Cleanup();
             NetworkManager.Singleton.Shutdown();
+
+            //PersistentUpgrades.Instance.Save(); todo
+            Destroy(PersistentUpgrades.Instance.gameObject);
+
             Loader.Load(Loader.Scene.MainMenu);
         });
     }

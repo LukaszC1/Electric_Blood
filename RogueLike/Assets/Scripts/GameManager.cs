@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class GameManager : NetworkBehaviour
     private float timer = 1;
     [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>(0);
     [SerializeField] TMPro.TextMeshProUGUI killCounter;
+    [SerializeField] TextMeshProUGUI coinsCounter;
     [SerializeField] GameObject xpBankGemPrefab;
     GameObject xpBankGem;
     [SerializeField] GameObject breakableObject;
@@ -56,6 +58,8 @@ public class GameManager : NetworkBehaviour
     [SerializeField] public GameObject singleplayerCamera;
     [SerializeField] public GameObject gameOverPanel;
     [SerializeField] public GameObject indicatorPrefab;
+
+
     private void Awake()
     {
         Instance = this;
@@ -74,6 +78,7 @@ public class GameManager : NetworkBehaviour
         experience.OnValueChanged += UpdateExpSlider;
         level.OnValueChanged += UpdateLevelText;
         killCount.OnValueChanged += UpdateKillCounter;
+        coinsCounter.text = PersistentUpgrades.Instance.saveData.coins.ToString();
     }
     public void OnDestroy()
     {
@@ -255,7 +260,9 @@ public class GameManager : NetworkBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
+        if(waitingForOtherPlayersUI.gameObject.activeInHierarchy)
         waitingForOtherPlayersUI.ChangeVisibility(); //disable the waiting for other players UI
+        
         TogglePauseGameWithMenuScreen();
     }
 
@@ -414,5 +421,10 @@ public class GameManager : NetworkBehaviour
     private void WaitingForOtherPlayersUIServerRpc()
     {
         WaitingForOtherPlayersUIClientRpc();
+    }
+
+    public void UpdateCoins(int newValue)
+    {
+        coinsCounter.text = newValue.ToString();
     }
 }

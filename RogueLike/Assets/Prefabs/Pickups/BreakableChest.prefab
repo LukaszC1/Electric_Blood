@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7704662458669818048}
   - component: {fileID: -9182755385379122424}
   - component: {fileID: 1655588554171474095}
+  - component: {fileID: 2402669131839508871}
   m_Layer: 0
   m_Name: BreakableChest
   m_TagString: Untagged
@@ -30,13 +31,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2462822473757790693}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.84, y: 0.1, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2462822473757790712
 SpriteRenderer:
@@ -170,6 +171,7 @@ MonoBehaviour:
   dropOnDestroy:
   - {fileID: 7704662458669818048}
   - {fileID: -9182755385379122424}
+  - {fileID: 2402669131839508871}
 --- !u!114 &7704662458669818048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +232,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 0
   SlerpPosition: 0
+--- !u!114 &2402669131839508871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462822473757790693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3c5b0bff38a8e4996b63bad0dc96f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItem: {fileID: 3232819379456140962, guid: a687620dfddfa304596ffd82a8da999b, type: 3}
+  chanceToDrop: 1
+  quitting: 0

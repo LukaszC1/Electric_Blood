@@ -2,28 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
+using static ShopPanelUI;
 
 /// <summary>
 /// The class handling the persistent upgrades saving and loading.
 /// </summary>
 public class PersistentUpgrades : MonoBehaviour
 {
-    private SaveData saveData { get; set; } = new SaveData();
+    public SaveData saveData = new SaveData();
     public static PersistentUpgrades Instance { get; private set;}
 
     private void Awake()
     {
         Instance = this;
         //load the data from a file 
-        Load();
+        //Load();
         DontDestroyOnLoad(this);
-    }
 
-    private void OnApplicationQuit()
-    {
-        //serialize the data
-        Save();
+        saveData.coins = 1000;
     }
 
     public void Save()
@@ -49,6 +48,11 @@ public class PersistentUpgrades : MonoBehaviour
         saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
         Debug.Log("Data loaded at: " + filePath);
     }
+
+    public void AddCoins(int v)
+    {
+       saveData.coins += v;
+    }
 }
 
 /// <summary>
@@ -57,17 +61,36 @@ public class PersistentUpgrades : MonoBehaviour
 [Serializable]
 public class SaveData
 {
-    public int coins;
-    public int[] characterStats;
-
-    /// <summary>
-    /// Updates the data to be saved.
-    /// </summary>
-    /// <param name="coins"></param>
-    /// <param name="characterStats"></param>
-    public void UpdateData(int coins, int[] characterStats)
+    public int coins
     {
-        this.coins = coins;
-        this.characterStats = characterStats;
+        get
+        {
+            return _coins;
+        }
+
+        set
+        {
+            OnValueChanged(_coins, value);
+            _coins = value;       
+        }
     }
+    private int _coins = 0;
+    public int sumOfCoinsSpent;
+    private void OnValueChanged(int oldValue, int newValue)
+    {
+        GameManager.Instance?.UpdateCoins(newValue);
+        Debug.Log("Coins changed from " + oldValue + " to " + newValue);
+    }
+
+    public List<LoadedStats> newCharacterStats = new List<LoadedStats>{
+        new LoadedStats { stat = CharacterStats.MaxHp, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.Armor, currentValue = 0, currentLevel = 0, maxLevel = 1, initialPrice = 1000 },
+        new LoadedStats { stat = CharacterStats.HpRegen, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.DamageMultiplier, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.AreaMultiplier, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.ProjectileSpeed, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.MagnetSize, currentValue = 0, currentLevel = 0, maxLevel = 2, initialPrice = 100 },
+        new LoadedStats { stat = CharacterStats.CooldownMultiplier, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 300 },
+        new LoadedStats { stat = CharacterStats.AmountBonus, currentValue = 0, currentLevel = 0, maxLevel = 1, initialPrice = 2000 }
+    };
 }
