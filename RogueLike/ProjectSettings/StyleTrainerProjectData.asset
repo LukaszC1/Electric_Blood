@@ -26,59 +26,1625 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2360936931592241152
-      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
-      data:
-        m_Guid: bc818c70-8587-4513-a598-4236dfedb6a2
-        m_State: 3
-        m_Disposing: 0
-        m_Styles: []
-        m_Version: 202231001
-    - rid: 2360936931592241153
-      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
-      data:
-        m_Guid: 11000000-0000-0000-0000-000000000011
-        m_State: 1
-        m_Disposing: 0
-        m_Styles:
-        - rid: 2360936931592241225
-        m_Version: 202231001
-    - rid: 2360936931592241224
+    - rid: 112675349130641408
       type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
       data:
-        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_Guid: 472827b4-8e45-4487-9ce4-da2b8098179d
         m_State: 1
         m_Disposing: 0
-        m_IsFallback: 1
+        m_IsFallback: 0
         m_Thumbnail:
-          rid: -2
+          rid: 112675349130641415
         m_Visible: 0
-        selectedCheckPointGUID: 00000000-0000-0000-0000-000000000000
-        m_FavoriteCheckPointGUID: active
+        selectedCheckPointGUID: 40ca9a9a-8e76-4142-8658-22f937bbaf8d
+        m_FavoriteCheckPointGUID: 73935776-0574-49a5-b2a7-729e8a834137
         parentID: 00000000-0000-0000-0000-000000000000
-        m_ProjectID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
         m_TrainingSteps: 2000
         m_CheckPoints:
-        - m_Guid: 00000000-0000-0000-0000-000000000000
+        - m_Guid: 73935776-0574-49a5-b2a7-729e8a834137
           m_State: 1
           m_Disposing: 0
-          m_ProjectID: 00000000-0000-0000-0000-000000000000
-          m_Name: Default
-          m_Description: Default style.
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
           parent_id: 00000000-0000-0000-0000-000000000000
           m_TrainingSetData:
-            m_Guid: 
-            m_State: 0
-            m_Disposing: 0
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
             m_TrainingSet: []
-            m_ProjectID: 
-          m_ValidationImagesData: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 3891c41b-802a-4604-9bc9-095b54675d06
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 3891c41b-802a-4604-9bc9-095b54675d06
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 45b91438-b673-4760-82c2-b19497ba7f42
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 45b91438-b673-4760-82c2-b19497ba7f42
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: bddbb8a0-5022-4b21-a9f9-95bb06882bbd
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: bddbb8a0-5022-4b21-a9f9-95bb06882bbd
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 200
+        - m_Guid: 1a13eb05-71ae-4e93-a805-f48623ead285
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 94f69ff0-79d9-41ce-9e4a-68048b070987
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 94f69ff0-79d9-41ce-9e4a-68048b070987
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 290575af-25f6-43d1-910a-08b0824428a4
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 290575af-25f6-43d1-910a-08b0824428a4
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: e5a16c74-d9c2-4626-8027-41e07a6d4d66
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: e5a16c74-d9c2-4626-8027-41e07a6d4d66
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 400
+        - m_Guid: c794a7e9-745b-46ff-99e0-e17711e3fcdb
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 100978ee-5b30-4656-b579-5bd27f2bad61
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 100978ee-5b30-4656-b579-5bd27f2bad61
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 658cdd88-4f1d-4674-859c-768cb5f57e67
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 658cdd88-4f1d-4674-859c-768cb5f57e67
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: fc5e19fd-6150-4e40-9d9d-fa1a4a33d456
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: fc5e19fd-6150-4e40-9d9d-fa1a4a33d456
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 600
+        - m_Guid: 4009dc2e-5e7c-4e2a-a384-08a77af65f6a
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 3a20d65c-26f4-4b1d-9d58-5b49ad1ddbbf
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 3a20d65c-26f4-4b1d-9d58-5b49ad1ddbbf
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 809e2a21-5287-49d2-ac7e-209fc4496a9c
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 809e2a21-5287-49d2-ac7e-209fc4496a9c
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: bab6758b-6ab2-4d0d-a476-c93a1684f336
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: bab6758b-6ab2-4d0d-a476-c93a1684f336
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 800
+        - m_Guid: 2b85e9de-f610-4dec-af63-d19b6278dc9d
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 779c5817-770d-42fa-be46-bbb91b4432d0
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 779c5817-770d-42fa-be46-bbb91b4432d0
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: fb3f0a90-8174-47ca-955d-eef14c9dec19
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: fb3f0a90-8174-47ca-955d-eef14c9dec19
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 98ac1eae-2f64-470c-8821-0118a7742614
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 98ac1eae-2f64-470c-8821-0118a7742614
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1000
+        - m_Guid: 2f858113-1ba0-4398-ba8d-3bb9778f7030
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: eec58836-3d46-4823-82ff-2f1277abc780
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: eec58836-3d46-4823-82ff-2f1277abc780
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 5bedf22e-562c-4e6a-89bf-d2ba3ba3ebe5
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 5bedf22e-562c-4e6a-89bf-d2ba3ba3ebe5
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: fe3ec797-ac8e-436b-91d4-33eab512c6f9
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: fe3ec797-ac8e-436b-91d4-33eab512c6f9
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1200
+        - m_Guid: bec3cfde-851d-4eab-ba29-f79b9413e400
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: cf2a95c2-7470-4930-bd5c-aebd6f33d50e
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: cf2a95c2-7470-4930-bd5c-aebd6f33d50e
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: a130a916-ff5f-4aa5-918b-63ddb428623a
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: a130a916-ff5f-4aa5-918b-63ddb428623a
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 12aa8866-8017-466b-a8ff-88cef85f39ea
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 12aa8866-8017-466b-a8ff-88cef85f39ea
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1400
+        - m_Guid: 4c722ee3-5af7-4bcf-9612-a55e1694f059
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 23d1b164-6524-42a5-9cd3-33a4850788ae
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 23d1b164-6524-42a5-9cd3-33a4850788ae
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 63665b50-ed78-4600-8f34-cc2dbfa599bb
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 63665b50-ed78-4600-8f34-cc2dbfa599bb
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: b2ef0be7-ab2b-4d30-8c08-9004706d4e38
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: b2ef0be7-ab2b-4d30-8c08-9004706d4e38
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1600
+        - m_Guid: ae7d82dc-1b99-4b44-b568-32159bd29934
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 60095dc3-b8bb-47d5-9744-ee5cb4b4957b
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 60095dc3-b8bb-47d5-9744-ee5cb4b4957b
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: 2c940177-526d-47b0-9723-726299c1c520
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 2c940177-526d-47b0-9723-726299c1c520
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 1cd89ff7-6ded-42c5-9404-62262c25b5f6
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 1cd89ff7-6ded-42c5-9404-62262c25b5f6
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1800
+        - m_Guid: 40ca9a9a-8e76-4142-8658-22f937bbaf8d
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 5a864534-c9dc-45d9-a05d-a63c1bdd79f4
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 5a864534-c9dc-45d9-a05d-a63c1bdd79f4
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: robot bat
+          - m_Guid: b5f7fd96-e023-4345-8ecd-b94465d0f43f
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: b5f7fd96-e023-4345-8ecd-b94465d0f43f
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 129a8f62-2fb7-458a-8b8b-7b07a42ad84d
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 129a8f62-2fb7-458a-8b8b-7b07a42ad84d
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
           m_TrainingSteps: 2000
-        m_SampleOutputPrompts: []
-        m_TrainingSetData: []
-        m_Name: Default
-        m_Description: Default style.
-    - rid: 2360936931592241225
+        m_SampleOutputPrompts:
+        - robot bat
+        - cyberpunk chest
+        - reflex tuner
+        m_TrainingSetData:
+        - m_Guid: ff612071-8657-467c-8f25-11faec908d0b
+          m_State: 1
+          m_Disposing: 0
+          m_TrainingSet:
+          - m_Guid: afc8c360-9c84-4f9c-8dec-869dd9575b97
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641440
+          - m_Guid: f0668024-ed22-4c34-a820-b43632ee58a4
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641441
+          - m_Guid: f6fe9587-73e5-427b-9957-25c696c31a00
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641442
+          - m_Guid: 9ad83ab1-db2e-4859-a9cb-64979d5b3036
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641443
+          - m_Guid: 430d1fc3-9a08-44b0-a8df-4637839f9899
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641444
+          - m_Guid: 61df7ec0-be42-4412-9792-6222f38569f4
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641445
+          - m_Guid: 2d05b0b6-5400-4f36-ae3c-8ce511848022
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641446
+          - m_Guid: d70864a3-0a31-4d7d-9a65-f003a6a18bcb
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641447
+          - m_Guid: d129abad-c4d8-4254-9d8f-7fa51627303b
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641448
+          - m_Guid: c5c9926b-9232-4d4c-8b6f-d30a1198c84c
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641449
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_Name: electric blood
+        m_Description: cyberpunk pixelart
+    - rid: 112675349130641411
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 0244c68a-d511-41f2-a613-c639db77bce8
+        m_State: 1
+        m_Disposing: 0
+        m_IsFallback: 0
+        m_Thumbnail:
+          rid: 112675349130641428
+        m_Visible: 0
+        selectedCheckPointGUID: 312b5194-cf46-42a9-8ddc-dd3fd4b9972c
+        m_FavoriteCheckPointGUID: 00000000-0000-0000-0000-000000000000
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 2889706a-9ae9-4222-b37d-08a60e2f5847
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: c578e542-eb2d-4583-80ae-b4dae085d861
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: c578e542-eb2d-4583-80ae-b4dae085d861
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: d023b86c-4854-4d4f-a284-ca57df12adbf
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: d023b86c-4854-4d4f-a284-ca57df12adbf
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: a4557a12-fa3a-4c2b-b759-8c7da9907107
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: a4557a12-fa3a-4c2b-b759-8c7da9907107
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 200
+        - m_Guid: 8319ac1a-8f95-4bfc-afc7-9830cf9850ca
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: bee41aca-7735-4412-bd7b-1ed1a4193531
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: bee41aca-7735-4412-bd7b-1ed1a4193531
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 2d55e7e7-b0a2-4383-be18-152974c651d3
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 2d55e7e7-b0a2-4383-be18-152974c651d3
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 101672c0-4920-4627-a7b2-d693e6b7a8c7
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 101672c0-4920-4627-a7b2-d693e6b7a8c7
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 400
+        - m_Guid: fa94bcd0-3af8-4a68-a5f9-70a97c166b16
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 58ee6ca7-461d-47d8-83d7-947a72ac94c5
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 58ee6ca7-461d-47d8-83d7-947a72ac94c5
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 599bd4e5-d87e-4f30-ab91-18643d0e3085
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 599bd4e5-d87e-4f30-ab91-18643d0e3085
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 04cd8eb2-e36e-4835-9289-22295b679837
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 04cd8eb2-e36e-4835-9289-22295b679837
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 600
+        - m_Guid: 3cea1334-fb34-425c-a068-6b6022595805
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: fbe19564-dc92-4f4b-829c-e2d7c551e804
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: fbe19564-dc92-4f4b-829c-e2d7c551e804
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: cff27d28-a322-43fd-ad67-9781b25dd343
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: cff27d28-a322-43fd-ad67-9781b25dd343
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 98c08d13-4e15-469f-8fb0-8194a050fcf8
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 98c08d13-4e15-469f-8fb0-8194a050fcf8
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 800
+        - m_Guid: dd636fd2-fecd-41b0-bea0-a1cfc6d4eced
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 832f62f9-acba-4f0e-bf70-49b1353160be
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 832f62f9-acba-4f0e-bf70-49b1353160be
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 9939c33d-bbaf-49da-ab7d-19a07f6b7cbf
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 9939c33d-bbaf-49da-ab7d-19a07f6b7cbf
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 66a5c649-59ea-4285-a67c-21c9f3b1b576
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 66a5c649-59ea-4285-a67c-21c9f3b1b576
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 1000
+        - m_Guid: dad3dd33-52d0-478f-baa9-3efef6f4a3e6
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: b0dddf13-699c-4ca3-a891-6b5f2fd9ed46
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: b0dddf13-699c-4ca3-a891-6b5f2fd9ed46
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 077d0c73-16bb-4f5a-b8a0-ff125e70bd4a
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 077d0c73-16bb-4f5a-b8a0-ff125e70bd4a
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: a473138f-ec3f-4c95-8d1c-94ccc8d0f7d3
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: a473138f-ec3f-4c95-8d1c-94ccc8d0f7d3
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 1200
+        - m_Guid: cd8d9207-9e4d-4e26-82d6-1843e317949f
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 8d29ff1f-723b-45e6-834a-bfae3c548446
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 8d29ff1f-723b-45e6-834a-bfae3c548446
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 79da77a8-4a98-4c0a-8d8f-d3dbb564054e
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 79da77a8-4a98-4c0a-8d8f-d3dbb564054e
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 5272f62e-82a8-4154-ad9f-afed72c44ce7
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 5272f62e-82a8-4154-ad9f-afed72c44ce7
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 1400
+        - m_Guid: 996af745-6a4a-4d26-8ea2-a2a1bf6a93e6
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 8dbdb5c5-3a78-4ffd-9031-7eb1aca657c2
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 8dbdb5c5-3a78-4ffd-9031-7eb1aca657c2
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 79c5cd09-faa3-4825-9f7a-04bb4090746b
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 79c5cd09-faa3-4825-9f7a-04bb4090746b
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: d18e3425-5058-4c2c-b65b-a679f48710aa
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: d18e3425-5058-4c2c-b65b-a679f48710aa
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 1600
+        - m_Guid: 5bcdf390-ee47-4276-98c4-1d3e307fe1e4
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 27e99196-2952-4a3c-a175-60bb890a27da
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 27e99196-2952-4a3c-a175-60bb890a27da
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: fe4f59c7-fac3-4f2d-b824-9e3be5d098b8
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: fe4f59c7-fac3-4f2d-b824-9e3be5d098b8
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 6a2efceb-5570-47e6-bf99-7fddcd64f65b
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 6a2efceb-5570-47e6-bf99-7fddcd64f65b
+              m_State: 5
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 1800
+        - m_Guid: 312b5194-cf46-42a9-8ddc-dd3fd4b9972c
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 1ae81283-31e1-4de4-ba21-f5c1354199f4
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 1ae81283-31e1-4de4-ba21-f5c1354199f4
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart plasma grenade
+          - m_Guid: 489a3275-2a87-40f2-adbe-8694dd790f37
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 489a3275-2a87-40f2-adbe-8694dd790f37
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixeart cyberpunk chest
+          - m_Guid: 34b30642-b139-4f47-b7d8-0917eec72f7e
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 34b30642-b139-4f47-b7d8-0917eec72f7e
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: pixelart reflex tuner
+          m_TrainingSteps: 2000
+        m_SampleOutputPrompts:
+        - pixelart plasma grenade
+        - pixeart cyberpunk chest
+        - pixelart reflex tuner
+        m_TrainingSetData:
+        - m_Guid: 590faa56-a812-4a45-993b-5a538365e4ec
+          m_State: 1
+          m_Disposing: 0
+          m_TrainingSet:
+          - m_Guid: 3895aace-1ab3-4649-b0cf-d2d09c22f32a
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641451
+          - m_Guid: b8b31fc1-2aeb-4c3c-a88b-68ab79e60033
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641452
+          - m_Guid: be2af5cd-6ddc-496f-bb8b-5ea80dec27ee
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641453
+          - m_Guid: e0e75e54-04e0-4f95-a88e-ab3566ad16e7
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641454
+          - m_Guid: b23535b1-64f0-4400-b683-9b17162f6878
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641455
+          - m_Guid: 4d43cb47-933d-4d9e-9083-ceba71abdc40
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641456
+          - m_Guid: 7eebd5ad-45a4-4fdc-b01e-533346c79315
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641457
+          - m_Guid: d72faa86-0cbb-4fea-8461-ff78d2bef1e1
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641458
+          - m_Guid: 94c4bd65-2c84-4345-b8d9-1a38a26a996b
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641459
+          - m_Guid: 175ec090-92ab-4332-a8a1-1685af5fbd42
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641460
+          - m_Guid: 2732c5c9-1289-410f-8f1a-f24016914e2a
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641461
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_Name: electric blood 2
+        m_Description: cyberpunk pixelart
+    - rid: 112675349130641415
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_State: 3
+        m_Disposing: 1
+    - rid: 112675349130641428
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_State: 3
+        m_Disposing: 1
+    - rid: 112675349130641440
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: afc8c360-9c84-4f9c-8dec-869dd9575b97
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641441
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: f0668024-ed22-4c34-a820-b43632ee58a4
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641442
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: f6fe9587-73e5-427b-9957-25c696c31a00
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641443
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 9ad83ab1-db2e-4859-a9cb-64979d5b3036
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641444
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 430d1fc3-9a08-44b0-a8df-4637839f9899
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641445
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 61df7ec0-be42-4412-9792-6222f38569f4
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641446
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 2d05b0b6-5400-4f36-ae3c-8ce511848022
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641447
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: d70864a3-0a31-4d7d-9a65-f003a6a18bcb
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641448
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: d129abad-c4d8-4254-9d8f-7fa51627303b
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641449
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: c5c9926b-9232-4d4c-8b6f-d30a1198c84c
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641450
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+        m_State: 1
+        m_Disposing: 0
+        m_IsFallback: 0
+        m_Thumbnail:
+          rid: -2
+        m_Visible: 1
+        selectedCheckPointGUID: be9c0329-f71f-43ee-9e1f-80b666399956
+        m_FavoriteCheckPointGUID: fab23dc8-d258-4f85-8afe-4f5e253105c3
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 33c6fac1-c884-47df-96a0-4dc58647a3cf
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 0b8b0342-d3c7-4fb8-901e-42ef09b1f84e
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 0b8b0342-d3c7-4fb8-901e-42ef09b1f84e
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: ded799d3-76db-4cbd-bf8c-a378c705672a
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: ded799d3-76db-4cbd-bf8c-a378c705672a
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 1912471f-9517-4a38-8650-db947c010b71
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 1912471f-9517-4a38-8650-db947c010b71
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 200
+        - m_Guid: 8bc8d570-107b-4df2-bf35-e2436ea67139
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 70144780-fd5c-43d2-ad09-6a6b582465f6
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 70144780-fd5c-43d2-ad09-6a6b582465f6
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: ba4cf29d-bafa-47a7-9e2b-47ac2de89c2e
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: ba4cf29d-bafa-47a7-9e2b-47ac2de89c2e
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: a0cadc4a-2468-4951-91b8-c9304bf5f57f
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: a0cadc4a-2468-4951-91b8-c9304bf5f57f
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 400
+        - m_Guid: 1b59891e-b7e1-4f59-909f-a52e8fdec968
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 4eda1a6e-a02d-4bcb-9a9d-e04d162b0d7c
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 4eda1a6e-a02d-4bcb-9a9d-e04d162b0d7c
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: b25f4f0d-9f9c-45b2-bf73-9bd5b6099ab4
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: b25f4f0d-9f9c-45b2-bf73-9bd5b6099ab4
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 3d732de2-b964-478f-b79f-740a8244f19c
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 3d732de2-b964-478f-b79f-740a8244f19c
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 600
+        - m_Guid: 96cd37de-7e20-435f-b256-a583c6a63999
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 884633a6-5edc-4ca9-8fcd-ab51b0ce64ae
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 884633a6-5edc-4ca9-8fcd-ab51b0ce64ae
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: d6c6a928-9512-4cc4-a70c-aca9dc778aad
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: d6c6a928-9512-4cc4-a70c-aca9dc778aad
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 2369251e-9f06-4265-9e16-98e0f8fdfc68
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 2369251e-9f06-4265-9e16-98e0f8fdfc68
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 800
+        - m_Guid: fab23dc8-d258-4f85-8afe-4f5e253105c3
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 676f5131-90fd-4913-b190-f220450b5b74
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 676f5131-90fd-4913-b190-f220450b5b74
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: ba42466a-15a4-4329-bf07-9cce91cbe6ef
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: ba42466a-15a4-4329-bf07-9cce91cbe6ef
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 15329f44-aea6-45fd-8523-ef8146f95d64
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 15329f44-aea6-45fd-8523-ef8146f95d64
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1000
+        - m_Guid: d715e171-0e5c-4c00-8c1b-e0061d21dada
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 1ef1e6e4-620c-4411-a25d-f605de3ea97d
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 1ef1e6e4-620c-4411-a25d-f605de3ea97d
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: 23b2a715-617f-4a00-9713-eebcba80f528
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 23b2a715-617f-4a00-9713-eebcba80f528
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 5fa18cb9-4a6b-4f99-819c-50c515a5d16a
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 5fa18cb9-4a6b-4f99-819c-50c515a5d16a
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1200
+        - m_Guid: 179edcb7-bd91-40ae-b798-cbfcce184ddd
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: b6b4ffb7-bd33-40fb-b590-8974c8e5d1cb
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: b6b4ffb7-bd33-40fb-b590-8974c8e5d1cb
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: 851d231a-2e6e-4431-ba1d-54bfd8762801
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 851d231a-2e6e-4431-ba1d-54bfd8762801
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 75494768-5e7a-4edc-8b41-1c8a8402aba5
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 75494768-5e7a-4edc-8b41-1c8a8402aba5
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1400
+        - m_Guid: 51faa70f-74b4-4f3b-b0b7-591f49e425d3
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: e15fd023-ce54-4f95-b45c-b955c7689f91
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: e15fd023-ce54-4f95-b45c-b955c7689f91
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: f9f53a65-42cc-4d44-b500-39549d5d44ea
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: f9f53a65-42cc-4d44-b500-39549d5d44ea
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 81c83dff-b22e-42fa-a5e0-fc1304b5dff4
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 81c83dff-b22e-42fa-a5e0-fc1304b5dff4
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1600
+        - m_Guid: e12ff4ea-b1f6-47a2-a230-9e74abd6ca0a
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 066e6913-7c90-4195-810e-bee20a236366
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 066e6913-7c90-4195-810e-bee20a236366
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: 011be548-6dec-4f33-9a48-8c8a557d9ab7
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 011be548-6dec-4f33-9a48-8c8a557d9ab7
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: 037f38a8-9ffc-4c68-9190-bf5a4d87ef9a
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 037f38a8-9ffc-4c68-9190-bf5a4d87ef9a
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 1800
+        - m_Guid: be9c0329-f71f-43ee-9e1f-80b666399956
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_Name: electric blood 2 (duplicate)
+          m_Description: cyberpunk pixelart
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+            m_State: 5
+            m_Disposing: 1
+            m_TrainingSet: []
+            m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+          m_ValidationImagesData:
+          - m_Guid: 9e7a8109-5840-4b93-8be6-32998a80186f
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: 9e7a8109-5840-4b93-8be6-32998a80186f
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: plasma grenade
+          - m_Guid: ad2ccdd1-2425-4089-a078-c8a3a8e22482
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: ad2ccdd1-2425-4089-a078-c8a3a8e22482
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: cyberpunk chest
+          - m_Guid: d7dc7f55-d54c-449c-9a9a-5d652d624b56
+            m_State: 5
+            m_Disposing: 1
+            m_ImageArtifact:
+              m_Guid: d7dc7f55-d54c-449c-9a9a-5d652d624b56
+              m_State: 1
+              m_Disposing: 1
+            m_Prompt: reflex tuner
+          m_TrainingSteps: 2000
+        m_SampleOutputPrompts:
+        - plasma grenade
+        - cyberpunk chest
+        - reflex tuner
+        m_TrainingSetData:
+        - m_Guid: 34b58182-d8e4-42c9-8476-ab41adfeeb74
+          m_State: 1
+          m_Disposing: 0
+          m_TrainingSet:
+          - m_Guid: f98cc943-2b01-494d-80f8-f6c8fa0bd8a6
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641485
+          - m_Guid: e359434a-3b9e-4942-b1fc-ea03de47643d
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641486
+          - m_Guid: 18a20aca-49a3-489d-bdac-20b9500a6423
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641487
+          - m_Guid: 91622ddc-b2d7-41f7-b737-6f3eafa1af07
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641488
+          - m_Guid: b8a18127-e916-40ad-a99a-be3c37cc9684
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641489
+          - m_Guid: 0d435d3e-55ec-48c8-9eb1-d66aabf6793c
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641490
+          - m_Guid: 04d2f86c-1668-416e-a4b5-c22778156ea3
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641491
+          - m_Guid: 14478331-d2a4-496f-bef9-be05e4fcc607
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641492
+          - m_Guid: 6b4b8497-e25d-4bf4-a515-82b644c950b4
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641493
+          - m_Guid: 9eacd917-7742-4222-88dc-e2bbeb1c1de5
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641494
+          - m_Guid: c210aa8e-6fc1-465b-ba19-6b84928181f0
+            m_State: 5
+            m_Disposing: 0
+            m_ImageArtifact:
+              rid: 112675349130641495
+          m_ProjectID: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_Name: electric blood 2 (duplicate)
+        m_Description: cyberpunk pixelart
+    - rid: 112675349130641451
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 3895aace-1ab3-4649-b0cf-d2d09c22f32a
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641452
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: b8b31fc1-2aeb-4c3c-a88b-68ab79e60033
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641453
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: be2af5cd-6ddc-496f-bb8b-5ea80dec27ee
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641454
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: e0e75e54-04e0-4f95-a88e-ab3566ad16e7
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641455
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: b23535b1-64f0-4400-b683-9b17162f6878
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641456
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 4d43cb47-933d-4d9e-9083-ceba71abdc40
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641457
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 7eebd5ad-45a4-4fdc-b01e-533346c79315
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641458
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: d72faa86-0cbb-4fea-8461-ff78d2bef1e1
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641459
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 94c4bd65-2c84-4345-b8d9-1a38a26a996b
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641460
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 175ec090-92ab-4332-a8a1-1685af5fbd42
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641461
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 2732c5c9-1289-410f-8f1a-f24016914e2a
+        m_State: 1
+        m_Disposing: 1
+    - rid: 112675349130641485
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: f98cc943-2b01-494d-80f8-f6c8fa0bd8a6
+        m_State: 2
+        m_Disposing: 1
+    - rid: 112675349130641486
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: e359434a-3b9e-4942-b1fc-ea03de47643d
+        m_State: 2
+        m_Disposing: 1
+    - rid: 112675349130641487
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 18a20aca-49a3-489d-bdac-20b9500a6423
+        m_State: 2
+        m_Disposing: 1
+    - rid: 112675349130641488
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 91622ddc-b2d7-41f7-b737-6f3eafa1af07
+        m_State: 2
+        m_Disposing: 1
+    - rid: 112675349130641489
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: b8a18127-e916-40ad-a99a-be3c37cc9684
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641490
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 0d435d3e-55ec-48c8-9eb1-d66aabf6793c
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641491
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 04d2f86c-1668-416e-a4b5-c22778156ea3
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641492
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 14478331-d2a4-496f-bef9-be05e4fcc607
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641493
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 6b4b8497-e25d-4bf4-a515-82b644c950b4
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641494
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 9eacd917-7742-4222-88dc-e2bbeb1c1de5
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675349130641495
+      type: {class: ImageArtifact, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: c210aa8e-6fc1-465b-ba19-6b84928181f0
+        m_State: 5
+        m_Disposing: 1
+    - rid: 112675352775229477
       type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
       data:
         m_Guid: 5cc104e0-423a-473e-8034-b9d346cb2357
@@ -163,3 +1729,58 @@ MonoBehaviour:
           m_ProjectID: 11000000-0000-0000-0000-000000000011
         m_Name: Default
         m_Description: Default Style
+    - rid: 2360936931592241152
+      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: bc818c70-8587-4513-a598-4236dfedb6a2
+        m_State: 1
+        m_Disposing: 0
+        m_Styles:
+        - rid: 112675349130641408
+        - rid: 112675349130641411
+        - rid: 112675349130641450
+        m_Version: 202231001
+    - rid: 2360936931592241153
+      type: {class: StyleTrainerData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 11000000-0000-0000-0000-000000000011
+        m_State: 1
+        m_Disposing: 0
+        m_Styles:
+        - rid: 112675352775229477
+        m_Version: 202231001
+    - rid: 2360936931592241224
+      type: {class: StyleData, ns: Unity.Muse.StyleTrainer, asm: Unity.Muse.StyleTrainer}
+      data:
+        m_Guid: 00000000-0000-0000-0000-000000000000
+        m_State: 1
+        m_Disposing: 0
+        m_IsFallback: 1
+        m_Thumbnail:
+          rid: -2
+        m_Visible: 0
+        selectedCheckPointGUID: 00000000-0000-0000-0000-000000000000
+        m_FavoriteCheckPointGUID: active
+        parentID: 00000000-0000-0000-0000-000000000000
+        m_ProjectID: 00000000-0000-0000-0000-000000000000
+        m_TrainingSteps: 2000
+        m_CheckPoints:
+        - m_Guid: 00000000-0000-0000-0000-000000000000
+          m_State: 1
+          m_Disposing: 0
+          m_ProjectID: 00000000-0000-0000-0000-000000000000
+          m_Name: Default
+          m_Description: Default style.
+          parent_id: 00000000-0000-0000-0000-000000000000
+          m_TrainingSetData:
+            m_Guid: 
+            m_State: 0
+            m_Disposing: 0
+            m_TrainingSet: []
+            m_ProjectID: 
+          m_ValidationImagesData: []
+          m_TrainingSteps: 2000
+        m_SampleOutputPrompts: []
+        m_TrainingSetData: []
+        m_Name: Default
+        m_Description: Default style.

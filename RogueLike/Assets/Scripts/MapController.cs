@@ -27,13 +27,24 @@ public class MapController : NetworkBehaviour
     public float cooldownTime;
 
 
-    // Update is called once per frame
+    private void Start()
+    {
+        if (!IsOwner) return;
+        var playerData = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(0);
+        var levelData = ElectricBloodMultiplayer.Instance.availableLevels[playerData.selectedLevel] as LevelData;
+        terrainChunk = levelData.chunks;
+        ChunkSpawnerServerRpc(new Vector3(0, 0, 0));
+    }
+
+
+
     void FixedUpdate()
     {
-        if (GameManager.Instance.listOfPlayers.Count == 0) return; //this is mainly here for it to not mess up before lobby is implemented
+        if (GameManager.Instance.listOfPlayers.Count == 0) return;
         CheckChunks();
         if (!IsServer) return;
-        optimizer();
+        if(spawnedChunk != null)
+            optimizer();
         spawnedChunk.RemoveAll(x => x == null);
     }
 
