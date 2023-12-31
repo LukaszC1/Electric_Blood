@@ -29,10 +29,10 @@ public class MapController : NetworkBehaviour
 
     private void Start()
     {
-        if (!IsOwner) return;
         var playerData = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(0);
         var levelData = ElectricBloodMultiplayer.Instance.availableLevels[playerData.selectedLevel] as LevelData;
         terrainChunk = levelData.chunks;
+        if (!IsOwner) return;
         ChunkSpawnerServerRpc(new Vector3(0, 0, 0));
     }
 

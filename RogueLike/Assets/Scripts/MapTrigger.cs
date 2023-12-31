@@ -16,7 +16,9 @@ public class MapTrigger : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (controller == null)
+            controller = FindObjectOfType<MapController>();
+        else if (collision.CompareTag("Player"))
         {
             controller.currentChunk = targetMap;
         }
