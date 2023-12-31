@@ -99,9 +99,22 @@ public abstract class Character : NetworkBehaviour
             isDyingUpdateServerRpc();
     }
 
+    [ServerRpc(RequireOwnership = false)]
+    private void ChangeNicknameServerRpc(string nickname)
+    {
+        ChangeNicknameClientRpc(nickname);
+        return;
+    }
+
+    [ClientRpc]
+    private void ChangeNicknameClientRpc(string nickname)
+    {
+        GetComponentInChildren<TextMeshProUGUI>().text = nickname;
+        return;
+    }
+
     public void Start()
     {
-
         if (!IsLocalPlayer)
         {
             if (indicatorNotLoaded)
@@ -112,18 +125,18 @@ public abstract class Character : NetworkBehaviour
             }
         }
 
+        if (!IsOwner) return;
+
         if (nickNotLoaded)
         {
-            if(ElectricBloodMultiplayer.playMultiplayer == true)
-                GetComponentInChildren<TextMeshProUGUI>().text = ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(this.playerID.Value).playerName.ToString();
+            if(ElectricBloodMultiplayer.playMultiplayer)
+                ChangeNicknameServerRpc(ElectricBloodMultiplayer.Instance.GetPlayerDataFromClientId(NetworkManager.Singleton.LocalClientId).playerName.ToString());
             else
                 GetComponentInChildren<TextMeshProUGUI>().gameObject.SetActive(false);
 
             nickNotLoaded = false;
         }
-
-
-        if (!IsOwner) return;
+      
         LoadPersistentUpgrades();
 
         currentHp.Value = maxHp.Value;

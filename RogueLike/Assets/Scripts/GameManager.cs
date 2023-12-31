@@ -261,7 +261,7 @@ public class GameManager : NetworkBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
-        if(waitingForOtherPlayersUI.gameObject.activeInHierarchy)
+        if(waitingForOtherPlayersUI.gameObject.activeSelf)
         waitingForOtherPlayersUI.ChangeVisibility(); //disable the waiting for other players UI
         
         TogglePauseGameWithMenuScreen();
