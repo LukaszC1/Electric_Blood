@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Enforcer
   m_EditorClassIdentifier: 
   characterName: Enforcer
-  characterDescription: lololololo
+  characterDescription: Starts with Throwing Daggers. Gets +2% projectile speed every
+    level.
   characterSprite: {fileID: 786432074, guid: bb7bf0d09f146434b9146c8639593619, type: 3}
   characterPrefab: {fileID: 6437405970386591931, guid: c62e07fc56076e5459cffd41ec951c6d, type: 3}

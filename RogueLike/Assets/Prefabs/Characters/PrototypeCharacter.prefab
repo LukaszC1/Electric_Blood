@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2954080868
+  GlobalObjectIdHash: 2112071848
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -317,19 +317,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp:
-    m_InternalValue: 100
+    m_InternalValue: 120
   armor:
     m_InternalValue: 0
   hpRegen:
-    m_InternalValue: 1
+    m_InternalValue: 1.2
   damageMultiplier:
-    m_InternalValue: 1
+    m_InternalValue: 0.8
   areaMultiplier:
     m_InternalValue: 1
   projectileSpeedMultiplier:
     m_InternalValue: 1
   magnetSize:
-    m_InternalValue: 1
+    m_InternalValue: 3
   cooldownMultiplier:
     m_InternalValue: 1
   amountBonus:

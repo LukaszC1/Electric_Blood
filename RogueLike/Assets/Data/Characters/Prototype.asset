@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Prototype
   m_EditorClassIdentifier: 
   characterName: Prototype
-  characterDescription: lololololo
+  characterDescription: Starts with Force Field. Gets +1% area every level.
   characterSprite: {fileID: -1365051779, guid: 0f9cbaaa6c629514eba7d2913653081e, type: 3}
   characterPrefab: {fileID: 3780462723639447594, guid: 537755e5f528c5144ac15373636264a2, type: 3}
