@@ -32,6 +32,9 @@ public class LevelSelectionPanel : MonoBehaviour
     {
         _closeBtn.onClick.AddListener(() =>
         {
+            if (!ElectricBloodMultiplayer.playMultiplayer)
+                ElectricBloodMultiplayer.Instance.StartSingleplayer();
+
             ElectricBloodMultiplayer.Instance.ChangeSelectedLevelIndex(_currentLevelIndex);
             gameObject.SetActive(false);
         });

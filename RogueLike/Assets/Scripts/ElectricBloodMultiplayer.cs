@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.Netcode;
 using Unity.Services.Authentication;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,10 +22,11 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
     public event EventHandler OnTryingToJoinGame;
     public event EventHandler OnFailedToJoinGame;
+    public event EventHandler OnPlayerDataNetworkListChanged;
 
     [SerializeField] public List<ScriptableObject> availableCharacters;
     [SerializeField] public List<ScriptableObject> availableLevels;
-
+    [SerializeField] public GameObject levelSelectionPanel;
 
     private NetworkList<PlayerData> playerDataNetworkList;
     private string playerName;
@@ -36,15 +38,25 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
 
         playerName = PlayerPrefs.GetString(PLAYER_PREFS, "PlayerName" + UnityEngine.Random.Range(100, 1000));
         playerDataNetworkList = new NetworkList<PlayerData>();
+        playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
+
     }
 
     private void Start()
     {
         if(!playMultiplayer)
         {
-            StartHost();             
-            Loader.LoadNetwork(Loader.Scene.GameScene);
+            levelSelectionPanel.gameObject.SetActive(true);
         }
+    }
+    private void PlayerDataNetworkList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
+    {
+        OnPlayerDataNetworkListChanged?.Invoke(this, EventArgs.Empty);
+    }
+    public void StartSingleplayer()
+    {
+        StartHost();
+        Loader.LoadNetwork(Loader.Scene.GameScene);
     }
 
     public string GetPlayerName()
@@ -72,14 +84,13 @@ public class ElectricBloodMultiplayer : NetworkBehaviour
         for (int i = 0; i < playerDataNetworkList.Count; i++)
         {
             PlayerData playerData = playerDataNetworkList[i];
+            
             if (playerData.clientId == clientId)
             {
                 // disconnected
                 playerDataNetworkList.RemoveAt(i);
             }
         }
-
-        //here might be a good place to call a method which destroys the weapons assigned to this client
     }
   
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)

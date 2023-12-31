@@ -37,6 +37,8 @@ public class SelectedPlayer : NetworkBehaviour
             kickBtn.gameObject.SetActive(false); //disable kick button for the player owned by host
         }
 
+        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged += Instance_OnPlayerDataNetworkListChanged;
+        SelectReady.Instance.OnReadyChanged += Instance_OnReadyChanged;  
     }
 
     private void Instance_OnReadyChanged(object sender, EventArgs e)
@@ -76,6 +78,11 @@ public class SelectedPlayer : NetworkBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnDestroy()
+    {
+        ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= Instance_OnPlayerDataNetworkListChanged;
     }
 }
   

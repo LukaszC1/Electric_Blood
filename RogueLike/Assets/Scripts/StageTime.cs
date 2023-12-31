@@ -22,6 +22,8 @@ public class StageTime : NetworkBehaviour
     private void Update()
     {
         if (!IsOwner) return;
+
+        if(time != null)
         time.Value += Time.deltaTime;
 
     }

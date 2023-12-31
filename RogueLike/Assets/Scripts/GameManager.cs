@@ -58,11 +58,11 @@ public class GameManager : NetworkBehaviour
     [SerializeField] public GameObject singleplayerCamera;
     [SerializeField] public GameObject gameOverPanel;
     [SerializeField] public GameObject indicatorPrefab;
-
+    
 
     private void Awake()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1; //set the time scale to 1 in case it was set to 0 in the previous game
         Instance = this;
 
         playerPausedDictionary = new Dictionary<ulong, bool>();
