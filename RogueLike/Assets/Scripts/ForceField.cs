@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// ForceField weapon class. This weapon is a passive weapon that slows enemies and deals damage to them.
+/// </summary>
 public class ForceField : WeaponBase
 {
-   
     private float timerForce, slowTimer = 0.1f;
 
     new private void Update()
@@ -115,5 +117,4 @@ public class ForceField : WeaponBase
 
         firstAttack();
     }
-
 }

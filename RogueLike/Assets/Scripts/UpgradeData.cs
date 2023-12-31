@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// UpgradeData is a ScriptableObject that contains data for upgrades.
+/// </summary>
 [CreateAssetMenu]
 public class UpgradeData : ScriptableObject
 {
@@ -18,6 +21,9 @@ public class UpgradeData : ScriptableObject
     public ItemStats itemStats;
 }
 
+/// <summary>
+/// Enum for upgrade types.
+/// </summary>
 public enum UpgradeType
 {
     WeaponUpgrade,

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script that handles the level selection panel.
+/// </summary>
 public class LevelSelectionPanel : MonoBehaviour
 {
     [SerializeField] private Button _closeBtn;

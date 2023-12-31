@@ -4,10 +4,12 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class that handles the UI screen for when the host disconnects.
+/// </summary>
 public class HostDisconnectUI : NetworkBehaviour
 {
     [SerializeField] private Button _closeBtn;
-
 
     private void Awake()
     {
@@ -42,7 +44,7 @@ public class HostDisconnectUI : NetworkBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnDestroy()
+    private void OnDestroy()
     {
         if (NetworkManager.Singleton == null)
             return;

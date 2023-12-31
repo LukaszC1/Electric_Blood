@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class handling the ElectroSphere area attack.
+/// </summary>
 public class ElectroSphere : NetworkBehaviour
 {
     private float timerForce;
     public float timeToAttack;
     public float damage;
     public float size;
-
-
 
     private void Update()
     {

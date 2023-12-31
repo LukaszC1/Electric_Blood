@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public abstract class WeaponBase : NetworkBehaviour //weapons base class
+/// <summary>
+/// Abstract class which represents the weapon base definition.
+/// </summary>
+public abstract class WeaponBase : NetworkBehaviour
 {
+    //Public fields
     public WeaponData weaponData;
     public WeaponStats weaponStats;
-    float timer;
     public PlayerMove playerMove;
     public Vector2 originalAoE;
     public float originalAoEF;
@@ -20,15 +23,17 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
     public AudioSource weaponSound;
     public GameObject sprite;
     public List<GameObject> enemies = new();
+
+    float timer;
     [SerializeField] bool updateSprite = false;
 
-    public void Awake()
+    private void Awake()
     {
         playerMove = GetComponentInParent<PlayerMove>();
         weaponSound= GetComponent<AudioSource>();
         character = GetComponentInParent<Character>();
     }
-    public void Start()
+    private void Start()
     {
         if (IsOwner)
         {
@@ -50,7 +55,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
             weaponStats.amount += character.amountBonus.Value;
         }
     }
-    public void Update()
+    private void Update()
     {
         if (!IsServer) return;
         timer -= Time.deltaTime;
@@ -63,12 +68,16 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         }
     }
 
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!IsServer) return;
         if (character == null) Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Sets the weapon data.
+    /// </summary>
+    /// <param name="wd"></param>
     public virtual void SetData(WeaponData wd)
     {
         weaponData = wd;
@@ -78,6 +87,9 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
 
     public abstract void Attack(); //each weapon has to inherit and implement this method
 
+    /// <summary>
+    /// Method which updates the weapon stats when the character levels up.
+    /// </summary>
     public virtual void LevelUpUpdate()
     {
         if (character == null) 
@@ -95,14 +107,21 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
 
     }
 
-
+    /// <summary>
+    /// Method which posts a damage popup message.
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="targetPos"></param>
     public virtual void PostMessage(int damage, Vector3 targetPos)
     {
         MessageSystem.instance.PostMessage(damage, targetPos);
     }
 
-
-    internal void Upgrade(WeaponStats upgradeData)
+    /// <summary>
+    /// Method which upgrades the weapon stats.
+    /// </summary>
+    /// <param name="upgradeData"></param>
+    public void Upgrade(WeaponStats upgradeData)
     {
         float percentageIncrease = 1;
         if (originalAoEF == 0 && upgradeData.vectorSize.x > 0)
@@ -118,6 +137,7 @@ public abstract class WeaponBase : NetworkBehaviour //weapons base class
         weaponStats.pierce += upgradeData.pierce;
         LevelUpUpdate();
     }
+
     [ClientRpc]
     private void UpdateSpriteClientRpc(Vector2 originalScale, NetworkBehaviourReference characterReference, float areaMultiplier)
     {

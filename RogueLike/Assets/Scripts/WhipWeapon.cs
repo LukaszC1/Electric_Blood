@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
+/// <summary>
+/// Script attached to WhipWeapon prefab.
+/// </summary>
 public class WhipWeapon : WeaponBase
 {
-  
+  /// <summary>
+  /// Whip prefab.
+  /// </summary>
     [SerializeField] GameObject WhipObject;
     private Vector2 startPosition;
     private GameObject strike;
@@ -25,12 +28,18 @@ public class WhipWeapon : WeaponBase
         }
     }
 
+    /// <summary>
+    /// Implemetnation of abstract method from WeaponBase.
+    /// </summary>
     public override void Attack()
     {
         StartCoroutine(CoroutineAttack());
     }
 
-    
+    /// <summary>
+    /// Method handling periodic attacking of a weapon using coroutine.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CoroutineAttack()
     {       
             startPosition = transform.position;         

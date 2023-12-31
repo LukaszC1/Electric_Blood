@@ -4,14 +4,33 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Class containing information about the wave to spawn.
+/// </summary>
 [Serializable]
 public class EnemiesSpawnWave
 {
+    /// <summary>
+    /// Enemy prefab reference.
+    /// </summary>
     public GameObject enemyPrefab;
+
+    /// <summary>
+    /// Amount of enemies.
+    /// </summary>
     public int amount;
+
+    /// <summary>
+    /// Length of the wave.
+    /// </summary>
     public float length;
 
-
+    /// <summary>
+    /// Constructor of the class.
+    /// </summary>
+    /// <param name="enemyPrefab"></param>
+    /// <param name="amount"></param>
+    /// <param name="length"></param>
     public EnemiesSpawnWave(GameObject enemyPrefab, int amount, float length)
     {
         this.enemyPrefab = enemyPrefab;
@@ -21,15 +40,20 @@ public class EnemiesSpawnWave
 
 }
 
-
 public class EnemiesManager : NetworkBehaviour
 {
-    [SerializeField] Vector2 spawnArea;
+    /// <summary>
+    /// List of enemies.
+    /// </summary>
     public List<GameObject> enemyList;
 
+    /// <summary>
+    /// List of waves to spawn.
+    /// </summary>
     public List<EnemiesSpawnWave> enemiesSpawnWaveList;
-    private float timer = 2f;
 
+    private float timer = 2f;
+    [SerializeField] Vector2 spawnArea;
 
     private void Update()
     {
@@ -68,6 +92,12 @@ public class EnemiesManager : NetworkBehaviour
 
     }
 
+    /// <summary>
+    /// Metgods which adds a wave to spawn.
+    /// </summary>
+    /// <param name="enemyToSpawn"></param>
+    /// <param name="amount"></param>
+    /// <param name="length"></param>
     public void AddWaveToSpawn(GameObject enemyToSpawn, int amount, float length)
     {
         EnemiesSpawnWave wave = new EnemiesSpawnWave(enemyToSpawn, amount, length);
@@ -77,7 +107,10 @@ public class EnemiesManager : NetworkBehaviour
         enemiesSpawnWaveList.Add(wave);
     }
 
-
+    /// <summary>
+    /// Method which spawn the enemy.
+    /// </summary>
+    /// <param name="enemyToSpawn"></param>
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
         if(!IsServer) return;
@@ -139,9 +172,9 @@ public class EnemiesManager : NetworkBehaviour
         }
         return false;
     }
+
     private void OnApplicationQuit()
     {
         Destroy(gameObject);
     }
-
 }

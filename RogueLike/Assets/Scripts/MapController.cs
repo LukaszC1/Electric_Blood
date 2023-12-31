@@ -2,12 +2,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class handling the map generation.
+/// </summary>
 public class MapController : NetworkBehaviour
 {
+    //Public fields
 
+    /// <summary>
+    /// List of all possible chunks.
+    /// </summary>
     public List<GameObject> terrainChunk;
+
     public GameObject currentChunk;
+
+    /// <summary>
+    /// Radius of the collider circle.
+    /// </summary>
     public float radius;
+
+    public float cooldownTime;
+    public LayerMask terrainMask;
+    [Header("Optimization")]
+    public List<GameObject> spawnedChunk;
+    public GameObject latest;
+    public float maxDistance; //> chunk size
+
+    //Private fields
     Vector3 noTerrain;
     Vector3 right;
     Vector3 left;
@@ -17,15 +38,9 @@ public class MapController : NetworkBehaviour
     Vector3 upleft;
     Vector3 downrigth;
     Vector3 downleft;
-    public LayerMask terrainMask;
-    [Header("Optimization")]
-    public List<GameObject> spawnedChunk;
-    public GameObject latest;
-    public float maxDistance; //> chunk size
     float dist;
     float cooldown;
-    public float cooldownTime;
-
+  
 
     private void Start()
     {
@@ -36,22 +51,18 @@ public class MapController : NetworkBehaviour
         ChunkSpawnerServerRpc(new Vector3(0, 0, 0));
     }
 
-
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (GameManager.Instance.listOfPlayers.Count == 0) return;
-        CheckChunks();
+            CheckChunks();
         if (!IsServer) return;
         if(spawnedChunk != null)
-            optimizer();
+            Optimizer();
         spawnedChunk.RemoveAll(x => x == null);
     }
 
-
-    void CheckChunks()
+    private void CheckChunks()
     {
-
         if (!currentChunk)
         {
             return;
@@ -101,12 +112,10 @@ public class MapController : NetworkBehaviour
         {
             ChunkSpawnerServerRpc(downleft);
         }
-        
-
     }
 
     [ServerRpc(RequireOwnership = false)]
-    void ChunkSpawnerServerRpc(Vector3 positionToSpawn)
+    private void ChunkSpawnerServerRpc(Vector3 positionToSpawn)
     {
         int rand = UnityEngine.Random.Range(0, terrainChunk.Count);
         latest = Instantiate(terrainChunk[rand], positionToSpawn, Quaternion.identity);
@@ -114,10 +123,8 @@ public class MapController : NetworkBehaviour
         latest.GetComponent<NetworkObject>().Spawn();
     }
 
-    void optimizer()
+    private void Optimizer()
     {
-
-
         cooldown -= Time.deltaTime;
 
         if (cooldown < 0f)

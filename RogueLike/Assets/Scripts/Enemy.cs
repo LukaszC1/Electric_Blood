@@ -4,21 +4,21 @@ using System.Threading;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Script which controls the enemy behaviour.
+/// </summary>
 public class Enemy : NetworkBehaviour, iDamageable
 {
     Transform targetDestination;
     GameObject targetGameObject;
-    Character targetCharacter;
     [SerializeField] public float speed;
     public bool isBoss;
     private float reverseSpeed;
     private float originalSpeed;
     private float previousSpeed;
-
     private float timer;
     private float timer2 = 0f;
     Rigidbody2D rgbd2d;
-
     [SerializeField] float hp = 4;
     [SerializeField] int damage = 1;
     [SerializeField] Material whiteMat;
@@ -33,7 +33,6 @@ public class Enemy : NetworkBehaviour, iDamageable
     DropOnDestroy dropOnDestroy;
     private float dissolveAmount = 1;
     private bool isDying=false;
-    bool quitting = false;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
@@ -134,7 +133,6 @@ public class Enemy : NetworkBehaviour, iDamageable
         }
     }
 
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -151,6 +149,10 @@ public class Enemy : NetworkBehaviour, iDamageable
         }
     }
 
+    /// <summary>
+    /// Implementaion of the iDamageable interface.
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(float damage)
     {
         hp -= damage;
@@ -170,6 +172,9 @@ public class Enemy : NetworkBehaviour, iDamageable
         }
     }
 
+    /// <summary>
+    /// Method which applies a slow effect to the enemy.
+    /// </summary>
     public void ApplySlow()
     {
         if (!isSlowed)
@@ -183,6 +188,7 @@ public class Enemy : NetworkBehaviour, iDamageable
         else
             timer += 0.1f;
     }
+
     [ClientRpc]
     private void isDyingUpdateClientRpc()
     {
@@ -193,6 +199,7 @@ public class Enemy : NetworkBehaviour, iDamageable
             Destroy(gameObject);
         }
     }
+
     [ClientRpc]
     private void isDyingClientRpc()
     {
@@ -201,6 +208,7 @@ public class Enemy : NetworkBehaviour, iDamageable
         rgbd2d.simulated = false;
         speed = 0;
     }
+
     [ClientRpc]
     private void takingDamageClientRpc()
     {
@@ -208,11 +216,13 @@ public class Enemy : NetworkBehaviour, iDamageable
         speed = reverseSpeed;
 
     }
+
     [ClientRpc]
     private void ResetMateriaClientRpc()
     {
         GetComponent<Renderer>().material = originalMat;
     }
+
     [ClientRpc]
     private void SpriteFlipFalseClientRpc()
     {

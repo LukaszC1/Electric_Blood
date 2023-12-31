@@ -5,16 +5,23 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// The main class which manages the game. It is responsible for most event present during the gameplay.
+/// </summary>
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
     [HideInInspector] public int xpGemAmount;
     [HideInInspector] public float xpBank;
+
+    /// <summary>
+    /// Dictionary containing the list of players in the game.
+    /// </summary>
     public Dictionary<ulong, Transform> listOfPlayers = new();
     public List<Transform> listOfPlayerTransforms = new();
-    private float timer = 1;
+
     [HideInInspector] NetworkVariable<int> killCount = new NetworkVariable<int>(0);
-    [SerializeField] TMPro.TextMeshProUGUI killCounter;
+    [SerializeField] TextMeshProUGUI killCounter;
     [SerializeField] TextMeshProUGUI coinsCounter;
     [SerializeField] GameObject xpBankGemPrefab;
     GameObject xpBankGem;
@@ -25,11 +32,20 @@ public class GameManager : NetworkBehaviour
     public ExperienceBar experienceBar;
     [SerializeField] public AudioSource xpSound;
 
+    /// <summary>
+    /// Event which is invoked when the state of the game changes.
+    /// </summary>
     public event EventHandler OnStateChanged;
+
+    /// <summary>
+    /// Event which is invoked when the game is paused.
+    /// </summary>
     public event EventHandler OnLocalGamePaused;
+
+    /// <summary>
+    /// Event which is invoked when the game is unpaused.
+    /// </summary>
     public event EventHandler OnLocalGameUnpaused;
-    public event EventHandler OnMultiplayerGamePaused;
-    public event EventHandler OnMultiplayerGameUnpaused;
 
     private enum State
     {
@@ -39,38 +55,28 @@ public class GameManager : NetworkBehaviour
         GameOver,
     }
 
-    private bool isLocalPlayerReady;
+    private float timer = 1;
     private bool isLocalGamePaused = false;
-    private bool indicatorNotLoaded = true;
-
-    NetworkVariable<int> connectedClientIdsCount = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-
     [SerializeField] private WaitingForOtherPlayersUI waitingForOtherPlayersUI;
-
     private NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
     private NetworkVariable<float> countdownToStartTimer = new NetworkVariable<float>(3f);
     private NetworkVariable<float> gamePlayingTimer = new NetworkVariable<float>(0f);
     private NetworkVariable<bool> isGamePaused = new NetworkVariable<bool>(false);
-
     private Dictionary<ulong, bool> playerPausedDictionary;
-
     [SerializeField] private GameObject characterPanel;
+
     [SerializeField] public GameObject singleplayerCamera;
     [SerializeField] public GameObject gameOverPanel;
     [SerializeField] public GameObject indicatorPrefab;
     
-
     private void Awake()
     {
         Time.timeScale = 1; //set the time scale to 1 in case it was set to 0 in the previous game
         Instance = this;
-
         playerPausedDictionary = new Dictionary<ulong, bool>();
- 
         experienceBar = FindObjectOfType<ExperienceBar>();
         experienceBar.UpdateExperienceSlider(experience.Value, TO_LEVEL_UP());
         experienceBar.SetLevelText(level.Value);
-
     }
     private void Start()
     {
@@ -81,7 +87,7 @@ public class GameManager : NetworkBehaviour
         killCount.OnValueChanged += UpdateKillCounter;
         coinsCounter.text = PersistentUpgrades.Instance.saveData.coins.ToString();
     }
-    public void OnDestroy()
+    private void OnDestroy()
     {
         PlayerMove.OnPauseAction -= OnPauseAction;
         UpgradePanelManager.OnPauseAction -= OnPauseAction;
@@ -138,8 +144,7 @@ public class GameManager : NetworkBehaviour
                 break;
         }
     }
-
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         CheckLevelUp();
         RefreshListOfPlayers(); 
@@ -166,6 +171,10 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method which toggles the pause state of the game.
+    /// </summary>
+    /// <param name="toggle"></param>
     public void TogglePauseGame(bool toggle = true)
     {
         isLocalGamePaused = !isLocalGamePaused;
@@ -212,15 +221,18 @@ public class GameManager : NetworkBehaviour
         isGamePaused.Value = false;
     }
 
+    /// <summary>
+    /// Method which retuns the current pause state of the game.
+    /// </summary>
+    /// <returns></returns>
     public bool IsGamePaused()
     {
         return isGamePaused.Value;
     }
 
-    public bool IsLocalPlayerReady()
-    {
-        return isLocalPlayerReady;
-    }
+    /// <summary>
+    /// Method called when the network is spawned. It adds the event listeners and sets the initial state of the game.
+    /// </summary>
     public override void OnNetworkSpawn()
     {
         state.OnValueChanged += State_OnValueChanged;
@@ -262,7 +274,7 @@ public class GameManager : NetworkBehaviour
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
         if(waitingForOtherPlayersUI.gameObject.activeSelf)
-        waitingForOtherPlayersUI.ChangeVisibility(); //disable the waiting for other players UI
+            waitingForOtherPlayersUI.ChangeVisibility(); //disable the waiting for other players UI
         
         TogglePauseGameWithMenuScreen();
     }
@@ -272,14 +284,10 @@ public class GameManager : NetworkBehaviour
         if (isGamePaused.Value)
         {
             Time.timeScale = 0f;
-
-            OnMultiplayerGamePaused?.Invoke(this, EventArgs.Empty);
         }
         else
         {
             Time.timeScale = 1f;
-
-            OnMultiplayerGameUnpaused?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -288,6 +296,39 @@ public class GameManager : NetworkBehaviour
         OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 
+
+    [ClientRpc]
+    private void LevelUpClientRpc()
+    {
+        foreach (var xd in listOfPlayers)
+        {
+            xd.Value.GetComponent<Character>().LevelUp();
+        }
+    }
+    [ClientRpc]
+    private void SetActiveClientRpc(NetworkObjectReference objectReference)
+    {
+        objectReference.TryGet(out NetworkObject Object);
+        Object.gameObject.SetActive(true);
+    }
+
+    [ClientRpc]
+    private void WaitingForOtherPlayersUIClientRpc()
+    {
+        waitingForOtherPlayersUI.ChangeVisibility();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void WaitingForOtherPlayersUIServerRpc()
+    {
+        WaitingForOtherPlayersUIClientRpc();
+    }
+
+    /// <summary>
+    /// Method which generates a random position taking into the account the position of the player.
+    /// </summary>
+    /// <param name="playerPos"></param>
+    /// <returns></returns>
     public Vector3 GenerateRandomPosition(Vector3 playerPos)
     {
         Vector3 position = new Vector3();
@@ -332,6 +373,9 @@ public class GameManager : NetworkBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Method which increments the kill counter.
+    /// </summary>
     public void IncrementKillCount()
     {
         if (IsServer)
@@ -340,6 +384,10 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method which checks how much experience is needed to level up.
+    /// </summary>
+    /// <returns></returns>
     public int TO_LEVEL_UP()
     {
         if (level.Value <= 20)
@@ -350,6 +398,9 @@ public class GameManager : NetworkBehaviour
             return 5 + (level.Value - 1) * 16;
     }
 
+    /// <summary>
+    /// Checks whether the player has enough experience to level up.
+    /// </summary>
     public void CheckLevelUp()
     {
         if (experience.Value >= TO_LEVEL_UP())
@@ -358,6 +409,9 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Methods which levels up the player when there is enough experience.
+    /// </summary>
     public void LevelUp()
     {
         if (!IsOwner) return;
@@ -365,6 +419,10 @@ public class GameManager : NetworkBehaviour
         level.Value += 1;
         LevelUpClientRpc();
     }
+
+    /// <summary>
+    /// Method which refreshes the list of players in the game.
+    /// </summary>
     public void RefreshListOfPlayers()
     {
         var players = GameObject.FindGameObjectsWithTag("Player");
@@ -377,53 +435,51 @@ public class GameManager : NetworkBehaviour
         listOfPlayerTransforms = new List<Transform>(listOfPlayers.Values);
     }
 
+    /// <summary>
+    /// Updates the kill counter when it changes value.
+    /// </summary>
+    /// <param name="previousValue"></param>
+    /// <param name="nextValue"></param>
     public void UpdateKillCounter(int previousValue, int nextValue)
     {
         killCounter.text = ":" + killCount.Value.ToString();
     }
 
+    /// <summary>
+    /// Updates the experience bar when it changes value.
+    /// </summary>
+    /// <param name="previousValue"></param>
+    /// <param name="nextValue"></param>
     public void UpdateExpSlider(float previousValue, float nextValue)
     {
         experienceBar.UpdateExperienceSlider(nextValue, TO_LEVEL_UP());
         xpSound.Play();
     }
 
+    /// <summary>
+    /// Updates the level text when it changes value.
+    /// </summary>
+    /// <param name="previousValue"></param>
+    /// <param name="nextValue"></param>
     public void UpdateLevelText(int previousValue, int nextValue)
     {
         experienceBar.SetLevelText(nextValue);
     }
 
+    /// <summary>
+    /// Adds experience to the player.
+    /// </summary>
+    /// <param name="amount"></param>
     public void AddExperience(float amount)
     {
         experience.Value += amount;
     }
-    [ClientRpc]
-    private void LevelUpClientRpc()
-    {
-        foreach (var xd in listOfPlayers)
-        {
-            xd.Value.GetComponent<Character>().LevelUp();
-        }
-    }
-    [ClientRpc]
-    private void SetActiveClientRpc(NetworkObjectReference objectReference)
-    {
-        objectReference.TryGet(out NetworkObject Object);
-        Object.gameObject.SetActive(true);
-    }
 
-    [ClientRpc]
-    private void WaitingForOtherPlayersUIClientRpc()
-    {
-        waitingForOtherPlayersUI.ChangeVisibility();
-    }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void WaitingForOtherPlayersUIServerRpc()
-    {
-        WaitingForOtherPlayersUIClientRpc();
-    }
-
+    /// <summary>
+    /// Updates the coins counter.
+    /// </summary>
+    /// <param name="newValue"></param>
     public void UpdateCoins(int newValue)
     {
         coinsCounter.text = newValue.ToString();

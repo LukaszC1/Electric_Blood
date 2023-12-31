@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// ElectrosphereLauncher is a weapon that spawns an ElectrosphereMissile on attack.
+/// </summary>
 public class ElectrosphereLauncher : WeaponBase
 {
     [SerializeField] GameObject missilePrefab;
@@ -27,7 +30,6 @@ public class ElectrosphereLauncher : WeaponBase
     [ServerRpc(RequireOwnership = false)]
     private void spawnObjectServerRpc(int i)
     {
-        //get enemy list somehow to fix the problem
         List<GameObject> enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
 
        if (enemies.Count != 0)
@@ -42,7 +44,7 @@ public class ElectrosphereLauncher : WeaponBase
             {
                 Vector3 throwDirection = randomEnemy - currentPosition;
                 ElectrosphereMissile projectile = missile.GetComponent<ElectrosphereMissile>();
-                projectile.setDirection(throwDirection.x, throwDirection.y);
+                projectile.SetDirection(throwDirection.x, throwDirection.y);
                 projectile.damage = weaponStats.damage;
                 projectile.speed = projectile.speed * character.projectileSpeedMultiplier.Value;
                 projectile.size = weaponStats.size;

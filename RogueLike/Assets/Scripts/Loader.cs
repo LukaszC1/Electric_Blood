@@ -4,9 +4,17 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Static class that handles scene loading.
+/// </summary>
 public static class Loader 
 {
-    public enum Scene //to do fix naming
+    private static Scene targetScene;
+
+    /// <summary>
+    /// Enum holding the possible scenes to load.
+    /// </summary>
+    public enum Scene 
     {
         MainMenu,
         GameScene,
@@ -15,10 +23,10 @@ public static class Loader
         CharacterSelection,
     }
 
-    private static Scene targetScene;
-
-
-
+    /// <summary>
+    /// Method that loads the target scene.
+    /// </summary>
+    /// <param name="targetScene"></param>
     public static void Load(Scene targetScene)
     {
         Loader.targetScene = targetScene;
@@ -26,11 +34,18 @@ public static class Loader
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
     }
 
+    /// <summary>
+    /// Method which loads the scene for all the clients.
+    /// </summary>
+    /// <param name="targetScene"></param>
     public static void LoadNetwork(Scene targetScene)
     {
         NetworkManager.Singleton.SceneManager.LoadScene(targetScene.ToString(), LoadSceneMode.Single);
     }
 
+    /// <summary>
+    /// Loader callback methods.
+    /// </summary>
     public static void LoaderCallback()
     {
         SceneManager.LoadScene(targetScene.ToString());

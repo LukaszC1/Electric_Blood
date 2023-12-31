@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script to the testing UI.
+/// </summary>
 public class TestingUI : MonoBehaviour
 {
     [SerializeField] private Button createGameButton;

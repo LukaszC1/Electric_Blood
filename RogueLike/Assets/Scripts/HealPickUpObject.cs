@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class handling the behaviour of the heal pick up object.
+/// </summary>
 public class HealPickUpObject : NetworkBehaviour, iPickUpObject
 {
     [SerializeField] int healAmount;
@@ -47,5 +50,4 @@ public class HealPickUpObject : NetworkBehaviour, iPickUpObject
     {
         Destroy(gameObject);
     }
-
 }

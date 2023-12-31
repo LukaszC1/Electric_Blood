@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class plasmaGrenadeThrow : WeaponBase
+/// <summary>
+/// Class handling the Plasma Grenade throwing action - spawns a grenade and throws it towards a random enemy.
+/// </summary>
+public class PlasmaGrenadeThrow : WeaponBase
 {
     [SerializeField] GameObject grenadePrefab;
 
@@ -27,7 +30,6 @@ public class plasmaGrenadeThrow : WeaponBase
     {
         if (enemies.Count != 0)
         {
-
             PlaySoundClientRpc();
 
             GameObject grenade = Instantiate(grenadePrefab);
@@ -53,6 +55,7 @@ public class plasmaGrenadeThrow : WeaponBase
             }
         }
     }
+
     [ClientRpc]
     private void PlaySoundClientRpc()
     {

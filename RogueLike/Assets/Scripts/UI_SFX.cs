@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class handling ui sfx.
+/// </summary>
 public class UI_SFX : MonoBehaviour
 {
     [Header("SFX")]
@@ -13,8 +16,6 @@ public class UI_SFX : MonoBehaviour
     public AudioSource sliderSound;
     [Tooltip("The GameObject holding the Audio Source component for the SWOOSH SOUND when switching to the Settings Screen")]
     public AudioSource swooshSound;
-
-
 
     public void PlayHover()
     {

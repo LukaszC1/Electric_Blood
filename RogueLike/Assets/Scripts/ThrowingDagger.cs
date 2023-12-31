@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Script to the Throwing Dagger weapon.
+/// </summary>
 public class ThrowingDagger : WeaponBase
 {
+    /// <summary>
+    /// The prefab of the Throwing Dagger.
+    /// </summary>
     [SerializeField] GameObject knifePrefab;
-
 
     public override void Attack()
     {
@@ -38,6 +43,7 @@ public class ThrowingDagger : WeaponBase
         projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
         projectile.pierce = weaponStats.pierce;
     }
+
     [ClientRpc]
     private void PlaySoundClientRpc()
     {

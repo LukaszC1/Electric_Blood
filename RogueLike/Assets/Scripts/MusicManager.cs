@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Class that manages the music in the game.
+/// </summary>
 public class MusicManager : MonoBehaviour
 {
-
     [SerializeField] AudioClip musicOnStart;
     AudioSource audioSource;
+    AudioClip switchAudio;
+    [SerializeField] float timeToSwitch;
+    float volume;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -18,8 +24,11 @@ public class MusicManager : MonoBehaviour
         Play(musicOnStart, false);
     }
 
-
-    AudioClip switchAudio;
+    /// <summary>
+    /// Method which plays the music.
+    /// </summary>
+    /// <param name="music"></param>
+    /// <param name="interrupt"></param>
     public void Play(AudioClip music, bool interrupt)
     {
         if (interrupt == true)
@@ -36,8 +45,6 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    [SerializeField] float timeToSwitch;
-    float volume;
     IEnumerator SmoothSwitch()
     {
         volume = 0.01f;

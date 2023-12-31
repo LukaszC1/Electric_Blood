@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Script attached to projectiles.
+/// </summary>
 public class ThrowingDaggerProjectile : NetworkBehaviour
 {
-    Vector3 direction;
+    //Public fields
     public float speed;
     public float damage;
     public float size;
     public int pierce = 1;
-    [SerializeField] float decayTime = 100;
 
+    //Private fields
+    [SerializeField] float decayTime = 100;
+    Vector3 direction;
     List<iDamageable> damagedEnemies;
 
+    /// <summary>
+    /// Sets the direction of the projectile.
+    /// </summary>
+    /// <param name="dirx"></param>
+    /// <param name="diry"></param>
     public void setDirection(float dirx, float diry)
     {
         direction = new Vector3(dirx, diry);
@@ -65,6 +75,11 @@ public class ThrowingDaggerProjectile : NetworkBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Creates the damage popup object at a given position.
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="worldPosition"></param>
     public void PostDamage(int damage, Vector3 worldPosition)
     {
         MessageSystem.instance.PostMessage(damage, worldPosition);

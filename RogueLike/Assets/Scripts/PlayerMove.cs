@@ -2,26 +2,30 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Classing handling player movement.
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : NetworkBehaviour
 {
+    //Public fields
+    /// <summary>
+    /// Event that is invoked when the player presses the pause button (ESC).
+    /// </summary>
     public static event EventHandler OnPauseAction;
-
+    [SerializeField] public float speed = 3f;
     public Rigidbody2D rgbd2d;
-
+    public SpriteRenderer sprite;
     [HideInInspector] public Vector3 movementVector;
     [HideInInspector] public NetworkVariable<float> lastHorizontalVector = new NetworkVariable<float>(1f,NetworkVariableReadPermission.Everyone ,NetworkVariableWritePermission.Owner);
     [HideInInspector] public NetworkVariable<float> lastVerticalVector = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [HideInInspector] public NetworkVariable<float> lastHorizontalVectorProjectiles = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [HideInInspector] public NetworkVariable<float> lastVerticalVectorProjectiles = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
-
-    [SerializeField] public float speed = 3f;
+    //Private fields
     bool facingRight = true;
-    public SpriteRenderer sprite;
-
-
     Animate animate;
+
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
@@ -31,7 +35,6 @@ public class PlayerMove : NetworkBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         if (!IsOwner) //only the local player can move this character
         {
             return;
@@ -79,7 +82,6 @@ public class PlayerMove : NetworkBehaviour
             }
             else if (movementVector.x != 0)
                 lastVerticalVectorProjectiles.Value = 0;
-
 
             animate.horizontal = movementVector.x;
 

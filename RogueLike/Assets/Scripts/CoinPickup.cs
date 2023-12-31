@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Pick up object for coins.
+/// </summary>
 public class CoinPickup : NetworkBehaviour, iPickUpObject
 {
     private float speed = 2.3f;
@@ -10,6 +13,10 @@ public class CoinPickup : NetworkBehaviour, iPickUpObject
     Transform targetDestination;
     private float timer = 0.2f;
 
+    /// <summary>
+    /// Method which adds the coins to the players after pickup.
+    /// </summary>
+    /// <param name="character"></param>
     public void OnPickUp(Character character)
     {
         if (!IsOwner) return;

@@ -5,21 +5,20 @@ using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script handling the Lobby user interface.
+/// </summary>
 public class LobbyUI : MonoBehaviour
 {
     [SerializeField] private Button _mainMenuBtn;
     [SerializeField] private Button _createLobbyBtn;
     [SerializeField] private Button _quickJoinBtn;
     [SerializeField] private Button _joinCodeBtn;
-
     [SerializeField] private TMP_InputField _joinCodeInputField;
     [SerializeField] private TMP_InputField _playerNameInputField;
-
     [SerializeField] private CreateLobbyUI _lobbyCreateUI;
-
     [SerializeField] private Transform _lobbyContainer;
     [SerializeField] private Transform _lobbyTemplate;
-
 
     private void Awake()
     {

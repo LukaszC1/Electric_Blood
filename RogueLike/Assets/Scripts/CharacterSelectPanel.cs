@@ -8,15 +8,16 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script attached to the character select panel.
+/// </summary>
 public class CharacterSelectPanel : NetworkBehaviour
 {
     [SerializeField] private Button nextButton;
     [SerializeField] private Button previousButton;
     [SerializeField] private Button selectButton;
     [SerializeField] private Button closeButton;
-
     [SerializeField] private Image displayedCharacter;
-
     [SerializeField] TextMeshProUGUI characterName;
     [SerializeField] private TextMeshProUGUI characterDescription;
     [SerializeField] private TextMeshProUGUI maxHp;

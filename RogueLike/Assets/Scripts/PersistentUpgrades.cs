@@ -13,6 +13,9 @@ using static ShopPanelUI;
 /// </summary>
 public class PersistentUpgrades : MonoBehaviour
 {
+    /// <summary>
+    /// Field containing the data to be saved.
+    /// </summary>
     public SaveData saveData = new SaveData();
     public static PersistentUpgrades Instance { get; private set;}
 
@@ -24,6 +27,9 @@ public class PersistentUpgrades : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    /// <summary>
+    /// Method which saves the data to a file.
+    /// </summary>
     public void Save()
     {
         string saveDataJson = JsonUtility.ToJson(saveData);
@@ -32,6 +38,9 @@ public class PersistentUpgrades : MonoBehaviour
         Debug.Log("Data saved at: " + filePath);
     }
 
+    /// <summary>
+    /// Method which loads the data from a file.
+    /// </summary>
     public void Load()
     {
         string filePath = Application.persistentDataPath + "/saveData.json";
@@ -49,6 +58,10 @@ public class PersistentUpgrades : MonoBehaviour
         Debug.Log("Data loaded at: " + filePath);
     }
 
+    /// <summary>
+    /// Method which increases the number of coins.
+    /// </summary>
+    /// <param name="v"></param>
     public void AddCoins(int v)
     {
        saveData.coins += v;
@@ -61,6 +74,9 @@ public class PersistentUpgrades : MonoBehaviour
 [Serializable]
 public class SaveData
 {
+    /// <summary>
+    /// Field containing the number of coins collected.
+    /// </summary>
     public int coins
     {
         get
@@ -77,6 +93,10 @@ public class SaveData
     [FormerlySerializedAs("coins")]
     [SerializeField]
     private int _coins = 0;
+
+    /// <summary>
+    /// Field containing the number of total coins spent.
+    /// </summary>
     public int totalCoinsSpent = 0;
     private void OnValueChanged(int oldValue, int newValue)
     {
@@ -84,6 +104,9 @@ public class SaveData
         Debug.Log("Coins changed from " + oldValue + " to " + newValue);
     }
 
+    /// <summary>
+    /// List containing the upggraded stats of the character.
+    /// </summary>
     public List<LoadedStats> newCharacterStats = new List<LoadedStats>{
         new LoadedStats { stat = CharacterStats.MaxHp, currentValue = 0, currentLevel = 0, maxLevel = 5, initialPrice = 100 },
         new LoadedStats { stat = CharacterStats.Armor, currentValue = 0, currentLevel = 0, maxLevel = 1, initialPrice = 1000 },

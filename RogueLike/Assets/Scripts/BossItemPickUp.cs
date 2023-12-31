@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-
+/// <summary>
+/// BossItemPickUp is a class that gives the player a random upgrade when picked up.
+/// </summary>
 public class BossItemPickUp : NetworkBehaviour, iPickUpObject
 {
-
+    /// <summary>
+    /// Adds a random upgrade to the player's list of upgrades on pick up.
+    /// </summary>
+    /// <param name="character"></param>
     public void OnPickUp(Character character)
     {
         //add the random upgrade to the character

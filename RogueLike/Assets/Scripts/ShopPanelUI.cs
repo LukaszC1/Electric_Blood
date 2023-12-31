@@ -8,8 +8,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script that handles the shop panel UI for persistent upgrades.
+/// </summary>
 public class ShopPanelUI : MonoBehaviour
 {
+    //Private fields
     [SerializeField] private Button closeButton;
     [SerializeField] private Button buyButton;
     [SerializeField] private Button resetButton;
@@ -22,6 +26,9 @@ public class ShopPanelUI : MonoBehaviour
     private int totalCoinsSpent = 0;
     private int coins;
 
+    /// <summary>
+    /// Enum that represents the stats that can be upgraded.
+    /// </summary>
     public enum CharacterStats : int
     {
         MaxHp,
@@ -35,6 +42,9 @@ public class ShopPanelUI : MonoBehaviour
         AmountBonus
     }
 
+    /// <summary>
+    /// The struct that holds the data for each stat for serialization.
+    /// </summary>
     [Serializable]
     public struct LoadedStats
     {
@@ -92,6 +102,10 @@ public class ShopPanelUI : MonoBehaviour
         availableCoins.text = "COINS:" + PersistentUpgrades.Instance.saveData.coins.ToString();
     }
 
+    /// <summary>
+    /// Method handling the OnClick event for the plus button with a given index.
+    /// </summary>
+    /// <param name="i"></param>
     public void OnClickPlus(int i)
     {
         var currentUpgradeLevel = characterStats[i];

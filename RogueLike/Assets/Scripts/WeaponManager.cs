@@ -5,16 +5,30 @@ using Unity.Netcode;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
+/// <summary>
+/// Weapon manager class. This class is responsible for managing the weapons of the player.
+/// </summary>
 public class WeaponManager : NetworkBehaviour
 {
-    [SerializeField] Transform weaponObjectContainer;
-    [SerializeField] WeaponData startingWeapon;
+    /// <summary>
+    /// List of weapons.
+    /// </summary>
+    [HideInInspector] public List<WeaponBase> weapons;
+
+    /// <summary>
+    /// Enemies manager handling the enemies spawning.
+    /// </summary>
     [HideInInspector] public EnemiesManager enemiesManager;
+
+    /// <summary>
+    /// List of all possible weapons.
+    /// </summary>
     [SerializeField] public List<WeaponData> allWeapons;
 
-    [HideInInspector] public List<WeaponBase> weapons;
+    [SerializeField] WeaponData startingWeapon;
     Character character;
     EquipedItemsManager equipedItemsManager;
+    [SerializeField] Transform weaponObjectContainer;
 
     private void Awake()
     {
@@ -30,12 +44,21 @@ public class WeaponManager : NetworkBehaviour
         if (!IsOwner) return;
         AddWeapon(startingWeapon);
     }
+
+    /// <summary>
+    /// Method which adds a weapon.
+    /// </summary>
+    /// <param name="weaponData"></param>
     public void AddWeapon(WeaponData weaponData)
     {
         AddWeaponServerRpc(weaponData.Name);
     }
 
-    internal void UpgradeWeapon(UpgradeData upgradeData)
+    /// <summary>
+    /// Method which applies upgrades to weapons.
+    /// </summary>
+    /// <param name="upgradeData"></param>
+    public void UpgradeWeapon(UpgradeData upgradeData)
     {
         WeaponBase weaponToUpgrade = weapons.Find(wd => wd.weaponData == upgradeData.weaponData);
         UpgradeWeaponServerRpc(upgradeData.weaponUpgradeStats, weaponToUpgrade);
@@ -80,7 +103,5 @@ public class WeaponManager : NetworkBehaviour
         weaponBaseReference.TryGet<WeaponBase>(out WeaponBase weaponToUpgrade);
         weaponToUpgrade.Upgrade(weaponStats);
     }
-
-
 }
 

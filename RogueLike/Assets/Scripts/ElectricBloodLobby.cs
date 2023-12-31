@@ -14,33 +14,40 @@ using Unity.Services.Relay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class handling the connection to the Unity Relay server and the Unity Lobby service.
+/// </summary>
 public class ElectricBloodLobby : NetworkBehaviour
 {
     public static ElectricBloodLobby Instance { get; private set; }
 
     private const string KEY_RELAY_JOIN_CODE = "RelayJoinCode";
+
     public event EventHandler OnCreateLobbyStarted;
     public event EventHandler OnCreateLobbyFailed;
     public event EventHandler OnJoinStarted;
     public event EventHandler OnQuickJoinFailed;
     public event EventHandler OnJoinFailed;
+
+    /// <summary>
+    /// Event that is invoked when the lobby list changes.
+    /// </summary>
     public event EventHandler<OnLobbyListChangedEventArgs> OnLobbyListChanged;
+
     private Lobby joinedLobby;
     private float heartbeatTimer;
     private float listLobbiesTimer;
 
     public class OnLobbyListChangedEventArgs : EventArgs
     {
-        public List<Lobby> lobbyList;
+       public List<Lobby> lobbyList;
     }
 
-        private void Awake()
+    private void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        
-        InitializeUnityAuthentication();
-       
+       Instance = this;
+       DontDestroyOnLoad(gameObject);
+       InitializeUnityAuthentication();
     }
 
     private async void InitializeUnityAuthentication()
@@ -79,7 +86,9 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method which handles the heartbeat singal to keep the lobby alive.
+    /// </summary>
     private void HandleHeartbeat()
     {
         if (IsLobbyHost())
@@ -122,7 +131,6 @@ public class ElectricBloodLobby : NetworkBehaviour
             Debug.Log(e);
         }
     }
-
 
     private async Task<Allocation> AllocateRelay()
     {
@@ -169,7 +177,11 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method to create a lobby.
+    /// </summary>
+    /// <param name="lobbyName"></param>
+    /// <param name="isPrivate"></param>
     public async void CreateLobby(string lobbyName, bool isPrivate)
     {
         OnCreateLobbyStarted?.Invoke(this, EventArgs.Empty);
@@ -202,6 +214,10 @@ public class ElectricBloodLobby : NetworkBehaviour
             OnCreateLobbyFailed?.Invoke(this, EventArgs.Empty);
         }
     }
+
+    /// <summary>
+    /// Method to quickjoin a lobby.
+    /// </summary>
     public async void QuickJoin()
     {
         OnJoinStarted?.Invoke(this, EventArgs.Empty);
@@ -224,6 +240,10 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to join a lobby with a lobby id.
+    /// </summary>
+    /// <param name="lobbyId"></param>
     public async void JoinWithId(string lobbyId)
     {
         OnJoinStarted?.Invoke(this, EventArgs.Empty);
@@ -246,6 +266,10 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to join a lobby with a lobby code.
+    /// </summary>
+    /// <param name="lobbyCode"></param>
     public async void JoinWithCode(string lobbyCode)
     {
         OnJoinStarted?.Invoke(this, EventArgs.Empty);
@@ -268,6 +292,9 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to delete a lobby.
+    /// </summary>
     public async void DeleteLobby()
     {
         if (joinedLobby != null)
@@ -285,6 +312,9 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method to leave a lobby.
+    /// </summary>
     public async void LeaveLobby()
     {
         if (joinedLobby != null)
@@ -302,6 +332,10 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method for kicking a player.
+    /// </summary>
+    /// <param name="playerId"></param>
     public async void KickPlayer(string playerId)
     {
         if (IsLobbyHost())
@@ -317,6 +351,10 @@ public class ElectricBloodLobby : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Getter for the joined lobby.
+    /// </summary>
+    /// <returns></returns>
     public Lobby GetLobby()
     {
         return joinedLobby;

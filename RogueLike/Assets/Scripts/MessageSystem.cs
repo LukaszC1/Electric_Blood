@@ -4,17 +4,21 @@ using TMPro;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Singleton class handling the message display system.
+/// </summary>
 public class MessageSystem : NetworkBehaviour
 {
     public static MessageSystem instance;
+    [SerializeField] GameObject damagePopup;
+    List<NetworkObject> messagePool;
+    int objectCount = 100;
+    int count = 0;
 
     private void Awake()
     {
         instance = this; 
     }
-
-    int objectCount = 100;
-    int count = 0;
 
     private void Start()
     {
@@ -27,9 +31,11 @@ public class MessageSystem : NetworkBehaviour
         }
     }
 
-    [SerializeField] GameObject damagePopup;
-    List<NetworkObject> messagePool;
-
+    /// <summary>
+    /// Posts a damage message to the screen at a given position.
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="position"></param>
     public void PostMessage (int damage, Vector3 position)
     {
         if (!IsOwner) return;
@@ -65,7 +71,7 @@ public class MessageSystem : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void fillListServerRpc()
+    private void fillListServerRpc()
     {
         GameObject go = Instantiate(damagePopup);
         messagePool.Add(go.GetComponent<NetworkObject>());

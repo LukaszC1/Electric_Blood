@@ -4,14 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script for the Create Lobby UI.
+/// </summary>
 public class CreateLobbyUI : MonoBehaviour
 {
     [SerializeField] private Button _closeBtn;
     [SerializeField] private Button _createPublicBtn;
     [SerializeField] private Button _createPrivateBtn;
     [SerializeField] private TMP_InputField _lobbyNameInputField;
-
-
 
     private void Awake()
     {  

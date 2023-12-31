@@ -6,17 +6,17 @@ using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script handling the character/level selection.
+/// </summary>
 public class SelectionUI : MonoBehaviour
 {
     [SerializeField] private Button _mainMenuBtn;
     [SerializeField] private Button _readyBtn;
     [SerializeField] private Button _selectCharacter;
     [SerializeField] private Button _selectLevel;
-
     [SerializeField] private CharacterSelectPanel _characterSelectPanel;
     [SerializeField] private LevelSelectionPanel _levelSelectionPanel;
-
-
     [SerializeField] private TextMeshProUGUI _lobbyNameText;
     [SerializeField] private TextMeshProUGUI _lobbyCodeText;
 

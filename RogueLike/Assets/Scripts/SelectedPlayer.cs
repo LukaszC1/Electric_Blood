@@ -7,6 +7,9 @@ using Unity.Services.Lobbies;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script attached to the selected player prefab. It is used to display the selected character and the player name.
+/// </summary>
 public class SelectedPlayer : NetworkBehaviour
 {
     [SerializeField] private int playerIndex;
@@ -80,7 +83,7 @@ public class SelectedPlayer : NetworkBehaviour
         gameObject.SetActive(false);
     }
 
-    public void OnDestroy()
+    private void OnDestroy()
     {
         ElectricBloodMultiplayer.Instance.OnPlayerDataNetworkListChanged -= Instance_OnPlayerDataNetworkListChanged;
     }

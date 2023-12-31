@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// This class is responsible for updating the counter on the GameScene.
+/// </summary>
 public class TimerUi : MonoBehaviour
 {
     TextMeshProUGUI text;
@@ -12,6 +15,10 @@ public class TimerUi : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
     }
 
+    /// <summary>
+    /// Method that updates the counter on the GameScene.
+    /// </summary>
+    /// <param name="time"></param>
     public void UpdateTime(float time)
     {
         int minutes = (int)(time / 60);

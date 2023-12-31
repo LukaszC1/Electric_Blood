@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// The class attached to Quickhack weapon inheriting from WeaponBase.
+/// </summary>
 public class Quickhack : WeaponBase
 {
     [SerializeField] GameObject hackAnim;
@@ -58,5 +61,4 @@ public class Quickhack : WeaponBase
             }
         }
     }
-
 }

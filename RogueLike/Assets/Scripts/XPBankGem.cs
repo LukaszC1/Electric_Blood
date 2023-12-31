@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
+
+/// <summary>
+/// Script for the XPBankGem object implementing the iPickUpObject interface.
+/// </summary>
 public class XPBankGem : NetworkBehaviour, iPickUpObject
 {
     private float speed = 2.3f;

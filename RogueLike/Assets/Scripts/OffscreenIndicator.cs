@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// This script is used to display an arrow pointing to the target if the target is offscreen.
+/// </summary>
 public class OffscreenIndicator : MonoBehaviour
 {
+    /// <summary>
+    /// The target to point to.
+    /// </summary>
     public Transform target;
+
+    /// <summary>
+    /// How far offscreen the target can be before the indicator is displayed.
+    /// </summary>
     public float threshold = 10f;
+
     private Camera cam;
     private SpriteRenderer spriteRenderer;
 

@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class containing all the stats of an item.
+/// </summary>
 [Serializable]
 public class ItemStats
 {
@@ -16,8 +19,11 @@ public class ItemStats
     public float cdMultiplier;
     public int amountBonus;
    
-
-    internal void Sum(ItemStats stats)
+    /// <summary>
+    /// Method which upgrades the stats of an item.
+    /// </summary>
+    /// <param name="stats"></param>
+    public void Sum(ItemStats stats)
     {
         maxHp += stats.maxHp;
         armor += stats.armor;
@@ -31,21 +37,41 @@ public class ItemStats
     }
 }
 
-
-
+/// <summary>
+/// Item ScriptableObject which contains all the information of an item.
+/// </summary>
 [CreateAssetMenu]
 public class Item : ScriptableObject
 {
+    /// <summary>
+    /// The name of the item.
+    /// </summary>
     public string Name;
+
+    /// <summary>
+    /// The stats of the item.
+    /// </summary>
     public ItemStats stats;
+
+    /// <summary>
+    /// The first upgrade.
+    /// </summary>
     public UpgradeData firstUpgrade;
 
+    /// <summary>
+    /// Initializes the item.
+    /// </summary>
+    /// <param name="Name"></param>
     public void Init(string Name)
     {
         this.Name = Name;
         stats = new ItemStats();
     }
 
+    /// <summary>
+    /// Method which equips an item to a character.
+    /// </summary>
+    /// <param name="character"></param>
     public void Equip(Character character)
     {
         character.maxHp.Value += stats.maxHp;
@@ -59,6 +85,10 @@ public class Item : ScriptableObject
         character.amountBonus.Value += stats.amountBonus;
     }
 
+    /// <summary>
+    /// Method which unequips an item from a character.
+    /// </summary>
+    /// <param name="character"></param>
     public void UnEquip(Character character)
     {
         character.maxHp.Value -= stats.maxHp;

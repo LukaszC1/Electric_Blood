@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class for destructable objects. Implements iDamageable.
+/// </summary>
 public class DestructableObject : NetworkBehaviour, iDamageable
 {
     private bool tookDamage = false;
@@ -11,6 +14,9 @@ public class DestructableObject : NetworkBehaviour, iDamageable
     private bool isGettingDestroyed = false;
     private float dissolveAmount = 1;
 
+    /// <summary>
+    /// List of possible drops on destroy of the object.
+    /// </summary>
     [SerializeField] List<DropOnDestroy> dropOnDestroy = new List<DropOnDestroy>();
 
     public void ApplySlow()

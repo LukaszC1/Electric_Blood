@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// This class is responsible for the laser rifle weapon.
+/// </summary>
 public class LaserRifle : WeaponBase
 {
     [SerializeField] GameObject laserPrefab;
@@ -22,7 +25,7 @@ public class LaserRifle : WeaponBase
         }
     }
 
-    Vector3 GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)
+    private Vector3 GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)
     {
         Transform bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;

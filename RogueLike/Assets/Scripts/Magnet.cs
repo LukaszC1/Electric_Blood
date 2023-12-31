@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Magnet is a script that is attached to the player and is used to attract coins and other objects to the player.
+/// </summary>
 public class Magnet : NetworkBehaviour
 {
     private float Size;
-
     Character character;
 
     private void Awake()
@@ -28,6 +30,9 @@ public class Magnet : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Function which levels up the magnet size.
+    /// </summary>
     public void LevelUpUpdate()
     {
         Size = character.magnetSize.Value;

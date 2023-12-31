@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class attached to HPBarBase.
+/// </summary>
 public class StatusBar : NetworkBehaviour
 {
+    /// <summary>
+    /// The transform of the status bar.
+    /// </summary>
     [SerializeField] Transform bar;
 
+    /// <summary>
+    /// Setter for the status bar.
+    /// </summary>
+    /// <param name="current"></param>
+    /// <param name="max"></param>
     public void SetState(int current, int max)
     {
         float state = (float)current;

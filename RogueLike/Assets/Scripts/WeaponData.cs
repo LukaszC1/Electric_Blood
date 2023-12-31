@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Class containing all the stats of a weapon implementing INetworkSerializable interface.
+/// </summary>
 [Serializable]
 public class WeaponStats : INetworkSerializable
 {
+    //weapon attributes
     public float damage;
     public float timeToAttack;
     public float size;
@@ -14,8 +18,15 @@ public class WeaponStats : INetworkSerializable
     public int amount;
     public int pierce;
 
-    //weapon attributes
-
+    /// <summary>
+    /// WeaponStats constructor.
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="timeToAttack"></param>
+    /// <param name="size"></param>
+    /// <param name="vectorSize"></param>
+    /// <param name="amount"></param>
+    /// <param name="pierce"></param>
     public WeaponStats(float damage, float timeToAttack, float size, Vector2 vectorSize, int amount, int pierce)
     {
         this.damage = damage;   
@@ -25,6 +36,10 @@ public class WeaponStats : INetworkSerializable
         this.amount = amount;
         this.pierce = pierce;
     }
+
+    /// <summary>
+    /// WeaponStats default constructor.
+    /// </summary>
     public WeaponStats()
     {
         this.damage = 0;
@@ -35,6 +50,11 @@ public class WeaponStats : INetworkSerializable
         this.amount = 0;
     }
 
+    /// <summary>
+    /// Implementation of the INetworkSerializable interface method.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="serializer"></param>
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref damage);
@@ -45,6 +65,10 @@ public class WeaponStats : INetworkSerializable
         serializer.SerializeValue(ref vectorSize);
     }
 
+    /// <summary>
+    /// Method which adds the upgrade stats to the current weapon stats.
+    /// </summary>
+    /// <param name="weaponUpgradeStats"></param>
     public void Sum(WeaponStats weaponUpgradeStats)
     {
         this.damage += weaponUpgradeStats.damage;
@@ -55,6 +79,10 @@ public class WeaponStats : INetworkSerializable
         this.pierce += weaponUpgradeStats.pierce;
     }
 }
+
+/// <summary>
+/// Scriptable object containing the information about weapons.
+/// </summary>
 [CreateAssetMenu]
 public class WeaponData : ScriptableObject
 {

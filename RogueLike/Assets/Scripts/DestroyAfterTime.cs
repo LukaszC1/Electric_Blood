@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Class that destroys the game object after a certain amount of time.
+/// </summary>
 public class DestroyAfterTime : NetworkBehaviour
 {
     [SerializeField] float timeToDestroy = 0.8f;

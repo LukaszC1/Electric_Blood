@@ -5,12 +5,13 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script attached to the in-game pause menu UI.
+/// </summary>
 public class GamePauseUI : NetworkBehaviour
 {
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
-
-
     private void Awake()
     {
         resumeButton.onClick.AddListener(() => {

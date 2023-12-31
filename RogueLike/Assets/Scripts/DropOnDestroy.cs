@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// Class that handles dropping an item on destroy.
+/// </summary>
 public class DropOnDestroy : NetworkBehaviour
 {
     [SerializeField] GameObject droppedItem;
@@ -14,6 +17,9 @@ public class DropOnDestroy : NetworkBehaviour
         quitting = true;       
     }
 
+    /// <summary>
+    /// Checks if the object should drop an item
+    /// </summary>
     public void CheckDrop()
     {
         if (!IsOwner) return;

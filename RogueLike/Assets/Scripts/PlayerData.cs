@@ -8,12 +8,18 @@ using Unity.VisualScripting;
 /// </summary>
 public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
 {
+    //Public fields
     public ulong clientId;
     public int characterIndex;
     public int selectedLevel;
     public FixedString64Bytes playerName;
     public FixedString64Bytes playerId;
 
+    /// <summary>
+    /// Implementation of Equals method.
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
     public bool Equals(PlayerData other)
     {
         return
@@ -24,6 +30,11 @@ public struct PlayerData : INetworkSerializable, IEquatable<PlayerData>
         this.playerId == other.playerId;
     }
 
+    /// <summary>
+    /// Implementation of the INetworkSerializable interface.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="serializer"></param>
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
        serializer.SerializeValue(ref clientId);

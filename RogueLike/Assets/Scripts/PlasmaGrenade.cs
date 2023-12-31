@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
+/// <summary>
+/// The plasma grenade projectile.
+/// </summary>
 public class PlasmaGrenade : NetworkBehaviour
 {
     Vector3 direction;
@@ -28,7 +31,6 @@ public class PlasmaGrenade : NetworkBehaviour
         damagedEnemies = new List<iDamageable>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
@@ -77,7 +79,6 @@ public class PlasmaGrenade : NetworkBehaviour
 
                 break;
             }
-
         }
 
         if (decayTime <= 0 || pierce <= 0)
@@ -85,5 +86,4 @@ public class PlasmaGrenade : NetworkBehaviour
             Destroy(gameObject);
         }
     }
-
 }

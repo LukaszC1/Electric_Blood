@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Trigger used to generate more map chunks.
+/// </summary>
 public class MapTrigger : MonoBehaviour
 {
-    MapController controller;
+    /// <summary>
+    /// Map reference.
+    /// </summary>
     public GameObject targetMap;
 
-
-    // Start is called before the first frame update
-    void Start()
+    MapController controller;
+  
+    private void Start()
     {
         controller = FindObjectOfType<MapController>();
     }

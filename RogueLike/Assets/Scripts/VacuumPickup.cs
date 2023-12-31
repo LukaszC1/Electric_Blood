@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Script attached to the pickup object that is used to vacuum gems from the map.
+/// </summary>
 public class VacuumPickup : NetworkBehaviour, iPickUpObject
 {
+    //Private fields
     private float speed = 2.3f;
     private float speed2 = 3;
     Transform targetDestination;
     private float timer = 0.2f;
 
+    /// <summary>
+    /// On pickup method implementation, vacuum the gems from the map.
+    /// </summary>
+    /// <param name="character"></param>
     public void OnPickUp(Character character)
     {
         if (!IsOwner) return;

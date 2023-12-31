@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script attached to the ConnectingUI.
+/// </summary>
 public class ConnectingUI : MonoBehaviour
 {
     private void Start()

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// ElectrosphereMissile is a projectile that spawns an ElectroSphere on collision with an enemy.
+/// </summary>
 public class ElectrosphereMissile : NetworkBehaviour
 {
     Vector3 direction;
@@ -15,9 +18,12 @@ public class ElectrosphereMissile : NetworkBehaviour
     public Character character;
     public float timeToAttack;
 
+    /// <summary>
+    /// List of enemies that have already been damaged by this ElectrosphereMissile.
+    /// </summary>
     List<iDamageable> damagedEnemies;
 
-    public void setDirection(float dirx, float diry)
+    public void SetDirection(float dirx, float diry)
     {
         direction = new Vector3(dirx, diry);
         transform.right = direction;
@@ -72,5 +78,4 @@ public class ElectrosphereMissile : NetworkBehaviour
             Destroy(gameObject);
         }
     }
-
 }

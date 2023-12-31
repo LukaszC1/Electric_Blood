@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Class handling the events of a stage.
+/// </summary>
 public class StageEventManager : NetworkBehaviour
 {
     [SerializeField] StageData stageData;

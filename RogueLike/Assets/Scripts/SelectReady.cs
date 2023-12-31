@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
+/// <summary>
+/// Class which handles the ready state of the players in the lobby.
+/// </summary>
 public class SelectReady : NetworkBehaviour
 {
+    /// <summary>
+    /// Singleton instance.
+    /// </summary>
     public static SelectReady Instance { get; private set; }
-    public event EventHandler OnReadyChanged;
-    private Dictionary<ulong, bool> _readyDict;
 
+    /// <summary>
+    /// Event which is invoked when the ready state of the player changes.
+    /// </summary>
+    public event EventHandler OnReadyChanged;
+
+    private Dictionary<ulong, bool> _readyDict;
 
     private void Awake()
     {

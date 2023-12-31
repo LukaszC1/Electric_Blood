@@ -6,8 +6,12 @@ using Unity.Netcode;
 using UnityEngine;
 using static ShopPanelUI;
 
+/// <summary>
+/// Abstract class which is the base class for all the characters in the game.
+/// </summary>
 public abstract class Character : NetworkBehaviour
 {
+    //Public fields
     [SerializeField] public NetworkVariable<int> maxHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] public NetworkVariable<int> armor = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] public NetworkVariable<float> hpRegen = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -17,30 +21,24 @@ public abstract class Character : NetworkBehaviour
     [SerializeField] public NetworkVariable<float> magnetSize = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] public NetworkVariable<float> cooldownMultiplier = new NetworkVariable<float>(1f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] public NetworkVariable<int> amountBonus = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-
-    public bool playerIsDead = false;
-    private bool indicatorNotLoaded = true;
-    private bool nickNotLoaded = true;
-
+    [SerializeField] public AudioSource xpSound;
+    public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     public ulong clientId;
     public float hpRegenTimer;
+    public bool playerIsDead = false;
+
+    //Private fields
+    private bool indicatorNotLoaded = true;
+    private bool nickNotLoaded = true;
     private float dissolveAmount = 1;
-
-    [SerializeField] public AudioSource xpSound;
-
-    public NetworkVariable<ulong> playerID = new NetworkVariable<ulong>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-
-    public NetworkVariable<int> currentHp = new NetworkVariable<int>(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     [SerializeField] StatusBar hpBar;
-
     private UpgradePanelManager upgradePanelManager;
     [SerializeField] EquipedItemsManager equipedItemsManager;
     [SerializeField] List<UpgradeData> upgrades;
-
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> acquiredUpgrades;
     [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
-
     WeaponManager weaponManager;
     PassiveItems passiveItems;
     [SerializeField] GameObject camera;
@@ -79,7 +77,7 @@ public abstract class Character : NetworkBehaviour
         hpBar.SetState(currentHp.Value, maxHp.Value);
     }
 
-    public void Update()
+    private void Update()
     {
         if (!IsOwner) return;
         hpRegenTimer += Time.deltaTime * hpRegen.Value;
@@ -92,7 +90,7 @@ public abstract class Character : NetworkBehaviour
 
     }
 
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!IsOwner) return;
         if (playerIsDead)
@@ -113,7 +111,7 @@ public abstract class Character : NetworkBehaviour
         return;
     }
 
-    public void Start()
+    private void Start()
     {
         if (!IsLocalPlayer)
         {
@@ -154,7 +152,6 @@ public abstract class Character : NetworkBehaviour
 
         AddUpgradesIntoList(upgradesAvailableOnStart);
         clientId = NetworkManager.Singleton.LocalClientId;
-
     }
 
     private void LoadPersistentUpgrades()
@@ -199,6 +196,10 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Implemantation of taking damage by the player.
+    /// </summary>
+    /// <param name="damage"></param>
     public void TakeDamage(int damage)
     {
         if (!IsOwner)  //only for testing
@@ -229,11 +230,13 @@ public abstract class Character : NetworkBehaviour
         }
 
     }
+
     [ServerRpc(RequireOwnership = false)]
     private void DestroyGameObjectServerRpc()
     {
        this.GetComponent<NetworkObject>().Despawn();
     }
+
     [ClientRpc]
     public void TakeDamageClientRpc(int damage)
     {
@@ -242,6 +245,7 @@ public abstract class Character : NetworkBehaviour
             TakeDamage(damage);
         }
     }
+
     [ClientRpc]
     private void SwitchCameraClientRpc(ClientRpcParams clientRpcParams = default)
     {
@@ -255,6 +259,7 @@ public abstract class Character : NetworkBehaviour
             }
         }
     }
+
     [ClientRpc]
     private void isDyingUpdateClientRpc()
     {
@@ -265,11 +270,13 @@ public abstract class Character : NetworkBehaviour
             CheckForGameOverServerRpc();
         }
     }
+
     [ServerRpc(RequireOwnership = false)]
     private void isDyingUpdateServerRpc()
     {
         isDyingUpdateClientRpc();
     }
+
     [ClientRpc]
     private void PlayerDeathClientRpc()
     {
@@ -277,6 +284,7 @@ public abstract class Character : NetworkBehaviour
         playerMove.rgbd2d.simulated = false;
         playerMove.speed = 0;
     }
+
     [ServerRpc(RequireOwnership = false)]
     private void CheckForGameOverServerRpc()
     {
@@ -291,18 +299,27 @@ public abstract class Character : NetworkBehaviour
             DestroyGameObjectServerRpc();
         }
     }
+
     [ClientRpc]
     private void GameOverClientRpc()
     {
         GetComponent<GameOver>().PlayerGameOver();
     }
+
+    /// <summary>
+    /// Function which applies armor to the damage taken.
+    /// </summary>
+    /// <param name="damage"></param>
     public void ApplyArmor(ref int damage)
     {
         damage -= armor.Value;
         if (damage <= 0) { damage = 1; }
     }
 
-
+    /// <summary>
+    /// Method which heals the player.
+    /// </summary>
+    /// <param name="amount"></param>
     public void Heal(int amount)
     {
         if (currentHp.Value <= 0) { return; }
@@ -326,6 +343,9 @@ public abstract class Character : NetworkBehaviour
             Heal(amount);
     }
 
+    /// <summary>
+    /// Method which levels up the player.
+    /// </summary>
     public void LevelUp()
     {
 
@@ -345,12 +365,17 @@ public abstract class Character : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void updateWeaponsServerRpc()
+    private void updateWeaponsServerRpc()
     {
         foreach (var weapon in weaponManager.weapons)
             weapon.LevelUpUpdate();
     }
 
+    /// <summary>
+    /// Method which returns a list of upgrades.
+    /// </summary>
+    /// <param name="count"></param>
+    /// <returns></returns>
     public List<UpgradeData> GetUpgrades(int count)
     {
         List<UpgradeData> upgradeList = new List<UpgradeData>();
@@ -372,6 +397,10 @@ public abstract class Character : NetworkBehaviour
         return upgradeList;
     }
 
+    /// <summary>
+    /// Method which upgrades the player.
+    /// </summary>
+    /// <param name="selectedUpgrade"></param>
     public void Upgrade(int selectedUpgrade)
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgrade];
@@ -407,9 +436,12 @@ public abstract class Character : NetworkBehaviour
 
         acquiredUpgrades.Add(upgradeData);
         upgrades.Remove(upgradeData);
-
-
     }
+
+    /// <summary>
+    /// Method which upgrades the weapon from a pick up.
+    /// </summary>
+    /// <param name="upgradeData"></param>
     public void UpgradeWeaponPickUp(UpgradeData upgradeData)
     {
         List<EquipedItem> iconList = new List<EquipedItem>();
@@ -425,6 +457,10 @@ public abstract class Character : NetworkBehaviour
         weaponManager.UpgradeWeapon(upgradeData);
     }
 
+    /// <summary>
+    /// Method which upgrades the stats of the player.
+    /// </summary>
+    /// <param name="stats"></param>
     public void UpgradeStats(ItemStats stats)
     {
         maxHp.Value += stats.maxHp;
@@ -438,7 +474,11 @@ public abstract class Character : NetworkBehaviour
         amountBonus.Value += stats.amountBonus;
     }
 
-
+    /// <summary>
+    /// Method which adds an icon of the equipped item to the HUD.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="upgradeData"></param>
     public void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
     {
         foreach (var icon in input) //find first empty slot and add the icon
@@ -451,6 +491,11 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method which levels up the equipped item.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <param name="upgradeData"></param>
     public void AddLevel(List<EquipedItem> input, UpgradeData upgradeData)
     {
         foreach (var icon in input)
@@ -463,7 +508,9 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method which checks if the player has max weapons.
+    /// </summary>
     public void CheckForMaxWeapons()
     {
         if (weaponManager.weapons.Count >= 6)
@@ -472,6 +519,9 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method which checks if the player has max items.
+    /// </summary>
     public void CheckForMaxItems()
     {
         if (passiveItems.items.Count >= 6)
@@ -480,31 +530,47 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
-    internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
+    private void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
     {
         if (upgradesToAdd == null) { return; }
 
         this.upgrades.AddRange(upgradesToAdd);
     }
-    internal void AddUpgradeIntoList(UpgradeData upgradeToAdd)
+
+    /// <summary>
+    /// Method which adds an upgrade into the list of upgrades.
+    /// </summary>
+    /// <param name="upgradeToAdd"></param>
+    public void AddUpgradeIntoList(UpgradeData upgradeToAdd)
     {
         if (upgradeToAdd == null) { return; }
 
         upgrades.Add(upgradeToAdd);
     }
 
-    internal void AcquiredUpgradesAdd(UpgradeData upgrade)
+    /// <summary>
+    /// Method which adds the acquired upgrades into the list of acquired upgrades.
+    /// </summary>
+    /// <param name="upgrade"></param>
+    public void AcquiredUpgradesAdd(UpgradeData upgrade)
     {
         acquiredUpgrades.Add(upgrade);
     }
 
-    internal void UpgradesRemove(UpgradeData upgrade)
+    /// <summary>
+    /// Method which removes an upgrade from the list of upgrades.
+    /// </summary>
+    /// <param name="upgrade"></param>
+    public void UpgradesRemove(UpgradeData upgrade)
     {
         upgrades.Remove(upgrade);
     }
 
     public abstract void LevelUpBonus();
 
+    /// <summary>
+    /// Method which initializes the player calss on NetworkSpawn.
+    /// </summary>
     public override void OnNetworkSpawn()
     {
         if (IsOwner)
@@ -517,6 +583,9 @@ public abstract class Character : NetworkBehaviour
         }
     }
 
+    /// <summary>
+    /// Method which vacuums the gems (pulls them towards the player).
+    /// </summary>
     public void VacuumGems()
     {
         GameObject[] XPGems = GameObject.FindGameObjectsWithTag("XP");

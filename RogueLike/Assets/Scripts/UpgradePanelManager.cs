@@ -3,14 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script attached to the UpgradePanel GameObject.
+/// </summary>
 public class UpgradePanelManager : MonoBehaviour
 {
-
+    /// <summary>
+    /// UpgradePanel game object.
+    /// </summary>
     [SerializeField] GameObject upgradePanel;
+
+    /// <summary>
+    /// List of upgrade buttons.
+    /// </summary>
     [SerializeField] List<UpgradeButton> upgradeButtons;
+
     private ulong currentPlayer;
 
+    /// <summary>
+    /// Event invoked when the upgrade panel is closed to unpause the game.
+    /// </summary>
     public static event EventHandler OnPauseAction;
+
+    /// <summary>
+    /// Methods closing the panel invoking the OnPauseAction event.
+    /// </summary>
     public void ClosePanel()
     {
         HideButtons();
@@ -32,6 +49,12 @@ public class UpgradePanelManager : MonoBehaviour
         HideButtons();
 
     }
+
+    /// <summary>
+    /// Method which opens the panel.
+    /// </summary>
+    /// <param name="upgradeData"></param>
+    /// <param name="currentPlayer"></param>
     public void OpenPanel(List<UpgradeData> upgradeData, ulong currentPlayer)
     {
         Clean();
@@ -47,6 +70,9 @@ public class UpgradePanelManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Upgrade buttons cleanup.
+    /// </summary>
     public void Clean()
     {
         for (int i = 0; i < upgradeButtons.Count; i++)
@@ -55,7 +81,10 @@ public class UpgradePanelManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Method which upgrades the character.
+    /// </summary>
+    /// <param name="pressedButtonID"></param>
     public void Upgrade(int pressedButtonID)
     {
         Transform player;

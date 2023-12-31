@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script handling the exit to main menu.
+/// </summary>
 public class ExitToMenu : NetworkBehaviour
 {
     [SerializeField] private Button mainMenuButton;

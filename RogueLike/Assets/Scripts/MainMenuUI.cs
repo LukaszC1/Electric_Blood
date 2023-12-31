@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script attached to the main menu UI.
+/// </summary>
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private Button singleplayerButton;
@@ -10,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button quitButton;
     [SerializeField] private Button shopButton;
     [SerializeField] private GameObject shopPanel;
+
     private void Awake()
     {
         singleplayerButton.onClick.AddListener(()=>

@@ -4,13 +4,15 @@ using UnityEngine;
 using TMPro;
 using Unity.Netcode;
 
+/// <summary>
+/// Script attached to the damage popup prefab.
+/// </summary>
 public class DamagePopup : NetworkBehaviour
 {
-    [SerializeField ]float timeToLive = 1f;
+    [SerializeField ] float timeToLive = 1f;
     float ttl = 1f;
-    TMPro.TextMeshPro textMeshPro;
+    TextMeshPro textMeshPro;
     AudioSource enemyHit;
-
     public bool isActive = false;
 
     private void Awake()
@@ -45,7 +47,5 @@ public class DamagePopup : NetworkBehaviour
                 gameObject.SetActive(false);
             }
         }
-
     }
-
 }
