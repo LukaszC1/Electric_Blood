@@ -1,0 +1,1244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
+  m_Name: electrosphere missile
+  m_EditorClassIdentifier: 
+  assetsData:
+  - rid: 112675354712473654
+  - rid: 112675354712473661
+  - rid: 112675354712473668
+  - rid: 112675354712473675
+  - rid: 112675354712473682
+  - rid: 112675354712473689
+  - rid: 112675354712473696
+  - rid: 112675354712473703
+  - rid: 112675354712473710
+  - rid: 112675354712473717
+  - rid: 112675354712473724
+  - rid: 112675354712473731
+  currentMode: TextToSprite
+  m_Data:
+  - rid: 112675354712473641
+  - rid: 112675354712473642
+  - rid: 112675354712473643
+  - rid: 112675354712473644
+  - rid: 112675354712473645
+  - rid: 112675354712473646
+  - rid: 112675354712473653
+  preRefinedArtifact:
+    rid: -2
+  refinedArtifact:
+    rid: -2
+  selectedArtifact:
+    rid: 112675354712473717
+  m_Operators:
+  - rid: 112675354712473647
+  - rid: 112675354712473648
+  - rid: 112675354712473649
+  - rid: 112675354712473650
+  - rid: 112675354712473651
+  - rid: 112675354712473652
+  m_PreRefineOperators: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 112675354712473641
+      type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_Liked:
+          m_Values: []
+        m_Disliked:
+          m_Values: []
+    - rid: 112675354712473642
+      type: {class: DefaultStyleData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473643
+      type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data: 
+    - rid: 112675354712473644
+      type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_NodeListWidth: 300
+        m_NodeListRefineWidth: 300
+        m_AssetListRefineWidth: 200
+    - rid: 112675354712473645
+      type: {class: SessionData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_SessionId: be2084f7-2a4d-46e6-8196-d21b0527cc58
+        sessionLoaded: 
+    - rid: 112675354712473646
+      type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_BookmarkedArtifacts:
+          m_Values: []
+        m_IsFilterEnabled: 0
+    - rid: 112675354712473647
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473648
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473649
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 10925
+          - 0
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - 0
+          - 
+          - 
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473650
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473651
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473652
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473653
+      type: {class: GenerateCountData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_Counter: 0
+    - rid: 112675354712473654
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: f462ba16-da08-4562-a56e-67752d4c439e
+        Seed: 46804
+        m_Operators:
+        - rid: 112675354712473655
+        - rid: 112675354712473656
+        - rid: 112675354712473657
+        - rid: 112675354712473658
+        - rid: 112675354712473659
+        - rid: 112675354712473660
+        history:
+        - rid: 112675354712473654
+        m_UnsafeContent: 0
+    - rid: 112675354712473655
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473656
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473657
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 46804
+          - f462ba16-da08-4562-a56e-67752d4c439e
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473658
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473659
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473660
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473661
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: f585592f-8912-48a5-acbf-1ecd74642bbd
+        Seed: 18552
+        m_Operators:
+        - rid: 112675354712473662
+        - rid: 112675354712473663
+        - rid: 112675354712473664
+        - rid: 112675354712473665
+        - rid: 112675354712473666
+        - rid: 112675354712473667
+        history:
+        - rid: 112675354712473661
+        m_UnsafeContent: 0
+    - rid: 112675354712473662
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473663
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473664
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 18552
+          - f585592f-8912-48a5-acbf-1ecd74642bbd
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473665
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473666
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473667
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473668
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 75703f80-f741-4f68-ab78-591dd35f6613
+        Seed: 54570
+        m_Operators:
+        - rid: 112675354712473669
+        - rid: 112675354712473670
+        - rid: 112675354712473671
+        - rid: 112675354712473672
+        - rid: 112675354712473673
+        - rid: 112675354712473674
+        history:
+        - rid: 112675354712473668
+        m_UnsafeContent: 0
+    - rid: 112675354712473669
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473670
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473671
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 54570
+          - 75703f80-f741-4f68-ab78-591dd35f6613
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473672
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473673
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473674
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473675
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: eec03840-c5ac-47a2-a582-0bb37841a79e
+        Seed: 17683
+        m_Operators:
+        - rid: 112675354712473676
+        - rid: 112675354712473677
+        - rid: 112675354712473678
+        - rid: 112675354712473679
+        - rid: 112675354712473680
+        - rid: 112675354712473681
+        history:
+        - rid: 112675354712473675
+        m_UnsafeContent: 0
+    - rid: 112675354712473676
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473677
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473678
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 17683
+          - eec03840-c5ac-47a2-a582-0bb37841a79e
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473679
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473680
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473681
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473682
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 213d62fb-8954-46de-b181-241787dbb3a5
+        Seed: 50082
+        m_Operators:
+        - rid: 112675354712473683
+        - rid: 112675354712473684
+        - rid: 112675354712473685
+        - rid: 112675354712473686
+        - rid: 112675354712473687
+        - rid: 112675354712473688
+        history:
+        - rid: 112675354712473682
+        m_UnsafeContent: 0
+    - rid: 112675354712473683
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473684
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473685
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 50082
+          - 213d62fb-8954-46de-b181-241787dbb3a5
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473686
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473687
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473688
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473689
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: f98598d5-2400-4558-a6b7-837e1a54a474
+        Seed: 8053
+        m_Operators:
+        - rid: 112675354712473690
+        - rid: 112675354712473691
+        - rid: 112675354712473692
+        - rid: 112675354712473693
+        - rid: 112675354712473694
+        - rid: 112675354712473695
+        history:
+        - rid: 112675354712473689
+        m_UnsafeContent: 0
+    - rid: 112675354712473690
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473691
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473692
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 8053
+          - f98598d5-2400-4558-a6b7-837e1a54a474
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473693
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473694
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473695
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473696
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: e4dba9e7-6c45-487c-8e7c-753c3d10620c
+        Seed: 48767
+        m_Operators:
+        - rid: 112675354712473697
+        - rid: 112675354712473698
+        - rid: 112675354712473699
+        - rid: 112675354712473700
+        - rid: 112675354712473701
+        - rid: 112675354712473702
+        history:
+        - rid: 112675354712473696
+        m_UnsafeContent: 0
+    - rid: 112675354712473697
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473698
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473699
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 48767
+          - e4dba9e7-6c45-487c-8e7c-753c3d10620c
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473700
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473701
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473702
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473703
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 9e87fa34-86c1-47fb-9fa9-77d378f3f588
+        Seed: 58791
+        m_Operators:
+        - rid: 112675354712473704
+        - rid: 112675354712473705
+        - rid: 112675354712473706
+        - rid: 112675354712473707
+        - rid: 112675354712473708
+        - rid: 112675354712473709
+        history:
+        - rid: 112675354712473703
+        m_UnsafeContent: 0
+    - rid: 112675354712473704
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473705
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473706
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 58791
+          - 9e87fa34-86c1-47fb-9fa9-77d378f3f588
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473707
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473708
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473709
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473710
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: dcac5ec4-8411-4b7a-9479-0efce9839352
+        Seed: 36964
+        m_Operators:
+        - rid: 112675354712473711
+        - rid: 112675354712473712
+        - rid: 112675354712473713
+        - rid: 112675354712473714
+        - rid: 112675354712473715
+        - rid: 112675354712473716
+        history:
+        - rid: 112675354712473710
+        m_UnsafeContent: 0
+    - rid: 112675354712473711
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473712
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473713
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 36964
+          - dcac5ec4-8411-4b7a-9479-0efce9839352
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473714
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473715
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473716
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473717
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 151d6218-475d-40b2-82ec-2aeeb8fff12e
+        Seed: 16879
+        m_Operators:
+        - rid: 112675354712473718
+        - rid: 112675354712473719
+        - rid: 112675354712473720
+        - rid: 112675354712473721
+        - rid: 112675354712473722
+        - rid: 112675354712473723
+        history:
+        - rid: 112675354712473717
+        m_UnsafeContent: 0
+    - rid: 112675354712473718
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473719
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473720
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 16879
+          - 151d6218-475d-40b2-82ec-2aeeb8fff12e
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473721
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473722
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473723
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473724
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 83a2291b-f030-4958-9c7f-b1714139d5dd
+        Seed: 21720
+        m_Operators:
+        - rid: 112675354712473725
+        - rid: 112675354712473726
+        - rid: 112675354712473727
+        - rid: 112675354712473728
+        - rid: 112675354712473729
+        - rid: 112675354712473730
+        history:
+        - rid: 112675354712473724
+        m_UnsafeContent: 0
+    - rid: 112675354712473725
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473726
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473727
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 21720
+          - 83a2291b-f030-4958-9c7f-b1714139d5dd
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473728
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473729
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473730
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473731
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 07867cd2-422b-4f09-bf4e-ba9dd31f273d
+        Seed: 15094
+        m_Operators:
+        - rid: 112675354712473732
+        - rid: 112675354712473733
+        - rid: 112675354712473734
+        - rid: 112675354712473735
+        - rid: 112675354712473736
+        - rid: 112675354712473737
+        history:
+        - rid: 112675354712473731
+        m_UnsafeContent: 0
+    - rid: 112675354712473732
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473733
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - electrosphere missile
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473734
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 15094
+          - 07867cd2-422b-4f09-bf4e-ba9dd31f273d
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473735
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAG0lEQVQ4EWNgGAWjITAaAqMhMBoCoyEwMkIAAAb0AAGmc37+AAAAAElFTkSuQmCC
+          - iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAABRUlEQVQ4EWPksOn+z4AKGEFcrW/LUUVJ5LFgU0+uode4IuHGwQ2O7AkDC17MCkT3AVwxDgbYhyA5ZAfBDcahiSRhZBczAsMYZhPYpfGJJWDDNLVMsBp6/doZsPjZMyfB9JXLh2Hq4C4HWcCE7HyYCnJpZBeDggLsUh1dW7B5MJf61W8E82Fhn6UrBuafXTQVTBubmINpGLHqrgzYHKDhYJczwSSoTcMjLyYuG2z2EqiLouJcwPxMqEunXX6FYjfMZ7CwPrwzByxv6z4F7HLauxgW2yjOwsNBV4/uI9q7GBZWsLCGpYr/enpgd8NSxWQcvlhesgomQ9tUwWhkZASzieKcB8ogoAwHznnIuQVmA7k0ci4GlRVgl8JyGLB0I9VclDICphmeQWAClNBYXYxkICOyAiRxgkzkYIUHBZIusNfINRxmDgDZ2Wq3gYt1iQAAAABJRU5ErkJggg==
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473736
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473737
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - be2084f7-2a4d-46e6-8196-d21b0527cc58
+          enabled: 0
+          assembly: Unity.Muse.Sprite
