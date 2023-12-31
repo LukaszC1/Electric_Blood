@@ -1,0 +1,4156 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
+  m_Name: cyberpunk magnet pickup
+  m_EditorClassIdentifier: 
+  assetsData:
+  - rid: 112675354712473751
+  - rid: 112675354712473758
+  - rid: 112675354712473765
+  - rid: 112675354712473772
+  - rid: 112675354712473779
+  - rid: 112675354712473786
+  - rid: 112675354712473793
+  - rid: 112675354712473800
+  - rid: 112675354712473807
+  - rid: 112675354712473814
+  - rid: 112675354712473821
+  - rid: 112675354712473828
+  - rid: 112675354712473835
+  - rid: 112675354712473842
+  - rid: 112675354712473849
+  - rid: 112675354712473856
+  - rid: 112675354712473863
+  - rid: 112675354712473870
+  - rid: 112675354712473877
+  - rid: 112675354712473884
+  - rid: 112675354712473891
+  - rid: 112675354712473898
+  - rid: 112675354712473905
+  - rid: 112675354712473912
+  - rid: 112675354712473919
+  - rid: 112675354712473926
+  - rid: 112675354712473933
+  - rid: 112675354712473940
+  - rid: 112675354712473947
+  - rid: 112675354712473954
+  - rid: 112675354712473961
+  - rid: 112675354712473968
+  - rid: 112675354712473975
+  - rid: 112675354712473982
+  - rid: 112675354712473989
+  - rid: 112675354712473996
+  - rid: 112675354712474003
+  - rid: 112675354712474010
+  - rid: 112675354712474017
+  - rid: 112675354712474024
+  - rid: 112675354712474031
+  - rid: 112675354712474038
+  - rid: 112675354712474045
+  - rid: 112675354712474052
+  currentMode: TextToSprite
+  m_Data:
+  - rid: 112675354712473738
+  - rid: 112675354712473739
+  - rid: 112675354712473740
+  - rid: 112675354712473741
+  - rid: 112675354712473742
+  - rid: 112675354712473743
+  - rid: 112675354712473750
+  preRefinedArtifact:
+    rid: -2
+  refinedArtifact:
+    rid: -2
+  selectedArtifact:
+    rid: 112675354712474024
+  m_Operators:
+  - rid: 112675354712473744
+  - rid: 112675354712473745
+  - rid: 112675354712473746
+  - rid: 112675354712473747
+  - rid: 112675354712473748
+  - rid: 112675354712473749
+  m_PreRefineOperators: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 112675354712473738
+      type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_Liked:
+          m_Values: []
+        m_Disliked:
+          m_Values: []
+    - rid: 112675354712473739
+      type: {class: DefaultStyleData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473740
+      type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data: 
+    - rid: 112675354712473741
+      type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_NodeListWidth: 300
+        m_NodeListRefineWidth: 300
+        m_AssetListRefineWidth: 200
+    - rid: 112675354712473742
+      type: {class: SessionData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_SessionId: 89745d5a-f92e-4ad9-bd40-442b27c14c04
+        sessionLoaded: 
+    - rid: 112675354712473743
+      type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_BookmarkedArtifacts:
+          m_Values: []
+        m_IsFilterEnabled: 0
+    - rid: 112675354712473744
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473745
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473746
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 18201
+          - 0
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - 0
+          - 
+          - 
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473747
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473748
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473749
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473750
+      type: {class: GenerateCountData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
+      data:
+        m_Counter: 0
+    - rid: 112675354712473751
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 55f28b39-536d-404d-bb0e-5b6cfebb15e8
+        Seed: 399
+        m_Operators:
+        - rid: 112675354712473752
+        - rid: 112675354712473753
+        - rid: 112675354712473754
+        - rid: 112675354712473755
+        - rid: 112675354712473756
+        - rid: 112675354712473757
+        history:
+        - rid: 112675354712473751
+        m_UnsafeContent: 0
+    - rid: 112675354712473752
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473753
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet pickup
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473754
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 399
+          - 55f28b39-536d-404d-bb0e-5b6cfebb15e8
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473755
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473756
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473757
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473758
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: aada47d9-84e7-4a6b-9b30-7e851e4de731
+        Seed: 36118
+        m_Operators:
+        - rid: 112675354712473759
+        - rid: 112675354712473760
+        - rid: 112675354712473761
+        - rid: 112675354712473762
+        - rid: 112675354712473763
+        - rid: 112675354712473764
+        history:
+        - rid: 112675354712473758
+        m_UnsafeContent: 1
+    - rid: 112675354712473759
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473760
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet pickup
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473761
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 36118
+          - aada47d9-84e7-4a6b-9b30-7e851e4de731
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473762
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473763
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473764
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473765
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 54ca3afa-5066-4f11-b5dc-f97133203df6
+        Seed: 43753
+        m_Operators:
+        - rid: 112675354712473766
+        - rid: 112675354712473767
+        - rid: 112675354712473768
+        - rid: 112675354712473769
+        - rid: 112675354712473770
+        - rid: 112675354712473771
+        history:
+        - rid: 112675354712473765
+        m_UnsafeContent: 0
+    - rid: 112675354712473766
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473767
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet pickup
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473768
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 43753
+          - 54ca3afa-5066-4f11-b5dc-f97133203df6
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473769
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473770
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473771
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473772
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 309829d9-ce0b-4a43-beec-e1eb1e476432
+        Seed: 27511
+        m_Operators:
+        - rid: 112675354712473773
+        - rid: 112675354712473774
+        - rid: 112675354712473775
+        - rid: 112675354712473776
+        - rid: 112675354712473777
+        - rid: 112675354712473778
+        history:
+        - rid: 112675354712473772
+        m_UnsafeContent: 0
+    - rid: 112675354712473773
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473774
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet pickup
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473775
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 27511
+          - 309829d9-ce0b-4a43-beec-e1eb1e476432
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473776
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473777
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473778
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473779
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: e47ec6be-b24d-4b78-90f4-ff2dc23ef8a3
+        Seed: 12284
+        m_Operators:
+        - rid: 112675354712473780
+        - rid: 112675354712473781
+        - rid: 112675354712473782
+        - rid: 112675354712473783
+        - rid: 112675354712473784
+        - rid: 112675354712473785
+        history:
+        - rid: 112675354712473779
+        m_UnsafeContent: 0
+    - rid: 112675354712473780
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473781
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473782
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 12284
+          - e47ec6be-b24d-4b78-90f4-ff2dc23ef8a3
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473783
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473784
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473785
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473786
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 7a65602a-5291-4307-802b-2e6938af59f6
+        Seed: 35846
+        m_Operators:
+        - rid: 112675354712473787
+        - rid: 112675354712473788
+        - rid: 112675354712473789
+        - rid: 112675354712473790
+        - rid: 112675354712473791
+        - rid: 112675354712473792
+        history:
+        - rid: 112675354712473786
+        m_UnsafeContent: 0
+    - rid: 112675354712473787
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473788
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473789
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 35846
+          - 7a65602a-5291-4307-802b-2e6938af59f6
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473790
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473791
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473792
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473793
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 6faa29bc-7960-48a2-a031-5cca4019f729
+        Seed: 46448
+        m_Operators:
+        - rid: 112675354712473794
+        - rid: 112675354712473795
+        - rid: 112675354712473796
+        - rid: 112675354712473797
+        - rid: 112675354712473798
+        - rid: 112675354712473799
+        history:
+        - rid: 112675354712473793
+        m_UnsafeContent: 0
+    - rid: 112675354712473794
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473795
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473796
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 46448
+          - 6faa29bc-7960-48a2-a031-5cca4019f729
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473797
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473798
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473799
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473800
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 757beadf-6a54-4d6a-8144-f6d5fe278c3d
+        Seed: 61439
+        m_Operators:
+        - rid: 112675354712473801
+        - rid: 112675354712473802
+        - rid: 112675354712473803
+        - rid: 112675354712473804
+        - rid: 112675354712473805
+        - rid: 112675354712473806
+        history:
+        - rid: 112675354712473800
+        m_UnsafeContent: 0
+    - rid: 112675354712473801
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473802
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473803
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 61439
+          - 757beadf-6a54-4d6a-8144-f6d5fe278c3d
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473804
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473805
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473806
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473807
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 916c8790-bbf0-48c7-b7ac-6155ed4d129e
+        Seed: 36301
+        m_Operators:
+        - rid: 112675354712473808
+        - rid: 112675354712473809
+        - rid: 112675354712473810
+        - rid: 112675354712473811
+        - rid: 112675354712473812
+        - rid: 112675354712473813
+        history:
+        - rid: 112675354712473807
+        m_UnsafeContent: 0
+    - rid: 112675354712473808
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473809
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473810
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 36301
+          - 916c8790-bbf0-48c7-b7ac-6155ed4d129e
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473811
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473812
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473813
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473814
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 31e0c219-7d46-4825-a5f2-5e59611f62d6
+        Seed: 64586
+        m_Operators:
+        - rid: 112675354712473815
+        - rid: 112675354712473816
+        - rid: 112675354712473817
+        - rid: 112675354712473818
+        - rid: 112675354712473819
+        - rid: 112675354712473820
+        history:
+        - rid: 112675354712473814
+        m_UnsafeContent: 0
+    - rid: 112675354712473815
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473816
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473817
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 64586
+          - 31e0c219-7d46-4825-a5f2-5e59611f62d6
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473818
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473819
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473820
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473821
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: d00a8985-77d4-4313-8f49-6867fbf0cd43
+        Seed: 29316
+        m_Operators:
+        - rid: 112675354712473822
+        - rid: 112675354712473823
+        - rid: 112675354712473824
+        - rid: 112675354712473825
+        - rid: 112675354712473826
+        - rid: 112675354712473827
+        history:
+        - rid: 112675354712473821
+        m_UnsafeContent: 0
+    - rid: 112675354712473822
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473823
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473824
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 29316
+          - d00a8985-77d4-4313-8f49-6867fbf0cd43
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473825
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473826
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473827
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473828
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: dc13dcd7-dc08-4010-9be5-38392f345d73
+        Seed: 33429
+        m_Operators:
+        - rid: 112675354712473829
+        - rid: 112675354712473830
+        - rid: 112675354712473831
+        - rid: 112675354712473832
+        - rid: 112675354712473833
+        - rid: 112675354712473834
+        history:
+        - rid: 112675354712473828
+        m_UnsafeContent: 0
+    - rid: 112675354712473829
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473830
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473831
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 33429
+          - dc13dcd7-dc08-4010-9be5-38392f345d73
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473832
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473833
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473834
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473835
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: e264df54-e28f-411c-925c-b29662c53ccc
+        Seed: 9611
+        m_Operators:
+        - rid: 112675354712473836
+        - rid: 112675354712473837
+        - rid: 112675354712473838
+        - rid: 112675354712473839
+        - rid: 112675354712473840
+        - rid: 112675354712473841
+        history:
+        - rid: 112675354712473835
+        m_UnsafeContent: 0
+    - rid: 112675354712473836
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473837
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473838
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 9611
+          - e264df54-e28f-411c-925c-b29662c53ccc
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473839
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473840
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473841
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473842
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 2193a0ad-f73c-4238-affb-21fb6aa3d6de
+        Seed: 57354
+        m_Operators:
+        - rid: 112675354712473843
+        - rid: 112675354712473844
+        - rid: 112675354712473845
+        - rid: 112675354712473846
+        - rid: 112675354712473847
+        - rid: 112675354712473848
+        history:
+        - rid: 112675354712473842
+        m_UnsafeContent: 0
+    - rid: 112675354712473843
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473844
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473845
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 57354
+          - 2193a0ad-f73c-4238-affb-21fb6aa3d6de
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473846
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473847
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473848
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473849
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 097fa056-fbb5-4276-8417-a068430263fa
+        Seed: 18589
+        m_Operators:
+        - rid: 112675354712473850
+        - rid: 112675354712473851
+        - rid: 112675354712473852
+        - rid: 112675354712473853
+        - rid: 112675354712473854
+        - rid: 112675354712473855
+        history:
+        - rid: 112675354712473849
+        m_UnsafeContent: 0
+    - rid: 112675354712473850
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473851
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473852
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 18589
+          - 097fa056-fbb5-4276-8417-a068430263fa
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473853
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473854
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473855
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473856
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 5d6f61ca-4ae2-4c0f-b382-a52bd7887e4f
+        Seed: 20700
+        m_Operators:
+        - rid: 112675354712473857
+        - rid: 112675354712473858
+        - rid: 112675354712473859
+        - rid: 112675354712473860
+        - rid: 112675354712473861
+        - rid: 112675354712473862
+        history:
+        - rid: 112675354712473856
+        m_UnsafeContent: 0
+    - rid: 112675354712473857
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473858
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473859
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 20700
+          - 5d6f61ca-4ae2-4c0f-b382-a52bd7887e4f
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473860
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473861
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473862
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473863
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 2a42b25b-26cb-49c3-ad88-dd136da7b138
+        Seed: 53683
+        m_Operators:
+        - rid: 112675354712473864
+        - rid: 112675354712473865
+        - rid: 112675354712473866
+        - rid: 112675354712473867
+        - rid: 112675354712473868
+        - rid: 112675354712473869
+        history:
+        - rid: 112675354712473863
+        m_UnsafeContent: 0
+    - rid: 112675354712473864
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473865
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473866
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 53683
+          - 2a42b25b-26cb-49c3-ad88-dd136da7b138
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473867
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473868
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473869
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473870
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 71a66ac2-6a8c-4adb-a03f-f948f09330c0
+        Seed: 10789
+        m_Operators:
+        - rid: 112675354712473871
+        - rid: 112675354712473872
+        - rid: 112675354712473873
+        - rid: 112675354712473874
+        - rid: 112675354712473875
+        - rid: 112675354712473876
+        history:
+        - rid: 112675354712473870
+        m_UnsafeContent: 0
+    - rid: 112675354712473871
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473872
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473873
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 10789
+          - 71a66ac2-6a8c-4adb-a03f-f948f09330c0
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473874
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473875
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473876
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473877
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 7d4d6ecd-fd60-4efd-92c1-09e52f97d268
+        Seed: 57138
+        m_Operators:
+        - rid: 112675354712473878
+        - rid: 112675354712473879
+        - rid: 112675354712473880
+        - rid: 112675354712473881
+        - rid: 112675354712473882
+        - rid: 112675354712473883
+        history:
+        - rid: 112675354712473877
+        m_UnsafeContent: 0
+    - rid: 112675354712473878
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473879
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473880
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 57138
+          - 7d4d6ecd-fd60-4efd-92c1-09e52f97d268
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473881
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473882
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473883
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473884
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 03a9b04d-e041-4a53-adea-e5043b808550
+        Seed: 6864
+        m_Operators:
+        - rid: 112675354712473885
+        - rid: 112675354712473886
+        - rid: 112675354712473887
+        - rid: 112675354712473888
+        - rid: 112675354712473889
+        - rid: 112675354712473890
+        history:
+        - rid: 112675354712473884
+        m_UnsafeContent: 0
+    - rid: 112675354712473885
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473886
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - sci fi magnet
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473887
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 6864
+          - 03a9b04d-e041-4a53-adea-e5043b808550
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473888
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473889
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473890
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473891
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 0ae3f493-a732-4dff-9dda-2edd3ba221c1
+        Seed: 13476
+        m_Operators:
+        - rid: 112675354712473892
+        - rid: 112675354712473893
+        - rid: 112675354712473894
+        - rid: 112675354712473895
+        - rid: 112675354712473896
+        - rid: 112675354712473897
+        history:
+        - rid: 112675354712473891
+        m_UnsafeContent: 0
+    - rid: 112675354712473892
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473893
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473894
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 13476
+          - 0ae3f493-a732-4dff-9dda-2edd3ba221c1
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473895
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473896
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473897
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473898
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: bd4cacaf-2d2e-4b9d-b7c9-0d45d437ade1
+        Seed: 17087
+        m_Operators:
+        - rid: 112675354712473899
+        - rid: 112675354712473900
+        - rid: 112675354712473901
+        - rid: 112675354712473902
+        - rid: 112675354712473903
+        - rid: 112675354712473904
+        history:
+        - rid: 112675354712473898
+        m_UnsafeContent: 0
+    - rid: 112675354712473899
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473900
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473901
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 17087
+          - bd4cacaf-2d2e-4b9d-b7c9-0d45d437ade1
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473902
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473903
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473904
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473905
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: d8eaef39-8689-4c36-9171-50405df2b1f7
+        Seed: 19407
+        m_Operators:
+        - rid: 112675354712473906
+        - rid: 112675354712473907
+        - rid: 112675354712473908
+        - rid: 112675354712473909
+        - rid: 112675354712473910
+        - rid: 112675354712473911
+        history:
+        - rid: 112675354712473905
+        m_UnsafeContent: 0
+    - rid: 112675354712473906
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473907
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473908
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 19407
+          - d8eaef39-8689-4c36-9171-50405df2b1f7
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473909
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473910
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473911
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473912
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: abc0734e-51cd-4637-b3fe-36cf23d938fe
+        Seed: 35365
+        m_Operators:
+        - rid: 112675354712473913
+        - rid: 112675354712473914
+        - rid: 112675354712473915
+        - rid: 112675354712473916
+        - rid: 112675354712473917
+        - rid: 112675354712473918
+        history:
+        - rid: 112675354712473912
+        m_UnsafeContent: 0
+    - rid: 112675354712473913
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473914
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473915
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 35365
+          - abc0734e-51cd-4637-b3fe-36cf23d938fe
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473916
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473917
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473918
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473919
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 0c4685cd-60a0-4b3f-9546-9e12b4394c39
+        Seed: 39506
+        m_Operators:
+        - rid: 112675354712473920
+        - rid: 112675354712473921
+        - rid: 112675354712473922
+        - rid: 112675354712473923
+        - rid: 112675354712473924
+        - rid: 112675354712473925
+        history:
+        - rid: 112675354712473919
+        m_UnsafeContent: 0
+    - rid: 112675354712473920
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473921
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473922
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 39506
+          - 0c4685cd-60a0-4b3f-9546-9e12b4394c39
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473923
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473924
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473925
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473926
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: af318a1f-39a9-4bc9-95dc-bd50a7919063
+        Seed: 20498
+        m_Operators:
+        - rid: 112675354712473927
+        - rid: 112675354712473928
+        - rid: 112675354712473929
+        - rid: 112675354712473930
+        - rid: 112675354712473931
+        - rid: 112675354712473932
+        history:
+        - rid: 112675354712473926
+        m_UnsafeContent: 0
+    - rid: 112675354712473927
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473928
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473929
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 20498
+          - af318a1f-39a9-4bc9-95dc-bd50a7919063
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473930
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473931
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473932
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473933
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: ffa14118-65f5-4cfb-9b0c-b8c86ff61083
+        Seed: 52414
+        m_Operators:
+        - rid: 112675354712473934
+        - rid: 112675354712473935
+        - rid: 112675354712473936
+        - rid: 112675354712473937
+        - rid: 112675354712473938
+        - rid: 112675354712473939
+        history:
+        - rid: 112675354712473933
+        m_UnsafeContent: 1
+    - rid: 112675354712473934
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473935
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473936
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 52414
+          - ffa14118-65f5-4cfb-9b0c-b8c86ff61083
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473937
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473938
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473939
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473940
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: c0324807-a2b5-4694-b93c-3a54536df5ee
+        Seed: 40107
+        m_Operators:
+        - rid: 112675354712473941
+        - rid: 112675354712473942
+        - rid: 112675354712473943
+        - rid: 112675354712473944
+        - rid: 112675354712473945
+        - rid: 112675354712473946
+        history:
+        - rid: 112675354712473940
+        m_UnsafeContent: 0
+    - rid: 112675354712473941
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473942
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnet
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473943
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 40107
+          - c0324807-a2b5-4694-b93c-3a54536df5ee
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473944
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473945
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473946
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473947
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 3c82afd8-5793-4428-a8ab-4b9e2554e817
+        Seed: 19391
+        m_Operators:
+        - rid: 112675354712473948
+        - rid: 112675354712473949
+        - rid: 112675354712473950
+        - rid: 112675354712473951
+        - rid: 112675354712473952
+        - rid: 112675354712473953
+        history:
+        - rid: 112675354712473947
+        m_UnsafeContent: 0
+    - rid: 112675354712473948
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473949
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473950
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 19391
+          - 3c82afd8-5793-4428-a8ab-4b9e2554e817
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473951
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473952
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473953
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473954
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 121650ce-6ccc-4ee1-98d0-7f1687593c91
+        Seed: 18552
+        m_Operators:
+        - rid: 112675354712473955
+        - rid: 112675354712473956
+        - rid: 112675354712473957
+        - rid: 112675354712473958
+        - rid: 112675354712473959
+        - rid: 112675354712473960
+        history:
+        - rid: 112675354712473954
+        m_UnsafeContent: 0
+    - rid: 112675354712473955
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473956
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473957
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 18552
+          - 121650ce-6ccc-4ee1-98d0-7f1687593c91
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473958
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473959
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473960
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473961
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 52e80bd5-b89b-42e7-8a1f-f46250df3a9f
+        Seed: 34031
+        m_Operators:
+        - rid: 112675354712473962
+        - rid: 112675354712473963
+        - rid: 112675354712473964
+        - rid: 112675354712473965
+        - rid: 112675354712473966
+        - rid: 112675354712473967
+        history:
+        - rid: 112675354712473961
+        m_UnsafeContent: 0
+    - rid: 112675354712473962
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473963
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473964
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 34031
+          - 52e80bd5-b89b-42e7-8a1f-f46250df3a9f
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473965
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473966
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473967
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473968
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 5ea71038-8916-4496-b2e4-e2a48ce30cb5
+        Seed: 59727
+        m_Operators:
+        - rid: 112675354712473969
+        - rid: 112675354712473970
+        - rid: 112675354712473971
+        - rid: 112675354712473972
+        - rid: 112675354712473973
+        - rid: 112675354712473974
+        history:
+        - rid: 112675354712473968
+        m_UnsafeContent: 0
+    - rid: 112675354712473969
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473970
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473971
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 59727
+          - 5ea71038-8916-4496-b2e4-e2a48ce30cb5
+          - 0
+          - 5cc104e0-423a-473e-8034-b9d346cb2357
+          - 0
+          - 03fa404b-39fc-4979-9272-deb5d8c4b24c
+          - Happy Harvest [Orion V4 2000]
+          - 8 Nov 2023
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473972
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473973
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473974
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473975
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: ab7b2162-9fed-466b-8643-af318db40498
+        Seed: 364
+        m_Operators:
+        - rid: 112675354712473976
+        - rid: 112675354712473977
+        - rid: 112675354712473978
+        - rid: 112675354712473979
+        - rid: 112675354712473980
+        - rid: 112675354712473981
+        history:
+        - rid: 112675354712473975
+        m_UnsafeContent: 0
+    - rid: 112675354712473976
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473977
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473978
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 364
+          - ab7b2162-9fed-466b-8643-af318db40498
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473979
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473980
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473981
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473982
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: a19cd617-caa8-4bdb-9f3c-3b0868f3b7fd
+        Seed: 18729
+        m_Operators:
+        - rid: 112675354712473983
+        - rid: 112675354712473984
+        - rid: 112675354712473985
+        - rid: 112675354712473986
+        - rid: 112675354712473987
+        - rid: 112675354712473988
+        history:
+        - rid: 112675354712473982
+        m_UnsafeContent: 1
+    - rid: 112675354712473983
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473984
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473985
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 18729
+          - a19cd617-caa8-4bdb-9f3c-3b0868f3b7fd
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473986
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473987
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473988
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473989
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: d0fa9f44-520c-4005-9de7-1ae47825bd56
+        Seed: 31308
+        m_Operators:
+        - rid: 112675354712473990
+        - rid: 112675354712473991
+        - rid: 112675354712473992
+        - rid: 112675354712473993
+        - rid: 112675354712473994
+        - rid: 112675354712473995
+        history:
+        - rid: 112675354712473989
+        m_UnsafeContent: 0
+    - rid: 112675354712473990
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473991
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473992
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 31308
+          - d0fa9f44-520c-4005-9de7-1ae47825bd56
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473993
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473994
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712473995
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712473996
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 762356bb-169a-44fb-a086-f92d31b00946
+        Seed: 15305
+        m_Operators:
+        - rid: 112675354712473997
+        - rid: 112675354712473998
+        - rid: 112675354712473999
+        - rid: 112675354712474000
+        - rid: 112675354712474001
+        - rid: 112675354712474002
+        history:
+        - rid: 112675354712473996
+        m_UnsafeContent: 1
+    - rid: 112675354712473997
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473998
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712473999
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 15305
+          - 762356bb-169a-44fb-a086-f92d31b00946
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474000
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474001
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474002
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474003
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 0e4e293c-b936-47bb-ac2d-575eb2800a8f
+        Seed: 1123
+        m_Operators:
+        - rid: 112675354712474004
+        - rid: 112675354712474005
+        - rid: 112675354712474006
+        - rid: 112675354712474007
+        - rid: 112675354712474008
+        - rid: 112675354712474009
+        history:
+        - rid: 112675354712474003
+        m_UnsafeContent: 0
+    - rid: 112675354712474004
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474005
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474006
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 1123
+          - 0e4e293c-b936-47bb-ac2d-575eb2800a8f
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474007
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474008
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474009
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474010
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: a7032284-3a9c-4da2-a720-c20186e6a16c
+        Seed: 49376
+        m_Operators:
+        - rid: 112675354712474011
+        - rid: 112675354712474012
+        - rid: 112675354712474013
+        - rid: 112675354712474014
+        - rid: 112675354712474015
+        - rid: 112675354712474016
+        history:
+        - rid: 112675354712474010
+        m_UnsafeContent: 0
+    - rid: 112675354712474011
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474012
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474013
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 49376
+          - a7032284-3a9c-4da2-a720-c20186e6a16c
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474014
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474015
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474016
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474017
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: a59613bd-1e39-4fe0-8e97-7dd4d8a30bcf
+        Seed: 20255
+        m_Operators:
+        - rid: 112675354712474018
+        - rid: 112675354712474019
+        - rid: 112675354712474020
+        - rid: 112675354712474021
+        - rid: 112675354712474022
+        - rid: 112675354712474023
+        history:
+        - rid: 112675354712474017
+        m_UnsafeContent: 1
+    - rid: 112675354712474018
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474019
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474020
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 20255
+          - a59613bd-1e39-4fe0-8e97-7dd4d8a30bcf
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474021
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474022
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474023
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474024
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 2e6947d1-c818-4e3f-8a5b-57ecd899f958
+        Seed: 23433
+        m_Operators:
+        - rid: 112675354712474025
+        - rid: 112675354712474026
+        - rid: 112675354712474027
+        - rid: 112675354712474028
+        - rid: 112675354712474029
+        - rid: 112675354712474030
+        history:
+        - rid: 112675354712474024
+        m_UnsafeContent: 1
+    - rid: 112675354712474025
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474026
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474027
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 23433
+          - 2e6947d1-c818-4e3f-8a5b-57ecd899f958
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474028
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474029
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474030
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474031
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 63342412-91bf-4799-87a5-79ab2e57ab07
+        Seed: 63536
+        m_Operators:
+        - rid: 112675354712474032
+        - rid: 112675354712474033
+        - rid: 112675354712474034
+        - rid: 112675354712474035
+        - rid: 112675354712474036
+        - rid: 112675354712474037
+        history:
+        - rid: 112675354712474031
+        m_UnsafeContent: 0
+    - rid: 112675354712474032
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474033
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474034
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 63536
+          - 63342412-91bf-4799-87a5-79ab2e57ab07
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474035
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474036
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474037
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474038
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 520a09d3-0b46-43d1-bce0-c8d1ed32bb1a
+        Seed: 45642
+        m_Operators:
+        - rid: 112675354712474039
+        - rid: 112675354712474040
+        - rid: 112675354712474041
+        - rid: 112675354712474042
+        - rid: 112675354712474043
+        - rid: 112675354712474044
+        history:
+        - rid: 112675354712474038
+        m_UnsafeContent: 1
+    - rid: 112675354712474039
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474040
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474041
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 45642
+          - 520a09d3-0b46-43d1-bce0-c8d1ed32bb1a
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474042
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474043
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474044
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474045
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 9c4594b3-6cef-4796-988e-6138722dbea4
+        Seed: 57854
+        m_Operators:
+        - rid: 112675354712474046
+        - rid: 112675354712474047
+        - rid: 112675354712474048
+        - rid: 112675354712474049
+        - rid: 112675354712474050
+        - rid: 112675354712474051
+        history:
+        - rid: 112675354712474045
+        m_UnsafeContent: 0
+    - rid: 112675354712474046
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474047
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474048
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 57854
+          - 9c4594b3-6cef-4796-988e-6138722dbea4
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474049
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474050
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474051
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474052
+      type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
+      data:
+        Guid: 445e2454-826b-4450-99f5-b0543c57e6be
+        Seed: 48527
+        m_Operators:
+        - rid: 112675354712474053
+        - rid: 112675354712474054
+        - rid: 112675354712474055
+        - rid: 112675354712474056
+        - rid: 112675354712474057
+        - rid: 112675354712474058
+        history:
+        - rid: 112675354712474052
+        m_UnsafeContent: 0
+    - rid: 112675354712474053
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToSprite
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474054
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - cyberpunk magnetic orb
+          - robot man
+          enabled: 1
+          assembly: 
+    - rid: 112675354712474055
+      type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SpriteGeneratorSettingsOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - 0,85
+          - 512
+          - 512
+          - 1
+          - 1
+          - 48527
+          - 445e2454-826b-4450-99f5-b0543c57e6be
+          - 0
+          - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
+          - 0
+          - fab23dc8-d258-4f85-8afe-4f5e253105c3
+          - electric blood 2 (duplicate)
+          - cyberpunk pixelart
+          - 
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474056
+      type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.KeyImageOperator
+          version: 0.0.1
+          settings:
+          - 
+          - 
+          - True
+          - 512
+          - 512
+          - 0.5
+          enabled: 1
+          assembly: Unity.Muse.Sprite
+    - rid: 112675354712474057
+      type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data: 
+    - rid: 112675354712474058
+      type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
+      data:
+        m_OperatorData:
+          type: Unity.Muse.Sprite.Operators.SessionOperator
+          version: 0.0.1
+          settings:
+          - 89745d5a-f92e-4ad9-bd40-442b27c14c04
+          enabled: 0
+          assembly: Unity.Muse.Sprite

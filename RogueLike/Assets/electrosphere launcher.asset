@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
-  m_Name: New Sprite Generator
+  m_Name: electrosphere launcher
   m_EditorClassIdentifier: 
   assetsData:
-  - rid: 112675352775229983
-  - rid: 112675352775229990
-  - rid: 112675352775229997
-  - rid: 112675352775230004
+  - rid: 112675354712473613
+  - rid: 112675354712473620
+  - rid: 112675354712473627
+  - rid: 112675354712473634
   currentMode: TextToSprite
   m_Data:
-  - rid: 112675349130641473
-  - rid: 112675349130641474
-  - rid: 112675349130641475
-  - rid: 112675349130641476
-  - rid: 112675349130641477
-  - rid: 112675349130641478
-  - rid: 112675352775229982
+  - rid: 112675354712473600
+  - rid: 112675354712473601
+  - rid: 112675354712473602
+  - rid: 112675354712473603
+  - rid: 112675354712473604
+  - rid: 112675354712473605
+  - rid: 112675354712473612
   preRefinedArtifact:
     rid: -2
   refinedArtifact:
@@ -33,49 +33,49 @@ MonoBehaviour:
   selectedArtifact:
     rid: -2
   m_Operators:
-  - rid: 112675349130641479
-  - rid: 112675349130641480
-  - rid: 112675349130641481
-  - rid: 112675349130641482
-  - rid: 112675349130641483
-  - rid: 112675349130641484
+  - rid: 112675354712473606
+  - rid: 112675354712473607
+  - rid: 112675354712473608
+  - rid: 112675354712473609
+  - rid: 112675354712473610
+  - rid: 112675354712473611
   m_PreRefineOperators: []
   references:
     version: 2
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 112675349130641473
+    - rid: 112675354712473600
       type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_Liked:
           m_Values: []
         m_Disliked:
           m_Values: []
-    - rid: 112675349130641474
+    - rid: 112675354712473601
       type: {class: DefaultStyleData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675349130641475
+    - rid: 112675354712473602
       type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data: 
-    - rid: 112675349130641476
+    - rid: 112675354712473603
       type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_NodeListWidth: 300
         m_NodeListRefineWidth: 300
         m_AssetListRefineWidth: 200
-    - rid: 112675349130641477
+    - rid: 112675354712473604
       type: {class: SessionData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data:
-        m_SessionId: 80836d51-c1da-4f8d-980a-8bc8ae76f742
+        m_SessionId: 25d4fad1-d870-4527-aaaf-e680d5e09d62
         sessionLoaded: 
-    - rid: 112675349130641478
+    - rid: 112675354712473605
       type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_BookmarkedArtifacts:
           m_Values: []
         m_IsFilterEnabled: 0
-    - rid: 112675349130641479
+    - rid: 112675354712473606
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -86,7 +86,7 @@ MonoBehaviour:
           - 4
           enabled: 1
           assembly: 
-    - rid: 112675349130641480
+    - rid: 112675354712473607
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -97,7 +97,7 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: 
-    - rid: 112675349130641481
+    - rid: 112675354712473608
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -111,7 +111,7 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 16424
+          - 13270
           - 0
           - 0
           - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
@@ -122,54 +122,54 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675349130641482
+    - rid: 112675354712473609
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.KeyImageOperator
           version: 0.0.1
           settings:
-          - 
-          - 
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAAQElEQVRoBe3QAQ0AAADCoPdPbQ8HESgMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwOTAlIAABdUJTJAAAAABJRU5ErkJggg==
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAENklEQVRoBe1ZPWgUQRSeDbHQxk4hhSCBEA8vyl3AxhSBYEgR1FT+cSKCGBWbi51NQCwkNiKnCCqmMMEiQVKESCBFbAy5FLlwBuUQLAStNYVgzt03+y0z7/b39vaSwKW4N+/tm++9/ea7mb2NUa1WBf/b3zfBQ5H81NZUpHw1ee1IWXWtMW/QUBMy31Oqm9i4jSPHJcnCKx+4yGH3vN+u3kFIknxXWMWLOaY6d2fuEcz58jzZ/vsbqK8pK2atwOmOokKSFAgYNyHKVylKbty+SFHZbFaI2q8LVk6rsbxwh/xC6RfZqbF3yIu7wsARFgGPJ+Ua/hNnqM6svRUtPZDt5HPbTr6M1HzW248rbhuRZNaIswHzFhuJxbF3ytf2KOsG+UZ8KddNvY1eHiALJXk1XAdJtIJdRzME2dl9mGw+Z+9JF/Lk77ML5qe3acTzK5s/Kf7l25qd6ZyWUBaU4utz3Pl52YezRwG9jhvF1Iaq0gHdJQNLUWDaaclNWVCSsb5OeW8nN8kqxNbg2IB8BZ061mBoaIj8VEp/HoJClqYdhVAeX3HMQz4lmR9Xr43R8M3rCeoryPfC9VQUCrWszoCzR3FG86kOyrz+TCpHCFgJ8HJUXhdC7iE6rBALH1YotFFaphU9nu4j/+/vP2SxF/F55bJ8Msf1zm6pOORBQfBhsTehDuLwj6V6KeTloy/M47Zmj+IJLV8y4ChqeKSfIul0WuNmpSD9UqlE8cXO0/J65aOWBwdKyvaeotCV3G2yrwqPyKIO8nk97iOPW/QDBfLrUFBx9RO/FMrnfbQUFYo2IRxFea0MmO06N0KQ6cpXCW0rz2tlsaKfy6taK8DTgooDPCXkO+SnHZJ53SAf87xsS1FezLC4oyjEoSycLljhxa2DlDJQkXsVz4cPixXEHoFTDHjIC7Loh+dBSTjtlOckSsUeaZ66oXyc+rwO/JaiwESANTKZDD3ngFGsPOb9GL5Bw465Fwj5Wr7SSOb4yEM97mMeLK7Dh4Wi4JuW/xKI5PM+W0/mCrNhhpaikKcpC8EDg2dpuLXwHiFX67OyyCd8OPw3Hk7Dh+NPKMUFD1O5hWJ4vF5f6xMgrT0KTARY9dSjlTFXUmf0uf7r3QcvaGVxXce3AXEaQkknb47TlWpPD1nzTSpKG8obC8QaadGnhrknFcVfLmp3lJCjKgolXBnFxaTs3MySK/St9CGK8/8UWmThvVnCChPFYlG0Wx94b+7a6S4OQlkgrZGtWryof4b6n+ImE0Z7FX9uwfMS9qoThVnqF8rqG3yK/n2VX6/KOEEopn31kNRkwtDLjlnct18DmqJ4YpMI05SFHqAofL0QN62vkpAXRlFhCAKepigEYQHUJMJQNlGLe4paxFdRHCxhwlyfr8weDBdV8dZqfK6oegkCcCSiMCkhwjyJsupGJcsiKi45uF/L/geVoYEPP+C/rwAAAABJRU5ErkJggg==
           - True
           - 512
           - 512
           - 0.5
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675349130641483
+    - rid: 112675354712473610
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675349130641484
+    - rid: 112675354712473611
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - 80836d51-c1da-4f8d-980a-8bc8ae76f742
+          - 25d4fad1-d870-4527-aaaf-e680d5e09d62
           enabled: 0
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229982
+    - rid: 112675354712473612
       type: {class: GenerateCountData, ns: Unity.Muse.Sprite.Data, asm: Unity.Muse.Sprite}
       data:
         m_Counter: 0
-    - rid: 112675352775229983
+    - rid: 112675354712473613
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
-        Guid: 04ae2cce-1814-422c-8a26-885a53db8d54
-        Seed: 6709
+        Guid: 5ad78007-b521-436e-b132-32adeab4ca0b
+        Seed: 37088
         m_Operators:
-        - rid: 112675352775229984
-        - rid: 112675352775229985
-        - rid: 112675352775229986
-        - rid: 112675352775229987
-        - rid: 112675352775229988
-        - rid: 112675352775229989
+        - rid: 112675354712473614
+        - rid: 112675354712473615
+        - rid: 112675354712473616
+        - rid: 112675354712473617
+        - rid: 112675354712473618
+        - rid: 112675354712473619
         history:
-        - rid: 112675352775229983
+        - rid: 112675354712473613
         m_UnsafeContent: 0
-    - rid: 112675352775229984
+    - rid: 112675354712473614
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -180,7 +180,7 @@ MonoBehaviour:
           - 4
           enabled: 1
           assembly: 
-    - rid: 112675352775229985
+    - rid: 112675354712473615
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -191,7 +191,7 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: 
-    - rid: 112675352775229986
+    - rid: 112675354712473616
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -205,8 +205,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 6709
-          - 04ae2cce-1814-422c-8a26-885a53db8d54
+          - 37088
+          - 5ad78007-b521-436e-b132-32adeab4ca0b
           - 0
           - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
           - 0
@@ -216,50 +216,50 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229987
+    - rid: 112675354712473617
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.KeyImageOperator
           version: 0.0.1
           settings:
-          - 
-          - 
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAAQElEQVRoBe3QAQ0AAADCoPdPbQ8HESgMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwOTAlIAABdUJTJAAAAABJRU5ErkJggg==
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAENklEQVRoBe1ZPWgUQRSeDbHQxk4hhSCBEA8vyl3AxhSBYEgR1FT+cSKCGBWbi51NQCwkNiKnCCqmMMEiQVKESCBFbAy5FLlwBuUQLAStNYVgzt03+y0z7/b39vaSwKW4N+/tm++9/ea7mb2NUa1WBf/b3zfBQ5H81NZUpHw1ee1IWXWtMW/QUBMy31Oqm9i4jSPHJcnCKx+4yGH3vN+u3kFIknxXWMWLOaY6d2fuEcz58jzZ/vsbqK8pK2atwOmOokKSFAgYNyHKVylKbty+SFHZbFaI2q8LVk6rsbxwh/xC6RfZqbF3yIu7wsARFgGPJ+Ua/hNnqM6svRUtPZDt5HPbTr6M1HzW248rbhuRZNaIswHzFhuJxbF3ytf2KOsG+UZ8KddNvY1eHiALJXk1XAdJtIJdRzME2dl9mGw+Z+9JF/Lk77ML5qe3acTzK5s/Kf7l25qd6ZyWUBaU4utz3Pl52YezRwG9jhvF1Iaq0gHdJQNLUWDaaclNWVCSsb5OeW8nN8kqxNbg2IB8BZ061mBoaIj8VEp/HoJClqYdhVAeX3HMQz4lmR9Xr43R8M3rCeoryPfC9VQUCrWszoCzR3FG86kOyrz+TCpHCFgJ8HJUXhdC7iE6rBALH1YotFFaphU9nu4j/+/vP2SxF/F55bJ8Msf1zm6pOORBQfBhsTehDuLwj6V6KeTloy/M47Zmj+IJLV8y4ChqeKSfIul0WuNmpSD9UqlE8cXO0/J65aOWBwdKyvaeotCV3G2yrwqPyKIO8nk97iOPW/QDBfLrUFBx9RO/FMrnfbQUFYo2IRxFea0MmO06N0KQ6cpXCW0rz2tlsaKfy6taK8DTgooDPCXkO+SnHZJ53SAf87xsS1FezLC4oyjEoSycLljhxa2DlDJQkXsVz4cPixXEHoFTDHjIC7Loh+dBSTjtlOckSsUeaZ66oXyc+rwO/JaiwESANTKZDD3ngFGsPOb9GL5Bw465Fwj5Wr7SSOb4yEM97mMeLK7Dh4Wi4JuW/xKI5PM+W0/mCrNhhpaikKcpC8EDg2dpuLXwHiFX67OyyCd8OPw3Hk7Dh+NPKMUFD1O5hWJ4vF5f6xMgrT0KTARY9dSjlTFXUmf0uf7r3QcvaGVxXce3AXEaQkknb47TlWpPD1nzTSpKG8obC8QaadGnhrknFcVfLmp3lJCjKgolXBnFxaTs3MySK/St9CGK8/8UWmThvVnCChPFYlG0Wx94b+7a6S4OQlkgrZGtWryof4b6n+ImE0Z7FX9uwfMS9qoThVnqF8rqG3yK/n2VX6/KOEEopn31kNRkwtDLjlnct18DmqJ4YpMI05SFHqAofL0QN62vkpAXRlFhCAKepigEYQHUJMJQNlGLe4paxFdRHCxhwlyfr8weDBdV8dZqfK6oegkCcCSiMCkhwjyJsupGJcsiKi45uF/L/geVoYEPP+C/rwAAAABJRU5ErkJggg==
           - True
           - 512
           - 512
           - 0.5
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229988
+    - rid: 112675354712473618
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675352775229989
+    - rid: 112675354712473619
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - 80836d51-c1da-4f8d-980a-8bc8ae76f742
+          - 25d4fad1-d870-4527-aaaf-e680d5e09d62
           enabled: 0
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229990
+    - rid: 112675354712473620
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
-        Guid: 5c441089-b993-48a5-94a6-bfe5537be6f2
-        Seed: 50003
+        Guid: 822b132d-6252-430d-8443-22981ebe51ab
+        Seed: 32679
         m_Operators:
-        - rid: 112675352775229991
-        - rid: 112675352775229992
-        - rid: 112675352775229993
-        - rid: 112675352775229994
-        - rid: 112675352775229995
-        - rid: 112675352775229996
+        - rid: 112675354712473621
+        - rid: 112675354712473622
+        - rid: 112675354712473623
+        - rid: 112675354712473624
+        - rid: 112675354712473625
+        - rid: 112675354712473626
         history:
-        - rid: 112675352775229990
+        - rid: 112675354712473620
         m_UnsafeContent: 0
-    - rid: 112675352775229991
+    - rid: 112675354712473621
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -270,7 +270,7 @@ MonoBehaviour:
           - 4
           enabled: 1
           assembly: 
-    - rid: 112675352775229992
+    - rid: 112675354712473622
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -281,7 +281,7 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: 
-    - rid: 112675352775229993
+    - rid: 112675354712473623
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -295,8 +295,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 50003
-          - 5c441089-b993-48a5-94a6-bfe5537be6f2
+          - 32679
+          - 822b132d-6252-430d-8443-22981ebe51ab
           - 0
           - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
           - 0
@@ -306,50 +306,50 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229994
+    - rid: 112675354712473624
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.KeyImageOperator
           version: 0.0.1
           settings:
-          - 
-          - 
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAAQElEQVRoBe3QAQ0AAADCoPdPbQ8HESgMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwOTAlIAABdUJTJAAAAABJRU5ErkJggg==
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAENklEQVRoBe1ZPWgUQRSeDbHQxk4hhSCBEA8vyl3AxhSBYEgR1FT+cSKCGBWbi51NQCwkNiKnCCqmMMEiQVKESCBFbAy5FLlwBuUQLAStNYVgzt03+y0z7/b39vaSwKW4N+/tm++9/ea7mb2NUa1WBf/b3zfBQ5H81NZUpHw1ee1IWXWtMW/QUBMy31Oqm9i4jSPHJcnCKx+4yGH3vN+u3kFIknxXWMWLOaY6d2fuEcz58jzZ/vsbqK8pK2atwOmOokKSFAgYNyHKVylKbty+SFHZbFaI2q8LVk6rsbxwh/xC6RfZqbF3yIu7wsARFgGPJ+Ua/hNnqM6svRUtPZDt5HPbTr6M1HzW248rbhuRZNaIswHzFhuJxbF3ytf2KOsG+UZ8KddNvY1eHiALJXk1XAdJtIJdRzME2dl9mGw+Z+9JF/Lk77ML5qe3acTzK5s/Kf7l25qd6ZyWUBaU4utz3Pl52YezRwG9jhvF1Iaq0gHdJQNLUWDaaclNWVCSsb5OeW8nN8kqxNbg2IB8BZ061mBoaIj8VEp/HoJClqYdhVAeX3HMQz4lmR9Xr43R8M3rCeoryPfC9VQUCrWszoCzR3FG86kOyrz+TCpHCFgJ8HJUXhdC7iE6rBALH1YotFFaphU9nu4j/+/vP2SxF/F55bJ8Msf1zm6pOORBQfBhsTehDuLwj6V6KeTloy/M47Zmj+IJLV8y4ChqeKSfIul0WuNmpSD9UqlE8cXO0/J65aOWBwdKyvaeotCV3G2yrwqPyKIO8nk97iOPW/QDBfLrUFBx9RO/FMrnfbQUFYo2IRxFea0MmO06N0KQ6cpXCW0rz2tlsaKfy6taK8DTgooDPCXkO+SnHZJ53SAf87xsS1FezLC4oyjEoSycLljhxa2DlDJQkXsVz4cPixXEHoFTDHjIC7Loh+dBSTjtlOckSsUeaZ66oXyc+rwO/JaiwESANTKZDD3ngFGsPOb9GL5Bw465Fwj5Wr7SSOb4yEM97mMeLK7Dh4Wi4JuW/xKI5PM+W0/mCrNhhpaikKcpC8EDg2dpuLXwHiFX67OyyCd8OPw3Hk7Dh+NPKMUFD1O5hWJ4vF5f6xMgrT0KTARY9dSjlTFXUmf0uf7r3QcvaGVxXce3AXEaQkknb47TlWpPD1nzTSpKG8obC8QaadGnhrknFcVfLmp3lJCjKgolXBnFxaTs3MySK/St9CGK8/8UWmThvVnCChPFYlG0Wx94b+7a6S4OQlkgrZGtWryof4b6n+ImE0Z7FX9uwfMS9qoThVnqF8rqG3yK/n2VX6/KOEEopn31kNRkwtDLjlnct18DmqJ4YpMI05SFHqAofL0QN62vkpAXRlFhCAKepigEYQHUJMJQNlGLe4paxFdRHCxhwlyfr8weDBdV8dZqfK6oegkCcCSiMCkhwjyJsupGJcsiKi45uF/L/geVoYEPP+C/rwAAAABJRU5ErkJggg==
           - True
           - 512
           - 512
           - 0.5
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229995
+    - rid: 112675354712473625
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675352775229996
+    - rid: 112675354712473626
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - 80836d51-c1da-4f8d-980a-8bc8ae76f742
+          - 25d4fad1-d870-4527-aaaf-e680d5e09d62
           enabled: 0
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775229997
+    - rid: 112675354712473627
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
-        Guid: 473fe0f7-8c00-4b32-8348-65e98ff9459d
-        Seed: 41256
+        Guid: f984bdd7-fd6e-4ba5-a89e-1ef572fb4519
+        Seed: 716
         m_Operators:
-        - rid: 112675352775229998
-        - rid: 112675352775229999
-        - rid: 112675352775230000
-        - rid: 112675352775230001
-        - rid: 112675352775230002
-        - rid: 112675352775230003
+        - rid: 112675354712473628
+        - rid: 112675354712473629
+        - rid: 112675354712473630
+        - rid: 112675354712473631
+        - rid: 112675354712473632
+        - rid: 112675354712473633
         history:
-        - rid: 112675352775229997
+        - rid: 112675354712473627
         m_UnsafeContent: 0
-    - rid: 112675352775229998
+    - rid: 112675354712473628
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -360,7 +360,7 @@ MonoBehaviour:
           - 4
           enabled: 1
           assembly: 
-    - rid: 112675352775229999
+    - rid: 112675354712473629
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -371,7 +371,7 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: 
-    - rid: 112675352775230000
+    - rid: 112675354712473630
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -385,8 +385,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 41256
-          - 473fe0f7-8c00-4b32-8348-65e98ff9459d
+          - 716
+          - f984bdd7-fd6e-4ba5-a89e-1ef572fb4519
           - 0
           - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
           - 0
@@ -396,50 +396,50 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775230001
+    - rid: 112675354712473631
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.KeyImageOperator
           version: 0.0.1
           settings:
-          - 
-          - 
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAAQElEQVRoBe3QAQ0AAADCoPdPbQ8HESgMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwOTAlIAABdUJTJAAAAABJRU5ErkJggg==
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAENklEQVRoBe1ZPWgUQRSeDbHQxk4hhSCBEA8vyl3AxhSBYEgR1FT+cSKCGBWbi51NQCwkNiKnCCqmMMEiQVKESCBFbAy5FLlwBuUQLAStNYVgzt03+y0z7/b39vaSwKW4N+/tm++9/ea7mb2NUa1WBf/b3zfBQ5H81NZUpHw1ee1IWXWtMW/QUBMy31Oqm9i4jSPHJcnCKx+4yGH3vN+u3kFIknxXWMWLOaY6d2fuEcz58jzZ/vsbqK8pK2atwOmOokKSFAgYNyHKVylKbty+SFHZbFaI2q8LVk6rsbxwh/xC6RfZqbF3yIu7wsARFgGPJ+Ua/hNnqM6svRUtPZDt5HPbTr6M1HzW248rbhuRZNaIswHzFhuJxbF3ytf2KOsG+UZ8KddNvY1eHiALJXk1XAdJtIJdRzME2dl9mGw+Z+9JF/Lk77ML5qe3acTzK5s/Kf7l25qd6ZyWUBaU4utz3Pl52YezRwG9jhvF1Iaq0gHdJQNLUWDaaclNWVCSsb5OeW8nN8kqxNbg2IB8BZ061mBoaIj8VEp/HoJClqYdhVAeX3HMQz4lmR9Xr43R8M3rCeoryPfC9VQUCrWszoCzR3FG86kOyrz+TCpHCFgJ8HJUXhdC7iE6rBALH1YotFFaphU9nu4j/+/vP2SxF/F55bJ8Msf1zm6pOORBQfBhsTehDuLwj6V6KeTloy/M47Zmj+IJLV8y4ChqeKSfIul0WuNmpSD9UqlE8cXO0/J65aOWBwdKyvaeotCV3G2yrwqPyKIO8nk97iOPW/QDBfLrUFBx9RO/FMrnfbQUFYo2IRxFea0MmO06N0KQ6cpXCW0rz2tlsaKfy6taK8DTgooDPCXkO+SnHZJ53SAf87xsS1FezLC4oyjEoSycLljhxa2DlDJQkXsVz4cPixXEHoFTDHjIC7Loh+dBSTjtlOckSsUeaZ66oXyc+rwO/JaiwESANTKZDD3ngFGsPOb9GL5Bw465Fwj5Wr7SSOb4yEM97mMeLK7Dh4Wi4JuW/xKI5PM+W0/mCrNhhpaikKcpC8EDg2dpuLXwHiFX67OyyCd8OPw3Hk7Dh+NPKMUFD1O5hWJ4vF5f6xMgrT0KTARY9dSjlTFXUmf0uf7r3QcvaGVxXce3AXEaQkknb47TlWpPD1nzTSpKG8obC8QaadGnhrknFcVfLmp3lJCjKgolXBnFxaTs3MySK/St9CGK8/8UWmThvVnCChPFYlG0Wx94b+7a6S4OQlkgrZGtWryof4b6n+ImE0Z7FX9uwfMS9qoThVnqF8rqG3yK/n2VX6/KOEEopn31kNRkwtDLjlnct18DmqJ4YpMI05SFHqAofL0QN62vkpAXRlFhCAKepigEYQHUJMJQNlGLe4paxFdRHCxhwlyfr8weDBdV8dZqfK6oegkCcCSiMCkhwjyJsupGJcsiKi45uF/L/geVoYEPP+C/rwAAAABJRU5ErkJggg==
           - True
           - 512
           - 512
           - 0.5
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775230002
+    - rid: 112675354712473632
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675352775230003
+    - rid: 112675354712473633
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - 80836d51-c1da-4f8d-980a-8bc8ae76f742
+          - 25d4fad1-d870-4527-aaaf-e680d5e09d62
           enabled: 0
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775230004
+    - rid: 112675354712473634
       type: {class: SpriteMuseArtifact, ns: Unity.Muse.Sprite.Artifacts, asm: Unity.Muse.Sprite}
       data:
-        Guid: d8fe9ac1-d893-436d-b8c2-42724d0eeb2d
-        Seed: 9015
+        Guid: ef459c23-22a2-48a5-ba40-ba5932675a79
+        Seed: 34187
         m_Operators:
-        - rid: 112675352775230005
-        - rid: 112675352775230006
-        - rid: 112675352775230007
-        - rid: 112675352775230008
-        - rid: 112675352775230009
-        - rid: 112675352775230010
+        - rid: 112675354712473635
+        - rid: 112675354712473636
+        - rid: 112675354712473637
+        - rid: 112675354712473638
+        - rid: 112675354712473639
+        - rid: 112675354712473640
         history:
-        - rid: 112675352775230004
+        - rid: 112675354712473634
         m_UnsafeContent: 0
-    - rid: 112675352775230005
+    - rid: 112675354712473635
       type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -450,7 +450,7 @@ MonoBehaviour:
           - 4
           enabled: 1
           assembly: 
-    - rid: 112675352775230006
+    - rid: 112675354712473636
       type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
@@ -461,7 +461,7 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: 
-    - rid: 112675352775230007
+    - rid: 112675354712473637
       type: {class: SpriteGeneratorSettingsOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
@@ -475,8 +475,8 @@ MonoBehaviour:
           - 512
           - 1
           - 1
-          - 9015
-          - d8fe9ac1-d893-436d-b8c2-42724d0eeb2d
+          - 34187
+          - ef459c23-22a2-48a5-ba40-ba5932675a79
           - 0
           - 8c5bc8e3-4a34-4e2c-91ac-b8b95c91d64f
           - 0
@@ -486,31 +486,31 @@ MonoBehaviour:
           - 
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775230008
+    - rid: 112675354712473638
       type: {class: KeyImageOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.KeyImageOperator
           version: 0.0.1
           settings:
-          - 
-          - 
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAAQElEQVRoBe3QAQ0AAADCoPdPbQ8HESgMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDBgwIABAwYMGDDwOTAlIAABdUJTJAAAAABJRU5ErkJggg==
+          - iVBORw0KGgoAAAANSUhEUgAAAEoAAAAgCAYAAAC1v+5NAAAENklEQVRoBe1ZPWgUQRSeDbHQxk4hhSCBEA8vyl3AxhSBYEgR1FT+cSKCGBWbi51NQCwkNiKnCCqmMMEiQVKESCBFbAy5FLlwBuUQLAStNYVgzt03+y0z7/b39vaSwKW4N+/tm++9/ea7mb2NUa1WBf/b3zfBQ5H81NZUpHw1ee1IWXWtMW/QUBMy31Oqm9i4jSPHJcnCKx+4yGH3vN+u3kFIknxXWMWLOaY6d2fuEcz58jzZ/vsbqK8pK2atwOmOokKSFAgYNyHKVylKbty+SFHZbFaI2q8LVk6rsbxwh/xC6RfZqbF3yIu7wsARFgGPJ+Ua/hNnqM6svRUtPZDt5HPbTr6M1HzW248rbhuRZNaIswHzFhuJxbF3ytf2KOsG+UZ8KddNvY1eHiALJXk1XAdJtIJdRzME2dl9mGw+Z+9JF/Lk77ML5qe3acTzK5s/Kf7l25qd6ZyWUBaU4utz3Pl52YezRwG9jhvF1Iaq0gHdJQNLUWDaaclNWVCSsb5OeW8nN8kqxNbg2IB8BZ061mBoaIj8VEp/HoJClqYdhVAeX3HMQz4lmR9Xr43R8M3rCeoryPfC9VQUCrWszoCzR3FG86kOyrz+TCpHCFgJ8HJUXhdC7iE6rBALH1YotFFaphU9nu4j/+/vP2SxF/F55bJ8Msf1zm6pOORBQfBhsTehDuLwj6V6KeTloy/M47Zmj+IJLV8y4ChqeKSfIul0WuNmpSD9UqlE8cXO0/J65aOWBwdKyvaeotCV3G2yrwqPyKIO8nk97iOPW/QDBfLrUFBx9RO/FMrnfbQUFYo2IRxFea0MmO06N0KQ6cpXCW0rz2tlsaKfy6taK8DTgooDPCXkO+SnHZJ53SAf87xsS1FezLC4oyjEoSycLljhxa2DlDJQkXsVz4cPixXEHoFTDHjIC7Loh+dBSTjtlOckSsUeaZ66oXyc+rwO/JaiwESANTKZDD3ngFGsPOb9GL5Bw465Fwj5Wr7SSOb4yEM97mMeLK7Dh4Wi4JuW/xKI5PM+W0/mCrNhhpaikKcpC8EDg2dpuLXwHiFX67OyyCd8OPw3Hk7Dh+NPKMUFD1O5hWJ4vF5f6xMgrT0KTARY9dSjlTFXUmf0uf7r3QcvaGVxXce3AXEaQkknb47TlWpPD1nzTSpKG8obC8QaadGnhrknFcVfLmp3lJCjKgolXBnFxaTs3MySK/St9CGK8/8UWmThvVnCChPFYlG0Wx94b+7a6S4OQlkgrZGtWryof4b6n+ImE0Z7FX9uwfMS9qoThVnqF8rqG3yK/n2VX6/KOEEopn31kNRkwtDLjlnct18DmqJ4YpMI05SFHqAofL0QN62vkpAXRlFhCAKepigEYQHUJMJQNlGLe4paxFdRHCxhwlyfr8weDBdV8dZqfK6oegkCcCSiMCkhwjyJsupGJcsiKi45uF/L/geVoYEPP+C/rwAAAABJRU5ErkJggg==
           - True
           - 512
           - 512
           - 0.5
           enabled: 1
           assembly: Unity.Muse.Sprite
-    - rid: 112675352775230009
+    - rid: 112675354712473639
       type: {class: SpriteRefiningMaskOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data: 
-    - rid: 112675352775230010
+    - rid: 112675354712473640
       type: {class: SessionOperator, ns: Unity.Muse.Sprite.Operators, asm: Unity.Muse.Sprite}
       data:
         m_OperatorData:
           type: Unity.Muse.Sprite.Operators.SessionOperator
           version: 0.0.1
           settings:
-          - 80836d51-c1da-4f8d-980a-8bc8ae76f742
+          - 25d4fad1-d870-4527-aaaf-e680d5e09d62
           enabled: 0
           assembly: Unity.Muse.Sprite
