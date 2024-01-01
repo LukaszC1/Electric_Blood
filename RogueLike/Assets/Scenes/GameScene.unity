@@ -14667,8 +14667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -107.3, y: -20}
-  m_SizeDelta: {x: 46.9673, y: 46.966995}
+  m_AnchoredPosition: {x: -92.8, y: -19.8}
+  m_SizeDelta: {x: 25.8188, y: 25.8186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450330747
 MonoBehaviour:
@@ -25101,13 +25101,13 @@ MonoBehaviour:
   terrainChunk: []
   currentChunk: {fileID: 0}
   radius: 1
+  cooldownTime: 1
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
   spawnedChunk: []
   latest: {fileID: 0}
   maxDistance: 70
-  cooldownTime: 1
 --- !u!4 &2055026114
 Transform:
   m_ObjectHideFlags: 0
