@@ -74,7 +74,6 @@ public class ShopPanelUI : MonoBehaviour
                 availableCoins.text = "COINS:" + PersistentUpgrades.Instance.saveData.coins.ToString();
                 PersistentUpgrades.Instance.Save();
                 gameObject.SetActive(false);
-                ClearCosts();
             }
         });
         resetButton.onClick.AddListener(() =>
@@ -90,6 +89,7 @@ public class ShopPanelUI : MonoBehaviour
        coins = PersistentUpgrades.Instance.saveData.coins;
 
        InitializeUpgrades();
+       UpdateAllCosts();
     }
 
     private void InitializeUpgrades()
@@ -120,13 +120,7 @@ public class ShopPanelUI : MonoBehaviour
             available = int.Parse(splitString[1].Trim());
         }
 
-        if (current < available)
-        {
-            current++;
-            characterStats[i].text = current + "/" + available;
-        }
-        else
-            return;
+        if (current >= available) return;
         
 
         var calculatedCost = 0;
@@ -134,80 +128,97 @@ public class ShopPanelUI : MonoBehaviour
         {
             case (int)CharacterStats.MaxHp:
                 var maxHp = newCharacterStats[(int)CharacterStats.MaxHp];
+                calculatedCost = CalculateCost(maxHp.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 maxHp.currentLevel = current;
                 maxHp.currentValue += 10f;
                 newCharacterStats[(int)CharacterStats.MaxHp] = maxHp;
-                calculatedCost = CalculateCost(maxHp.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.Armor:
                 var armor = newCharacterStats[(int)CharacterStats.Armor];
+                calculatedCost = CalculateCost(armor.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 armor.currentLevel = current;
                 armor.currentValue += 1f;
                 newCharacterStats[(int)CharacterStats.Armor] = armor;
-                calculatedCost = CalculateCost(armor.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.HpRegen:
                 var hpRegen = newCharacterStats[(int)CharacterStats.HpRegen];
+                calculatedCost = CalculateCost(hpRegen.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 hpRegen.currentLevel = current;
                 hpRegen.currentValue += 0.1f;
                 newCharacterStats[(int)CharacterStats.HpRegen] = hpRegen;
-                calculatedCost = CalculateCost(hpRegen.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.CooldownMultiplier:
                 var cooldownMultiplier = newCharacterStats[(int)CharacterStats.CooldownMultiplier];
+                calculatedCost = CalculateCost(cooldownMultiplier.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 cooldownMultiplier.currentLevel = current;
                 cooldownMultiplier.currentValue -= 0.02f;
                 newCharacterStats[(int)CharacterStats.CooldownMultiplier] = cooldownMultiplier;
-                calculatedCost = CalculateCost(cooldownMultiplier.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.AreaMultiplier:
                 var areaMultiplier = newCharacterStats[(int)CharacterStats.AreaMultiplier];
+                calculatedCost = CalculateCost(areaMultiplier.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 areaMultiplier.currentLevel = current;
                 areaMultiplier.currentValue += 0.1f;
                 newCharacterStats[(int)CharacterStats.AreaMultiplier] = areaMultiplier;
-                calculatedCost = CalculateCost(areaMultiplier.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.AmountBonus:
                 var amountBonus = newCharacterStats[(int)CharacterStats.AmountBonus];
+                calculatedCost = CalculateCost(amountBonus.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 amountBonus.currentLevel = current;
                 amountBonus.currentValue += 1f;
                 newCharacterStats[(int)CharacterStats.AmountBonus] = amountBonus;
-                calculatedCost = CalculateCost(amountBonus.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.MagnetSize:
                 var magentSize = newCharacterStats[(int)CharacterStats.MagnetSize];
+                calculatedCost = CalculateCost(magentSize.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 magentSize.currentLevel = current;
                 magentSize.currentValue += 1f;
                 newCharacterStats[(int)CharacterStats.MagnetSize] = magentSize;
-                calculatedCost = CalculateCost(magentSize.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.DamageMultiplier:
                 var damageMultiplier = newCharacterStats[(int)CharacterStats.DamageMultiplier];
+                calculatedCost = CalculateCost(damageMultiplier.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 damageMultiplier.currentLevel = current;
                 damageMultiplier.currentValue += 0.1f;
                 newCharacterStats[(int)CharacterStats.DamageMultiplier] = damageMultiplier;
-                calculatedCost = CalculateCost(damageMultiplier.initialPrice, current - 1);
                 break;
 
             case (int)CharacterStats.ProjectileSpeed:
                 var projectileSpeed = newCharacterStats[(int)CharacterStats.ProjectileSpeed];
+                calculatedCost = CalculateCost(projectileSpeed.initialPrice, current);
+                if (calculatedCost > coins) return;
+                current++;
                 projectileSpeed.currentLevel = current;
                 projectileSpeed.currentValue += 0.2f;
                 newCharacterStats[(int)CharacterStats.ProjectileSpeed] = projectileSpeed;
-                calculatedCost = CalculateCost(projectileSpeed.initialPrice, current - 1);
                 break;
         }
-        var currentPrice = int.Parse(costTexts[i].text);
-        currentPrice += calculatedCost;
-        costTexts[i].text = currentPrice.ToString();
+        characterStats[i].text = current + "/" + available;;
         sumOfCoinsSpent += calculatedCost;
+        UpdateAllCosts();
 
         coins -= calculatedCost;
         availableCoins.text = "COINS:" + coins;
@@ -223,7 +234,11 @@ public class ShopPanelUI : MonoBehaviour
             totalBought += item.currentLevel;
         }
         
+        if(totalBought > 0)
         cost = (initialPrice * (1 + bought)) + 20*Mathf.Pow(1.1f, totalBought-value); //calculate the cost of the next upgrade
+        else
+        cost = initialPrice * (1 + bought); //calculate the cost of the next upgrade
+
 
         return Mathf.FloorToInt(cost);
     }
@@ -247,7 +262,7 @@ public class ShopPanelUI : MonoBehaviour
             newCharacterStats[i] = item;
         }
 
-        ClearCosts();
+        UpdateAllCosts();
 
         newCharacterStats.ForEach(x =>
         {
@@ -260,6 +275,21 @@ public class ShopPanelUI : MonoBehaviour
         foreach (var text in costTexts)
         {
             text.text = "0";
+        }
+    }
+
+    private void UpdateAllCosts()
+    {
+        for (int i = 0; i < newCharacterStats.Count; ++i)
+        {
+            var item = newCharacterStats[i];
+            if (item.currentLevel == item.maxLevel)
+                costTexts[i].text = "MAX";
+            else
+            {
+                var cost = CalculateCost(item.initialPrice, item.currentLevel);
+                costTexts[i].text = cost.ToString();
+            }
         }
     }
 }
