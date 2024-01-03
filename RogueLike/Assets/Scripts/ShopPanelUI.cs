@@ -15,7 +15,6 @@ public class ShopPanelUI : MonoBehaviour
 {
     //Private fields
     [SerializeField] private Button closeButton;
-    [SerializeField] private Button buyButton;
     [SerializeField] private Button resetButton;
     [SerializeField] private TextMeshProUGUI availableCoins;
     [SerializeField] private List<TextMeshProUGUI> characterStats;
@@ -64,17 +63,6 @@ public class ShopPanelUI : MonoBehaviour
         {
             //close the panel
             gameObject.SetActive(false);
-        });
-        buyButton.onClick.AddListener(() =>
-        {           
-            if(coins >= sumOfCoinsSpent)
-            {
-                PersistentUpgrades.Instance.saveData.coins -= sumOfCoinsSpent;
-                PersistentUpgrades.Instance.saveData.totalCoinsSpent += sumOfCoinsSpent;
-                availableCoins.text = "COINS:" + PersistentUpgrades.Instance.saveData.coins.ToString();
-                PersistentUpgrades.Instance.Save();
-                gameObject.SetActive(false);
-            }
         });
         resetButton.onClick.AddListener(() =>
         {
@@ -222,6 +210,9 @@ public class ShopPanelUI : MonoBehaviour
 
         coins -= calculatedCost;
         availableCoins.text = "COINS:" + coins;
+        PersistentUpgrades.Instance.saveData.coins -= calculatedCost;
+        PersistentUpgrades.Instance.saveData.totalCoinsSpent += calculatedCost;
+        PersistentUpgrades.Instance.Save();
     }
 
     private int CalculateCost(int initialPrice, int bought, float value = 1f)
@@ -249,7 +240,7 @@ public class ShopPanelUI : MonoBehaviour
         coins += sumOfCoinsSpent + totalCoinsSpent;
         PersistentUpgrades.Instance.saveData.coins = coins;
         PersistentUpgrades.Instance.saveData.totalCoinsSpent = 0;
-        availableCoins.text = "COINS: " + coins;
+        availableCoins.text = "COINS:" + coins;
 
         sumOfCoinsSpent = 0;
         totalCoinsSpent = 0;
@@ -263,19 +254,13 @@ public class ShopPanelUI : MonoBehaviour
         }
 
         UpdateAllCosts();
+        PersistentUpgrades.Instance.Save();
+
 
         newCharacterStats.ForEach(x =>
         {
             characterStats[(int)x.stat].text = x.currentLevel + "/" + x.maxLevel;
         });
-    }
-
-    private void ClearCosts()
-    {
-        foreach (var text in costTexts)
-        {
-            text.text = "0";
-        }
     }
 
     private void UpdateAllCosts()
