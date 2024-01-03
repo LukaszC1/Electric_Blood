@@ -10,13 +10,9 @@ using UnityEngine.UI;
 /// </summary>
 public class GamePauseUI : NetworkBehaviour
 {
-    [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
     private void Awake()
     {
-        resumeButton.onClick.AddListener(() => {
-           GameManager.Instance.TogglePauseGame();
-        });
         mainMenuButton.onClick.AddListener(() => {
             Cleanup();
             NetworkManager.Singleton.Shutdown();
